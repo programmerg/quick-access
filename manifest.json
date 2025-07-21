@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "minimum_chrome_version": "116",
+    "name": "__MSG_app_name__",
+    "description": "__MSG_app_description__",
+    "version": "1.0",
+    "default_locale": "en",
+    "icons": {
+        "16": "images/icon-16.png",
+        "24": "images/icon-24.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "64": "images/icon-64.png",
+        "128": "images/icon-128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "bookmarks",
+        "tabs",
+        "tabGroups",
+        "readingList",
+        "favicon",
+        "sidePanel",
+        "storage",
+        "unlimitedStorage"
+    ],
+    "action": {
+        "default_title": "__MSG_open_side_panel__"
+    },
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "side_panel": {
+        "default_path": "index.html"
+    }
+}

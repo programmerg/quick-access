@@ -1,0 +1,179 @@
+{
+   "app_name": {
+      "message": "Quick access"
+   },
+   "app_description": {
+      "message": "A new tab page with your favorite bookmarks"
+   },
+   "new_tab_page": {
+      "message": "New Tab"
+   },
+   "search_": {
+      "message": "Search..."
+   },
+   "general": {
+      "message": "General"
+   },
+   "bookmarks": {
+      "message": "Bookmarks"
+   },
+   "reading_list": {
+      "message": "Reading list"
+   },
+   "tab_groups": {
+      "message": "Tab groups"
+   },
+   "settings": {
+      "message": "Settings"
+   },
+   "root_folder": {
+      "message": "Root folder"
+   },
+   "new_folder": {
+      "message": "Add folder"
+   },
+   "new_bookmark": {
+      "message": "Add bookmark"
+   },
+   "new_tab": {
+      "message": "Add tab"
+   },
+   "new_tabGroup": {
+      "message": "Add tab group"
+   },
+   "new_page": {
+      "message": "Add page"
+   },
+   "edit_folder": {
+      "message": "Edit folder"
+   },
+   "edit_bookmark": {
+      "message": "Edit bookmark"
+   },
+   "edit_tab": {
+      "message": "Edit tab"
+   },
+   "edit_tabGroup": {
+      "message": "Edit tab group"
+   },
+   "edit_page": {
+      "message": "Edit page"
+   },
+   "add": {
+      "message": "Add"
+   },
+   "edit": {
+      "message": "Edit"
+   },
+   "delete": {
+      "message": "Delete"
+   },
+   "cancel": {
+      "message": "Cancel"
+   },
+   "save": {
+      "message": "Save"
+   },
+   "close": {
+      "message": "Close"
+   },
+   "title": {
+      "message": "Title"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "default_view": {
+      "message": "Default view"
+   },
+   "default_path": {
+      "message": "Default folder"
+   },
+   "grid_cols": {
+      "message": "Columns"
+   },
+   "background_type": {
+      "message": "Background image"
+   },
+   "background_file": {
+      "message": "Background image file"
+   },
+   "background_url": {
+      "message": "Background image URL"
+   },
+   "favicon_type": {
+      "message": "Icons"
+   },
+   "favicon_url": {
+      "message": "Icon URL"
+   },
+   "default": {
+      "message": "Default"
+   },
+   "custom_url": {
+      "message": "Custom URL"
+   },
+   "custom_file": {
+      "message": "Local file"
+   },
+   "select_file": {
+      "message": "Choose file"
+   },
+   "no_search_results_found": {
+      "message": "No search results found"
+   },
+   "delete_item_confirm": {
+      "message": "Are you sure you want to delete\n$1?"
+   },
+   "empty_state": {
+      "message": "No content to display"
+   },
+   "empty_state_details": {
+      "message": "Add new items with the + button!"
+   },
+   "error_loading_data": {
+      "message": "Oops! Something went wrong!"
+   },
+   "error_loading_data_details": {
+      "message": "Check the console for more details."
+   },
+   "pages_unread": {
+      "message": "Unread pages"
+   },
+   "pages_read": {
+      "message": "Read pages"
+   },
+   "ungrouped_tabs": {
+      "message": "Ungrouped tabs"
+   },
+   "open_side_panel": {
+      "message": "Click to open / close Side panel"
+   },
+
+
+
+
+   "background_color": {
+      "message": "Color"
+   },
+   "opacity": {
+      "message": "Opacity"
+   },
+   "column_gap": {
+      "message": "Column gap"
+   },
+   "row_gap": {
+      "message": "Row gap"
+   },
+
+   
+   "error_newtab_occupied": {
+      "message": "Another extension controls what page is shown when you open a new tab. Please, disable that extension and try again."
+   },
+   "error_too_many_subscriptions": {
+      "message": "Maximum number of subscriptions exceeded! Currently no more than $1 subscriptions are allowed!"
+   },
+   "sync_footnote": {
+      "message": "Please note: You need to be signed in to Chrome to sync settings. Not all settings can be synchronized. Syncing may take a few minutes."
+   }
+}

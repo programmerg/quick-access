@@ -1,0 +1,152 @@
+{
+   "app_name": {
+      "message": "Gyors elérés"
+   },
+   "app_description": {
+      "message": "Egy szép, minimalista gyorshívó könyvjelzőkkel és lapcsoportokkal"
+   },
+   "new_tab_page": {
+      "message": "Új lap"
+   },
+   "search_": {
+      "message": "Keresés..."
+   },
+   "general": {
+      "message": "Általános"
+   },
+   "bookmarks": {
+      "message": "Könyvjelzők"
+   },
+   "reading_list": {
+      "message": "Olvasási lista"
+   },
+   "tab_groups": {
+      "message": "Lapcsoportok"
+   },
+   "settings": {
+      "message": "Beállítások"
+   },
+   "root_folder": {
+      "message": "Gyökér mappa"
+   },
+   "new_folder": {
+      "message": "Új mappa"
+   },
+   "new_bookmark": {
+      "message": "Új könyvjelző"
+   },
+   "new_tab": {
+      "message": "Új lap"
+   },
+   "new_tabGroup": {
+      "message": "Új lap csoport"
+   },
+   "new_page": {
+      "message": "Új oldal"
+   },
+   "edit_folder": {
+      "message": "Mappa szerkesztése"
+   },
+   "edit_bookmark": {
+      "message": "Könyvjelző szerkesztése"
+   },
+   "edit_tab": {
+      "message": "Lap szerkesztése"
+   },
+   "edit_tabGroup": {
+      "message": "Lap csoport szerkesztése"
+   },
+   "edit_page": {
+      "message": "Oldal szerkesztése"
+   },
+   "add": {
+      "message": "Új"
+   },
+   "edit": {
+      "message": "Szerkesztés"
+   },
+   "delete": {
+      "message": "Törlés"
+   },
+   "cancel": {
+      "message": "Mégse"
+   },
+   "save": {
+      "message": "Mentés"
+   },
+   "close": {
+      "message": "Bezárás"
+   },
+   "title": {
+      "message": "Név"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "default_view": {
+      "message": "Alapértelmezett nézet"
+   },
+   "default_path": {
+      "message": "Kezdő mappa"
+   },
+   "grid_cols": {
+      "message": "Oszlopok száma"
+   },
+   "background_type": {
+      "message": "Háttérkép"
+   },
+   "background_file": {
+      "message": "Háttérkép fájl"
+   },
+   "background_url": {
+      "message": "Háttérkép URL"
+   },
+   "favicon_type": {
+      "message": "Ikonok"
+   },
+   "favicon_url": {
+      "message": "Ikon URL"
+   },
+   "default": {
+      "message": "Alapértelmezett"
+   },
+   "custom_url": {
+      "message": "Egyedi szolgáltató"
+   },
+   "custom_file": {
+      "message": "Helyi fájl"
+   },
+   "select_file": {
+      "message": "Fájl kiválasztása"
+   },
+   "no_search_results_found": {
+      "message": "Nincs találat"
+   },
+   "delete_item_confirm": {
+      "message": "Biztosan törölni szeretné ezt:\n$1?"
+   },
+   "empty_state": {
+      "message": "Nincs megjeleníthető tartalom"
+   },
+   "empty_state_details": {
+      "message": "Adj hozzá új elemeket a + gombbal!"
+   },
+   "error_loading_data": {
+      "message": "Hiba történt az adatok betöltése közben"
+   },
+   "error_loading_data_details": {
+      "message": "A részletekért tájékozódjon a konzolban."
+   },
+   "pages_unread": {
+      "message": "Olvasatlan oldalak"
+   },
+   "pages_read": {
+      "message": "Elolvasott oldalak"
+   },
+   "ungrouped_tabs": {
+      "message": "Csoport nélkül"
+   },
+   "open_side_panel": {
+      "message": "Oldalsó panel megnyitása / bezárása"
+   }
+}
