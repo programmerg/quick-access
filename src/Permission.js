@@ -1,4 +1,4 @@
-export class Permissions {
+export class Permission {
 
     static defaults = [
         'bookmarks',
@@ -11,7 +11,7 @@ export class Permissions {
     }
 
     static async all() {
-        return await chrome.permissions.getAll();
+        return (await chrome.permissions.getAll())?.permissions;
     }
 
     static async request(permissions) {

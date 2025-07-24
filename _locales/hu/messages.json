@@ -3,7 +3,7 @@
       "message": "Gyors elérés"
    },
    "app_description": {
-      "message": "Egy szép, minimalista gyorshívó könyvjelzőkkel és lapcsoportokkal"
+      "message": "Egy letisztult, intuitív új lap oldal amin a Gyakori oldalak mellett a Könyvjelzőid, Olvasási listád és Lap csoportjaid is egyetlen kattintással elérheted."
    },
    "new_tab_page": {
       "message": "Új lap"
@@ -13,6 +13,9 @@
    },
    "general": {
       "message": "Általános"
+   },
+   "views": {
+      "message": "Nézetek"
    },
    "bookmarks": {
       "message": "Könyvjelzők"
@@ -27,7 +30,7 @@
       "message": "Beállítások"
    },
    "root_folder": {
-      "message": "Gyökér mappa"
+      "message": "Gyökérmappa"
    },
    "new_folder": {
       "message": "Új mappa"
@@ -83,6 +86,9 @@
    "url": {
       "message": "URL"
    },
+   "url_address": {
+      "message": "URL cím"
+   },
    "default_view": {
       "message": "Alapértelmezett nézet"
    },
@@ -96,31 +102,55 @@
       "message": "Háttérkép"
    },
    "background_file": {
-      "message": "Háttérkép fájl"
+      "message": "Fájl"
    },
    "background_url": {
-      "message": "Háttérkép URL"
+      "message": "URL cím"
+   },
+   "background_color": {
+      "message": "Egyszínű"
    },
    "favicon_type": {
       "message": "Ikonok"
    },
    "favicon_url": {
-      "message": "Ikon URL"
+      "message": "Egyedi URL cím"
    },
-   "default": {
+   "favicon_default": {
       "message": "Alapértelmezett"
-   },
-   "custom_url": {
-      "message": "Egyedi szolgáltató"
-   },
-   "custom_file": {
-      "message": "Helyi fájl"
    },
    "select_file": {
       "message": "Fájl kiválasztása"
    },
+   "tiles": {
+      "message": "Csempék" 
+   },
+   "tile_enable_add": {
+      "message": "Új elem csempe megjelenítése" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Szerkesztés és törlés gombok engedélyezése" 
+   },
+   "tile_enable_reorder": {
+      "message": "Átrendezés engedélyezése" 
+   },
+   "enable_bookmarks": {
+      "message": "Hozzáférés engedélyezése"
+   },
+   "enable_reading_list": {
+      "message": "Hozzáférés engedélyezése"
+   },
+   "enable_tab_groups": {
+      "message": "Hozzáférés engedélyezése"
+   },
+   "custom_theme": {
+      "message": "Egyedi megjelenés"
+   },
    "no_search_results_found": {
       "message": "Nincs találat"
+   },
+   "no_search_results_found_details": {
+      "message": "Próbálj más kulcsszavakat használni"
    },
    "delete_item_confirm": {
       "message": "Biztosan törölni szeretné ezt:\n$1?"
@@ -132,10 +162,10 @@
       "message": "Adj hozzá új elemeket a + gombbal!"
    },
    "error_loading_data": {
-      "message": "Hiba történt az adatok betöltése közben"
+      "message": "Hoppá, van egy kis probléma"
    },
    "error_loading_data_details": {
-      "message": "A részletekért tájékozódjon a konzolban."
+      "message": "Az adatok betöltése nem sikerült"
    },
    "pages_unread": {
       "message": "Olvasatlan oldalak"
@@ -148,5 +178,32 @@
    },
    "open_side_panel": {
       "message": "Oldalsó panel megnyitása / bezárása"
+   },
+   "theme": {
+      "message": "Téma"
+   },
+   "create_url_footnote": {
+      "message": "Mappa létrehozásához hagyja üresen"
+   },
+   "welcome_title": {
+      "message": "Szia!"
+   },
+   "welcome_message1": {
+      "message": "Ez a bővítmény lehetővé teszi számodra, hogy a Gyakori oldalak mellett a Könyvjelzőid, Olvasási listád és Lap csoportjaid is egy letisztult, intuitív kezdőlapon, egyetlen kattintással elérd."
+   },
+   "welcome_message2": {
+      "message": "Állíts be klassz háttereket. Vagy dobd el az egeret és használd a <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> és <kbd>→</kbd> billentyűket a navigáláshoz."
+   },
+   "welcome_message3": {
+      "message": "Ha rögzíted a <b><img src='images/icon-16.png' style='vertical-align:middle'> Gyors elérés</b> ikont az eszköztárra, még oldalsávként is meg fog tudni jelenni."
+   },
+   "welcome_message4": {
+      "message": "Kezdésnek válaszd ki, mit szeretnél itt látni:"
+   },
+   "welcome_message5": {
+      "message": "Ezeket később a <b>Beállítások</b> közt bármikor módosíthatod."
+   },
+   "welcome_message6": {
+      "message": "Beállításaid automatikusan a Chrome fiókodba szinkronizáljuk, hogy minden eszközödön egyformán klassz élményben legyen részed. Ha nincs még fiókod, érdemes létrehozni egyet!"
    }
 }

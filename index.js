@@ -1,9 +1,11 @@
 
 import { Bookmark } from "./src/Bookmark.js";
+import { History } from "./src/History.js";
 import { Page } from "./src/Page.js";
-import { Tab } from "./src/Tab.js";
+import { Permission } from "./src/Permission.js";
 import { Settings } from "./src/Settings.js";
-import { Permissions } from "./src/Permissions.js";
+import { Tab } from "./src/Tab.js";
+import { TopSite } from "./src/TopSite.js";
 
 export class UI {
 
@@ -20,7 +22,9 @@ export class UI {
     async init() {
         this.applySettings(await Settings.all());
         this.switchView(this.settings.defaultView);
+        this.handlePermissionChange();
         
+        this.registerPermissionEventListeners();
         this.registerSearchEventListeners();
         this.registerSettingsFormEventListeners();
         this.registerKeyboardNavigationEventListeners();
@@ -37,22 +41,50 @@ export class UI {
         document.documentElement.lang = chrome.i18n.getUILanguage();
         this.updateTranslation();
 
-        // TODO: permission handling
-        // if (!Permissions.hasAccessTo(['bookmarks'])) {}
-        // if (!Permissions.hasAccessTo(['tabGroups'])) {}
-        // if (!Permissions.hasAccessTo(['readingList'])) {}
-        // chrome.permissions.onAdded
-        // chrome.permissions.onRemoved
+        // Welcome screen
+        if (await Settings.get('firstRun')) {
+            const welcomeModal = document.getElementById('welcomeModal');
+            if (welcomeModal) welcomeModal.showModal();
+            welcomeModal.addEventListener("close", (e) => Settings.save({ firstRun: false }));
+        }
+    }
+    
+    registerPermissionEventListeners() {
+        ['bookmarks', 'tabGroups', 'readingList'].forEach(view => {
+            const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
+            Array.from(inputs).forEach(input => input.addEventListener('change', (e) => {
+                if (e.target.checked)   Permission.request([view]);
+                else                    Permission.remove([view]);
+            }));
+        });
+
+        chrome.permissions.onAdded.addListener(({permissions}) => this.handlePermissionChange());
+        chrome.permissions.onRemoved.addListener(({permissions}) => this.handlePermissionChange());
+    }
+
+    async handlePermissionChange() {
+        const permissions = await Permission.all();
+        ['bookmarks', 'tabGroups', 'readingList'].forEach(view => {
+            const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
+            Array.from(inputs).forEach(input => input.checked = permissions.includes(view));
+
+            const btn = document.querySelector(`.toggle-btn[data-toggle="${view}"]`);
+            btn.classList.toggle('hidden', !permissions.includes(view));
+        });
     }
 
     // MARK: Translation
     updateTranslation() {
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            el.placeholder = chrome.i18n.getMessage(el.getAttribute('data-i18n-placeholder'));
+        });
+
         document.querySelectorAll('[data-i18n-title]').forEach(el => {
             el.title = chrome.i18n.getMessage(el.getAttribute('data-i18n-title'));
         });
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
-            el.textContent = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+            el.innerHTML = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
         });
     }
 
@@ -101,6 +133,10 @@ export class UI {
         
         switch (this.settings.backgroundType) {
             case 'none':
+                if (this.settings.backgroundColor) {
+                    body.style.backgroundImage = `linear-gradient(0deg, ${this.settings.backgroundColor} 0%, ${this.settings.backgroundColor} 100%)`;
+                    body.classList.remove('has-background');
+                }
                 break;
             case 'url':
                 if (this.settings.backgroundUrl) {
@@ -231,6 +267,11 @@ export class UI {
         const loading = document.getElementById('loading');
         const message = document.getElementById('message');
         const content = document.getElementById('content');
+        
+        if (!['bookmarks', 'readingList', 'tabGroups'].includes(this.currentView)) {
+            content.innerHTML = '';
+            return;
+        }
 
         let parentId = this.settings['defaultPath_' + this.currentView] || '';
         if (this.currentPath.length > 0) {
@@ -243,7 +284,9 @@ export class UI {
         try {
             loading.classList.toggle('hidden', false);
 
-            // if (!Permissions.hasAccessTo([view])) throw new Error('Missing permission');
+            if (!(await Permission.hasAccessTo([this.currentView]))) {
+                throw new Error('Missing permission');
+            }
 
             switch (this.currentView) {
                 case 'bookmarks':
@@ -288,9 +331,10 @@ export class UI {
             items.forEach(item => content.appendChild(this.createTile(item)));
 
         } else {
+            const isSearchActive = document.getElementById('searchInput').value.length > 0;
             message.classList.toggle('hidden', false);
             message.innerHTML = `
-                <h3>${chrome.i18n.getMessage('empty_state')}</h3>
+                <h3>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found' : 'empty_state')}</h3>
                 <p>${chrome.i18n.getMessage('empty_state_details')}</p>`;
         }
 
@@ -350,26 +394,29 @@ export class UI {
     }
     
     registerTileEventListeners() {
-        chrome.bookmarks.onCreated.addListener((id, bookmark) => this.handleTileEvent('bookmarks', null, 'created', new Bookmark(bookmark)));
-        chrome.bookmarks.onChanged.addListener(async (id, changeInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
-        chrome.bookmarks.onMoved.addListener(async (id, moveInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
-        chrome.bookmarks.onRemoved.addListener((id, removeInfo) => this.handleTileEvent('bookmarks', id, 'removed', null));
+        chrome.bookmarks?.onCreated?.addListener((id, bookmark) => this.handleTileEvent('bookmarks', null, 'created', new Bookmark(bookmark)));
+        chrome.bookmarks?.onChanged?.addListener(async (id, changeInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        chrome.bookmarks?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        chrome.bookmarks?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('bookmarks', id, 'removed', null));
         // onChildrenReordered
 
-        chrome.readingList.onEntryAdded.addListener((entry) => this.handleTileEvent('readingList', null, 'created', new Page(entry)));
-        chrome.readingList.onEntryUpdated.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'updated', new Page(entry)));
-        chrome.readingList.onEntryRemoved.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'removed', null));
+        chrome.readingList?.onEntryAdded?.addListener((entry) => this.handleTileEvent('readingList', null, 'created', new Page(entry)));
+        chrome.readingList?.onEntryUpdated?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'updated', new Page(entry)));
+        chrome.readingList?.onEntryRemoved?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'removed', null));
 
-        chrome.tabGroups.onCreated.addListener((group) => this.handleTileEvent('tabGroups', null, 'created', new Tab(group)));
-        chrome.tabGroups.onUpdated.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
-        chrome.tabGroups.onMoved.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
-        chrome.tabGroups.onRemoved.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'removed', null));
+        chrome.tabGroups?.onCreated?.addListener((group) => this.handleTileEvent('tabGroups', null, 'created', new Tab(group)));
+        chrome.tabGroups?.onUpdated?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
+        chrome.tabGroups?.onMoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
+        chrome.tabGroups?.onRemoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'removed', null));
 
-        chrome.tabs.onCreated.addListener((tab) => this.handleTileEvent('tabGroups', null, 'created', new Tab(tab)));
-        chrome.tabs.onUpdated.addListener((id, changeInfo, tab) => this.handleTileEvent('tabGroups', id, 'updated', new Tab(tab)));
-        chrome.tabs.onMoved.addListener(async (id, moveInfo) => this.handleTileEvent('tabGroups', id, 'updated', (await Tab.get(id))[0]));
-        chrome.tabs.onRemoved.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
+        chrome.tabs?.onCreated?.addListener((tab) => this.handleTileEvent('tabGroups', null, 'created', new Tab(tab)));
+        chrome.tabs?.onUpdated?.addListener((id, changeInfo, tab) => this.handleTileEvent('tabGroups', id, 'updated', new Tab(tab)));
+        chrome.tabs?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('tabGroups', id, 'updated', (await Tab.get(id))[0]));
+        chrome.tabs?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
         // onReplaced, onAttached, onDetached
+
+        // chrome.history.onVisited.addListener((history) => );
+        // chrome.history.onVisitRemoved.addListener((urls) => );
     }
 
     // MARK: Search
@@ -620,12 +667,18 @@ export class UI {
         const modal = document.getElementById('settingsModal');
 
         const form = modal.firstElementChild;
-        form.gridCols.value = this.settings.gridCols;
         form.backgroundType.value = this.settings.backgroundType;
+        form.backgroundColor.value = this.settings.backgroundColor;
         form.backgroundUrl.value = this.settings.backgroundUrl;
         form.backgroundFile.value = this.settings.backgroundFile;
         form.faviconType.value = this.settings.faviconType;
         form.faviconUrl.value = this.settings.faviconUrl;
+        form.gridCols.value = this.settings.gridCols;
+        form.tileAdd.checked = this.settings.tileAdd === 'true';
+        form.tileEditAndDelete.checked = this.settings.tileEditAndDelete === 'true';
+        form.tileReorder.checked = this.settings.tileReorder === 'true';
+        form.theme.value = this.settings.theme;
+
         this.createBookmarksDefaultPathOptions(form);
         this.createTabGroupsDefaultPathOptions(form);
         this.createReadingListDefaultPathOptions(form);
@@ -667,7 +720,7 @@ export class UI {
         const defaultValue = this.settings.defaultPath_bookmarks;
         
         let items = [];
-        if (Permissions.hasAccessTo(['bookmarks'])) {
+        if (await Permission.hasAccessTo(['bookmarks'])) {
             items = await Bookmark.list();
         }
         this.createSelectOptions(target, items, defaultValue);
@@ -678,7 +731,7 @@ export class UI {
         const defaultValue = this.settings.defaultPath_tabGroups;
         
         let items = [];
-        if (Permissions.hasAccessTo(['tabGroups'])) {
+        if (await Permission.hasAccessTo(['tabGroups'])) {
             items = await Tab.list();
         }
         this.createSelectOptions(target, items, defaultValue);
@@ -689,7 +742,7 @@ export class UI {
         const defaultValue = this.settings.defaultPath_readingList;
 
         let items = [];
-        if (Permissions.hasAccessTo(['readingList'])) {
+        if (await Permission.hasAccessTo(['readingList'])) {
             items = await Page.list();
         }
         this.createSelectOptions(target, items, defaultValue);
@@ -707,8 +760,10 @@ export class UI {
     }
 
     toggleBackgroundInputs(form) {
+        const backgroundColorGroup = document.getElementById('backgroundColorGroup');
         const backgroundUrlGroup = document.getElementById('backgroundUrlGroup');
         const backgroundFileGroup = document.getElementById('backgroundFileGroup');
+        backgroundColorGroup.classList.toggle('hidden', form.backgroundType.value !== 'none');
         backgroundUrlGroup.classList.toggle('hidden', form.backgroundType.value !== 'url');
         backgroundFileGroup.classList.toggle('hidden', form.backgroundType.value !== 'file');
     }
@@ -726,15 +781,20 @@ export class UI {
         const modal = form.parentElement;
         
         const newSettings = {
-            defaultPath_bookmarks: form.defaultPath_bookmarks.value,
-            defaultPath_tabGroups: form.defaultPath_tabGroups.value,
-            defaultPath_readingList: form.defaultPath_readingList.value,
-            gridCols: parseInt(form.gridCols.value),
-            backgroundType: form.backgroundType.value,
-            backgroundUrl: form.backgroundUrl.value,
-            backgroundFile: form.backgroundFile.value,
-            faviconType: form.faviconType.value,
-            faviconUrl: form.faviconUrl.value,
+            backgroundType:             form.backgroundType.value,
+            backgroundColor:            form.backgroundColor.value,
+            backgroundUrl:              form.backgroundUrl.value,
+            backgroundFile:             form.backgroundFile.value,
+            faviconType:                form.faviconType.value,
+            faviconUrl:                 form.faviconUrl.value,
+            gridCols:                   parseInt(form.gridCols.value),
+            defaultPath_bookmarks:      form.defaultPath_bookmarks.value,
+            defaultPath_tabGroups:      form.defaultPath_tabGroups.value,
+            defaultPath_readingList:    form.defaultPath_readingList.value,
+            tileAdd:                    form.tileAdd.checked ? 'true' : 'false',
+            tileEditAndDelete:          form.tileEditAndDelete.checked ? 'true' : 'false',
+            tileReorder:                form.tileReorder.checked ? 'true' : 'false',
+            theme:                      form.theme.value,
         };
         await Settings.save(newSettings);
         this.applySettings(newSettings);

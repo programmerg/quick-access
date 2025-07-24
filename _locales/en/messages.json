@@ -3,7 +3,7 @@
       "message": "Quick access"
    },
    "app_description": {
-      "message": "A new tab page with your favorite bookmarks"
+      "message": "A clean, intuitive new tab page where you can access your Favorites, Reading List, and Tab Groups with just one click."
    },
    "new_tab_page": {
       "message": "New Tab"
@@ -13,6 +13,9 @@
    },
    "general": {
       "message": "General"
+   },
+   "views": {
+      "message": "Views"
    },
    "bookmarks": {
       "message": "Bookmarks"
@@ -83,6 +86,9 @@
    "url": {
       "message": "URL"
    },
+   "url_address": {
+      "message": "URL address"
+   },
    "default_view": {
       "message": "Default view"
    },
@@ -96,31 +102,55 @@
       "message": "Background image"
    },
    "background_file": {
-      "message": "Background image file"
+      "message": "File"
    },
    "background_url": {
-      "message": "Background image URL"
+      "message": "URL address"
+   },
+   "background_color": {
+      "message": "Simple color"
    },
    "favicon_type": {
       "message": "Icons"
    },
    "favicon_url": {
-      "message": "Icon URL"
+      "message": "Custom URL address"
    },
-   "default": {
+   "favicon_default": {
       "message": "Default"
-   },
-   "custom_url": {
-      "message": "Custom URL"
-   },
-   "custom_file": {
-      "message": "Local file"
    },
    "select_file": {
       "message": "Choose file"
    },
+   "tiles": {
+      "message": "Tiles" 
+   },
+   "tile_enable_add": {
+      "message": "Show 'Add new item' button" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Enable edit and delete buttons" 
+   },
+   "tile_enable_reorder": {
+      "message": "Enable reordering" 
+   },
+   "enable_bookmarks": {
+      "message": "Grant permission"
+   },
+   "enable_reading_list": {
+      "message": "Grant permission"
+   },
+   "enable_tab_groups": {
+      "message": "Grant permission"
+   },
+   "custom_theme": {
+      "message": "Custom appearance"
+   },
    "no_search_results_found": {
       "message": "No search results found"
+   },
+   "no_search_results_found_details": {
+      "message": "Try using different keywords"
    },
    "delete_item_confirm": {
       "message": "Are you sure you want to delete\n$1?"
@@ -135,7 +165,7 @@
       "message": "Oops! Something went wrong!"
    },
    "error_loading_data_details": {
-      "message": "Check the console for more details."
+      "message": "Failed to retrieve data."
    },
    "pages_unread": {
       "message": "Unread pages"
@@ -149,31 +179,31 @@
    "open_side_panel": {
       "message": "Click to open / close Side panel"
    },
-
-
-
-
-   "background_color": {
-      "message": "Color"
+   "theme": {
+      "message": "Theme"
    },
-   "opacity": {
-      "message": "Opacity"
+   "create_url_footnote": {
+      "message": "Leave blank to create a folder"
    },
-   "column_gap": {
-      "message": "Column gap"
+   "welcome_title": {
+      "message": "Hi!"
    },
-   "row_gap": {
-      "message": "Row gap"
+   "welcome_message1": {
+      "message": "This extension allows you to access your Top Pages, Bookmarks, Reading List, and Tab Groups on a clean, intuitive new tab page with a single click."
    },
-
-   
-   "error_newtab_occupied": {
-      "message": "Another extension controls what page is shown when you open a new tab. Please, disable that extension and try again."
+   "welcome_message2": {
+      "message": "Set cool backgrounds. Or ditch the mouse and use the <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys to navigate."
    },
-   "error_too_many_subscriptions": {
-      "message": "Maximum number of subscriptions exceeded! Currently no more than $1 subscriptions are allowed!"
+   "welcome_message3": {
+      "message": "If you pin the <b><img src='images/icon-16.png' style='vertical-align:middle'> Quick Access</b> icon to the toolbar, all of these will also be displayed as a sidebar."
    },
-   "sync_footnote": {
-      "message": "Please note: You need to be signed in to Chrome to sync settings. Not all settings can be synchronized. Syncing may take a few minutes."
+   "welcome_message4": {
+      "message": "To get started, select what you would like to see here:"
+   },
+   "welcome_message5": {
+      "message": "You can change these in the <b><svg xmlns='http://www.w3.org/2000/svg' style='height:20px;width:20px;vertical-align:bottom'><use xlink:href='#settings'></svg> Settings</b> at any time."
+   },
+   "welcome_message6": {
+      "message": "Your settings will be synced to your Chrome account automatically so you can enjoy the same great experience across all your devices. If you don't have an account yet, it's worth creating one!"
    }
 }

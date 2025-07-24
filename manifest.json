@@ -14,15 +14,18 @@
         "128": "images/icon-128.png"
     },
     "permissions": [
-        "activeTab",
-        "bookmarks",
-        "tabs",
-        "tabGroups",
-        "readingList",
         "favicon",
         "sidePanel",
         "storage",
         "unlimitedStorage"
+    ],
+    "optional_permissions": [
+        "bookmarks",
+        "tabs",
+        "tabGroups",
+        "readingList",
+        "topSites",
+        "history"
     ],
     "action": {
         "default_title": "__MSG_open_side_panel__"
