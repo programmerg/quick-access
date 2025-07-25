@@ -50,15 +50,16 @@
     <dialog class="modal" id="welcomeModal" role="dialog" aria-modal="true">
         <form class="modal-content" method="dialog">
             <div class="modal-header">
-                <h2 class="modal-title" data-i18n="welcome_title"></h2>
+                <h2 class="modal-title">
+                    <img src='images/icon-24.png' style='vertical-align:middle'>
+                    <span data-i18n="welcome_title" style="color: #5f6368;"></span>
+                </h2>
                 <button type="reset" class="close-btn" data-i18n-title="close">×</button>
             </div>
 
             <div class="modal-body">
-                <p data-i18n="welcome_message1"></p>
-                <p data-i18n="welcome_message2"></p>
-                <p data-i18n="welcome_message3"></p>
-                <p data-i18n="welcome_message4"></p>
+                <p data-i18n="welcome_message"></p>
+                <p data-i18n="welcome_permissions1"></p>
                 <div class="permissions">
                     <label class="checkbox-group">
                         <span class="switch-label" data-i18n="bookmarks"></span>
@@ -82,8 +83,8 @@
                         </div>
                     </label>
                 </div>
-                <p data-i18n="welcome_message5"></p>
-                <p data-i18n="welcome_message6"></p>
+                <p data-i18n="welcome_permissions2"></p>
+                <p data-i18n="welcome_footnote"></p>
             </div>
         </form>
     </dialog>
@@ -105,11 +106,16 @@
                         <label class="form-label" data-i18n="url"></label>
                         <input type="url" class="form-input" name="url">
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="folder"></label>
+                        <select class="form-select" name="parentId">
+                            <option value="" data-i18n="root_folder"></option>
+                        </select>
+                    </div>
                 </fieldset>
             </div>
             
             <div class="modal-footer">
-                <input type="hidden" name="parentId">
                 <button type="reset" class="btn-secondary" data-i18n="cancel"></button>
                 <button type="submit" class="btn-primary" data-i18n="save"></button>
             </div>
@@ -131,8 +137,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#viewSettings">
-                            <span data-i18n="views"></span>
+                        <a href="#advancedSettings">
+                            <span data-i18n="advanced"></span>
                         </a>
                     </li>
                     <li>
@@ -141,24 +147,27 @@
                         </a>
                     </li>
                 </ul>
+
                 <fieldset id="generalSettings">
+                    <div class="form-group">
+                        <label class="form-label" data-i18n="background_color"></label>
+                        <input type="color" class="form-input" name="backgroundColor">
+                    </div>
+
                     <div class="form-group">
                         <label class="form-label" data-i18n="background_type"></label>
                         <select class="form-select" name="backgroundType">
-                            <option value="none" data-i18n="background_color"></option>
+                            <option value="none" data-i18n="background_none"></option>
                             <option value="url" data-i18n="background_url"></option>
                             <option value="file" data-i18n="background_file"></option>
                         </select>
                     </div>
-                    <div class="form-group hidden" id="backgroundColorGroup">
-                        <input type="color" class="form-input" name="backgroundColor">
-                    </div>
                     <div class="form-group hidden" id="backgroundFileGroup">
-                        <div class="file-input">
+                        <label class="form-input file-input with-preview">
                             <input type="hidden" name="backgroundFile">
                             <input type="file" id="backgroundFileImport" accept="image/*">
-                            <label class="file-input-label with-preview" for="backgroundFileImport" data-i18n="select_file"></label>
-                        </div>
+                            <span data-i18n="select_file"></span>
+                        </label>
                     </div>
                     <div class="form-group hidden" id="backgroundUrlGroup">
                         <input type="url" class="form-input" name="backgroundUrl" data-i18n-placeholder="url_address">
@@ -179,9 +188,40 @@
                         <label class="form-label" data-i18n="grid_cols"></label>
                         <input type="number" min="3" max="8" step="1" class="form-select" name="gridCols">
                     </div>
+                </fieldset>
+
+                <fieldset id="advancedSettings">
+                    <div class="form-group">
+                        <label class="form-label" style="font-weight: bold;" data-i18n="permissions"></label>
+                        <label class="checkbox-group">
+                            <span class="switch-label" data-i18n="enable_bookmarks"></span>
+                            <div class="switch">
+                                <input type="checkbox" class="checkbox" name="bookmarksPermission">
+                                <span class="slider"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-group">
+                            <span class="switch-label" data-i18n="enable_reading_list"></span>
+                            <div class="switch">
+                                <input type="checkbox" class="checkbox" name="readingListPermission">
+                                <span class="slider"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-group">
+                            <span class="switch-label" data-i18n="enable_tab_groups"></span>
+                            <div class="switch">
+                                <input type="checkbox" class="checkbox" name="tabGroupsPermission">
+                                <span class="slider"></span>
+                            </div>
+                        </label>
+                    </div>
                     
                     <div class="form-group">
-                        <label class="form-label" data-i18n="tiles"></label>
+                        <label class="form-label" style="font-weight: bold;" data-i18n="tiles"></label>
                         <label class="checkbox-group">
                             <span class="switch-label" data-i18n="tile_enable_add"></span>
                             <div class="switch">
@@ -209,62 +249,11 @@
                         </label>
                     </div>
                 </fieldset>
-                <fieldset id="viewSettings">
-                    <div class="form-group">
-                        <label class="form-label" style="font-weight: bold;" data-i18n="bookmarks"></label>
-                        <label class="checkbox-group">
-                            <span class="switch-label" data-i18n="enable_bookmarks"></span>
-                            <div class="switch">
-                                <input type="checkbox" class="checkbox" name="bookmarksPermission">
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" data-i18n="default_path"></label>
-                        <select class="form-select" name="defaultPath_bookmarks">
-                            <option value="" data-i18n="root_folder"></option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" style="font-weight: bold;" data-i18n="reading_list"></label>
-                        <label class="checkbox-group">
-                            <span class="switch-label" data-i18n="enable_reading_list"></span>
-                            <div class="switch">
-                                <input type="checkbox" class="checkbox" name="readingListPermission">
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" data-i18n="default_path"></label>
-                        <select class="form-select" name="defaultPath_readingList">
-                            <option value="" data-i18n="root_folder"></option>
-                        </select>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="form-label" style="font-weight: bold;" data-i18n="tab_groups"></label>
-                        <label class="checkbox-group">
-                            <span class="switch-label" data-i18n="enable_tab_groups"></span>
-                            <div class="switch">
-                                <input type="checkbox" class="checkbox" name="tabGroupsPermission">
-                                <span class="slider"></span>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" data-i18n="default_path"></label>
-                        <select class="form-select" name="defaultPath_tabGroups">
-                            <option value="" data-i18n="root_folder"></option>
-                        </select>
-                    </div>
-                </fieldset>
                 <fieldset id="themeSettings">
                     <div class="form-group">
                         <label class="form-label" data-i18n="custom_theme"></label>
-                        <textarea class="form-select" name="theme" rows="20"></textarea>
+                        <textarea class="form-select" name="theme" rows="15"></textarea>
                     </div>
                 </fieldset>
             </div>

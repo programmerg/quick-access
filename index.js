@@ -20,7 +20,10 @@ export class UI {
 
     // MARK: Initialization
     async init() {
-        this.applySettings(await Settings.all());
+        this.applySettings({
+            ...this.settings,
+            ...await Settings.all(),
+        });
         this.switchView(this.settings.defaultView);
         this.handlePermissionChange();
         
@@ -42,10 +45,13 @@ export class UI {
         this.updateTranslation();
 
         // Welcome screen
-        if (await Settings.get('firstRun')) {
+        if (this.settings.firstRun) {
             const welcomeModal = document.getElementById('welcomeModal');
             if (welcomeModal) welcomeModal.showModal();
-            welcomeModal.addEventListener("close", (e) => Settings.save({ firstRun: false }));
+            welcomeModal.addEventListener("close", (e) => {
+                this.settings.firstRun = false;
+                Settings.save({ firstRun: false });
+            });
         }
     }
     
@@ -53,8 +59,9 @@ export class UI {
         ['bookmarks', 'tabGroups', 'readingList'].forEach(view => {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.addEventListener('change', (e) => {
-                if (e.target.checked)   Permission.request([view]);
-                else                    Permission.remove([view]);
+                const items = (view === 'tabGroups') ? ['tabGroups', 'tabs'] : [view];
+                if (e.target.checked)   Permission.request(items);
+                else                    Permission.remove(items);
             }));
         });
 
@@ -104,6 +111,15 @@ export class UI {
         document.body.classList.toggle('light', !dark);
     }
 
+    getLightnessFromHex(color) {
+        const hex = color.replace(/^#/, '');
+        const r = parseInt(hex.substr(0,2), 16);
+        const g = parseInt(hex.substr(2,2), 16);
+        const b = parseInt(hex.substr(4,2), 16);
+        const brightness = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+        return +(brightness * 100).toFixed(2);
+    }
+
     getBrowserIcon() {
         if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
             return 'images/opera.svg';
@@ -121,23 +137,20 @@ export class UI {
 
     // MARK: Apply settings
     applySettings(settings) {
-        this.settings = {
-            ...Settings.defaults,
-            ...this.settings,
-            ...settings
-        };
+        this.settings = settings;
 
         const body = document.body;
+        if (this.settings.backgroundColor) {
+            body.setAttribute('style', `
+                --color-ui-bg: ${this.settings.backgroundColor};
+                --color-ui-text: var(${this.getLightnessFromHex(this.settings.backgroundColor) > 60 ? '--color-dark' : '--color-light'});
+            `);
+        }
+
         body.style.backgroundImage = '';
         body.classList.remove('has-background');
         
         switch (this.settings.backgroundType) {
-            case 'none':
-                if (this.settings.backgroundColor) {
-                    body.style.backgroundImage = `linear-gradient(0deg, ${this.settings.backgroundColor} 0%, ${this.settings.backgroundColor} 100%)`;
-                    body.classList.remove('has-background');
-                }
-                break;
             case 'url':
                 if (this.settings.backgroundUrl) {
                     body.style.backgroundImage = `url('${this.settings.backgroundUrl}')`;
@@ -217,12 +230,25 @@ export class UI {
             this.settings.defaultView = view;
             Settings.save({ defaultView: view });
         }
-        this.navigateToPath([]);
+        
+        let path = [];
+        if (this.settings['defaultPath_' + view]) {
+            path = JSON.parse(this.settings['defaultPath_' + view]) ?? [];
+        }
+        this.navigateToPath(path);
     }
 
     // MARK: Navigate
     navigateToPath(path) {
         this.currentPath = path;
+        
+        this.settings['defaultPath_' + this.currentView] = JSON.stringify(path);
+        Settings.save({ 
+            defaultPath_bookmarks: this.settings.defaultPath_bookmarks,
+            defaultPath_readingList: this.settings.defaultPath_readingList,
+            defaultPath_tabGroups: this.settings.defaultPath_tabGroups,
+        });
+
         this.updateBreadcrumb();
         this.loadContent();
     }
@@ -273,7 +299,7 @@ export class UI {
             return;
         }
 
-        let parentId = this.settings['defaultPath_' + this.currentView] || '';
+        let parentId = '';
         if (this.currentPath.length > 0) {
             parentId = this.currentPath[this.currentPath.length - 1].id;
         }
@@ -301,8 +327,10 @@ export class UI {
             }
             this.renderItems(items);
             
-            const addBtn = this.createAddTile(parentId);
-            if (addBtn) content.appendChild(addBtn);
+            if (this.settings.tileAdd) {
+                const addBtn = this.createAddTile(parentId);
+                if (addBtn) content.appendChild(addBtn);
+            }
 
         } catch (error) {
             console.error(error);
@@ -534,6 +562,10 @@ export class UI {
         }
         tile.appendChild(url);
 
+        const btns = document.createElement('span');
+        btns.className = 'tile-btns';
+        tile.appendChild(btns);
+
         return tile;
     }
 
@@ -555,8 +587,14 @@ export class UI {
             item.open();
             e.preventDefault();
         });
-        this.addEditButton(tile, item);
-        this.addDeleteButton(tile, item);
+
+        if (this.settings.tileEditAndDelete) {
+            const btns = tile.querySelector('.tile-btns');
+            const delBtn = this.createDeleteButton(item);
+            if (delBtn) btns.appendChild(delBtn);
+            const editBtn = this.createEditButton(item);
+            if (editBtn) btns.appendChild(editBtn);
+        }
 
         return tile;
     }
@@ -578,8 +616,14 @@ export class UI {
             this.navigateToPath(this.currentPath);
             e.preventDefault();
         });
-        this.addEditButton(tile, item);
-        this.addDeleteButton(tile, item);
+        
+        if (this.settings.tileEditAndDelete) {
+            const btns = tile.querySelector('.tile-btns');
+            const delBtn = this.createDeleteButton(item);
+            if (delBtn) btns.appendChild(delBtn);
+            const editBtn = this.createEditButton(item);
+            if (editBtn) btns.appendChild(editBtn);
+        }
 
         return tile;
     }
@@ -617,7 +661,7 @@ export class UI {
     }
 
     // MARK: Edit button
-    addEditButton(tile, item) {
+    createEditButton(item) {
         if (item instanceof Tab || (item instanceof Page && !item.url)) return;
 
         let title = '';
@@ -633,7 +677,6 @@ export class UI {
                 break;
         }
         const editBtn = document.createElement('button');
-        editBtn.className = 'tile-edit-btn';
         editBtn.title = chrome.i18n.getMessage('edit');
         editBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#edit"></svg>';
         editBtn.addEventListener('click', (e) => {
@@ -641,15 +684,14 @@ export class UI {
             e.stopPropagation();
         });
 
-        tile.appendChild(editBtn);
+        return editBtn;
     }
 
     // MARK: Delete button
-    addDeleteButton(tile, item) {
+    createDeleteButton(item) {
         if ((item instanceof Tab || item instanceof Page) && !item.url) return;
 
         const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'tile-delete-btn';
         deleteBtn.title = chrome.i18n.getMessage('delete');
         deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#trash"></svg>';
         deleteBtn.addEventListener('click', (e) => {
@@ -659,7 +701,7 @@ export class UI {
             e.stopPropagation();
         });
 
-        tile.appendChild(deleteBtn);
+        return deleteBtn;
     }
 
     // MARK: Settings modal
@@ -667,21 +709,18 @@ export class UI {
         const modal = document.getElementById('settingsModal');
 
         const form = modal.firstElementChild;
-        form.backgroundType.value = this.settings.backgroundType;
         form.backgroundColor.value = this.settings.backgroundColor;
+        form.backgroundType.value = this.settings.backgroundType;
         form.backgroundUrl.value = this.settings.backgroundUrl;
         form.backgroundFile.value = this.settings.backgroundFile;
         form.faviconType.value = this.settings.faviconType;
         form.faviconUrl.value = this.settings.faviconUrl;
         form.gridCols.value = this.settings.gridCols;
-        form.tileAdd.checked = this.settings.tileAdd === 'true';
-        form.tileEditAndDelete.checked = this.settings.tileEditAndDelete === 'true';
-        form.tileReorder.checked = this.settings.tileReorder === 'true';
+        form.tileAdd.checked = this.settings.tileAdd;
+        form.tileEditAndDelete.checked = this.settings.tileEditAndDelete;
+        form.tileReorder.checked = this.settings.tileReorder;
         form.theme.value = this.settings.theme;
 
-        this.createBookmarksDefaultPathOptions(form);
-        this.createTabGroupsDefaultPathOptions(form);
-        this.createReadingListDefaultPathOptions(form);
         this.toggleBackgroundInputs(form);
         this.toggleBackgroundImage(form);
         this.toggleFaviconInputs(form);
@@ -715,37 +754,18 @@ export class UI {
         });
     }
 
-    async createBookmarksDefaultPathOptions(form) {
-        const target = form.defaultPath_bookmarks;
-        const defaultValue = this.settings.defaultPath_bookmarks;
-        
+    async createParentIdOptions(form, item) {
         let items = [];
-        if (await Permission.hasAccessTo(['bookmarks'])) {
+        if (item instanceof Bookmark && await Permission.hasAccessTo(['bookmarks'])) {
             items = await Bookmark.list();
         }
-        this.createSelectOptions(target, items, defaultValue);
-    }
-
-    async createTabGroupsDefaultPathOptions(form) {
-        const target = form.defaultPath_tabGroups;
-        const defaultValue = this.settings.defaultPath_tabGroups;
-        
-        let items = [];
-        if (await Permission.hasAccessTo(['tabGroups'])) {
+        if (item instanceof Tab && await Permission.hasAccessTo(['tabGroups'])) {
             items = await Tab.list();
         }
-        this.createSelectOptions(target, items, defaultValue);
-    }
-
-    async createReadingListDefaultPathOptions(form) {
-        const target = form.defaultPath_readingList;
-        const defaultValue = this.settings.defaultPath_readingList;
-
-        let items = [];
-        if (await Permission.hasAccessTo(['readingList'])) {
+        if (item instanceof Page && await Permission.hasAccessTo(['readingList'])) {
             items = await Page.list();
         }
-        this.createSelectOptions(target, items, defaultValue);
+        this.createSelectOptions(form.parentId, items, item.parentId);
     }
 
     createSelectOptions(target, items, defaultValue) {
@@ -760,16 +780,14 @@ export class UI {
     }
 
     toggleBackgroundInputs(form) {
-        const backgroundColorGroup = document.getElementById('backgroundColorGroup');
         const backgroundUrlGroup = document.getElementById('backgroundUrlGroup');
         const backgroundFileGroup = document.getElementById('backgroundFileGroup');
-        backgroundColorGroup.classList.toggle('hidden', form.backgroundType.value !== 'none');
         backgroundUrlGroup.classList.toggle('hidden', form.backgroundType.value !== 'url');
         backgroundFileGroup.classList.toggle('hidden', form.backgroundType.value !== 'file');
     }
 
     toggleBackgroundImage(form) {
-        document.getElementById('backgroundFileImport').nextElementSibling.style.backgroundImage = `url("${form.backgroundFile.value}")`;
+        document.getElementById('backgroundFileImport').parentElement.style.backgroundImage = `url("${form.backgroundFile.value}")`;
     }
 
     toggleFaviconInputs(form) {
@@ -780,22 +798,21 @@ export class UI {
     async saveSettings(form) {
         const modal = form.parentElement;
         
-        const newSettings = {
-            backgroundType:             form.backgroundType.value,
+        const newSettings = new Settings({
+            ...this.settings,
+            
             backgroundColor:            form.backgroundColor.value,
+            backgroundType:             form.backgroundType.value,
             backgroundUrl:              form.backgroundUrl.value,
             backgroundFile:             form.backgroundFile.value,
             faviconType:                form.faviconType.value,
             faviconUrl:                 form.faviconUrl.value,
             gridCols:                   parseInt(form.gridCols.value),
-            defaultPath_bookmarks:      form.defaultPath_bookmarks.value,
-            defaultPath_tabGroups:      form.defaultPath_tabGroups.value,
-            defaultPath_readingList:    form.defaultPath_readingList.value,
-            tileAdd:                    form.tileAdd.checked ? 'true' : 'false',
-            tileEditAndDelete:          form.tileEditAndDelete.checked ? 'true' : 'false',
-            tileReorder:                form.tileReorder.checked ? 'true' : 'false',
+            tileAdd:                    form.tileAdd.checked ? true : false,
+            tileEditAndDelete:          form.tileEditAndDelete.checked ? true : false,
+            tileReorder:                form.tileReorder.checked ? true : false,
             theme:                      form.theme.value,
-        };
+        });
         await Settings.save(newSettings);
         this.applySettings(newSettings);
         // this.loadContent(); // force change favicons
@@ -885,7 +902,9 @@ export class UI {
         const form = modal.firstElementChild;
         form.title.value = item.title || '';
         form.url.value = item.url || '';
-        form.parentId.value = item.parentId;
+        // form.parentId.value = item.parentId;
+
+        this.createParentIdOptions(form, item);
 
         modal.showModal();
     }

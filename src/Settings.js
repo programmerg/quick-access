@@ -1,59 +1,32 @@
 export class Settings {
 
-    static defaults = {
-        firstRun:                   true,
-        backgroundType:             'none',
-        backgroundColor:            '#f8f7f4',
-        backgroundUrl:              'https://picsum.photos/1920/1080',
-        backgroundFile:             null,
-        faviconType:                'none',
-        faviconUrl:                 'https://www.google.com/s2/favicons?domain={domain}&sz=64',
-        gridCols:                   6,
-        defaultView:                '',
-        defaultPath_bookmarks:      '',
-        defaultPath_tabGroups:      '',
-        defaultPath_readingList:    '',
-        tileAdd:                    true,
-        tileEditAndDelete:          true,
-        tileReorder:                true,
-        theme: `
-            :root {
-                --border-radius: 8px;
-                --border-radius-lg: 16px;
-                --border-radius-xl: 50px;
-                --color-danger: rgb(220, 53, 69);
-                --color-danger-hover: rgb(201, 48, 63);
-                --color-primary: rgb(0, 123, 255);
-                --color-primary-hover: rgb(0, 86, 179);
-                --color-secondary: rgba(108, 117, 125, 0.9);
-                --color-secondary-hover: rgba(108, 117, 125, 0.3);
-                --color-tile-icon: rgb(95, 99, 104);
-                --color-overlay: rgba(32, 33, 36, 0.1);
-            }
-            .light {
-                --color-base: 255, 255, 255;
-                --color-inverse: 60, 60, 60;
-                --color-bg: rgba(248, 247, 244, 1);
-                --color-text: rgba(var(--color-inverse), 1);
-                --color-muted: rgba(102, 102, 102, 1);
-                --color-muted-hover: rgba(var(--color-inverse), 0.05);
-            }
-            .dark {
-                --color-base: 60, 60, 60;
-                --color-inverse: 255, 255, 255;
-                --color-bg: rgba(var(--color-base), 1);
-                --color-text: rgba(var(--color-inverse), 1);
-                --color-muted: rgba(102, 102, 102, 1);
-                --color-muted-hover: rgba(var(--color-inverse), 0.05);
-            }
-        `.replaceAll('            ', '')
-    };
+    constructor({
+        firstRun, defaultView, defaultPath_bookmarks, defaultPath_readingList, defaultPath_tabGroups, backgroundFile, 
+        backgroundColor, backgroundType, backgroundUrl, faviconType, faviconUrl, gridCols, tileAdd, tileEditAndDelete, tileReorder, theme
+    }) {
+        this.firstRun                   = Boolean(firstRun                  ?? true);
+        this.defaultView                = String(defaultView                ?? 'topSites');
+        this.defaultPath_bookmarks      = String(defaultPath_bookmarks      ?? '[]');
+        this.defaultPath_readingList    = String(defaultPath_readingList    ?? '[]');
+        this.defaultPath_tabGroups      = String(defaultPath_tabGroups      ?? '[]');
+        this.backgroundColor            = String(backgroundColor            ?? '');
+        this.backgroundType             = String(backgroundType             ?? 'url'); // none, file
+        this.backgroundUrl              = String(backgroundUrl              ?? 'https://picsum.photos/1920/1080');
+        this.backgroundFile             = String(backgroundFile             ?? '');
+        this.faviconType                = String(faviconType                ?? 'none'); // url
+        this.faviconUrl                 = String(faviconUrl                 ?? 'https://www.google.com/s2/favicons?domain={domain}&sz=64');
+        this.gridCols                   = Number(gridCols                   ?? 5);
+        this.tileAdd                    = Boolean(tileAdd                   ?? true);
+        this.tileEditAndDelete          = Boolean(tileEditAndDelete         ?? true);
+        this.tileReorder                = Boolean(tileReorder               ?? true);
+        this.theme                      = String(theme                      ?? '');
+    }
 
     static async find(keys = []) {
-        return {
+        return new this({
           ...await chrome.storage.sync.get(keys),
           ...await chrome.storage.local.get(keys),
-        };
+        });
     }
 
     static async get(key) {
@@ -69,32 +42,34 @@ export class Settings {
     }
 
     static async save(settings) {
-        const syncSettings = this.filter(settings, [
-            'backgroundType',
-            'backgroundColor',
-            'backgroundUrl',
-            'faviconType',
-            'faviconUrl',
-            'gridCols',
-            'defaultPath_bookmarks',
-            'defaultPath_tabGroups',
-            'defaultPath_readingList',
-            'tileAdd',
-            'tileEditAndDelete',
-            'tileReorder',
-            'theme',
-        ]);
-        if (Object.keys(syncSettings).length > 0) {
-            await this.set(syncSettings, true);
-        }
+        const store = {
+            sync: this.filter(settings, [
+                'backgroundColor',
+                'backgroundType',
+                'backgroundUrl',
+                'faviconType',
+                'faviconUrl',
+                'gridCols',
+                'tileAdd',
+                'tileEditAndDelete',
+                'tileReorder',
+                'theme',
+            ]),
+            local: this.filter(settings, [
+                'firstRun',
+                'defaultView',
+                'defaultPath_bookmarks',
+                'defaultPath_readingList',
+                'defaultPath_tabGroups',
+                'backgroundFile',
+            ])
+        };
 
-        const localSettings = this.filter(settings, [
-            'firstRun',
-            'defaultView',
-            'backgroundFile',
-        ]);
-        if (Object.keys(localSettings).length > 0) {
-            await this.set(localSettings, false);
+        if (Object.keys(store.sync).length > 0) {
+            await this.set(store.sync, true);
+        }
+        if (Object.keys(store.local).length > 0) {
+            await this.set(store.local, false);
         }
     }
 

@@ -14,8 +14,8 @@
    "general": {
       "message": "Általános"
    },
-   "views": {
-      "message": "Nézetek"
+   "advanced": {
+      "message": "Haladó"
    },
    "bookmarks": {
       "message": "Könyvjelzők"
@@ -89,32 +89,32 @@
    "url_address": {
       "message": "URL cím"
    },
-   "default_view": {
-      "message": "Alapértelmezett nézet"
-   },
-   "default_path": {
-      "message": "Kezdő mappa"
+   "folder": {
+      "message": "Mappa"
    },
    "grid_cols": {
       "message": "Oszlopok száma"
+   },
+   "background_color": {
+      "message": "Téma szín"
    },
    "background_type": {
       "message": "Háttérkép"
    },
    "background_file": {
-      "message": "Fájl"
+      "message": "Helyi fájl"
    },
    "background_url": {
-      "message": "URL cím"
+      "message": "Egyedi háttérkép szolgáltatás"
    },
-   "background_color": {
-      "message": "Egyszínű"
+   "background_none": {
+      "message": "Nincs"
    },
    "favicon_type": {
       "message": "Ikonok"
    },
    "favicon_url": {
-      "message": "Egyedi URL cím"
+      "message": "Egyedi ikon szolgáltatás"
    },
    "favicon_default": {
       "message": "Alapértelmezett"
@@ -134,14 +134,17 @@
    "tile_enable_reorder": {
       "message": "Átrendezés engedélyezése" 
    },
+   "permissions": {
+      "message": "Jogosultságok"
+   },
    "enable_bookmarks": {
-      "message": "Hozzáférés engedélyezése"
+      "message": "Könyvjelzők engedélyezése"
    },
    "enable_reading_list": {
-      "message": "Hozzáférés engedélyezése"
+      "message": "Olvasási lista engedélyezése"
    },
    "enable_tab_groups": {
-      "message": "Hozzáférés engedélyezése"
+      "message": "Lap csoportok engedélyezése"
    },
    "custom_theme": {
       "message": "Egyedi megjelenés"
@@ -162,10 +165,10 @@
       "message": "Adj hozzá új elemeket a + gombbal!"
    },
    "error_loading_data": {
-      "message": "Hoppá, van egy kis probléma"
+      "message": "Hoppá, egy kis probléma adódott"
    },
    "error_loading_data_details": {
-      "message": "Az adatok betöltése nem sikerült"
+      "message": "Az adatokat nem sikerült betölteni"
    },
    "pages_unread": {
       "message": "Olvasatlan oldalak"
@@ -186,24 +189,18 @@
       "message": "Mappa létrehozásához hagyja üresen"
    },
    "welcome_title": {
-      "message": "Szia!"
+      "message": "Gyors elérés"
    },
-   "welcome_message1": {
-      "message": "Ez a bővítmény lehetővé teszi számodra, hogy a Gyakori oldalak mellett a Könyvjelzőid, Olvasási listád és Lap csoportjaid is egy letisztult, intuitív kezdőlapon, egyetlen kattintással elérd."
+   "welcome_message": {
+      "message": "Üdvözöl a megújult kezdőlapod! A Gyakori oldalak mellett most már Könyvjelzőid, Olvasási listád és Lap csoportjaid is egyetlen kattintással elérheted. Állíts be egy klassz hátteret, vagy dobd el az egeret és használd a <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> és <kbd>→</kbd> billentyűket a navigáláshoz. Rögzítsd a bővítmény ikonját az eszköztárra, és oldalsávként is bármikor előhívhatod."
    },
-   "welcome_message2": {
-      "message": "Állíts be klassz háttereket. Vagy dobd el az egeret és használd a <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> és <kbd>→</kbd> billentyűket a navigáláshoz."
-   },
-   "welcome_message3": {
-      "message": "Ha rögzíted a <b><img src='images/icon-16.png' style='vertical-align:middle'> Gyors elérés</b> ikont az eszköztárra, még oldalsávként is meg fog tudni jelenni."
-   },
-   "welcome_message4": {
+   "welcome_permissions1": {
       "message": "Kezdésnek válaszd ki, mit szeretnél itt látni:"
    },
-   "welcome_message5": {
-      "message": "Ezeket később a <b>Beállítások</b> közt bármikor módosíthatod."
+   "welcome_permissions2": {
+      "message": "Ezt később a <b>Beállítások</b> közt bármikor módosíthatod."
    },
-   "welcome_message6": {
-      "message": "Beállításaid automatikusan a Chrome fiókodba szinkronizáljuk, hogy minden eszközödön egyformán klassz élményben legyen részed. Ha nincs még fiókod, érdemes létrehozni egyet!"
+   "welcome_footnote": {
+      "message": "Beállításaid automatikusan a Chrome fiókodba szinkronizáljuk, így minden eszközödön egyformán klassz élményben legyen részed."
    }
 }

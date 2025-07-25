@@ -14,8 +14,8 @@
    "general": {
       "message": "General"
    },
-   "views": {
-      "message": "Views"
+   "advanced": {
+      "message": "Advanced"
    },
    "bookmarks": {
       "message": "Bookmarks"
@@ -89,32 +89,32 @@
    "url_address": {
       "message": "URL address"
    },
-   "default_view": {
-      "message": "Default view"
-   },
-   "default_path": {
-      "message": "Default folder"
+   "parent_path": {
+      "message": "Folder"
    },
    "grid_cols": {
       "message": "Columns"
+   },
+   "background_color": {
+      "message": "Theme color"
    },
    "background_type": {
       "message": "Background image"
    },
    "background_file": {
-      "message": "File"
+      "message": "Local file"
    },
    "background_url": {
-      "message": "URL address"
+      "message": "Custom wallpaper service"
    },
-   "background_color": {
-      "message": "Simple color"
+   "background_none": {
+      "message": "None"
    },
    "favicon_type": {
       "message": "Icons"
    },
    "favicon_url": {
-      "message": "Custom URL address"
+      "message": "Custom favicon service"
    },
    "favicon_default": {
       "message": "Default"
@@ -134,14 +134,17 @@
    "tile_enable_reorder": {
       "message": "Enable reordering" 
    },
+   "permissions": {
+      "message": "Permissions"
+   },
    "enable_bookmarks": {
-      "message": "Grant permission"
+      "message": "Access to Bookmarks"
    },
    "enable_reading_list": {
-      "message": "Grant permission"
+      "message": "Access to Reading list"
    },
    "enable_tab_groups": {
-      "message": "Grant permission"
+      "message": "Access to Tab groups"
    },
    "custom_theme": {
       "message": "Custom appearance"
@@ -186,24 +189,18 @@
       "message": "Leave blank to create a folder"
    },
    "welcome_title": {
-      "message": "Hi!"
+      "message": "Quick Access"
    },
-   "welcome_message1": {
-      "message": "This extension allows you to access your Top Pages, Bookmarks, Reading List, and Tab Groups on a clean, intuitive new tab page with a single click."
+   "welcome_message": {
+      "message": "Welcome to your new home page! In addition to Frequent Pages, you can now access your Bookmarks, Reading List, and Tab Groups with a single click. Set a cool background or ditch the mouse and use the <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys to navigate. Pin the extension icon to the toolbar and you can bring it up as a sidebar anytime."
    },
-   "welcome_message2": {
-      "message": "Set cool backgrounds. Or ditch the mouse and use the <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys to navigate."
-   },
-   "welcome_message3": {
-      "message": "If you pin the <b><img src='images/icon-16.png' style='vertical-align:middle'> Quick Access</b> icon to the toolbar, all of these will also be displayed as a sidebar."
-   },
-   "welcome_message4": {
+   "welcome_permissions1": {
       "message": "To get started, select what you would like to see here:"
    },
-   "welcome_message5": {
-      "message": "You can change these in the <b><svg xmlns='http://www.w3.org/2000/svg' style='height:20px;width:20px;vertical-align:bottom'><use xlink:href='#settings'></svg> Settings</b> at any time."
+   "welcome_permissions2": {
+      "message": "You can change these in the <b>Settings</b> at any time."
    },
-   "welcome_message6": {
-      "message": "Your settings will be synced to your Chrome account automatically so you can enjoy the same great experience across all your devices. If you don't have an account yet, it's worth creating one!"
+   "welcome_footnote": {
+      "message": "Your settings will be synced to your Chrome account automatically so you can enjoy the same great experience across all your devices."
    }
 }

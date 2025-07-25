@@ -14,6 +14,7 @@
         "128": "images/icon-128.png"
     },
     "permissions": [
+        "topSites",
         "favicon",
         "sidePanel",
         "storage",
@@ -24,7 +25,6 @@
         "tabs",
         "tabGroups",
         "readingList",
-        "topSites",
         "history"
     ],
     "action": {
