@@ -15,6 +15,7 @@ export class UI {
         this.currentPath = [];
         this.lastItems = [];
         this.activeElement = null;
+        this.isSidePanel = (window.location.search === '?context=side_panel')
         this.init();
     }
 
@@ -56,7 +57,7 @@ export class UI {
     }
     
     registerPermissionEventListeners() {
-        ['bookmarks', 'tabGroups', 'readingList'].forEach(view => {
+        ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.addEventListener('change', (e) => {
                 const items = (view === 'tabGroups') ? ['tabGroups', 'tabs'] : [view];
@@ -71,7 +72,7 @@ export class UI {
 
     async handlePermissionChange() {
         const permissions = await Permission.all();
-        ['bookmarks', 'tabGroups', 'readingList'].forEach(view => {
+        ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.checked = permissions.includes(view));
 
@@ -140,7 +141,7 @@ export class UI {
         this.settings = settings;
 
         const body = document.body;
-        if (this.settings.backgroundColor) {
+        if (this.settings.backgroundColor && !this.isSidePanel) {
             body.setAttribute('style', `
                 --color-ui-bg: ${this.settings.backgroundColor};
                 --color-ui-text: var(${this.getLightnessFromHex(this.settings.backgroundColor) > 60 ? '--color-dark' : '--color-light'});
@@ -152,13 +153,13 @@ export class UI {
         
         switch (this.settings.backgroundType) {
             case 'url':
-                if (this.settings.backgroundUrl) {
+                if (this.settings.backgroundUrl && !this.isSidePanel) {
                     body.style.backgroundImage = `url('${this.settings.backgroundUrl}')`;
                     body.classList.add('has-background');
                 }
                 break;
             case 'file':
-                if (this.settings.backgroundFile) {
+                if (this.settings.backgroundFile && !this.isSidePanel) {
                     body.style.backgroundImage = `url('${this.settings.backgroundFile}')`;
                     body.classList.add('has-background');
                 }
@@ -219,7 +220,7 @@ export class UI {
 
     // MARK: View
     switchView(view) {
-        if (!['bookmarks', 'readingList', 'tabGroups'].includes(view)) return;
+        if (!['topSites', 'history', 'bookmarks', 'readingList', 'tabGroups'].includes(view)) return;
 
         if (this.currentView != view) {
             this.currentView = view;
@@ -261,6 +262,8 @@ export class UI {
         const homeItem = document.createElement('span');
         homeItem.className = 'breadcrumb-item';
         switch (this.currentView) {
+            case 'topSites':    homeItem.textContent = chrome.i18n.getMessage('top_sites'); break;
+            case 'history':     homeItem.textContent = chrome.i18n.getMessage('history'); break;
             case 'bookmarks':   homeItem.textContent = chrome.i18n.getMessage('bookmarks'); break;
             case 'readingList': homeItem.textContent = chrome.i18n.getMessage('reading_list'); break;
             case 'tabGroups':   homeItem.textContent = chrome.i18n.getMessage('tab_groups'); break;
@@ -294,7 +297,7 @@ export class UI {
         const message = document.getElementById('message');
         const content = document.getElementById('content');
         
-        if (!['bookmarks', 'readingList', 'tabGroups'].includes(this.currentView)) {
+        if (!['topSites', 'history', 'bookmarks', 'readingList', 'tabGroups'].includes(this.currentView)) {
             content.innerHTML = '';
             return;
         }
@@ -315,6 +318,12 @@ export class UI {
             }
 
             switch (this.currentView) {
+                case 'topSites':
+                    items = await TopSite.find(parentId);
+                    break;
+                case 'history':
+                    items = await History.find(parentId);
+                    break;
                 case 'bookmarks':
                     items = await Bookmark.find(parentId);
                     break;
@@ -376,6 +385,7 @@ export class UI {
     }
 
     handleTileEvent(view, id, eventType, item) {
+        console.log(view, id, eventType, item);
         if (this.currentView !== view) return;
 
         const isCurrentFolder = this.currentPath[this.currentPath.length - 1]?.id === id;
@@ -443,8 +453,8 @@ export class UI {
         chrome.tabs?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
         // onReplaced, onAttached, onDetached
 
-        // chrome.history.onVisited.addListener((history) => );
-        // chrome.history.onVisitRemoved.addListener((urls) => );
+        chrome.history?.onVisited?.addListener((history) => this.handleTileEvent('history', history.id, 'created', new History(history)));
+        chrome.history?.onVisitRemoved?.addListener(({allHistory, urls}) => urls?.forEach(url => this.handleTileEvent('history', url, 'removed', null)));
     }
 
     // MARK: Search
@@ -469,13 +479,6 @@ export class UI {
         searchInput.addEventListener('input', (e) => {
             this.searchItems(searchInput.value);
         });
-        
-        const searchIcon = document.getElementsByClassName('search-icon')[0];
-        if (searchIcon) {
-            searchIcon.addEventListener('click', (e) => {
-                searchInput.focus();
-            });
-        }
     }
 
     // MARK: Keyboard navigation
@@ -539,8 +542,8 @@ export class UI {
     // MARK: Base tile
     createBaseTile(item) {
         const tile = document.createElement('button');
-        tile.className = 'tile';
-        tile.dataset.id = item.id ?? item.url;
+        tile.className = 'tile glass';
+        tile.dataset.id = item.id ?? item.url ?? '';
         tile.dataset.type = item.constructor.name;
 
         const icon = document.createElement('span');
@@ -584,7 +587,7 @@ export class UI {
         icon.appendChild(favicon);
 
         tile.addEventListener('click', (e) => {
-            item.open();
+            item.open(this.isSidePanel);
             e.preventDefault();
         });
 
@@ -632,6 +635,14 @@ export class UI {
     createAddTile(parentId) {
         let item, title = '';
         switch (this.currentView) {
+            case 'topSites':
+                item = new TopSite({ parentId });
+                title = chrome.i18n.getMessage('new_top_sites');
+                break;
+            case 'history':
+                item = new History({ parentId });
+                title = chrome.i18n.getMessage('new_history');
+                break;
             case 'bookmarks':
                 item = new Bookmark({ parentId });
                 title = chrome.i18n.getMessage('new_bookmark');
@@ -645,7 +656,7 @@ export class UI {
                 title = chrome.i18n.getMessage('new_tab');
                 break;
         }
-        if ((item instanceof Page || item instanceof Tab) && this.currentPath.length < 1) return;
+        if (((item instanceof Page || item instanceof Tab) && parentId === '') || item instanceof History || item instanceof TopSite) return;
         
         const tile = this.createBaseTile({ title: title });
         tile.classList.add('add');
@@ -662,10 +673,13 @@ export class UI {
 
     // MARK: Edit button
     createEditButton(item) {
-        if (item instanceof Tab || (item instanceof Page && !item.url)) return;
+        if (item instanceof Tab || (item instanceof Page && !item.url) || item instanceof History || item instanceof TopSite) return;
 
         let title = '';
         switch (this.currentView) {
+            case 'history':   
+                title = chrome.i18n.getMessage('edit_history');
+                break;
             case 'bookmarks':   
                 title = chrome.i18n.getMessage('edit_bookmark');
                 break;
@@ -689,7 +703,7 @@ export class UI {
 
     // MARK: Delete button
     createDeleteButton(item) {
-        if ((item instanceof Tab || item instanceof Page) && !item.url) return;
+        if (((item instanceof Tab || item instanceof Page) && !item.url) || item instanceof TopSite) return;
 
         const deleteBtn = document.createElement('button');
         deleteBtn.title = chrome.i18n.getMessage('delete');
@@ -756,6 +770,12 @@ export class UI {
 
     async createParentIdOptions(form, item) {
         let items = [];
+        if (item instanceof TopSite && await Permission.hasAccessTo(['topSites'])) {
+            items = await TopSite.list();
+        }
+        if (item instanceof History && await Permission.hasAccessTo(['history'])) {
+            items = await History.list();
+        }
         if (item instanceof Bookmark && await Permission.hasAccessTo(['bookmarks'])) {
             items = await Bookmark.list();
         }
@@ -800,7 +820,7 @@ export class UI {
         
         const newSettings = new Settings({
             ...this.settings,
-            
+
             backgroundColor:            form.backgroundColor.value,
             backgroundType:             form.backgroundType.value,
             backgroundUrl:              form.backgroundUrl.value,

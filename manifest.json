@@ -14,7 +14,6 @@
         "128": "images/icon-128.png"
     },
     "permissions": [
-        "topSites",
         "favicon",
         "sidePanel",
         "storage",
@@ -22,10 +21,11 @@
     ],
     "optional_permissions": [
         "bookmarks",
+        "history",
+        "readingList",
         "tabs",
         "tabGroups",
-        "readingList",
-        "history"
+        "topSites"
     ],
     "action": {
         "default_title": "__MSG_open_side_panel__"
@@ -34,9 +34,9 @@
         "service_worker": "service-worker.js"
     },
     "chrome_url_overrides": {
-        "newtab": "index.html"
+        "newtab": "index.html?context=newtab"
     },
     "side_panel": {
-        "default_path": "index.html"
+        "default_path": "index.html?context=side_panel"
     }
 }

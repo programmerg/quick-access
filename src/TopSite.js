@@ -11,17 +11,19 @@ export class TopSite {
 
     static async list() {
         return [
-            { id: '', title: chrome.i18n.getMessage('root_folder') },
+            new this({ id: '', title: chrome.i18n.getMessage('root_folder') }),
         ];
     }
 
     static async find(parentId = '') {
         if (parentId !== '') return [];
-        return await chrome.topSites.get();
+        return (await chrome.topSites.get())
+            .map(item => new this(item)) || [];
     }
 
     static async get(url) {
-        return (await this.find('')).find(item => item.url === url);
+        return (await this.find(''))
+            .find(item => item.url === url);
     }
 
     async save({ title, url }) {
@@ -32,8 +34,8 @@ export class TopSite {
         // not available
     }
 
-    open() {
-        window.location.assign(this.url);
+    open(newTab = false) {
+        window.open(this.url, newTab ? '_blank' : '_self');
     }
 
 }

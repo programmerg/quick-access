@@ -1,6 +1,7 @@
 export class Permission {
 
     static defaults = [
+        'history',
         'bookmarks',
         'readingList',
         'tabGroups',

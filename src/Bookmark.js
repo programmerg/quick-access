@@ -69,7 +69,7 @@ export class Bookmark {
         }     
     }
 
-    open() {
-        window.location.assign(this.url);
+    open(newTab = false) {
+        window.open(this.url, newTab ? '_blank' : '_self');
     }
 }

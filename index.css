@@ -2,7 +2,7 @@
  * MARK: Color palette
  */
 
-body {
+:root {
     --border-radius: 8px;
     --border-radius-lg: 16px;
     --border-radius-xl: 50px;
@@ -27,11 +27,6 @@ body.light {
     color-scheme: light;
     --color-bg: var(--color-base);
     --color-text: var(--color-dark);
-    --color-muted: rgb(from var(--color-text) r g b / 0.7);
-    --color-ui-bg: var(--color-light);
-    --color-ui-text: var(--color-dark);
-    --color-ui-muted: rgb(from var(--color-dark) r g b / 0.7);
-    --color-ui: oklch(from var(--color-ui-bg) calc(l * 1.2) c h);
     --color-overlay: #2125291a;
 }
 
@@ -39,12 +34,15 @@ body.dark {
     color-scheme: dark;
     --color-bg: var(--color-inverse);
     --color-text: var(--color-light);
-    --color-muted: rgb(from var(--color-text) r g b / 0.7);
-    --color-ui-bg: var(--color-dark);
-    --color-ui-text: var(--color-light);
-    --color-ui-muted: rgb(from var(--color-light) r g b / 0.7);
-    --color-ui: oklch(from var(--color-ui-bg) calc(l * 1.2) c h);
     --color-overlay: #f8f9fa1a;
+}
+
+body {
+    --color-muted: rgb(from var(--color-text) r g b / 0.7);
+    --color-ui-bg: oklch(from var(--color-bg) calc(l / 1.03) c h);
+    --color-ui-text: var(--color-text);
+    --color-ui-muted: rgb(from var(--color-ui-text) r g b / 0.7);
+    --color-ui: oklch(from var(--color-ui-bg) calc(l * 1.2) c h);
 }
 
 /* 
@@ -59,7 +57,8 @@ body.dark {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    background-image: linear-gradient(0deg, var(--color-ui-bg) 0%, var(--color-ui-bg) 100%);
+    background-color: var(--color-ui-bg);
+    background-image: none;
     background-size: cover;
     background-attachment: fixed;
     color: var(--color-ui-text);
@@ -83,8 +82,14 @@ button {
     display: none;
     width: 100%;
     height: 100%;
-    background: var(--color-overlay);
     z-index: -1;
+    background-image: none;
+    background-size: cover;
+}
+
+.glass {
+    backdrop-filter: blur(16px) saturate(80%);
+    -webkit-backdrop-filter: blur(16px) saturate(80%);
 }
 
 body.has-background .overlay {
@@ -114,7 +119,6 @@ body.has-background .overlay {
     align-items: center;
     background: rgb(from var(--color-ui) r g b / 0.2);
     color: var(--color-ui-text);
-    backdrop-filter: blur(10px);
     border: 1px solid rgb(from var(--color-ui) r g b / 0.3);
     border-radius: var(--border-radius-lg);
     padding: 15px 25px;
@@ -133,6 +137,7 @@ body.has-background .overlay {
     font-size: 14px;
     line-height: 28px;
     flex-grow: 1;
+    max-width: 100%;
 }
 
 .breadcrumb-item {
@@ -140,6 +145,9 @@ body.has-background .overlay {
     padding: 5px 10px;
     border-radius: var(--border-radius);
     transition: background 0.2s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .breadcrumb-item:hover {
@@ -156,22 +164,23 @@ body.has-background .overlay {
 
 .search-container {
     position: relative;
-    max-width: 400px;
+    max-width: 370px;
     margin: 0;
 }
 
+.search-container svg {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 16px;
+    right: auto;
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+}
+
 .search-input {
-    background: rgb(from var(--color-ui) r g b / 0.3);
-    color: var(--color-ui-text);
-    border: none;
-    outline: none;
-    width: calc(22px + 32px);
-    height: calc(22px + 16px);
-    padding: 8px 16px 8px 38px;
-    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 14px;
-    transition: border-color 0.2s, background 0.2s;
 }
 
 .search-input.active,
@@ -183,28 +192,6 @@ body.has-background .overlay {
 
 .search-input::placeholder {
     color: var(--color-ui-text);
-}
-
-.search-icon {
-    color: var(--color-ui-text);
-    background: transparent;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
-    font-size: 16px;
-    opacity: 1;
-    transition: opacity 0.2s;
-}
-
-.search-icon svg {
-    width: 100%;
-    height: 100%;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -239,6 +226,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     align-items: center;
 }
 
+.search-input,
 .toggle-btn, 
 .settings-btn {
     background: rgb(from var(--color-ui) r g b / 0.3);
@@ -259,6 +247,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     display: inline-block;
 }
 
+.search-input:hover,
 .toggle-btn:hover, 
 .settings-btn:hover {
     background: rgb(from var(--color-ui) r g b / 0.4);
@@ -287,6 +276,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     .search-container {
         max-width: 100%;
         margin: 0;
+        flex-grow: 1;
     }
     
     .controls {
@@ -294,11 +284,19 @@ input[type="search"]:focus::-webkit-search-cancel-button {
         justify-content: space-between;
     }
     
+    .search-input,
     .toggle-btn,
     .settings-btn {
         width: calc(22px + 16px);
         min-width: calc(22px + 16px);
         padding: 8px 8px;
+    }
+
+    .search-container svg {
+        left: 8px;
+    }
+    .search-input {
+        padding-left: 30px !important;
     }
 }
 
@@ -423,7 +421,6 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .tile {
     color: var(--color-ui-text);
     background: rgb(from var(--color-ui) r g b / 0.2);
-    backdrop-filter: blur(5px);
     border: 1px solid rgb(from var(--color-ui) r g b / 0.3);
     border-radius: var(--border-radius-lg);
     padding: 20px;
@@ -442,7 +439,6 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
 .tile:hover, 
 .tile:focus {
-    transform: scale(1.01);
     box-shadow: rgb(32, 33, 36, 0.28) 0px 1px 6px 0px;
     background: rgb(from var(--color-ui) r g b / 0.4);
     outline: none;
@@ -462,7 +458,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     outline: 2px dashed var(--color-primary);
 }
 
-.tile > .tile-icon {
+.tile .tile-icon {
     width: 48px;
     height: 48px;
     min-width: 48px;
@@ -473,14 +469,14 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     color: var(--color-ui-text);
 }
 
-.tile > .tile-icon img,
-.tile > .tile-icon svg {
+.tile .tile-icon img,
+.tile .tile-icon svg {
     width: 100%;
     height: 100%;
     display: inline-block;
 }
 
-.tile > .tile-title {
+.tile .tile-title {
     font-size: 14px;
     font-weight: 500;
     word-wrap: break-word;
@@ -490,7 +486,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     width: 100%;
 }
 
-.tile > .tile-url {
+.tile .tile-url {
     font-size: 12px;
     opacity: 0.5;
     word-wrap: break-word;
@@ -498,14 +494,17 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    display: none;
 }
 
 .tile > .tile-btns {
     display: none;
     position: absolute;
-    top: 8px;
+    top: 50%;
     right: 8px;
+    transform: translateY(-50%);
     z-index: 2;
+    flex-direction: column;
 }
 
 .tile > .tile-btns > button {
@@ -526,28 +525,40 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 }
 
 .tile:hover > .tile-btns {
-    display: block;
+    display: flex;
 }
 
 @media (max-width: 400px) {
-    body {
-        background-image: none !important;
-        background-color: rgb(var(--color-));
-    }
-
-    .overlay {
-        display: none !important;
-    }
-
     .container {
-        --border-radius-lg: 8px;
+        --border-radius-lg: 12px;
         border-radius: 0;
-        gap: 15px;
-        padding: 3px;
+        gap: 0;
+        padding: 0;
+        max-height: 100vh;
+    }
+
+    .main {
+        padding: 5px 5px;
+        overflow: auto;
     }
 
     .header {
         padding: 5px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .toggle-btn, .settings-btn, .search-input {
+        background-color: transparent;
+    }
+
+    .toggle-btns .toggle-btn, .search-input {
+        border-radius: var(--border-radius-lg) !important;
+    }
+
+    .settings-btn {
+        display: none;
     }
 
     .grid {
@@ -557,16 +568,18 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     .tile {
         flex-direction: row;
         text-align: left;
-        padding: 12px;
+        padding: 6px;
         min-height: 24px;
+        transition: none;
     }
 
     .tile:hover, 
-    .tile:active {
+    .tile:focus {
         transform: none;
+        box-shadow: none;
     }
 
-    .tile-icon {
+    .tile > .tile-icon {
         width: 24px;
         height: 24px;
         min-width: 24px;
@@ -574,35 +587,24 @@ input[type="search"]:focus::-webkit-search-cancel-button {
         margin: 0;
     }
 
-    .tile-url {
+    .tile > .tile-url {
         text-align: right;
-    }
-
-    .tile:hover .tile-url, 
-    .tile:active .tile-url {
         display: none;
     }
-    
-    .tile-delete-btn, 
-    .tile-edit-btn {
-        position: static;
-        bottom: auto;
-        right: auto;
-        top: auto;
-        margin: -6px -3px;
+
+    .tile:hover > .tile-title, 
+    .tile:focus > .tile-title {
+        padding-right: 60px;
+    }
+
+    .tile > .tile-btns {
+        flex-direction: row;
     }
 }
 
 /* 
  * MARK: Modals
  */
-
-.modal::backdrop {
-    background: rgb(0, 0, 0, 0.35);
-    backdrop-filter: blur(5px);
-    transition: display 0.1s allow-discrete, overlay 0.1s allow-discrete, opacity 0.1s;
-    opacity: 0;
-}
 
 .modal {
     display: none;
@@ -624,9 +626,11 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     animation: close 0.1s forwards;
 }
 
-.modal-content {
-    padding: 30px 0;
-    width: 100%;
+.modal::backdrop {
+    background: rgb(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+    transition: display 0.1s allow-discrete, overlay 0.1s allow-discrete, opacity 0.1s;
+    opacity: 0;
 }
 
 .modal[open]::backdrop {
@@ -662,14 +666,19 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   }
 }
 
-.modal-header {
+.modal > .modal-content {
+    padding: 30px 0;
+    width: 100%;
+}
+
+.modal > .modal-content > .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px 20px 30px;
 }
 
-.modal-title {
+.modal > .modal-content > .modal-header > .modal-title {
     font-size: 20px;
     font-weight: 600;
 }
@@ -694,13 +703,13 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     background: var(--color-overlay);
 }
 
-.modal-body {
+.modal > .modal-content > .modal-body {
     padding: 0 30px 0 30px;
     max-height: 80vh;
     overflow-y: auto;
 }
 
-.modal-footer {
+.modal > .modal-content > .modal-footer {
     padding: 20px 30px 0 30px;
     text-align: right;
 }
@@ -829,7 +838,7 @@ fieldset {
     text-align: center;
 }
 
-.file-input input[type="file"] {
+.file-input input {
     position: absolute;
     top: 0;
     left: 0;
@@ -847,7 +856,17 @@ fieldset {
 
 .form-group input[type="color"] {
     height: 38px;
-    padding: 5px 10px;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 5px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 6px;
+	border: none;
 }
 
 .switch-label {
