@@ -3,59 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title data-i18n="new_tab_page"></title>
+
     <link rel="stylesheet" href="index.css">
+    <style id="custom_theme"></style>
 </head>
 <body>
     <div class="overlay"></div>
 
-    <div class="container">
-        <div class="header glass">
-            <div class="breadcrumb" id="breadcrumb">
-                <span class="breadcrumb-item" data-path=""></span>
-            </div>
-            <div class="controls">
-                <div class="search-container">
-                    <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#search"></svg>
-                    <input type="search" class="search-input" id="searchInput" data-i18n-title="search_">
-                </div>
-                <div class="toggle-btns">
-                    <button class="toggle-btn" data-toggle="topSites" data-i18n-title="topSites" tabindex="-1">
-                        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#schedule"></svg>
-                    </button>
-                    <button class="toggle-btn" data-toggle="history" data-i18n-title="history" tabindex="-1">
-                        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#history"></svg>
-                    </button>
-                    <button class="toggle-btn" data-toggle="bookmarks" data-i18n-title="bookmarks" tabindex="-1">
-                        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#star"></svg>
-                    </button>
-                    <button class="toggle-btn" data-toggle="readingList" data-i18n-title="reading_list" tabindex="-1">
-                        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#readinglist"></svg>
-                    </button>
-                    <button class="toggle-btn" data-toggle="tabGroups" data-i18n-title="tab_groups" tabindex="-1">
-                        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#tabgroup"></svg>
-                    </button>
-                </div>
-                <button class="settings-btn" id="settingsBtn" data-i18n-title="settings" tabindex="-1">
-                    <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#settings"></svg>
-                </button>
+    <main class="main">
+        <div class="header">
+            <div class="container">
+                <nav class="navigation glass">
+                    <div class="breadcrumb" id="breadcrumb">
+                        <span class="breadcrumb-item" data-path=""></span>
+                    </div>
+                    <div class="controls">
+                        <div class="search-container">
+                            <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#search"></svg>
+                            <input type="search" class="btn search-input" id="searchInput" data-i18n-title="search_">
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn" data-view="topSites" data-i18n-title="top_sites" tabindex="-1">
+                                <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#schedule"></svg>
+                            </button>
+                            <button class="btn" data-view="history" data-i18n-title="history" tabindex="-1">
+                                <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#history"></svg>
+                            </button>
+                            <button class="btn" data-view="bookmarks" data-i18n-title="bookmarks" tabindex="-1">
+                                <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#star"></svg>
+                            </button>
+                            <button class="btn" data-view="readingList" data-i18n-title="reading_list" tabindex="-1">
+                                <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#readinglist"></svg>
+                            </button>
+                            <button class="btn" data-view="tabGroups" data-i18n-title="tab_groups" tabindex="-1">
+                                <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#tabgroup"></svg>
+                            </button>
+                        </div>
+                        <button class="btn" id="settingsBtn" data-i18n-title="settings" tabindex="-1">
+                            <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#settings"></svg>
+                        </button>
+                    </div>
+                </nav>
             </div>
         </div>
-        <div class="main">
-            <div id="loading" class="loading hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><use xlink:href="#spinner"></svg>
-                <div class="spinner hidden"></div>
+        <div class="content">
+            <div class="container">
+                <div id="content" class="grid cols-1"></div>
+                <div id="message" class="message hidden"></div>
+                <div id="loading" class="loading hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><use xlink:href="#spinner"></svg>
+                    <div class="spinner hidden"></div>
+                </div>
             </div>
-            <div id="content" class="grid hidden"></div>
-            <div id="message" class="message hidden"></div>
         </div>
-    </div>
+    </main>
     
-    <dialog class="modal" id="welcomeModal" role="dialog" aria-modal="true">
+    <dialog id="welcomeModal" role="dialog" aria-modal="true">
         <form class="modal-content" method="dialog">
             <div class="modal-header">
                 <h2 class="modal-title">
-                    <img src='images/icon-24.png' style='vertical-align:middle'>
+                    <img src="images/icon-24.png" style="vertical-align:middle">
                     <span data-i18n="welcome_title" style="color: #5f6368;"></span>
                 </h2>
                 <button type="reset" class="close-btn" data-i18n-title="close">×</button>
@@ -65,6 +74,20 @@
                 <p data-i18n="welcome_message"></p>
                 <p data-i18n="welcome_permissions1"></p>
                 <div class="permissions">
+                    <label class="checkbox-group">
+                        <span class="switch-label" data-i18n="top_sites"></span>
+                        <div class="switch">
+                            <input type="checkbox" class="checkbox" name="topSitesPermission">
+                            <span class="slider"></span>
+                        </div>
+                    </label>
+                    <label class="checkbox-group">
+                        <span class="switch-label" data-i18n="history"></span>
+                        <div class="switch">
+                            <input type="checkbox" class="checkbox" name="historyPermission">
+                            <span class="slider"></span>
+                        </div>
+                    </label>
                     <label class="checkbox-group">
                         <span class="switch-label" data-i18n="bookmarks"></span>
                         <div class="switch">
@@ -93,7 +116,7 @@
         </form>
     </dialog>
 
-    <dialog class="modal" id="itemModal" role="dialog" aria-modal="true">
+    <dialog id="itemModal" role="dialog" aria-modal="true">
         <form class="modal-content" data-action="saveItem" method="dialog">
             <div class="modal-header">
                 <h2 class="modal-title"></h2>
@@ -104,15 +127,15 @@
                 <fieldset>
                     <div class="form-group" id="itemTitleGroup">
                         <label class="form-label" data-i18n="title"></label>
-                        <input type="text" class="form-input" name="title" required="required" autofocus="autofocus">
+                        <input type="text" class="form-control" name="title" required="required" autofocus="autofocus">
                     </div>
                     <div class="form-group" id="itemUrlGroup">
                         <label class="form-label" data-i18n="url"></label>
-                        <input type="url" class="form-input" name="url">
+                        <input type="url" class="form-control" name="url">
                     </div>
                     <div class="form-group">
                         <label class="form-label" data-i18n="folder"></label>
-                        <select class="form-select" name="parentId">
+                        <select class="form-control" name="parentId">
                             <option value="" data-i18n="root_folder"></option>
                         </select>
                     </div>
@@ -126,7 +149,7 @@
         </form>
     </dialog>
 
-    <dialog class="modal" id="settingsModal" role="dialog" aria-modal="true">
+    <dialog id="settingsModal" role="dialog" aria-modal="true">
         <form class="modal-content" data-action="saveSettings" method="dialog">
             <div class="modal-header">
                 <h2 class="modal-title" data-i18n="settings"></h2>
@@ -146,8 +169,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#themeSettings">
-                            <span data-i18n="theme"></span>
+                        <a href="#expertSettings">
+                            <span data-i18n="expert"></span>
                         </a>
                     </li>
                 </ul>
@@ -155,48 +178,48 @@
                 <fieldset id="generalSettings">
                     <div class="form-group">
                         <label class="form-label" data-i18n="background_color"></label>
-                        <input type="color" class="form-input" name="backgroundColor">
+                        <input type="color" class="form-control" name="backgroundColor">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" data-i18n="background_type"></label>
-                        <select class="form-select" name="backgroundType">
+                        <select class="form-control" name="backgroundType">
                             <option value="none" data-i18n="background_none"></option>
                             <option value="url" data-i18n="background_url"></option>
                             <option value="file" data-i18n="background_file"></option>
                         </select>
                     </div>
                     <div class="form-group hidden" id="backgroundFileGroup">
-                        <label class="form-input file-input with-preview">
+                        <label class="form-control file-input with-preview">
                             <input type="hidden" name="backgroundFile">
                             <input type="file" id="backgroundFileImport" accept="image/*">
                             <span data-i18n="select_file"></span>
                         </label>
                     </div>
                     <div class="form-group hidden" id="backgroundUrlGroup">
-                        <input type="url" class="form-input" name="backgroundUrl" data-i18n-placeholder="url_address">
+                        <input type="url" class="form-control" name="backgroundUrl" data-i18n-placeholder="url_address">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" data-i18n="favicon_type"></label>
-                        <select class="form-select" name="faviconType">
+                        <select class="form-control" name="faviconType">
                             <option value="none" data-i18n="favicon_default"></option>
                             <option value="url" data-i18n="favicon_url"></option>
                         </select>
                     </div>
                     <div class="form-group hidden" id="faviconUrlGroup">
-                        <input type="url" class="form-input" name="faviconUrl" data-i18n-placeholder="url_address">
+                        <input type="url" class="form-control" name="faviconUrl" data-i18n-placeholder="url_address">
                     </div>
                     
                     <div class="form-group">
                         <label class="form-label" data-i18n="grid_cols"></label>
-                        <input type="number" min="3" max="8" step="1" class="form-select" name="gridCols">
+                        <input type="number" min="3" max="8" step="1" class="form-control" name="gridCols">
                     </div>
                 </fieldset>
 
                 <fieldset id="advancedSettings">
                     <div class="form-group">
-                        <label class="form-label" style="font-weight: bold;" data-i18n="permissions"></label>
+                        <label class="form-label bold" data-i18n="permissions"></label>
                         <label class="checkbox-group">
                             <span class="switch-label" data-i18n="enable_top_sites"></span>
                             <div class="switch">
@@ -243,7 +266,7 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label" style="font-weight: bold;" data-i18n="tiles"></label>
+                        <label class="form-label bold" data-i18n="tiles"></label>
                         <label class="checkbox-group">
                             <span class="switch-label" data-i18n="tile_enable_add"></span>
                             <div class="switch">
@@ -272,10 +295,10 @@
                     </div>
                 </fieldset>
 
-                <fieldset id="themeSettings">
+                <fieldset id="expertSettings">
                     <div class="form-group">
                         <label class="form-label" data-i18n="custom_theme"></label>
-                        <textarea class="form-select" name="theme" rows="15"></textarea>
+                        <textarea class="form-control" name="theme" rows="15" data-i18n-placeholder="custom_theme_placeholder"></textarea>
                     </div>
                 </fieldset>
             </div>
@@ -325,12 +348,12 @@
         <symbol id="download" viewBox="0 -960 960 960"><path d="M480-336 288-528l51-51 105 105v-342h72v342l105-105 51 51-192 192ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72h432v-72h72v72q0 29.7-21.16 50.85Q725.68-192 695.96-192H263.72Z"></path></symbol>
         <symbol id="fullscreen" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></symbol>
         <symbol id="persons" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></symbol>
-        <symbol id="history" viewBox="0 0 24 24"><path d="M12.945312 22.75 C 10.320312 22.75 8.074219 21.839844 6.207031 20.019531 C 4.335938 18.199219 3.359375 15.972656 3.269531 13.34375 L 5.089844 13.34375 C 5.175781 15.472656 5.972656 17.273438 7.480469 18.742188 C 8.988281 20.210938 10.808594 20.945312 12.945312 20.945312 C 15.179688 20.945312 17.070312 20.164062 18.621094 18.601562 C 20.167969 17.039062 20.945312 15.144531 20.945312 12.910156 C 20.945312 10.714844 20.164062 8.855469 18.601562 7.335938 C 17.039062 5.816406 15.15625 5.054688 12.945312 5.054688 C 11.710938 5.054688 10.554688 5.339844 9.480469 5.902344 C 8.402344 6.46875 7.476562 7.226562 6.699219 8.179688 L 9.585938 8.179688 L 9.585938 9.984375 L 3.648438 9.984375 L 3.648438 4.0625 L 5.453125 4.0625 L 5.453125 6.824219 C 6.386719 5.707031 7.503906 4.828125 8.804688 4.199219 C 10.109375 3.566406 11.488281 3.25 12.945312 3.25 C 14.300781 3.25 15.570312 3.503906 16.761719 4.011719 C 17.949219 4.519531 18.988281 5.214844 19.875 6.089844 C 20.761719 6.964844 21.464844 7.992188 21.976562 9.167969 C 22.492188 10.34375 22.75 11.609375 22.75 12.964844 C 22.75 14.316406 22.492188 15.589844 21.976562 16.777344 C 21.464844 17.964844 20.761719 19.003906 19.875 19.882812 C 18.988281 20.765625 17.949219 21.464844 16.761719 21.976562 C 15.570312 22.492188 14.300781 22.75 12.945312 22.75 Z M 16.269531 17.460938 L 12.117188 13.34375 L 12.117188 7.527344 L 13.921875 7.527344 L 13.921875 12.601562 L 17.550781 16.179688 Z M 16.269531 17.460938"></path></symbol>
+        <symbol id="history" viewBox="0 0 24 24"><path fill="currentColor" d="M12.945312 22.75 C 10.320312 22.75 8.074219 21.839844 6.207031 20.019531 C 4.335938 18.199219 3.359375 15.972656 3.269531 13.34375 L 5.089844 13.34375 C 5.175781 15.472656 5.972656 17.273438 7.480469 18.742188 C 8.988281 20.210938 10.808594 20.945312 12.945312 20.945312 C 15.179688 20.945312 17.070312 20.164062 18.621094 18.601562 C 20.167969 17.039062 20.945312 15.144531 20.945312 12.910156 C 20.945312 10.714844 20.164062 8.855469 18.601562 7.335938 C 17.039062 5.816406 15.15625 5.054688 12.945312 5.054688 C 11.710938 5.054688 10.554688 5.339844 9.480469 5.902344 C 8.402344 6.46875 7.476562 7.226562 6.699219 8.179688 L 9.585938 8.179688 L 9.585938 9.984375 L 3.648438 9.984375 L 3.648438 4.0625 L 5.453125 4.0625 L 5.453125 6.824219 C 6.386719 5.707031 7.503906 4.828125 8.804688 4.199219 C 10.109375 3.566406 11.488281 3.25 12.945312 3.25 C 14.300781 3.25 15.570312 3.503906 16.761719 4.011719 C 17.949219 4.519531 18.988281 5.214844 19.875 6.089844 C 20.761719 6.964844 21.464844 7.992188 21.976562 9.167969 C 22.492188 10.34375 22.75 11.609375 22.75 12.964844 C 22.75 14.316406 22.492188 15.589844 21.976562 16.777344 C 21.464844 17.964844 20.761719 19.003906 19.875 19.882812 C 18.988281 20.765625 17.949219 21.464844 16.761719 21.976562 C 15.570312 22.492188 14.300781 22.75 12.945312 22.75 Z M 16.269531 17.460938 L 12.117188 13.34375 L 12.117188 7.527344 L 13.921875 7.527344 L 13.921875 12.601562 L 17.550781 16.179688 Z M 16.269531 17.460938"></path></symbol>
         <symbol id="file" viewBox="0 0 24 24"><path d="M6 2c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"></path></symbol>
         <symbol id="more" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></symbol>
         <symbol id="expand" viewBox="0 -960 960 960"><path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z"></path></symbol>
         <symbol id="person" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></symbol>
-        <symbol id="schedule" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></symbol>
+        <symbol id="schedule" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path></symbol>
         <symbol id="star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></symbol>
         <symbol id="sync" viewBox="0 -960 960 960"><path d="M216-192v-72h74q-45-40-71.5-95.5T192-480q0-101 61-177.5T408-758v75q-63 23-103.5 77.5T264-480q0 48 19.5 89t52.5 70v-63h72v192H216Zm336-10v-75q63-23 103.5-77.5T696-480q0-48-19.5-89T624-639v63h-72v-192h192v72h-74q45 40 71.5 95.5T768-480q0 101-61 177.5T552-202Z"></path></symbol>
     </svg>

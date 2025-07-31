@@ -1,11 +1,11 @@
 export class Page {
 
-    constructor({ url, title, id, index, hasBeenRead, creationTime, lastUpdateTime, children }) {
+    constructor({ url, title, id, parentId, hasBeenRead, creationTime, lastUpdateTime, children }) {
         this.title = title;
         this.url = url;         // pkey
         this.id = id;           // missing
-        this.index = index;     // missing
-        this.parentId = hasBeenRead ? '1' : '0';
+        this.index = null;      // missing
+        this.parentId = parentId ? parentId : (hasBeenRead ? '1' : '0');
         this.createdAt = creationTime;
         this.updatedAt = lastUpdateTime;
         this.color = null;

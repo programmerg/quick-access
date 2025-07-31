@@ -1,11 +1,11 @@
 export class Tab {
 
-    constructor({ url, title, id, index, groupId, windowId, color, lastAccessed, children }) {
+    constructor({ url, title, id, index, parentId, groupId, windowId, color, lastAccessed, children }) {
         this.title = title;
         this.url = url;
         this.id = id;
         this.index = index;
-        this.parentId = groupId;
+        this.parentId = parentId ? parentId : (groupId === -1 ? '' : groupId);
         this.createdAt = null;          // missing
         this.updatedAt = lastAccessed;
         this.color = color;
@@ -45,10 +45,10 @@ export class Tab {
 
     static async list() {
         const items = await chrome.tabGroups.query({});
-        items.push({
-            id: -1,
-            title: chrome.i18n.getMessage('ungrouped_tabs')
-        });
+        // items.push({
+        //     id: -1,
+        //     title: chrome.i18n.getMessage('ungrouped_tabs')
+        // });
         return [
             { id: '', title: chrome.i18n.getMessage('root_folder') },
             ...(items.map(({id, title}) => ({
@@ -61,11 +61,14 @@ export class Tab {
     static async find(parentId = '') {
         let items = [];
         if (parentId === '') {
-            items = (await chrome.tabGroups.query({}));
-            items.push({
-                id: -1,
-                title: chrome.i18n.getMessage('ungrouped_tabs'),
-            });
+            items = [
+                ...(await chrome.tabGroups.query({})),
+                ...(await chrome.tabs.query({ groupId: -1 }))
+            ];
+            // items.push({
+            //     id: -1,
+            //     title: chrome.i18n.getMessage('ungrouped_tabs'),
+            // });
         } else {
             items = (await chrome.tabs.query({ groupId: parseInt(parentId) }));
         }

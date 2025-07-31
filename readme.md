@@ -6,14 +6,15 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 
 - Clean tiled interface on the new tab page
 - Side panel for quick access
-- Easy switch between bookmarks, reading list, and tab groups 
+- Easy switch between history, bookmarks, reading list, and tab groups 
 - Quick search across all items
 - Create, modify or delete everything in one place
+- Drag and drop support (rearrange, organize, pin to desktop as shortcut)
 - Automatic dark/light mode detection
 - Custom background image, color and background provider URL support
 - Built-in favicon and custom favicon provider support
-- Customizable grid layout and color themes (multiple built-in themes)
-- Ditch the mouse! Lightning fast navigation with <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys.
+- Customizable grid layout and color themes
+- Lightning fast navigation with <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys.
 - Fully localized interface (English, Hungarian, ...)
 - Fine-tuneable permissions. Only request permissions for what you need.
 - It just works. All your settings are with you in your Chrome account.
@@ -32,7 +33,6 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 - `_locales/` – Translations (e.g., English, Hungarian)
 - `images/` – Default icons, favicons
 - `src/` – Logic modules (Bookmark, History, Page, Permission, Settings, Tab, TopSite)
-- `themes/` – Dozens of ready-made themes (colors, icons, backgrounds)
 - `index.html` – Main HTML page, includes UI and SVG icons
 - `index.js` – Complete UI logic: event handling, tiles, search, settings, etc.
 - `index.css` – Default styles

@@ -26,21 +26,17 @@ export class UI {
             ...await Settings.all(),
         });
         this.switchView(this.settings.defaultView);
-        this.handlePermissionChange();
         
+        this.registerColorThemeEventListeners();
         this.registerPermissionEventListeners();
         this.registerSearchEventListeners();
         this.registerSettingsFormEventListeners();
         this.registerKeyboardNavigationEventListeners();
         this.registerTileEventListeners();
-        this.registerEventListeners();
+        this.registerViewEventListeners();
+        this.registerModalEventListeners();
         this.initTabs();
         
-        // Color theme
-        const colorTheme = window.matchMedia('(prefers-color-scheme: dark)');
-        colorTheme.addEventListener('change', (e) => this.updateTheme(colorTheme.matches));
-        this.updateTheme(colorTheme.matches);
-
         // Internationalization
         document.documentElement.lang = chrome.i18n.getUILanguage();
         this.updateTranslation();
@@ -56,6 +52,7 @@ export class UI {
         }
     }
     
+    // MARK: Permissions
     registerPermissionEventListeners() {
         ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
@@ -68,6 +65,7 @@ export class UI {
 
         chrome.permissions.onAdded.addListener(({permissions}) => this.handlePermissionChange());
         chrome.permissions.onRemoved.addListener(({permissions}) => this.handlePermissionChange());
+        this.handlePermissionChange();
     }
 
     async handlePermissionChange() {
@@ -76,7 +74,7 @@ export class UI {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.checked = permissions.includes(view));
 
-            const btn = document.querySelector(`.toggle-btn[data-toggle="${view}"]`);
+            const btn = document.querySelector(`[data-view="${view}"]`);
             btn.classList.toggle('hidden', !permissions.includes(view));
         });
     }
@@ -136,86 +134,10 @@ export class UI {
         return 'images/browser.svg';
     }
 
-    // MARK: Apply settings
-    applySettings(settings) {
-        this.settings = settings;
-
-        const body = document.body;
-        if (this.settings.backgroundColor && !this.isSidePanel) {
-            body.setAttribute('style', `
-                --color-ui-bg: ${this.settings.backgroundColor};
-                --color-ui-text: var(${this.getLightnessFromHex(this.settings.backgroundColor) > 60 ? '--color-dark' : '--color-light'});
-            `);
-        }
-
-        body.style.backgroundImage = '';
-        body.classList.remove('has-background');
-        
-        switch (this.settings.backgroundType) {
-            case 'url':
-                if (this.settings.backgroundUrl && !this.isSidePanel) {
-                    body.style.backgroundImage = `url('${this.settings.backgroundUrl}')`;
-                    body.classList.add('has-background');
-                }
-                break;
-            case 'file':
-                if (this.settings.backgroundFile && !this.isSidePanel) {
-                    body.style.backgroundImage = `url('${this.settings.backgroundFile}')`;
-                    body.classList.add('has-background');
-                }
-                break;
-        }
-        
-        const content = document.getElementById('content');
-        content.className = `grid cols-${this.settings.gridCols}`;
-    }
-
-    // MARK: Event listeners
-    registerEventListeners() {
-        
-        document.body.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        });
-        
-        document.getElementById('settingsBtn').addEventListener('click', (e) => {
-            this.openSettings();
-        });
-
-        Array.from(document.getElementsByClassName('toggle-btn')).forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const view = btn.getAttribute('data-toggle');
-                this.switchView(view);
-            });
-        });
-
-        Array.from(document.getElementsByClassName('modal')).forEach(modal => {
-
-            // Close modal on button click
-            Array.from(modal.querySelectorAll('button[type="reset"]')).forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    modal.close();
-                    e.preventDefault();
-                });
-            });
-
-            // Close modal on click outside
-            modal.addEventListener('click', (e) => {
-                if (e.target.id === modal.id) {
-                    modal.close();
-                }
-            });
-        });
-
-        // Handle form submission
-        Array.from(document.getElementsByTagName('form')).forEach(form => {
-            form.addEventListener('submit', (e) => {
-                const action = this[form.dataset.action];
-                if (typeof action === 'function') action.call(this, form);
-                e.preventDefault();
-            });
-        });
+    registerColorThemeEventListeners() {
+        const colorTheme = window.matchMedia('(prefers-color-scheme: dark)');
+        colorTheme.addEventListener('change', (e) => this.updateTheme(colorTheme.matches));
+        this.updateTheme(colorTheme.matches);
     }
 
     // MARK: View
@@ -224,8 +146,8 @@ export class UI {
 
         if (this.currentView != view) {
             this.currentView = view;
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-toggle') === view);
+            document.querySelectorAll('[data-view]').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-view') === view);
             });
 
             this.settings.defaultView = view;
@@ -239,7 +161,6 @@ export class UI {
         this.navigateToPath(path);
     }
 
-    // MARK: Navigate
     navigateToPath(path) {
         this.currentPath = path;
         
@@ -248,6 +169,7 @@ export class UI {
             defaultPath_bookmarks: this.settings.defaultPath_bookmarks,
             defaultPath_readingList: this.settings.defaultPath_readingList,
             defaultPath_tabGroups: this.settings.defaultPath_tabGroups,
+            defaultPath_history: this.settings.defaultPath_history,
         });
 
         this.updateBreadcrumb();
@@ -289,6 +211,25 @@ export class UI {
             });
             breadcrumb.appendChild(item);
         }
+    }
+    
+    registerViewEventListeners() {
+        document.body.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+        
+        document.getElementById('settingsBtn').addEventListener('click', (e) => {
+            this.openSettings();
+        });
+
+        Array.from(document.querySelectorAll('[data-view]')).forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const view = btn.getAttribute('data-view');
+                this.switchView(view);
+            });
+        });
     }
 
     // MARK: Content
@@ -334,7 +275,7 @@ export class UI {
                     items = await Tab.find(parentId);
                     break;
             }
-            this.renderItems(items);
+            this.renderTiles(items);
             
             if (this.settings.tileAdd) {
                 const addBtn = this.createAddTile(parentId);
@@ -356,8 +297,8 @@ export class UI {
         }
     }
 
-    // MARK: Items (Tiles)
-    renderItems(items) {
+    // MARK: Tiles
+    renderTiles(items) {
         const message = document.getElementById('message');
         const content = document.getElementById('content');
         content.innerHTML = '';
@@ -365,7 +306,12 @@ export class UI {
         if (items.length > 0) {
             message.classList.toggle('hidden', true);
 
-            items.forEach(item => content.appendChild(this.createTile(item)));
+            items.forEach(item => {
+                const tile = this.createTile(item);
+                content.appendChild(tile);
+            });
+
+            this.enableTileDragAndDrop(content, items);
 
         } else {
             const isSearchActive = document.getElementById('searchInput').value.length > 0;
@@ -376,6 +322,102 @@ export class UI {
         }
 
         this.lastItems = items;
+    }
+        
+    enableTileDragAndDrop(content, items) {
+        const tileClassNames = '.tile.item, .tile.folder';
+        const isDragEnabled = this.settings.tileReorder && (this.currentView === 'bookmarks' || this.currentView === 'tabGroups');
+        
+        let sourceIdx = null;
+        let sourceElement = null;
+        let originalNextSibling = null;
+        let originalParent = null;
+
+        Array.from(content.querySelectorAll(tileClassNames)).forEach((tile) => {
+            tile.setAttribute('draggable', 'true');
+            
+            tile.addEventListener('dragstart', (e) => {
+                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                sourceIdx = currentTiles.indexOf(tile);
+                sourceElement = tile;
+                originalNextSibling = tile.nextSibling;
+                originalParent = tile.parentNode;
+                tile.classList.add('ghost');
+                e.dataTransfer.effectAllowed = 'linkMove';
+                e.dataTransfer.setData('text/x-moz-url', `${items[sourceIdx].url}\r\n${items[sourceIdx].title}`);
+                e.dataTransfer.setData('text/uri-list', `${items[sourceIdx].url}`);
+                e.dataTransfer.setDragImage(tile, tile.offsetWidth/2, tile.offsetHeight/2);
+                setTimeout(() => {
+                    tile.classList.remove('ghost');
+                    tile.classList.add('dragging');
+                }, 100);
+            });
+
+            tile.addEventListener('dragend', (e) => {
+                tile.classList.remove('ghost');
+                tile.classList.remove('dragging');
+                if (sourceElement && originalParent) {
+                    if (originalNextSibling && originalNextSibling.parentNode === originalParent) {
+                        originalParent.insertBefore(sourceElement, originalNextSibling);
+                    } else {
+                        originalParent.appendChild(sourceElement);
+                    }
+                }
+                sourceIdx = null;
+                sourceElement = null;
+                originalNextSibling = null;
+                originalParent = null;
+            });
+
+            tile.addEventListener('dragleave', (e) => {
+                if (tile.classList.contains('folder')) {
+                    tile.classList.remove('dropping');
+                    sourceElement.style.opacity = 1;
+                }
+            });
+
+            tile.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                if (sourceElement === null || tile === sourceElement || !isDragEnabled) return;
+                const rect = tile.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                
+                if (tile.classList.contains('folder') 
+                    && (x > rect.width * 1 / 3 && x < rect.width * 2 / 3)
+                ) {
+                    tile.classList.add('dropping');
+                    sourceElement.style.opacity = 0;
+                }
+                const insertAfter = x > rect.width / 2;
+                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                const targetIdx = currentTiles.indexOf(tile) + (insertAfter ? 1 : 0);
+                const lastDropIdx = currentTiles.indexOf(sourceElement);
+                if (lastDropIdx !== targetIdx) {
+                    if (insertAfter) {
+                        content.insertBefore(sourceElement, tile.nextSibling);
+                    } else {
+                        content.insertBefore(sourceElement, tile);
+                    }
+                }
+            });
+
+            tile.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (sourceElement === null || !isDragEnabled) return;
+                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                const targetIdx = currentTiles.indexOf(sourceElement);
+                if (sourceIdx !== targetIdx) {
+                    if (tile.classList.contains('folder')) {
+                        const itemId = sourceElement.dataset.id;
+                        const groupId = e.currentTarget.dataset.id;
+                        items[sourceIdx].move()
+                        content.dispatchEvent(new Event('move', { groupId, itemId }));
+                    } else {
+                        content.dispatchEvent(new Event('reorder', { sourceIdx, targetIdx }));
+                    }
+                }
+            });
+        });
     }
 
     createTile(item) {
@@ -470,7 +512,7 @@ export class UI {
             (item.url && item.url.toLowerCase().includes(query))
         );
 
-        this.renderItems(filtered);
+        this.renderTiles(filtered);
     }
 
     registerSearchEventListeners() {
@@ -541,19 +583,24 @@ export class UI {
 
     // MARK: Base tile
     createBaseTile(item) {
-        const tile = document.createElement('button');
-        tile.className = 'tile glass';
+        const tile = document.createElement('div');
+        tile.className = 'tile';
         tile.dataset.id = item.id ?? item.url ?? '';
         tile.dataset.type = item.constructor.name;
 
+        const anchor = document.createElement('a');
+        anchor.className = 'glass';
+        if (item.url) anchor.href = item.url;
+        tile.appendChild(anchor);
+
         const icon = document.createElement('span');
         icon.className = 'tile-icon';
-        tile.appendChild(icon);
+        anchor.appendChild(icon);
 
         const title = document.createElement('span');
         title.className = 'tile-title';
         title.textContent = item.title ?? '';
-        tile.appendChild(title);
+        anchor.appendChild(title);
 
         const url = document.createElement('span');
         url.className = 'tile-url';
@@ -656,7 +703,7 @@ export class UI {
                 title = chrome.i18n.getMessage('new_tab');
                 break;
         }
-        if (((item instanceof Page || item instanceof Tab) && parentId === '') || item instanceof History || item instanceof TopSite) return;
+        if ((item instanceof Bookmark && parentId === '') || (item instanceof Page && parentId === '') || item instanceof History || item instanceof TopSite) return;
         
         const tile = this.createBaseTile({ title: title });
         tile.classList.add('add');
@@ -673,7 +720,7 @@ export class UI {
 
     // MARK: Edit button
     createEditButton(item) {
-        if (item instanceof Tab || (item instanceof Page && !item.url) || item instanceof History || item instanceof TopSite) return;
+        if ((item instanceof Bookmark && item.parentId === '0') || (item instanceof Page && !item.url) || item instanceof History || item instanceof TopSite || item instanceof Tab) return;
 
         let title = '';
         switch (this.currentView) {
@@ -694,8 +741,8 @@ export class UI {
         editBtn.title = chrome.i18n.getMessage('edit');
         editBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#edit"></svg>';
         editBtn.addEventListener('click', (e) => {
-            this.openEditItems(item, title);
             e.stopPropagation();
+            this.openEditItems(item, title);
         });
 
         return editBtn;
@@ -703,16 +750,16 @@ export class UI {
 
     // MARK: Delete button
     createDeleteButton(item) {
-        if (((item instanceof Tab || item instanceof Page) && !item.url) || item instanceof TopSite) return;
+        if ((item instanceof Bookmark && item.parentId === '0') || ((item instanceof Tab || item instanceof Page) && !item.url) || item instanceof TopSite) return;
 
         const deleteBtn = document.createElement('button');
         deleteBtn.title = chrome.i18n.getMessage('delete');
         deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#trash"></svg>';
         deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             if (confirm(chrome.i18n.getMessage('delete_item_confirm', item.title))) {
                 item.remove();
             }
-            e.stopPropagation();
         });
 
         return deleteBtn;
@@ -835,11 +882,113 @@ export class UI {
         });
         await Settings.save(newSettings);
         this.applySettings(newSettings);
-        // this.loadContent(); // force change favicons
+        this.loadContent(); // force change favicons, and tile buttons
         
         modal.close();
     }
     
+    applySettings(settings) {
+        this.settings = settings;
+
+        if (this.isSidePanel) return;
+
+        const isLightBg = this.getLightnessFromHex(this.settings.backgroundColor) > 60;
+
+        let styles = [];
+
+        if (this.settings.backgroundColor !== '#000000') {
+            styles.push(`--color-ui: ${this.settings.backgroundColor};`);
+            styles.push(`--color-ui-text: var(${isLightBg ? '--color-inverse' : '--color-base'});`);
+            styles.push(`--color-ui-bg: oklch(from var(--color-ui) calc(l ${isLightBg ? '/' : '*'} 1.2) c h / 0.2);`);
+            styles.push(`--color-ui-border: oklch(from var(--color-ui) calc(l ${isLightBg ? '/' : '*'} 1.2) c h / 0.5);`);
+            styles.push(`--color-ui-hover: oklch(from var(--color-ui) calc(l ${isLightBg ? '/' : '*'} 1.2) c h / 0.3);`);
+            styles.push(`--color-ui-active: oklch(from var(--color-ui) calc(l ${isLightBg ? '/' : '*'} 1.4) c h / 0.5);`);
+        }
+
+        switch (this.settings.backgroundType) {
+            case 'url':
+                if (this.settings.backgroundUrl) {
+                    styles.push(`background-image: url('${this.settings.backgroundUrl}');`);
+                }
+                break;
+            case 'file':
+                if (this.settings.backgroundFile) {
+                    styles.push(`background-image: url('${this.settings.backgroundFile}');`);
+                }
+                break;
+            default:
+                //styles.push(`background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');`);
+                styles.push(`background-image: none;`);
+                break;
+        }
+        
+        const custom_theme = document.getElementById('custom_theme');
+        custom_theme.innerHTML = `body {\n  ${styles.join('\n  ')}\n}\n\n${this.settings.theme}`;
+        
+        const content = document.getElementById('content');
+        content.className = `grid cols-${this.settings.gridCols}`;
+    }
+    
+    registerModalEventListeners() {
+        Array.from(document.getElementsByTagName('dialog')).forEach(modal => {
+
+            // Close modal on button click
+            Array.from(modal.querySelectorAll('button[type="reset"]')).forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    modal.close();
+                    e.preventDefault();
+                });
+            });
+
+            // Close modal on click outside
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === modal.id) {
+                    modal.close();
+                }
+            });
+        });
+
+        // Handle form submission
+        Array.from(document.getElementsByTagName('form')).forEach(form => {
+            form.addEventListener('submit', (e) => {
+                const action = this[form.dataset.action];
+                if (typeof action === 'function') action.call(this, form);
+                e.preventDefault();
+            });
+        });
+    }
+    
+    // MARK: Item modal
+    openEditItems(item, title) {
+        const modal = document.getElementById('itemModal');
+        modal.querySelector('.modal-title').textContent = title;
+
+        this.activeElement = item;
+
+        const form = modal.firstElementChild;
+        form.title.value = item.title || '';
+        form.url.value = item.url || '';
+        // form.parentId.value = item.parentId;
+
+        this.createParentIdOptions(form, item);
+
+        modal.showModal();
+    }
+
+    async saveItem(form) {
+        const modal = form.parentElement;
+
+        const item = this.activeElement;
+
+        const title = form.title.value.trim();
+        const url = form.url.value.trim();
+        const parentId = form.parentId.value;
+
+        await item.save({ title, url, parentId });
+
+        modal.close();
+    }
+
     // MARK: Tabs
     initTabs() {
         const tabbed = document.querySelector('[data-toggle="tabbed"]');
@@ -911,38 +1060,6 @@ export class UI {
         tabs[0].setAttribute('aria-selected', 'true');
         panels[0].hidden = false;
     }
-    
-    // MARK: Item modal
-    openEditItems(item, title) {
-        const modal = document.getElementById('itemModal');
-        modal.querySelector('.modal-title').textContent = title;
-
-        this.activeElement = item;
-
-        const form = modal.firstElementChild;
-        form.title.value = item.title || '';
-        form.url.value = item.url || '';
-        // form.parentId.value = item.parentId;
-
-        this.createParentIdOptions(form, item);
-
-        modal.showModal();
-    }
-
-    async saveItem(form) {
-        const modal = form.parentElement;
-
-        const item = this.activeElement;
-
-        const title = form.title.value.trim();
-        const url = form.url.value.trim();
-        const parentId = form.parentId.value;
-
-        await item.save({ title, url, parentId });
-
-        modal.close();
-    }
-
 }
 
 // MARK: Entry point

@@ -17,7 +17,7 @@
    "advanced": {
       "message": "Haladó"
    },
-   "topSites": {
+   "top_sites": {
       "message": "Gyakori oldalak"
    },
    "history": {
@@ -194,11 +194,17 @@
    "open_side_panel": {
       "message": "Oldalsó panel megnyitása / bezárása"
    },
-   "theme": {
-      "message": "Téma"
+   "expert": {
+      "message": "Szakértő"
+   },
+   "custom_theme_placeholder": {
+      "message": "Használj CSS stílusokat a testreszabáshoz, pl.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nTovábbi infók: https://www.w3schools.com/css/"
    },
    "create_url_footnote": {
       "message": "Mappa létrehozásához hagyja üresen"
+   },
+   "hi": {
+      "message": "Szia!"
    },
    "welcome_title": {
       "message": "Gyors elérés"
@@ -210,7 +216,7 @@
       "message": "Kezdésnek válaszd ki, mit szeretnél itt látni:"
    },
    "welcome_permissions2": {
-      "message": "Ezt később a <b>Beállítások</b> közt bármikor módosíthatod."
+      "message": "Ezt később a beállítások közt bármikor módosíthatod."
    },
    "welcome_footnote": {
       "message": "Beállításaid automatikusan a Chrome fiókodba szinkronizáljuk, így minden eszközödön egyformán klassz élményben legyen részed."

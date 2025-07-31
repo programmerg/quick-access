@@ -17,7 +17,7 @@
    "advanced": {
       "message": "Advanced"
    },
-   "topSites": {
+   "top_sites": {
       "message": "Top sites"
    },
    "history": {
@@ -194,11 +194,17 @@
    "open_side_panel": {
       "message": "Click to open / close Side panel"
    },
-   "theme": {
-      "message": "Theme"
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Use CSS styles here to customize the interface, e.g.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nFor more: https://www.w3schools.com/css/"
    },
    "create_url_footnote": {
       "message": "Leave blank to create a folder"
+   },
+   "hi": {
+      "message": "Hi!"
    },
    "welcome_title": {
       "message": "Quick Access"
@@ -210,7 +216,7 @@
       "message": "To get started, select what you would like to see here:"
    },
    "welcome_permissions2": {
-      "message": "You can change these in the <b>Settings</b> at any time."
+      "message": "You can change these in the Settings at any time."
    },
    "welcome_footnote": {
       "message": "Your settings will be synced to your Chrome account automatically so you can enjoy the same great experience across all your devices."

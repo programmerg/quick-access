@@ -1,7 +1,7 @@
 export class Settings {
 
     constructor({
-        firstRun, defaultView, defaultPath_bookmarks, defaultPath_readingList, defaultPath_tabGroups, backgroundFile, 
+        firstRun, defaultView, defaultPath_bookmarks, defaultPath_readingList, defaultPath_tabGroups, defaultPath_history, backgroundFile, 
         backgroundColor, backgroundType, backgroundUrl, faviconType, faviconUrl, gridCols, tileAdd, tileEditAndDelete, tileReorder, theme
     }) {
         this.firstRun                   = Boolean(firstRun                  ?? true);
@@ -9,7 +9,8 @@ export class Settings {
         this.defaultPath_bookmarks      = String(defaultPath_bookmarks      ?? '[]');
         this.defaultPath_readingList    = String(defaultPath_readingList    ?? '[]');
         this.defaultPath_tabGroups      = String(defaultPath_tabGroups      ?? '[]');
-        this.backgroundColor            = String(backgroundColor            ?? '');
+        this.defaultPath_history        = String(defaultPath_history        ?? '[]');
+        this.backgroundColor            = String(backgroundColor            ?? '#000000');
         this.backgroundType             = String(backgroundType             ?? 'url'); // none, file
         this.backgroundUrl              = String(backgroundUrl              ?? 'https://picsum.photos/1920/1080');
         this.backgroundFile             = String(backgroundFile             ?? '');
@@ -61,6 +62,7 @@ export class Settings {
                 'defaultPath_bookmarks',
                 'defaultPath_readingList',
                 'defaultPath_tabGroups',
+                'defaultPath_history',
                 'backgroundFile',
             ])
         };
