@@ -162,7 +162,7 @@
       "message": "Egyedi megjelenés"
    },
    "no_search_results_found": {
-      "message": "Nincs találat"
+      "message": "Nincs megfelelő találat"
    },
    "no_search_results_found_details": {
       "message": "Próbálj más kulcsszavakat használni"
@@ -171,10 +171,10 @@
       "message": "Biztosan törölni szeretné ezt:\n$1?"
    },
    "empty_state": {
-      "message": "Nincs megjeleníthető tartalom"
+      "message": "Ez a mappa még üres"
    },
    "empty_state_details": {
-      "message": "Adj hozzá új elemeket a + gombbal!"
+      "message": "Adj hozzá új elemeket a + gombbal"
    },
    "error_loading_data": {
       "message": "Hoppá, egy kis probléma adódott"
@@ -203,8 +203,14 @@
    "create_url_footnote": {
       "message": "Mappa létrehozásához hagyja üresen"
    },
-   "hi": {
-      "message": "Szia!"
+   "motivation_1": {
+      "message": "Szia, legyen szép napod!"
+   },
+   "motivation_2": {
+      "message": "Jó újra látni!"
+   },
+   "motivation_3": {
+      "message": "Csináljunk ma valami nagyszerűt!"
    },
    "welcome_title": {
       "message": "Gyors elérés"

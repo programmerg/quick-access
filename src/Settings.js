@@ -1,11 +1,11 @@
 export class Settings {
 
     constructor({
-        firstRun, defaultView, defaultPath_bookmarks, defaultPath_readingList, defaultPath_tabGroups, defaultPath_history, backgroundFile, 
+        firstRun, defaultView, defaultPath_bookmarks, defaultPath_readingList, defaultPath_tabGroups, defaultPath_history, backgroundFile, backgroundTime,
         backgroundColor, backgroundType, backgroundUrl, faviconType, faviconUrl, gridCols, tileAdd, tileEditAndDelete, tileReorder, theme
     }) {
         this.firstRun                   = Boolean(firstRun                  ?? true);
-        this.defaultView                = String(defaultView                ?? 'topSites');
+        this.defaultView                = String(defaultView                ?? '');
         this.defaultPath_bookmarks      = String(defaultPath_bookmarks      ?? '[]');
         this.defaultPath_readingList    = String(defaultPath_readingList    ?? '[]');
         this.defaultPath_tabGroups      = String(defaultPath_tabGroups      ?? '[]');
@@ -14,6 +14,7 @@ export class Settings {
         this.backgroundType             = String(backgroundType             ?? 'url'); // none, file
         this.backgroundUrl              = String(backgroundUrl              ?? 'https://picsum.photos/1920/1080');
         this.backgroundFile             = String(backgroundFile             ?? '');
+        this.backgroundTime             = Number(backgroundTime             ?? '');
         this.faviconType                = String(faviconType                ?? 'none'); // url
         this.faviconUrl                 = String(faviconUrl                 ?? 'https://www.google.com/s2/favicons?domain={domain}&sz=64');
         this.gridCols                   = Number(gridCols                   ?? 5);
@@ -64,6 +65,7 @@ export class Settings {
                 'defaultPath_tabGroups',
                 'defaultPath_history',
                 'backgroundFile',
+                'backgroundTime',
             ])
         };
 

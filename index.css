@@ -72,6 +72,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     user-select: none;
+    transition: background-image 1s;
 }
 
 kbd {
@@ -114,8 +115,8 @@ kbd {
     min-height: 100vh;
     display: flex;
     flex-flow: column;
-    justify-content: flex-start;
-    gap: 10vh;
+    justify-content: start;
+    gap: 5vh;
 }
 
 .container {
@@ -123,6 +124,7 @@ kbd {
     min-width: 300px;
     margin: 0 auto;
     padding: 20px;
+    overflow: hidden;
 }
 
 /* 
@@ -167,8 +169,21 @@ kbd {
     overflow: hidden;
 }
 
-.breadcrumb-item:hover {
+.breadcrumb-item:not(.motivation):hover {
     background: var(--color-ui-hover);
+}
+
+.motivation {
+    animation: moving 0.4s ease;
+}
+
+@keyframes moving {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .breadcrumb-separator {
@@ -318,6 +333,11 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     }
 }
 
+.content {
+    flex-grow: 1;
+    position: relative;
+} 
+
 .content .container {
     padding-top: 0;
 }
@@ -327,8 +347,13 @@ input[type="search"]:focus::-webkit-search-cancel-button {
  */
 
 .message {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    transform: translate(0, calc(-50% - 50px));
     text-align: center;
-    padding: 60px 20px;
     color: var(--color-ui-text);
     opacity: 0.7;
 }
@@ -347,8 +372,13 @@ input[type="search"]:focus::-webkit-search-cancel-button {
  */
 
 .loading {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    transform: translate(0, calc(-50% - 50px));
     text-align: center;
-    padding: 60px 20px;
     color: rgb(255, 255, 255, 0.8);
     font-size: 18px;
 }
@@ -376,6 +406,11 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(1, 1fr);
+    animation: moving 0.3s ease;
+}
+
+.grid.hidden {
+    animation: none;
 }
 
 .grid.cols-2 {
@@ -623,6 +658,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
     .grid {
         gap: 5px;
+        animation: none;
     }
 
     .tile > a {

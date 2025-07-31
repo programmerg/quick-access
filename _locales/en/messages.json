@@ -171,10 +171,10 @@
       "message": "Are you sure you want to delete\n$1?"
    },
    "empty_state": {
-      "message": "No content to display"
+      "message": "This folder is empty yet"
    },
    "empty_state_details": {
-      "message": "Add new items with the + button!"
+      "message": "Add new items with the + button"
    },
    "error_loading_data": {
       "message": "Oops! Something went wrong!"
@@ -203,8 +203,14 @@
    "create_url_footnote": {
       "message": "Leave blank to create a folder"
    },
-   "hi": {
-      "message": "Hi!"
+   "motivation_1": {
+      "message": "Hi, have a nice day!"
+   },
+   "motivation_2": {
+      "message": "Good to see you again!"
+   },
+   "motivation_3": {
+      "message": "Let's do something great!"
    },
    "welcome_title": {
       "message": "Quick Access"

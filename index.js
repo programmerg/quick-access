@@ -25,6 +25,11 @@ export class UI {
             ...this.settings,
             ...await Settings.all(),
         });
+        
+        if ((new Date()).getTime() > this.settings.backgroundTime + (1 * 60 * 60 * 1000)) { // +1 hour
+            this.requestNewBackgroundFromUrl();
+        }
+        
         this.switchView(this.settings.defaultView);
         
         this.registerColorThemeEventListeners();
@@ -142,7 +147,7 @@ export class UI {
 
     // MARK: View
     switchView(view) {
-        if (!['topSites', 'history', 'bookmarks', 'readingList', 'tabGroups'].includes(view)) return;
+        if (!['', 'topSites', 'history', 'bookmarks', 'readingList', 'tabGroups'].includes(view)) return;
 
         if (this.currentView != view) {
             this.currentView = view;
@@ -182,18 +187,23 @@ export class UI {
         breadcrumb.innerHTML = '';
 
         const homeItem = document.createElement('span');
-        homeItem.className = 'breadcrumb-item';
-        switch (this.currentView) {
-            case 'topSites':    homeItem.textContent = chrome.i18n.getMessage('top_sites'); break;
-            case 'history':     homeItem.textContent = chrome.i18n.getMessage('history'); break;
-            case 'bookmarks':   homeItem.textContent = chrome.i18n.getMessage('bookmarks'); break;
-            case 'readingList': homeItem.textContent = chrome.i18n.getMessage('reading_list'); break;
-            case 'tabGroups':   homeItem.textContent = chrome.i18n.getMessage('tab_groups'); break;
+        if (this.currentView === '') {
+            homeItem.className = 'breadcrumb-item motivation';
+            homeItem.textContent = chrome.i18n.getMessage('motivation_' + (Math.floor(Math.random() * 3) + 1));
+        } else {
+            homeItem.className = 'breadcrumb-item';
+            switch (this.currentView) {
+                case 'topSites':    homeItem.textContent = chrome.i18n.getMessage('top_sites'); break;
+                case 'history':     homeItem.textContent = chrome.i18n.getMessage('history'); break;
+                case 'bookmarks':   homeItem.textContent = chrome.i18n.getMessage('bookmarks'); break;
+                case 'readingList': homeItem.textContent = chrome.i18n.getMessage('reading_list'); break;
+                case 'tabGroups':   homeItem.textContent = chrome.i18n.getMessage('tab_groups'); break;
+            }
+            homeItem.setAttribute('data-path', '');
+            homeItem.addEventListener('click', (e) => {
+                this.navigateToPath([]);
+            });
         }
-        homeItem.setAttribute('data-path', '');
-        homeItem.addEventListener('click', (e) => {
-            this.navigateToPath([]);
-        });
         breadcrumb.appendChild(homeItem);
 
         for (let i = 0; i < this.currentPath.length; i++) {
@@ -227,7 +237,7 @@ export class UI {
         Array.from(document.querySelectorAll('[data-view]')).forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const view = btn.getAttribute('data-view');
-                this.switchView(view);
+                this.switchView(btn.classList.contains('active') ? '' : view);
             });
         });
     }
@@ -236,27 +246,23 @@ export class UI {
     async loadContent() {
         const loading = document.getElementById('loading');
         const message = document.getElementById('message');
-        const content = document.getElementById('content');
+        const grid = document.getElementById('grid');
         
-        if (!['topSites', 'history', 'bookmarks', 'readingList', 'tabGroups'].includes(this.currentView)) {
-            content.innerHTML = '';
-            return;
-        }
-
         let parentId = '';
         if (this.currentPath.length > 0) {
             parentId = this.currentPath[this.currentPath.length - 1].id;
         }
 
-        content.dataset.parentId = parentId;
+        grid.dataset.parentId = parentId;
 
         let items = [];
         try {
+            grid.classList.toggle('hidden', true);
             loading.classList.toggle('hidden', false);
 
-            if (!(await Permission.hasAccessTo([this.currentView]))) {
-                throw new Error('Missing permission');
-            }
+            // if (!(await Permission.hasAccessTo([this.currentView]))) {
+            //     throw new Error('Missing permission');
+            // }
 
             switch (this.currentView) {
                 case 'topSites':
@@ -279,8 +285,10 @@ export class UI {
             
             if (this.settings.tileAdd) {
                 const addBtn = this.createAddTile(parentId);
-                if (addBtn) content.appendChild(addBtn);
+                if (addBtn) grid.appendChild(addBtn);
             }
+            
+            document.getElementById('searchInput').style.pointerEvents = items.length < 1 ? 'none' : '';
 
         } catch (error) {
             console.error(error);
@@ -290,9 +298,8 @@ export class UI {
                 <h3>${chrome.i18n.getMessage('error_loading_data')}</h3>
                 <p>${chrome.i18n.getMessage('error_loading_data_details')}</p>`;
 
-            //content.classList.toggle('hidden', true);
-
         } finally {
+            grid.classList.toggle('hidden', false);
             loading.classList.toggle('hidden', true);
         }
     }
@@ -300,31 +307,33 @@ export class UI {
     // MARK: Tiles
     renderTiles(items) {
         const message = document.getElementById('message');
-        const content = document.getElementById('content');
-        content.innerHTML = '';
+        const grid = document.getElementById('grid');
+        grid.innerHTML = '';
         
         if (items.length > 0) {
             message.classList.toggle('hidden', true);
 
             items.forEach(item => {
                 const tile = this.createTile(item);
-                content.appendChild(tile);
+                grid.appendChild(tile);
             });
 
-            this.enableTileDragAndDrop(content, items);
+            this.enableTileDragAndDrop(grid, items);
 
         } else {
-            const isSearchActive = document.getElementById('searchInput').value.length > 0;
-            message.classList.toggle('hidden', false);
-            message.innerHTML = `
-                <h3>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found' : 'empty_state')}</h3>
-                <p>${chrome.i18n.getMessage('empty_state_details')}</p>`;
+            if (this.currentView !== '') {
+                const isSearchActive = document.getElementById('searchInput').value.length > 0;
+                message.classList.toggle('hidden', false);
+                message.innerHTML = `
+                    <h3>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found' : 'empty_state')}</h3>
+                    <p>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found_details' : 'empty_state_details')}</p>`;
+            }
         }
-
+        
         this.lastItems = items;
     }
         
-    enableTileDragAndDrop(content, items) {
+    enableTileDragAndDrop(grid, items) {
         const tileClassNames = '.tile.item, .tile.folder';
         const isDragEnabled = this.settings.tileReorder && (this.currentView === 'bookmarks' || this.currentView === 'tabGroups');
         
@@ -333,11 +342,11 @@ export class UI {
         let originalNextSibling = null;
         let originalParent = null;
 
-        Array.from(content.querySelectorAll(tileClassNames)).forEach((tile) => {
+        Array.from(grid.querySelectorAll(tileClassNames)).forEach((tile) => {
             tile.setAttribute('draggable', 'true');
             
             tile.addEventListener('dragstart', (e) => {
-                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                const currentTiles = Array.from(grid.querySelectorAll(tileClassNames));
                 sourceIdx = currentTiles.indexOf(tile);
                 sourceElement = tile;
                 originalNextSibling = tile.nextSibling;
@@ -389,14 +398,14 @@ export class UI {
                     sourceElement.style.opacity = 0;
                 }
                 const insertAfter = x > rect.width / 2;
-                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                const currentTiles = Array.from(grid.querySelectorAll(tileClassNames));
                 const targetIdx = currentTiles.indexOf(tile) + (insertAfter ? 1 : 0);
                 const lastDropIdx = currentTiles.indexOf(sourceElement);
                 if (lastDropIdx !== targetIdx) {
                     if (insertAfter) {
-                        content.insertBefore(sourceElement, tile.nextSibling);
+                        grid.insertBefore(sourceElement, tile.nextSibling);
                     } else {
-                        content.insertBefore(sourceElement, tile);
+                        grid.insertBefore(sourceElement, tile);
                     }
                 }
             });
@@ -404,16 +413,16 @@ export class UI {
             tile.addEventListener('drop', (e) => {
                 e.preventDefault();
                 if (sourceElement === null || !isDragEnabled) return;
-                const currentTiles = Array.from(content.querySelectorAll(tileClassNames));
+                const currentTiles = Array.from(grid.querySelectorAll(tileClassNames));
                 const targetIdx = currentTiles.indexOf(sourceElement);
                 if (sourceIdx !== targetIdx) {
                     if (tile.classList.contains('folder')) {
                         const itemId = sourceElement.dataset.id;
                         const groupId = e.currentTarget.dataset.id;
                         items[sourceIdx].move()
-                        content.dispatchEvent(new Event('move', { groupId, itemId }));
+                        grid.dispatchEvent(new Event('move', { groupId, itemId }));
                     } else {
-                        content.dispatchEvent(new Event('reorder', { sourceIdx, targetIdx }));
+                        grid.dispatchEvent(new Event('reorder', { sourceIdx, targetIdx }));
                     }
                 }
             });
@@ -445,22 +454,22 @@ export class UI {
             return;
         }
 
-        const content = document.getElementById('content');
-        const oldTile = content.querySelector(`.tile[data-id="${id}"]`);
+        const grid = document.getElementById('grid');
+        const oldTile = grid.querySelector(`.tile[data-id="${id}"]`);
         const newTile = item ? this.createTile(item) : null;
 
-        const isContentOfCurrentFolder = content.dataset.parentId === item?.parentId;
+        const isContentOfCurrentFolder = grid.dataset.parentId === item?.parentId;
         if (isContentOfCurrentFolder) {
             switch (eventType) {
                 case 'created':
-                    content.appendChild(newTile);
+                    grid.appendChild(newTile);
                     break;
     
                 case 'updated':
                     if (oldTile) { // updated inplace
                         oldTile.innerHTML = newTile.innerHTML;
                     } else { // probably moved here from another folder, so we need to create the tile here
-                        content.appendChild(newTile);
+                        grid.appendChild(newTile);
                     }
                     break;
     
@@ -525,9 +534,9 @@ export class UI {
 
     // MARK: Keyboard navigation
     registerKeyboardNavigationEventListeners() {
-        const content = document.getElementById('content');
-        content.addEventListener('keydown', (e) => {
-            const tiles = Array.from(content.getElementsByClassName('tile'));
+        const grid = document.getElementById('grid');
+        grid.addEventListener('keydown', (e) => {
+            const tiles = Array.from(grid.getElementsByClassName('tile'));
             const index = tiles.indexOf(document.activeElement);
             if (index === -1) return;
 
@@ -703,7 +712,7 @@ export class UI {
                 title = chrome.i18n.getMessage('new_tab');
                 break;
         }
-        if ((item instanceof Bookmark && parentId === '') || (item instanceof Page && parentId === '') || item instanceof History || item instanceof TopSite) return;
+        if (item === undefined || (item instanceof Bookmark && parentId === '') || (item instanceof Page && parentId === '') || item instanceof History || item instanceof TopSite) return;
         
         const tile = this.createBaseTile({ title: title });
         tile.classList.add('add');
@@ -882,9 +891,31 @@ export class UI {
         });
         await Settings.save(newSettings);
         this.applySettings(newSettings);
+
         this.loadContent(); // force change favicons, and tile buttons
+        this.requestNewBackgroundFromUrl();
         
         modal.close();
+    }
+
+    requestNewBackgroundFromUrl() {
+        if (this.settings.backgroundType !== 'url') return;
+
+        fetch(this.settings.backgroundUrl)
+            .then(res => res.blob())
+            .then(blob => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const backgroundTime = (new Date()).getTime();
+                    const backgroundFile = reader.result;
+                    this.settings.backgroundTime = backgroundTime;
+                    this.settings.backgroundFile = backgroundFile;
+                    Settings.save({ backgroundFile, backgroundTime });
+                    const custom_theme = document.getElementById('custom_theme');
+                    custom_theme.innerHTML += `body {\n  background-image: url('${this.settings.backgroundFile}');\n}`;
+                };
+                reader.readAsDataURL(blob);
+            });
     }
     
     applySettings(settings) {
@@ -908,7 +939,7 @@ export class UI {
         switch (this.settings.backgroundType) {
             case 'url':
                 if (this.settings.backgroundUrl) {
-                    styles.push(`background-image: url('${this.settings.backgroundUrl}');`);
+                    styles.push(`background-image: url('${this.settings.backgroundFile}');`);
                 }
                 break;
             case 'file':
@@ -925,8 +956,8 @@ export class UI {
         const custom_theme = document.getElementById('custom_theme');
         custom_theme.innerHTML = `body {\n  ${styles.join('\n  ')}\n}\n\n${this.settings.theme}`;
         
-        const content = document.getElementById('content');
-        content.className = `grid cols-${this.settings.gridCols}`;
+        const grid = document.getElementById('grid');
+        grid.className = `grid cols-${this.settings.gridCols}`;
     }
     
     registerModalEventListeners() {
