@@ -3,7 +3,7 @@ export class Page {
     constructor({ url, title, id, parentId, hasBeenRead, creationTime, lastUpdateTime, children }) {
         this.title = title;
         this.url = url;         // pkey
-        this.id = id;           // missing
+        this.id = id ?? url;    // missing
         this.index = null;      // missing
         this.parentId = parentId ? parentId : (hasBeenRead ? '1' : '0');
         this.createdAt = creationTime;
@@ -68,7 +68,10 @@ export class Page {
         }
     }
 
-    open(newTab = false) {
+    async open(newTab = false) {
+        if (this.parentId !== '1') {
+            await this.save({ parentId: '1' }); // mark as read
+        }
         window.open(this.url, newTab ? '_blank' : '_self');
     }
 }

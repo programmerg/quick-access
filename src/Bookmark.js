@@ -53,11 +53,18 @@ export class Bookmark {
         return await chrome.bookmarks.get(id.toString());
     }
 
-    async save({ title, url, parentId }) {
-        if (!this.id) {
+    async save({ title, url, parentId, index }) {
+        if (!this.id) { // create
             await chrome.bookmarks.create({ title, url, parentId });
-        } else {
-            await chrome.bookmarks.update(this.id, { title, url });
+
+        } else { // update
+            if (index || parentId) { // move or reorder
+                await chrome.bookmarks.move(this.id, { parentId: parentId ?? this.parentId, index });
+            }
+            
+            if (title || url) { // edit
+                await chrome.bookmarks.update(this.id, { title, url });
+            }
         }
     }
 

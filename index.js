@@ -227,6 +227,7 @@ export class UI {
         document.body.addEventListener('contextmenu', (e) => {
             e.preventDefault();
             e.stopPropagation();
+            if (!this.isSidePanel) this.openSettings();
             return false;
         });
         
@@ -415,16 +416,18 @@ export class UI {
                 if (sourceElement === null || !isDragEnabled) return;
                 const currentTiles = Array.from(grid.querySelectorAll(tileClassNames));
                 const targetIdx = currentTiles.indexOf(sourceElement);
-                if (sourceIdx !== targetIdx) {
-                    if (tile.classList.contains('folder')) {
-                        const itemId = sourceElement.dataset.id;
-                        const groupId = e.currentTarget.dataset.id;
-                        items[sourceIdx].move()
-                        grid.dispatchEvent(new Event('move', { groupId, itemId }));
-                    } else {
-                        grid.dispatchEvent(new Event('reorder', { sourceIdx, targetIdx }));
+                const item = items[sourceIdx];
+                const itemId = sourceElement.dataset.id;
+                const parentId = e.currentTarget.dataset.id;
+                if (tile.classList.contains('folder') && itemId !== parentId) {
+                    if (!(item instanceof Tab && item.url === '')) {
+                        item.save({ parentId: parentId }); // move
                     }
+                } else if (sourceIdx !== targetIdx) {
+                    item.save({ index: targetIdx }); // reorder
                 }
+                tile.classList.remove('dropping');
+                sourceElement.style.opacity = 1;
             });
         });
     }
@@ -436,7 +439,6 @@ export class UI {
     }
 
     handleTileEvent(view, id, eventType, item) {
-        console.log(view, id, eventType, item);
         if (this.currentView !== view) return;
 
         const isCurrentFolder = this.currentPath[this.currentPath.length - 1]?.id === id;
@@ -453,23 +455,32 @@ export class UI {
             }
             return;
         }
+        return this.loadContent();
 
         const grid = document.getElementById('grid');
         const oldTile = grid.querySelector(`.tile[data-id="${id}"]`);
         const newTile = item ? this.createTile(item) : null;
+        const render = (tile) => {
+            if (!item.index || item.index >= grid.children.length) {
+                grid.appendChild(tile);
+            } else {
+                grid.insertBefore(tile, grid.children[item.index]);
+            }
+        }
 
         const isContentOfCurrentFolder = grid.dataset.parentId === item?.parentId;
         if (isContentOfCurrentFolder) {
             switch (eventType) {
                 case 'created':
-                    grid.appendChild(newTile);
+                    render(newTile);
                     break;
     
                 case 'updated':
                     if (oldTile) { // updated inplace
                         oldTile.innerHTML = newTile.innerHTML;
+                        render(oldTile);
                     } else { // probably moved here from another folder, so we need to create the tile here
-                        grid.appendChild(newTile);
+                        render(newTile);
                     }
                     break;
     
@@ -486,8 +497,8 @@ export class UI {
         chrome.bookmarks?.onCreated?.addListener((id, bookmark) => this.handleTileEvent('bookmarks', null, 'created', new Bookmark(bookmark)));
         chrome.bookmarks?.onChanged?.addListener(async (id, changeInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
         chrome.bookmarks?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        chrome.bookmarks?.onChildrenReordered?.addListener(async (id, reorderInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
         chrome.bookmarks?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('bookmarks', id, 'removed', null));
-        // onChildrenReordered
 
         chrome.readingList?.onEntryAdded?.addListener((entry) => this.handleTileEvent('readingList', null, 'created', new Page(entry)));
         chrome.readingList?.onEntryUpdated?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'updated', new Page(entry)));
@@ -498,11 +509,16 @@ export class UI {
         chrome.tabGroups?.onMoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
         chrome.tabGroups?.onRemoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'removed', null));
 
+        chrome.tabs?.onAttached?.addListener(async (id, attachInfo) => this.handleTileEvent('tabGroups', null, 'created', (await Tab.get(id))[0]));
         chrome.tabs?.onCreated?.addListener((tab) => this.handleTileEvent('tabGroups', null, 'created', new Tab(tab)));
         chrome.tabs?.onUpdated?.addListener((id, changeInfo, tab) => this.handleTileEvent('tabGroups', id, 'updated', new Tab(tab)));
         chrome.tabs?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('tabGroups', id, 'updated', (await Tab.get(id))[0]));
         chrome.tabs?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
-        // onReplaced, onAttached, onDetached
+        chrome.tabs?.onDetached?.addListener((id, detachInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
+        chrome.tabs?.onReplaced?.addListener(async (addedTabId, removedTabId) => {
+            this.handleTileEvent('tabGroups', removedTabId, 'removed', null);
+            this.handleTileEvent('tabGroups', null, 'created', (await Tab.get(addedTabId))[0]);
+        });
 
         chrome.history?.onVisited?.addListener((history) => this.handleTileEvent('history', history.id, 'created', new History(history)));
         chrome.history?.onVisitRemoved?.addListener(({allHistory, urls}) => urls?.forEach(url => this.handleTileEvent('history', url, 'removed', null)));
@@ -729,7 +745,7 @@ export class UI {
 
     // MARK: Edit button
     createEditButton(item) {
-        if ((item instanceof Bookmark && item.parentId === '0') || (item instanceof Page && !item.url) || item instanceof History || item instanceof TopSite || item instanceof Tab) return;
+        if ((item instanceof Bookmark && item.parentId === '0') || item instanceof Page || item instanceof History || item instanceof TopSite) return;
 
         let title = '';
         switch (this.currentView) {
@@ -759,7 +775,7 @@ export class UI {
 
     // MARK: Delete button
     createDeleteButton(item) {
-        if ((item instanceof Bookmark && item.parentId === '0') || ((item instanceof Tab || item instanceof Page) && !item.url) || item instanceof TopSite) return;
+        if ((item instanceof Bookmark && item.parentId === '0') || (item instanceof Page && !item.url) || item instanceof TopSite) return;
 
         const deleteBtn = document.createElement('button');
         deleteBtn.title = chrome.i18n.getMessage('delete');
@@ -850,7 +866,7 @@ export class UI {
             const option = document.createElement('option');
             option.value = item.id;
             option.textContent = item.title;
-            option.selected = (defaultValue && defaultValue === item.id) ? true : undefined;
+            option.selected = (defaultValue && defaultValue == item.id) ? true : undefined;
             target.appendChild(option);
         }
     }
