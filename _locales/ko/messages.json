@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "빠른 액세스"
+   },
+   "app_description": {
+      "message": "즐겨찾기, 읽기 목록, 탭 그룹에 한 번의 클릭으로 접근할 수 있는 깔끔하고 직관적인 새 탭 페이지입니다."
+   },
+   "new_tab_page": {
+      "message": "새 탭"
+   },
+   "search_": {
+      "message": "검색..."
+   },
+   "general": {
+      "message": "일반"
+   },
+   "advanced": {
+      "message": "고급"
+   },
+   "top_sites": {
+      "message": "인기 사이트"
+   },
+   "history": {
+      "message": "기록"
+   },
+   "bookmarks": {
+      "message": "북마크"
+   },
+   "reading_list": {
+      "message": "읽기 목록"
+   },
+   "tab_groups": {
+      "message": "탭 그룹"
+   },
+   "settings": {
+      "message": "설정"
+   },
+   "root_folder": {
+      "message": "루트 폴더"
+   },
+   "new_folder": {
+      "message": "새 폴더"
+   },
+   "new_bookmark": {
+      "message": "새 북마크"
+   },
+   "new_tab": {
+      "message": "새 탭"
+   },
+   "new_tabGroup": {
+      "message": "새 탭 그룹"
+   },
+   "new_page": {
+      "message": "새 페이지"
+   },
+   "edit_folder": {
+      "message": "폴더 편집"
+   },
+   "edit_bookmark": {
+      "message": "북마크 편집"
+   },
+   "edit_tab": {
+      "message": "탭 편집"
+   },
+   "edit_tabGroup": {
+      "message": "탭 그룹 편집"
+   },
+   "edit_page": {
+      "message": "페이지 편집"
+   },
+   "add": {
+      "message": "추가"
+   },
+   "edit": {
+      "message": "편집"
+   },
+   "delete": {
+      "message": "삭제"
+   },
+   "cancel": {
+      "message": "취소"
+   },
+   "save": {
+      "message": "저장"
+   },
+   "close": {
+      "message": "닫기"
+   },
+   "title": {
+      "message": "제목"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL 주소"
+   },
+   "parent_path": {
+      "message": "폴더"
+   },
+   "grid_cols": {
+      "message": "열 수"
+   },
+   "background_color": {
+      "message": "테마 색상"
+   },
+   "background_type": {
+      "message": "배경 이미지"
+   },
+   "background_file": {
+      "message": "로컬 파일"
+   },
+   "background_url": {
+      "message": "맞춤 배경 서비스"
+   },
+   "background_none": {
+      "message": "없음"
+   },
+   "favicon_type": {
+      "message": "아이콘"
+   },
+   "favicon_url": {
+      "message": "맞춤 아이콘 서비스"
+   },
+   "favicon_default": {
+      "message": "기본"
+   },
+   "select_file": {
+      "message": "파일 선택"
+   },
+   "tiles": {
+      "message": "타일"
+   },
+   "tile_enable_add": {
+      "message": "'새 항목 추가' 버튼 표시"
+   },
+   "tile_enable_edit_delete": {
+      "message": "편집 및 삭제 버튼 활성화"
+   },
+   "tile_enable_reorder": {
+      "message": "재정렬 허용"
+   },
+   "permissions": {
+      "message": "권한"
+   },
+   "enable_top_sites": {
+      "message": "인기 사이트 접근 허용"
+   },
+   "enable_history": {
+      "message": "기록 접근 허용"
+   },
+   "enable_bookmarks": {
+      "message": "북마크 접근 허용"
+   },
+   "enable_reading_list": {
+      "message": "읽기 목록 접근 허용"
+   },
+   "enable_tab_groups": {
+      "message": "탭 그룹 접근 허용"
+   },
+   "custom_theme": {
+      "message": "맞춤 테마"
+   },
+   "no_search_results_found": {
+      "message": "검색 결과가 없습니다"
+   },
+   "no_search_results_found_details": {
+      "message": "다른 키워드를 사용해 보세요"
+   },
+   "delete_item_confirm": {
+      "message": "정말 삭제하시겠습니까?\n$1"
+   },
+   "empty_state": {
+      "message": "이 폴더는 비어 있습니다"
+   },
+   "empty_state_details": {
+      "message": "+ 버튼으로 새 항목 추가"
+   },
+   "error_loading_data": {
+      "message": "문제가 발생했습니다"
+   },
+   "error_loading_data_details": {
+      "message": "데이터를 불러오지 못했습니다"
+   },
+   "pages_unread": {
+      "message": "읽지 않은 페이지"
+   },
+   "pages_read": {
+      "message": "읽은 페이지"
+   },
+   "ungrouped_tabs": {
+      "message": "그룹화되지 않은 탭"
+   },
+   "open_side_panel": {
+      "message": "사이드 패널 열기/닫기"
+   },
+   "expert": {
+      "message": "전문가"
+   },
+   "custom_theme_placeholder": {
+      "message": "CSS 스타일을 사용하여 인터페이스를 사용자 지정할 수 있습니다. 예:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\n자세한 내용: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "폴더를 만들려면 비워 두세요"
+   },
+   "motivation_1": {
+      "message": "안녕하세요, 좋은 하루 되세요!"
+   },
+   "motivation_2": {
+      "message": "다시 만나서 반가워요!"
+   },
+   "motivation_3": {
+      "message": "오늘 멋진 일을 해봅시다!"
+   },
+   "welcome_title": {
+      "message": "빠른 액세스"
+   },
+   "welcome_message": {
+      "message": "새로운 시작 페이지에 오신 것을 환영합니다! 인기 페이지뿐만 아니라 북마크, 읽기 목록, 탭 그룹에도 한 번의 클릭으로 접근할 수 있습니다. 멋진 배경을 설정하거나 <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd>, <kbd>→</kbd> 키로 탐색할 수 있습니다. 확장 프로그램 아이콘을 도구 모음에 고정하면 언제든지 사이드 패널로 열 수 있습니다."
+   },
+   "welcome_permissions1": {
+      "message": "먼저 여기에 표시할 항목을 선택하세요:"
+   },
+   "welcome_permissions2": {
+      "message": "이 설정은 언제든지 변경할 수 있습니다."
+   },
+   "welcome_footnote": {
+      "message": "설정은 자동으로 Chrome 계정에 동기화되어 모든 기기에서 동일한 환경을 즐길 수 있습니다."
+   }
+}

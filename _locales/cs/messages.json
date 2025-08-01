@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Rychlý přístup"
+   },
+   "app_description": {
+      "message": "Čistá, intuitivní stránka nové karty, kde můžete přistupovat ke svým oblíbeným položkám, seznamu četby a skupinám karet jediným kliknutím."
+   },
+   "new_tab_page": {
+      "message": "Nová karta"
+   },
+   "search_": {
+      "message": "Hledat..."
+   },
+   "general": {
+      "message": "Obecné"
+   },
+   "advanced": {
+      "message": "Pokročilé"
+   },
+   "top_sites": {
+      "message": "Nejnavštěvovanější stránky"
+   },
+   "history": {
+      "message": "Historie"
+   },
+   "bookmarks": {
+      "message": "Záložky"
+   },
+   "reading_list": {
+      "message": "Seznam četby"
+   },
+   "tab_groups": {
+      "message": "Skupiny karet"
+   },
+   "settings": {
+      "message": "Nastavení"
+   },
+   "root_folder": {
+      "message": "Kořenová složka"
+   },
+   "new_folder": {
+      "message": "Přidat složku"
+   },
+   "new_bookmark": {
+      "message": "Přidat záložku"
+   },
+   "new_tab": {
+      "message": "Přidat kartu"
+   },
+   "new_tabGroup": {
+      "message": "Přidat skupinu karet"
+   },
+   "new_page": {
+      "message": "Přidat stránku"
+   },
+   "edit_folder": {
+      "message": "Upravit složku"
+   },
+   "edit_bookmark": {
+      "message": "Upravit záložku"
+   },
+   "edit_tab": {
+      "message": "Upravit kartu"
+   },
+   "edit_tabGroup": {
+      "message": "Upravit skupinu karet"
+   },
+   "edit_page": {
+      "message": "Upravit stránku"
+   },
+   "add": {
+      "message": "Přidat"
+   },
+   "edit": {
+      "message": "Upravit"
+   },
+   "delete": {
+      "message": "Smazat"
+   },
+   "cancel": {
+      "message": "Zrušit"
+   },
+   "save": {
+      "message": "Uložit"
+   },
+   "close": {
+      "message": "Zavřít"
+   },
+   "title": {
+      "message": "Název"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresa"
+   },
+   "parent_path": {
+      "message": "Složka"
+   },
+   "grid_cols": {
+      "message": "Sloupce"
+   },
+   "background_color": {
+      "message": "Barva motivu"
+   },
+   "background_type": {
+      "message": "Obrázek pozadí"
+   },
+   "background_file": {
+      "message": "Místní soubor"
+   },
+   "background_url": {
+      "message": "Vlastní služba tapety"
+   },
+   "background_none": {
+      "message": "Žádné"
+   },
+   "favicon_type": {
+      "message": "Ikony"
+   },
+   "favicon_url": {
+      "message": "Vlastní služba ikon"
+   },
+   "favicon_default": {
+      "message": "Výchozí"
+   },
+   "select_file": {
+      "message": "Vybrat soubor"
+   },
+   "tiles": {
+      "message": "Dlaždice" 
+   },
+   "tile_enable_add": {
+      "message": "Zobrazit tlačítko 'Přidat novou položku'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Povolit tlačítka upravit a smazat" 
+   },
+   "tile_enable_reorder": {
+      "message": "Povolit přeuspořádání" 
+   },
+   "permissions": {
+      "message": "Oprávnění"
+   },
+   "enable_top_sites": {
+      "message": "Přístup k nejnavštěvovanějším stránkám"
+   },
+   "enable_history": {
+      "message": "Přístup k historii"
+   },
+   "enable_bookmarks": {
+      "message": "Přístup k záložkám"
+   },
+   "enable_reading_list": {
+      "message": "Přístup k seznamu četby"
+   },
+   "enable_tab_groups": {
+      "message": "Přístup ke skupinám karet"
+   },
+   "custom_theme": {
+      "message": "Vlastní vzhled"
+   },
+   "no_search_results_found": {
+      "message": "Nenalezeny žádné výsledky vyhledávání"
+   },
+   "no_search_results_found_details": {
+      "message": "Zkuste použít jiná klíčová slova"
+   },
+   "delete_item_confirm": {
+      "message": "Opravdu chcete smazat\n$1?"
+   },
+   "empty_state": {
+      "message": "Tato složka je zatím prázdná"
+   },
+   "empty_state_details": {
+      "message": "Přidejte nové položky pomocí tlačítka +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Něco se pokazilo!"
+   },
+   "error_loading_data_details": {
+      "message": "Nepodařilo se načíst data."
+   },
+   "pages_unread": {
+      "message": "Nepřečtené stránky"
+   },
+   "pages_read": {
+      "message": "Přečtené stránky"
+   },
+   "ungrouped_tabs": {
+      "message": "Neseskupené karty"
+   },
+   "open_side_panel": {
+      "message": "Klikněte pro otevření / zavření bočního panelu"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Použijte zde CSS styly pro přizpůsobení rozhraní, např.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nVíce informací: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Ponechte prázdné pro vytvoření složky"
+   },
+   "motivation_1": {
+      "message": "Ahoj, přeji krásný den!"
+   },
+   "motivation_2": {
+      "message": "Dobře tě zase vidět!"
+   },
+   "motivation_3": {
+      "message": "Pojďme dnes udělat něco skvělého!"
+   },
+   "welcome_title": {
+      "message": "Rychlý přístup"
+   },
+   "welcome_message": {
+      "message": "Vítejte na vaší nové domovské stránce! Kromě často navštěvovaných stránek nyní můžete přistupovat ke svým záložkám, seznamu četby a skupinám karet jediným kliknutím. Nastavte si cool pozadí nebo odložte myš a použijte klávesy <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> a <kbd>→</kbd> pro navigaci. Připněte ikonu rozšíření na panel nástrojů a můžete ji kdykoli vyvolat jako boční panel."
+   },
+   "welcome_permissions1": {
+      "message": "Pro začátek vyberte, co byste zde chtěli vidět:"
+   },
+   "welcome_permissions2": {
+      "message": "Můžete to kdykoli změnit v nastavení."
+   },
+   "welcome_footnote": {
+      "message": "Vaše nastavení se automaticky synchronizují s vaším účtem Chrome, takže si můžete užívat stejný skvělý zážitek na všech svých zařízeních."
+   }
+}

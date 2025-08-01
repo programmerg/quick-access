@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Hurtigtilgang"
+   },
+   "app_description": {
+      "message": "En ren og intuitiv ny fane-side der du kan få tilgang til favoritter, leseliste og fanegrupper med bare ett klikk."
+   },
+   "new_tab_page": {
+      "message": "Ny fane"
+   },
+   "search_": {
+      "message": "Søk..."
+   },
+   "general": {
+      "message": "Generelt"
+   },
+   "advanced": {
+      "message": "Avansert"
+   },
+   "top_sites": {
+      "message": "Mest besøkte"
+   },
+   "history": {
+      "message": "Historikk"
+   },
+   "bookmarks": {
+      "message": "Bokmerker"
+   },
+   "reading_list": {
+      "message": "Leseliste"
+   },
+   "tab_groups": {
+      "message": "Fanegrupper"
+   },
+   "settings": {
+      "message": "Innstillinger"
+   },
+   "root_folder": {
+      "message": "Rotmappe"
+   },
+   "new_folder": {
+      "message": "Ny mappe"
+   },
+   "new_bookmark": {
+      "message": "Nytt bokmerke"
+   },
+   "new_tab": {
+      "message": "Ny fane"
+   },
+   "new_tabGroup": {
+      "message": "Ny fanegruppe"
+   },
+   "new_page": {
+      "message": "Ny side"
+   },
+   "edit_folder": {
+      "message": "Rediger mappe"
+   },
+   "edit_bookmark": {
+      "message": "Rediger bokmerke"
+   },
+   "edit_tab": {
+      "message": "Rediger fane"
+   },
+   "edit_tabGroup": {
+      "message": "Rediger fanegruppe"
+   },
+   "edit_page": {
+      "message": "Rediger side"
+   },
+   "add": {
+      "message": "Legg til"
+   },
+   "edit": {
+      "message": "Rediger"
+   },
+   "delete": {
+      "message": "Slett"
+   },
+   "cancel": {
+      "message": "Avbryt"
+   },
+   "save": {
+      "message": "Lagre"
+   },
+   "close": {
+      "message": "Lukk"
+   },
+   "title": {
+      "message": "Tittel"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-adresse"
+   },
+   "parent_path": {
+      "message": "Mappe"
+   },
+   "grid_cols": {
+      "message": "Antall kolonner"
+   },
+   "background_color": {
+      "message": "Temafarge"
+   },
+   "background_type": {
+      "message": "Bakgrunnsbilde"
+   },
+   "background_file": {
+      "message": "Lokal fil"
+   },
+   "background_url": {
+      "message": "Egendefinert bakgrunnstjeneste"
+   },
+   "background_none": {
+      "message": "Ingen"
+   },
+   "favicon_type": {
+      "message": "Ikoner"
+   },
+   "favicon_url": {
+      "message": "Egendefinert ikontjeneste"
+   },
+   "favicon_default": {
+      "message": "Standard"
+   },
+   "select_file": {
+      "message": "Velg fil"
+   },
+   "tiles": {
+      "message": "Fliser"
+   },
+   "tile_enable_add": {
+      "message": "Vis «Legg til ny»-knapp"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Tillat redigerings- og sletteknapper"
+   },
+   "tile_enable_reorder": {
+      "message": "Tillat omorganisering"
+   },
+   "permissions": {
+      "message": "Tillatelser"
+   },
+   "enable_top_sites": {
+      "message": "Tillat tilgang til mest besøkte"
+   },
+   "enable_history": {
+      "message": "Tillat tilgang til historikk"
+   },
+   "enable_bookmarks": {
+      "message": "Tillat tilgang til bokmerker"
+   },
+   "enable_reading_list": {
+      "message": "Tillat tilgang til leseliste"
+   },
+   "enable_tab_groups": {
+      "message": "Tillat tilgang til fanegrupper"
+   },
+   "custom_theme": {
+      "message": "Egendefinert utseende"
+   },
+   "no_search_results_found": {
+      "message": "Ingen søkeresultater"
+   },
+   "no_search_results_found_details": {
+      "message": "Prøv med andre søkeord"
+   },
+   "delete_item_confirm": {
+      "message": "Er du sikker på at du vil slette:\n$1?"
+   },
+   "empty_state": {
+      "message": "Denne mappen er tom"
+   },
+   "empty_state_details": {
+      "message": "Legg til nye elementer med +-knappen"
+   },
+   "error_loading_data": {
+      "message": "Oops! Noe gikk galt"
+   },
+   "error_loading_data_details": {
+      "message": "Kunne ikke laste inn data"
+   },
+   "pages_unread": {
+      "message": "Uleste sider"
+   },
+   "pages_read": {
+      "message": "Leste sider"
+   },
+   "ungrouped_tabs": {
+      "message": "Ugrupperte faner"
+   },
+   "open_side_panel": {
+      "message": "Åpne/lukk sidepanel"
+   },
+   "expert": {
+      "message": "Ekspert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Bruk CSS-stiler for å tilpasse grensesnittet, f.eks.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nMer info: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "La stå tomt for å opprette en mappe"
+   },
+   "motivation_1": {
+      "message": "Hei, ha en fin dag!"
+   },
+   "motivation_2": {
+      "message": "Hyggelig å se deg igjen!"
+   },
+   "motivation_3": {
+      "message": "La oss gjøre noe bra i dag!"
+   },
+   "welcome_title": {
+      "message": "Hurtigtilgang"
+   },
+   "welcome_message": {
+      "message": "Velkommen til din nye startside! I tillegg til mest besøkte sider kan du nå få tilgang til bokmerkene, leselisten og fanegruppene dine med ett enkelt klikk. Sett et stilig bakgrunnsbilde, eller dropp musen og bruk <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> og <kbd>→</kbd> for å navigere. Fest utvidelsesikonet til verktøylinjen, så kan du åpne det som et sidepanel når som helst."
+   },
+   "welcome_permissions1": {
+      "message": "Velg hva du vil se her for å komme i gang:"
+   },
+   "welcome_permissions2": {
+      "message": "Du kan endre dette når som helst i innstillingene."
+   },
+   "welcome_footnote": {
+      "message": "Innstillingene dine synkroniseres automatisk til Chrome-kontoen din, slik at du får samme gode opplevelse på alle enhetene dine."
+   }
+}

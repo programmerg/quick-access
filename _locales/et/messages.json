@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Kiire juurdepääs"
+   },
+   "app_description": {
+      "message": "Puhas, intuitiivne uue kaardi leht, kus saate ühe klõpsuga pääseda ligi oma lemmikutele, lugemisloendile ja kaartide gruppidele."
+   },
+   "new_tab_page": {
+      "message": "Uus kaart"
+   },
+   "search_": {
+      "message": "Otsi..."
+   },
+   "general": {
+      "message": "Üldine"
+   },
+   "advanced": {
+      "message": "Täpsemalt"
+   },
+   "top_sites": {
+      "message": "Populaarseimad leheküljed"
+   },
+   "history": {
+      "message": "Ajalugu"
+   },
+   "bookmarks": {
+      "message": "Järjehoidjad"
+   },
+   "reading_list": {
+      "message": "Lugemisloend"
+   },
+   "tab_groups": {
+      "message": "Kaartide grupid"
+   },
+   "settings": {
+      "message": "Seaded"
+   },
+   "root_folder": {
+      "message": "Juurkaust"
+   },
+   "new_folder": {
+      "message": "Lisa kaust"
+   },
+   "new_bookmark": {
+      "message": "Lisa järjehoidja"
+   },
+   "new_tab": {
+      "message": "Lisa kaart"
+   },
+   "new_tabGroup": {
+      "message": "Lisa kaartide grupp"
+   },
+   "new_page": {
+      "message": "Lisa lehekülg"
+   },
+   "edit_folder": {
+      "message": "Redigeeri kausta"
+   },
+   "edit_bookmark": {
+      "message": "Redigeeri järjehoidjat"
+   },
+   "edit_tab": {
+      "message": "Redigeeri kaarti"
+   },
+   "edit_tabGroup": {
+      "message": "Redigeeri kaartide gruppi"
+   },
+   "edit_page": {
+      "message": "Redigeeri lehekülge"
+   },
+   "add": {
+      "message": "Lisa"
+   },
+   "edit": {
+      "message": "Redigeeri"
+   },
+   "delete": {
+      "message": "Kustuta"
+   },
+   "cancel": {
+      "message": "Tühista"
+   },
+   "save": {
+      "message": "Salvesta"
+   },
+   "close": {
+      "message": "Sulge"
+   },
+   "title": {
+      "message": "Pealkiri"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-aadress"
+   },
+   "parent_path": {
+      "message": "Kaust"
+   },
+   "grid_cols": {
+      "message": "Veerud"
+   },
+   "background_color": {
+      "message": "Teema värv"
+   },
+   "background_type": {
+      "message": "Taustapilt"
+   },
+   "background_file": {
+      "message": "Kohalik fail"
+   },
+   "background_url": {
+      "message": "Kohandatud taustapildi teenus"
+   },
+   "background_none": {
+      "message": "Puudub"
+   },
+   "favicon_type": {
+      "message": "Ikoonid"
+   },
+   "favicon_url": {
+      "message": "Kohandatud ikooni teenus"
+   },
+   "favicon_default": {
+      "message": "Vaikimisi"
+   },
+   "select_file": {
+      "message": "Vali fail"
+   },
+   "tiles": {
+      "message": "Plaadid" 
+   },
+   "tile_enable_add": {
+      "message": "Näita 'Lisa uus element' nuppu" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Luba redigeerimise ja kustutamise nupud" 
+   },
+   "tile_enable_reorder": {
+      "message": "Luba ümberpaigutamine" 
+   },
+   "permissions": {
+      "message": "Õigused"
+   },
+   "enable_top_sites": {
+      "message": "Juurdepääs populaarseimatele lehekülgedele"
+   },
+   "enable_history": {
+      "message": "Juurdepääs ajaloole"
+   },
+   "enable_bookmarks": {
+      "message": "Juurdepääs järjehoidjatele"
+   },
+   "enable_reading_list": {
+      "message": "Juurdepääs lugemisloendile"
+   },
+   "enable_tab_groups": {
+      "message": "Juurdepääs kaartide gruppidele"
+   },
+   "custom_theme": {
+      "message": "Kohandatud välimus"
+   },
+   "no_search_results_found": {
+      "message": "Otsingutulemusi ei leitud"
+   },
+   "no_search_results_found_details": {
+      "message": "Proovige kasutada teistsuguseid märksõnu"
+   },
+   "delete_item_confirm": {
+      "message": "Kas olete kindel, et soovite kustutada\n$1?"
+   },
+   "empty_state": {
+      "message": "See kaust on veel tühi"
+   },
+   "empty_state_details": {
+      "message": "Lisage uusi elemente + nupuga"
+   },
+   "error_loading_data": {
+      "message": "Ups! Midagi läks valesti!"
+   },
+   "error_loading_data_details": {
+      "message": "Andmete laadimine ebaõnnestus."
+   },
+   "pages_unread": {
+      "message": "Lugemata leheküljed"
+   },
+   "pages_read": {
+      "message": "Loetud leheküljed"
+   },
+   "ungrouped_tabs": {
+      "message": "Grupeerimata kaardid"
+   },
+   "open_side_panel": {
+      "message": "Klõpsake külgpaneeli avamiseks / sulgemiseks"
+   },
+   "expert": {
+      "message": "Ekspert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Kasutage siin CSS-stiile liidese kohandamiseks, nt:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nRohkem infot: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Jätke tühjaks kausta loomiseks"
+   },
+   "motivation_1": {
+      "message": "Tere, ilusat päeva!"
+   },
+   "motivation_2": {
+      "message": "Hea sind jälle näha!"
+   },
+   "motivation_3": {
+      "message": "Tehkem täna midagi suurepärast!"
+   },
+   "welcome_title": {
+      "message": "Kiire juurdepääs"
+   },
+   "welcome_message": {
+      "message": "Tere tulemast oma uuele avalehele! Lisaks sagedastele lehekülgedele saate nüüd ühe klõpsuga pääseda ligi oma järjehoidjatele, lugemisloendile ja kaartide gruppidele. Seadke lahe taust või jätke hiir kõrvale ja kasutage navigeerimiseks klahve <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> ja <kbd>→</kbd>. Kinnitage laienduse ikoon tööriistaribale ja saate selle külgpaneelina igal ajal avada."
+   },
+   "welcome_permissions1": {
+      "message": "Alustamiseks valige, mida sooviksite siin näha:"
+   },
+   "welcome_permissions2": {
+      "message": "Saate neid seadetes igal ajal muuta."
+   },
+   "welcome_footnote": {
+      "message": "Teie seaded sünkroonitakse automaatselt teie Chrome'i kontoga, nii et saate nautida sama suurepärast kogemust kõigis oma seadmetes."
+   }
+}

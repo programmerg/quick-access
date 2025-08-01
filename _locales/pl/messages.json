@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Szybki dostęp"
+   },
+   "app_description": {
+      "message": "Czysta i intuicyjna nowa karta, w której możesz uzyskać dostęp do ulubionych, listy czytelniczej i grup kart jednym kliknięciem."
+   },
+   "new_tab_page": {
+      "message": "Nowa karta"
+   },
+   "search_": {
+      "message": "Szukaj..."
+   },
+   "general": {
+      "message": "Ogólne"
+   },
+   "advanced": {
+      "message": "Zaawansowane"
+   },
+   "top_sites": {
+      "message": "Najczęściej odwiedzane"
+   },
+   "history": {
+      "message": "Historia"
+   },
+   "bookmarks": {
+      "message": "Zakładki"
+   },
+   "reading_list": {
+      "message": "Lista czytelnicza"
+   },
+   "tab_groups": {
+      "message": "Grupy kart"
+   },
+   "settings": {
+      "message": "Ustawienia"
+   },
+   "root_folder": {
+      "message": "Folder główny"
+   },
+   "new_folder": {
+      "message": "Nowy folder"
+   },
+   "new_bookmark": {
+      "message": "Nowa zakładka"
+   },
+   "new_tab": {
+      "message": "Nowa karta"
+   },
+   "new_tabGroup": {
+      "message": "Nowa grupa kart"
+   },
+   "new_page": {
+      "message": "Nowa strona"
+   },
+   "edit_folder": {
+      "message": "Edytuj folder"
+   },
+   "edit_bookmark": {
+      "message": "Edytuj zakładkę"
+   },
+   "edit_tab": {
+      "message": "Edytuj kartę"
+   },
+   "edit_tabGroup": {
+      "message": "Edytuj grupę kart"
+   },
+   "edit_page": {
+      "message": "Edytuj stronę"
+   },
+   "add": {
+      "message": "Dodaj"
+   },
+   "edit": {
+      "message": "Edytuj"
+   },
+   "delete": {
+      "message": "Usuń"
+   },
+   "cancel": {
+      "message": "Anuluj"
+   },
+   "save": {
+      "message": "Zapisz"
+   },
+   "close": {
+      "message": "Zamknij"
+   },
+   "title": {
+      "message": "Tytuł"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Adres URL"
+   },
+   "parent_path": {
+      "message": "Folder"
+   },
+   "grid_cols": {
+      "message": "Liczba kolumn"
+   },
+   "background_color": {
+      "message": "Kolor motywu"
+   },
+   "background_type": {
+      "message": "Obraz tła"
+   },
+   "background_file": {
+      "message": "Plik lokalny"
+   },
+   "background_url": {
+      "message": "Niestandardowa usługa tapet"
+   },
+   "background_none": {
+      "message": "Brak"
+   },
+   "favicon_type": {
+      "message": "Ikony"
+   },
+   "favicon_url": {
+      "message": "Niestandardowa usługa ikon"
+   },
+   "favicon_default": {
+      "message": "Domyślne"
+   },
+   "select_file": {
+      "message": "Wybierz plik"
+   },
+   "tiles": {
+      "message": "Kafelki"
+   },
+   "tile_enable_add": {
+      "message": "Pokaż przycisk 'Dodaj nowy element'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Włącz przyciski edycji i usuwania"
+   },
+   "tile_enable_reorder": {
+      "message": "Włącz zmianę kolejności"
+   },
+   "permissions": {
+      "message": "Uprawnienia"
+   },
+   "enable_top_sites": {
+      "message": "Zezwól na dostęp do najczęściej odwiedzanych"
+   },
+   "enable_history": {
+      "message": "Zezwól na dostęp do historii"
+   },
+   "enable_bookmarks": {
+      "message": "Zezwól na dostęp do zakładek"
+   },
+   "enable_reading_list": {
+      "message": "Zezwól na dostęp do listy czytelniczej"
+   },
+   "enable_tab_groups": {
+      "message": "Zezwól na dostęp do grup kart"
+   },
+   "custom_theme": {
+      "message": "Niestandardowy wygląd"
+   },
+   "no_search_results_found": {
+      "message": "Brak wyników wyszukiwania"
+   },
+   "no_search_results_found_details": {
+      "message": "Spróbuj użyć innych słów kluczowych"
+   },
+   "delete_item_confirm": {
+      "message": "Czy na pewno chcesz usunąć:\n$1?"
+   },
+   "empty_state": {
+      "message": "Ten folder jest pusty"
+   },
+   "empty_state_details": {
+      "message": "Dodaj nowe elementy przyciskiem +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Coś poszło nie tak"
+   },
+   "error_loading_data_details": {
+      "message": "Nie udało się załadować danych"
+   },
+   "pages_unread": {
+      "message": "Nieprzeczytane strony"
+   },
+   "pages_read": {
+      "message": "Przeczytane strony"
+   },
+   "ungrouped_tabs": {
+      "message": "Karty bez grupy"
+   },
+   "open_side_panel": {
+      "message": "Otwórz/zamknij panel boczny"
+   },
+   "expert": {
+      "message": "Ekspert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Użyj stylów CSS, aby dostosować interfejs, np.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nWięcej informacji: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Pozostaw puste, aby utworzyć folder"
+   },
+   "motivation_1": {
+      "message": "Cześć, miłego dnia!"
+   },
+   "motivation_2": {
+      "message": "Miło cię znowu widzieć!"
+   },
+   "motivation_3": {
+      "message": "Zróbmy dziś coś wspaniałego!"
+   },
+   "welcome_title": {
+      "message": "Szybki dostęp"
+   },
+   "welcome_message": {
+      "message": "Witamy na nowej stronie startowej! Oprócz najczęściej odwiedzanych stron możesz teraz uzyskać dostęp do zakładek, listy czytelniczej i grup kart jednym kliknięciem. Ustaw fajne tło lub używaj klawiszy <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> i <kbd>→</kbd>, aby nawigować. Przypnij ikonę rozszerzenia do paska narzędzi, aby móc w każdej chwili otworzyć je jako panel boczny."
+   },
+   "welcome_permissions1": {
+      "message": "Na początek wybierz, co chcesz tutaj zobaczyć:"
+   },
+   "welcome_permissions2": {
+      "message": "Możesz to zmienić w ustawieniach w dowolnym momencie."
+   },
+   "welcome_footnote": {
+      "message": "Twoje ustawienia zostaną automatycznie zsynchronizowane z kontem Chrome, abyś mógł cieszyć się taką samą wygodą na wszystkich urządzeniach."
+   }
+}

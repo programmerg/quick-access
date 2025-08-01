@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Ātrā piekļuve"
+   },
+   "app_description": {
+      "message": "Tīra, intuitīva jauna cilnes lapa, kurā varat piekļūt saviem grāmatzīmēm, lasīšanas sarakstam un cilņu grupām ar vienu klikšķi."
+   },
+   "new_tab_page": {
+      "message": "Jauna cilne"
+   },
+   "search_": {
+      "message": "Meklēt..."
+   },
+   "general": {
+      "message": "Vispārīgi"
+   },
+   "advanced": {
+      "message": "Papildu"
+   },
+   "top_sites": {
+      "message": "Populārākās vietnes"
+   },
+   "history": {
+      "message": "Vēsture"
+   },
+   "bookmarks": {
+      "message": "Grāmatzīmes"
+   },
+   "reading_list": {
+      "message": "Lasīšanas saraksts"
+   },
+   "tab_groups": {
+      "message": "Cilņu grupas"
+   },
+   "settings": {
+      "message": "Iestatījumi"
+   },
+   "root_folder": {
+      "message": "Saknes mape"
+   },
+   "new_folder": {
+      "message": "Pievienot mapi"
+   },
+   "new_bookmark": {
+      "message": "Pievienot grāmatzīmi"
+   },
+   "new_tab": {
+      "message": "Pievienot cilni"
+   },
+   "new_tabGroup": {
+      "message": "Pievienot cilņu grupu"
+   },
+   "new_page": {
+      "message": "Pievienot lapu"
+   },
+   "edit_folder": {
+      "message": "Rediģēt mapi"
+   },
+   "edit_bookmark": {
+      "message": "Rediģēt grāmatzīmi"
+   },
+   "edit_tab": {
+      "message": "Rediģēt cilni"
+   },
+   "edit_tabGroup": {
+      "message": "Rediģēt cilņu grupu"
+   },
+   "edit_page": {
+      "message": "Rediģēt lapu"
+   },
+   "add": {
+      "message": "Pievienot"
+   },
+   "edit": {
+      "message": "Rediģēt"
+   },
+   "delete": {
+      "message": "Dzēst"
+   },
+   "cancel": {
+      "message": "Atcelt"
+   },
+   "save": {
+      "message": "Saglabāt"
+   },
+   "close": {
+      "message": "Aizvērt"
+   },
+   "title": {
+      "message": "Nosaukums"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adrese"
+   },
+   "parent_path": {
+      "message": "Mape"
+   },
+   "grid_cols": {
+      "message": "Kolonnu skaits"
+   },
+   "background_color": {
+      "message": "Tēmas krāsa"
+   },
+   "background_type": {
+      "message": "Fona attēls"
+   },
+   "background_file": {
+      "message": "Lokāls fails"
+   },
+   "background_url": {
+      "message": "Pielāgots fona serviss"
+   },
+   "background_none": {
+      "message": "Nav"
+   },
+   "favicon_type": {
+      "message": "Ikonas"
+   },
+   "favicon_url": {
+      "message": "Pielāgots ikonu serviss"
+   },
+   "favicon_default": {
+      "message": "Noklusējuma"
+   },
+   "select_file": {
+      "message": "Izvēlēties failu"
+   },
+   "tiles": {
+      "message": "Flīzes" 
+   },
+   "tile_enable_add": {
+      "message": "Rādīt 'Pievienot jaunu elementu' pogu" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Iespējot rediģēšanas un dzēšanas pogas" 
+   },
+   "tile_enable_reorder": {
+      "message": "Iespējot pārkārtošanu" 
+   },
+   "permissions": {
+      "message": "Atļaujas"
+   },
+   "enable_top_sites": {
+      "message": "Piekļuve populārākajām vietnēm"
+   },
+   "enable_history": {
+      "message": "Piekļuve vēsturei"
+   },
+   "enable_bookmarks": {
+      "message": "Piekļuve grāmatzīmēm"
+   },
+   "enable_reading_list": {
+      "message": "Piekļuve lasīšanas sarakstam"
+   },
+   "enable_tab_groups": {
+      "message": "Piekļuve cilņu grupām"
+   },
+   "custom_theme": {
+      "message": "Pielāgots izskats"
+   },
+   "no_search_results_found": {
+      "message": "Meklēšanas rezultāti nav atrasti"
+   },
+   "no_search_results_found_details": {
+      "message": "Mēģiniet izmantot citus atslēgvārdus"
+   },
+   "delete_item_confirm": {
+      "message": "Vai tiešām vēlaties dzēst\n$1?"
+   },
+   "empty_state": {
+      "message": "Šī mape vēl ir tukša"
+   },
+   "empty_state_details": {
+      "message": "Pievienojiet jaunus elementus ar + pogu"
+   },
+   "error_loading_data": {
+      "message": "Ups! Kaut kas nogāja greizi!"
+   },
+   "error_loading_data_details": {
+      "message": "Neizdevās ielādēt datus"
+   },
+   "pages_unread": {
+      "message": "Nelasītās lapas"
+   },
+   "pages_read": {
+      "message": "Izlasītās lapas"
+   },
+   "ungrouped_tabs": {
+      "message": "Negrupētās cilnes"
+   },
+   "open_side_panel": {
+      "message": "Noklikšķiniet, lai atvērtu/aizvērtu sānu paneli"
+   },
+   "expert": {
+      "message": "Eksperts"
+   },
+   "custom_theme_placeholder": {
+      "message": "Izmantojiet CSS stilus šeit, lai pielāgotu saskarni, piemēram:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nVairāk informācijas: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Atstājiet tukšu, lai izveidotu mapi"
+   },
+   "motivation_1": {
+      "message": "Sveiki, lai jums jauka diena!"
+   },
+   "motivation_2": {
+      "message": "Prieks jūs atkal redzēt!"
+   },
+   "motivation_3": {
+      "message": "Darīsim šodien kaut ko lielisku!"
+   },
+   "welcome_title": {
+      "message": "Ātrā piekļuve"
+   },
+   "welcome_message": {
+      "message": "Laipni lūdzam jūsu jaunajā sākumlapā! Papildus biežāk apmeklētajām lapām, tagad varat piekļūt savām grāmatzīmēm, lasīšanas sarakstam un cilņu grupām ar vienu klikšķi. Iestatiet foršu fonu vai atmetiet peli un izmantojiet <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> un <kbd>→</kbd> taustiņus navigācijai. Piespraudiet paplašinājuma ikonu rīkjoslā, un jūs varēsiet to izsaukt kā sānu joslu jebkurā laikā."
+   },
+   "welcome_permissions1": {
+      "message": "Lai sāktu, izvēlieties, ko vēlētos šeit redzēt:"
+   },
+   "welcome_permissions2": {
+      "message": "Jūs varat to mainīt iestatījumos jebkurā laikā."
+   },
+   "welcome_footnote": {
+      "message": "Jūsu iestatījumi tiks automātiski sinhronizēti ar jūsu Chrome kontu, lai jūs varētu baudīt vienādu lielisku pieredzi visās savās ierīcēs."
+   }
+}

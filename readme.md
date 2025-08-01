@@ -15,7 +15,7 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 - Built-in favicon and custom favicon provider support
 - Customizable grid layout and color themes
 - Lightning fast navigation with <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> keys.
-- Fully localized interface (English, Hungarian, ...)
+- Fully localized interface (available in 36 languages)
 - Fine-tuneable permissions. Only request permissions for what you need.
 - It just works. All your settings are with you in your Chrome account.
 - Works in all browsers that support V3 manifest
@@ -30,11 +30,11 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 
 ## File Structure
 
-- `_locales/` – Translations (e.g., English, Hungarian)
+- `_locales/` – Translations
 - `images/` – Default icons, favicons
 - `src/` – Logic modules (Bookmark, History, Page, Permission, Settings, Tab, TopSite)
 - `index.html` – Main HTML page, includes UI and SVG icons
-- `index.js` – Complete UI logic: event handling, tiles, search, settings, etc.
+- `index.js` – UI logic: event handling, tiles, search, settings, etc.
 - `index.css` – Default styles
 - `manifest.json` – Chrome extension manifest
 - `service-worker.js` – Service worker, install logic

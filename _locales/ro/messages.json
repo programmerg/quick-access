@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Acces rapid"
+   },
+   "app_description": {
+      "message": "O pagină curată și intuitivă pentru file noi unde poți accesa favoritele, lista de lectură și grupurile de file cu un singur clic."
+   },
+   "new_tab_page": {
+      "message": "Filă nouă"
+   },
+   "search_": {
+      "message": "Căutare..."
+   },
+   "general": {
+      "message": "General"
+   },
+   "advanced": {
+      "message": "Avansat"
+   },
+   "top_sites": {
+      "message": "Site-uri frecvente"
+   },
+   "history": {
+      "message": "Istoric"
+   },
+   "bookmarks": {
+      "message": "Marcaje"
+   },
+   "reading_list": {
+      "message": "Lista de lectură"
+   },
+   "tab_groups": {
+      "message": "Grupuri de file"
+   },
+   "settings": {
+      "message": "Setări"
+   },
+   "root_folder": {
+      "message": "Dosarul rădăcină"
+   },
+   "new_folder": {
+      "message": "Adaugă dosar"
+   },
+   "new_bookmark": {
+      "message": "Adaugă marcaj"
+   },
+   "new_tab": {
+      "message": "Adaugă filă"
+   },
+   "new_tabGroup": {
+      "message": "Adaugă grup de file"
+   },
+   "new_page": {
+      "message": "Adaugă pagină"
+   },
+   "edit_folder": {
+      "message": "Editează dosarul"
+   },
+   "edit_bookmark": {
+      "message": "Editează marcajul"
+   },
+   "edit_tab": {
+      "message": "Editează fila"
+   },
+   "edit_tabGroup": {
+      "message": "Editează grupul de file"
+   },
+   "edit_page": {
+      "message": "Editează pagina"
+   },
+   "add": {
+      "message": "Adaugă"
+   },
+   "edit": {
+      "message": "Editează"
+   },
+   "delete": {
+      "message": "Șterge"
+   },
+   "cancel": {
+      "message": "Anulează"
+   },
+   "save": {
+      "message": "Salvează"
+   },
+   "close": {
+      "message": "Închide"
+   },
+   "title": {
+      "message": "Titlu"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Adresa URL"
+   },
+   "parent_path": {
+      "message": "Dosar"
+   },
+   "grid_cols": {
+      "message": "Coloane"
+   },
+   "background_color": {
+      "message": "Culoarea temei"
+   },
+   "background_type": {
+      "message": "Imagine de fundal"
+   },
+   "background_file": {
+      "message": "Fișier local"
+   },
+   "background_url": {
+      "message": "Serviciu personalizat de tapet"
+   },
+   "background_none": {
+      "message": "Niciunul"
+   },
+   "favicon_type": {
+      "message": "Icoane"
+   },
+   "favicon_url": {
+      "message": "Serviciu personalizat de favicon"
+   },
+   "favicon_default": {
+      "message": "Implicit"
+   },
+   "select_file": {
+      "message": "Alege fișierul"
+   },
+   "tiles": {
+      "message": "Plăcuțe" 
+   },
+   "tile_enable_add": {
+      "message": "Afișează butonul 'Adaugă element nou'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Activează butoanele de editare și ștergere" 
+   },
+   "tile_enable_reorder": {
+      "message": "Activează reordonarea" 
+   },
+   "permissions": {
+      "message": "Permisiuni"
+   },
+   "enable_top_sites": {
+      "message": "Acces la site-uri frecvente"
+   },
+   "enable_history": {
+      "message": "Acces la istoric"
+   },
+   "enable_bookmarks": {
+      "message": "Acces la marcaje"
+   },
+   "enable_reading_list": {
+      "message": "Acces la lista de lectură"
+   },
+   "enable_tab_groups": {
+      "message": "Acces la grupuri de file"
+   },
+   "custom_theme": {
+      "message": "Aspect personalizat"
+   },
+   "no_search_results_found": {
+      "message": "Nu s-au găsit rezultate"
+   },
+   "no_search_results_found_details": {
+      "message": "Încearcă să folosești alte cuvinte cheie"
+   },
+   "delete_item_confirm": {
+      "message": "Ești sigur că vrei să ștergi\n$1?"
+   },
+   "empty_state": {
+      "message": "Acest dosar este încă gol"
+   },
+   "empty_state_details": {
+      "message": "Adaugă elemente noi cu butonul +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Ceva nu a mers bine!"
+   },
+   "error_loading_data_details": {
+      "message": "Nu s-au putut încărca datele."
+   },
+   "pages_unread": {
+      "message": "Pagini necitite"
+   },
+   "pages_read": {
+      "message": "Pagini citite"
+   },
+   "ungrouped_tabs": {
+      "message": "File negrupate"
+   },
+   "open_side_panel": {
+      "message": "Clic pentru deschiderea / închiderea panoului lateral"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Folosește stiluri CSS aici pentru personalizarea interfeței, de ex.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nPentru mai multe: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Lasă gol pentru a crea un dosar"
+   },
+   "motivation_1": {
+      "message": "Salut, să ai o zi minunată!"
+   },
+   "motivation_2": {
+      "message": "Mă bucur să te văd din nou!"
+   },
+   "motivation_3": {
+      "message": "Să facem ceva grozav astăzi!"
+   },
+   "welcome_title": {
+      "message": "Acces rapid"
+   },
+   "welcome_message": {
+      "message": "Bun venit pe noua ta pagină de start! Pe lângă paginile frecvente, acum poți accesa marcajele, lista de lectură și grupurile de file cu un singur clic. Setează un fundal cool sau lasă mouse-ul și folosește tastele <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> și <kbd>→</kbd> pentru navigare. Fixează iconul extensiei în bara de instrumente și o poți invoca ca panou lateral oricând."
+   },
+   "welcome_permissions1": {
+      "message": "Pentru început, selectează ce ai vrea să vezi aici:"
+   },
+   "welcome_permissions2": {
+      "message": "Poți schimba acestea în setări oricând."
+   },
+   "welcome_footnote": {
+      "message": "Setările tale se vor sincroniza automat cu contul Chrome astfel încât să te poți bucura de aceeași experiență minunată pe toate dispozitivele."
+   }
+}

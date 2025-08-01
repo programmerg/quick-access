@@ -19,7 +19,7 @@ export class History {
           .map(item => new this(item)) || [];
     }
 
-    static list() {
+    static async list() {
         return new Array(30).fill().map((_, index) => {
             const today = new Date();
             const day = new Date(today.setDate(today.getDate() - index));

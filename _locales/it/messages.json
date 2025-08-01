@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Accesso rapido"
+   },
+   "app_description": {
+      "message": "Una nuova scheda pulita e intuitiva dove puoi accedere ai tuoi Preferiti, Lista di lettura e Gruppi di schede con un solo clic."
+   },
+   "new_tab_page": {
+      "message": "Nuova scheda"
+   },
+   "search_": {
+      "message": "Cerca..."
+   },
+   "general": {
+      "message": "Generale"
+   },
+   "advanced": {
+      "message": "Avanzate"
+   },
+   "top_sites": {
+      "message": "Siti frequenti"
+   },
+   "history": {
+      "message": "Cronologia"
+   },
+   "bookmarks": {
+      "message": "Preferiti"
+   },
+   "reading_list": {
+      "message": "Lista di lettura"
+   },
+   "tab_groups": {
+      "message": "Gruppi di schede"
+   },
+   "settings": {
+      "message": "Impostazioni"
+   },
+   "root_folder": {
+      "message": "Cartella principale"
+   },
+   "new_folder": {
+      "message": "Nuova cartella"
+   },
+   "new_bookmark": {
+      "message": "Nuovo preferito"
+   },
+   "new_tab": {
+      "message": "Nuova scheda"
+   },
+   "new_tabGroup": {
+      "message": "Nuovo gruppo di schede"
+   },
+   "new_page": {
+      "message": "Nuova pagina"
+   },
+   "edit_folder": {
+      "message": "Modifica cartella"
+   },
+   "edit_bookmark": {
+      "message": "Modifica preferito"
+   },
+   "edit_tab": {
+      "message": "Modifica scheda"
+   },
+   "edit_tabGroup": {
+      "message": "Modifica gruppo di schede"
+   },
+   "edit_page": {
+      "message": "Modifica pagina"
+   },
+   "add": {
+      "message": "Aggiungi"
+   },
+   "edit": {
+      "message": "Modifica"
+   },
+   "delete": {
+      "message": "Elimina"
+   },
+   "cancel": {
+      "message": "Annulla"
+   },
+   "save": {
+      "message": "Salva"
+   },
+   "close": {
+      "message": "Chiudi"
+   },
+   "title": {
+      "message": "Nome"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Indirizzo URL"
+   },
+   "parent_path": {
+      "message": "Cartella"
+   },
+   "grid_cols": {
+      "message": "Colonne"
+   },
+   "background_color": {
+      "message": "Colore tema"
+   },
+   "background_type": {
+      "message": "Immagine di sfondo"
+   },
+   "background_file": {
+      "message": "File locale"
+   },
+   "background_url": {
+      "message": "Servizio sfondo personalizzato"
+   },
+   "background_none": {
+      "message": "Nessuno"
+   },
+   "favicon_type": {
+      "message": "Icone"
+   },
+   "favicon_url": {
+      "message": "Servizio icone personalizzato"
+   },
+   "favicon_default": {
+      "message": "Predefinito"
+   },
+   "select_file": {
+      "message": "Scegli file"
+   },
+   "tiles": {
+      "message": "Riquadri"
+   },
+   "tile_enable_add": {
+      "message": "Mostra il pulsante 'Aggiungi nuovo elemento'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Abilita i pulsanti modifica ed elimina"
+   },
+   "tile_enable_reorder": {
+      "message": "Abilita riordinamento"
+   },
+   "permissions": {
+      "message": "Permessi"
+   },
+   "enable_top_sites": {
+      "message": "Abilita siti frequenti"
+   },
+   "enable_history": {
+      "message": "Abilita cronologia"
+   },
+   "enable_bookmarks": {
+      "message": "Abilita preferiti"
+   },
+   "enable_reading_list": {
+      "message": "Abilita lista di lettura"
+   },
+   "enable_tab_groups": {
+      "message": "Abilita gruppi di schede"
+   },
+   "custom_theme": {
+      "message": "Aspetto personalizzato"
+   },
+   "no_search_results_found": {
+      "message": "Nessun risultato trovato"
+   },
+   "no_search_results_found_details": {
+      "message": "Prova con altre parole chiave"
+   },
+   "delete_item_confirm": {
+      "message": "Sei sicuro di voler eliminare questo elemento:\n$1?"
+   },
+   "empty_state": {
+      "message": "Questa cartella è ancora vuota"
+   },
+   "empty_state_details": {
+      "message": "Aggiungi nuovi elementi con il pulsante +"
+   },
+   "error_loading_data": {
+      "message": "Ops! Si è verificato un problema"
+   },
+   "error_loading_data_details": {
+      "message": "Impossibile caricare i dati"
+   },
+   "pages_unread": {
+      "message": "Pagine non lette"
+   },
+   "pages_read": {
+      "message": "Pagine lette"
+   },
+   "ungrouped_tabs": {
+      "message": "Senza gruppo"
+   },
+   "open_side_panel": {
+      "message": "Clicca per aprire/chiudere il pannello laterale"
+   },
+   "expert": {
+      "message": "Esperto"
+   },
+   "custom_theme_placeholder": {
+      "message": "Usa qui gli stili CSS per personalizzare l'interfaccia, ad esempio:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nPer saperne di più: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Lascia vuoto per creare una cartella"
+   },
+   "motivation_1": {
+      "message": "Ciao, buona giornata!"
+   },
+   "motivation_2": {
+      "message": "Bentornato!"
+   },
+   "motivation_3": {
+      "message": "Facciamo qualcosa di fantastico oggi!"
+   },
+   "welcome_title": {
+      "message": "Accesso rapido"
+   },
+   "welcome_message": {
+      "message": "Benvenuto nella tua nuova pagina iniziale! Oltre ai siti frequenti, ora puoi accedere ai tuoi preferiti, lista di lettura e gruppi di schede con un solo clic. Imposta uno sfondo interessante oppure usa i tasti <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> e <kbd>→</kbd> per navigare. Fissa l'icona dell'estensione sulla barra degli strumenti e potrai aprirla come barra laterale in qualsiasi momento."
+   },
+   "welcome_permissions1": {
+      "message": "Per iniziare, seleziona cosa vuoi vedere qui:"
+   },
+   "welcome_permissions2": {
+      "message": "Puoi modificare questa scelta nelle impostazioni in qualsiasi momento."
+   },
+   "welcome_footnote": {
+      "message": "Le tue impostazioni verranno sincronizzate automaticamente con il tuo account Chrome così potrai godere della stessa esperienza su tutti i tuoi dispositivi."
+   }
+}

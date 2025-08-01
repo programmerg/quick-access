@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Hiter dostop"
+   },
+   "app_description": {
+      "message": "Čista, intuitivna stran novega zavihka, kjer lahko z enim klikom dostopate do priljubljenih strani, seznama za branje in skupin zavihkov."
+   },
+   "new_tab_page": {
+      "message": "Nov zavihek"
+   },
+   "search_": {
+      "message": "Iskanje..."
+   },
+   "general": {
+      "message": "Splošno"
+   },
+   "advanced": {
+      "message": "Napredno"
+   },
+   "top_sites": {
+      "message": "Najpogostejše strani"
+   },
+   "history": {
+      "message": "Zgodovina"
+   },
+   "bookmarks": {
+      "message": "Zaznamki"
+   },
+   "reading_list": {
+      "message": "Seznam za branje"
+   },
+   "tab_groups": {
+      "message": "Skupine zavihkov"
+   },
+   "settings": {
+      "message": "Nastavitve"
+   },
+   "root_folder": {
+      "message": "Korenska mapa"
+   },
+   "new_folder": {
+      "message": "Dodaj mapo"
+   },
+   "new_bookmark": {
+      "message": "Dodaj zaznamek"
+   },
+   "new_tab": {
+      "message": "Dodaj zavihek"
+   },
+   "new_tabGroup": {
+      "message": "Dodaj skupino zavihkov"
+   },
+   "new_page": {
+      "message": "Dodaj stran"
+   },
+   "edit_folder": {
+      "message": "Uredi mapo"
+   },
+   "edit_bookmark": {
+      "message": "Uredi zaznamek"
+   },
+   "edit_tab": {
+      "message": "Uredi zavihek"
+   },
+   "edit_tabGroup": {
+      "message": "Uredi skupino zavihkov"
+   },
+   "edit_page": {
+      "message": "Uredi stran"
+   },
+   "add": {
+      "message": "Dodaj"
+   },
+   "edit": {
+      "message": "Uredi"
+   },
+   "delete": {
+      "message": "Izbriši"
+   },
+   "cancel": {
+      "message": "Prekliči"
+   },
+   "save": {
+      "message": "Shrani"
+   },
+   "close": {
+      "message": "Zapri"
+   },
+   "title": {
+      "message": "Naslov"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL naslov"
+   },
+   "parent_path": {
+      "message": "Mapa"
+   },
+   "grid_cols": {
+      "message": "Stolpci"
+   },
+   "background_color": {
+      "message": "Barva teme"
+   },
+   "background_type": {
+      "message": "Slika ozadja"
+   },
+   "background_file": {
+      "message": "Lokalna datoteka"
+   },
+   "background_url": {
+      "message": "Storitev ozadja po meri"
+   },
+   "background_none": {
+      "message": "Brez"
+   },
+   "favicon_type": {
+      "message": "Ikone"
+   },
+   "favicon_url": {
+      "message": "Storitev ikon po meri"
+   },
+   "favicon_default": {
+      "message": "Privzeto"
+   },
+   "select_file": {
+      "message": "Izberi datoteko"
+   },
+   "tiles": {
+      "message": "Ploščice" 
+   },
+   "tile_enable_add": {
+      "message": "Prikaži gumb 'Dodaj nov element'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Omogoči gumbova za urejanje in brisanje" 
+   },
+   "tile_enable_reorder": {
+      "message": "Omogoči prerazporejanje" 
+   },
+   "permissions": {
+      "message": "Dovoljenja"
+   },
+   "enable_top_sites": {
+      "message": "Dostop do najpogostejših strani"
+   },
+   "enable_history": {
+      "message": "Dostop do zgodovine"
+   },
+   "enable_bookmarks": {
+      "message": "Dostop do zaznamkov"
+   },
+   "enable_reading_list": {
+      "message": "Dostop do seznama za branje"
+   },
+   "enable_tab_groups": {
+      "message": "Dostop do skupin zavihkov"
+   },
+   "custom_theme": {
+      "message": "Videz po meri"
+   },
+   "no_search_results_found": {
+      "message": "Ni najdenih rezultatov iskanja"
+   },
+   "no_search_results_found_details": {
+      "message": "Poskusite z drugimi ključnimi besedami"
+   },
+   "delete_item_confirm": {
+      "message": "Ali ste prepričani, da želite izbrisati\n$1?"
+   },
+   "empty_state": {
+      "message": "Ta mapa je še prazna"
+   },
+   "empty_state_details": {
+      "message": "Dodajte nove elemente z gumbom +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Kaj je šlo narobe!"
+   },
+   "error_loading_data_details": {
+      "message": "Pridobivanje podatkov ni uspelo."
+   },
+   "pages_unread": {
+      "message": "Neprebrane strani"
+   },
+   "pages_read": {
+      "message": "Prebrane strani"
+   },
+   "ungrouped_tabs": {
+      "message": "Nezdrużeni zavihki"
+   },
+   "open_side_panel": {
+      "message": "Kliknite za odpiranje / zapiranje stranske plošče"
+   },
+   "expert": {
+      "message": "Strokovnjak"
+   },
+   "custom_theme_placeholder": {
+      "message": "Uporabite CSS sloge tukaj za prilagajanje vmesnika, npr.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nVeč informacij: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Pustite prazno za ustvarjanje mape"
+   },
+   "motivation_1": {
+      "message": "Pozdravljeni, lep dan!"
+   },
+   "motivation_2": {
+      "message": "Lepo vas je spet videti!"
+   },
+   "motivation_3": {
+      "message": "Naredimo danes nekaj odličnega!"
+   },
+   "welcome_title": {
+      "message": "Hiter dostop"
+   },
+   "welcome_message": {
+      "message": "Dobrodošli na vaši novi domači strani! Poleg pogosto obiskanih strani lahko zdaj z enim klikom dostopate do svojih zaznamkov, seznama za branje in skupin zavihkov. Nastavite kul ozadje ali pustite miško in uporabite tipke <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> in <kbd>→</kbd> za navigacijo. Pripnite ikono razširitve na orodno vrstico in jo lahko kadarkoli pokličete kot stransko ploščo."
+   },
+   "welcome_permissions1": {
+      "message": "Za začetek izberite, kaj bi radi videli tukaj:"
+   },
+   "welcome_permissions2": {
+      "message": "To lahko kadarkoli spremenite v nastavitvah."
+   },
+   "welcome_footnote": {
+      "message": "Vaše nastavitve se bodo samodejno sinhronizirali z vašim Chrome računom, tako da lahko uživate v enaki odlični izkušnji na vseh svojih napravah."
+   }
+}

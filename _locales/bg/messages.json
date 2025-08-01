@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Бърз достъп"
+   },
+   "app_description": {
+      "message": "Чиста, интуитивна страница за нови табове, където можете да достъпите любимите си страници, списъка за четене и групите табове с едно кликване."
+   },
+   "new_tab_page": {
+      "message": "Нов таб"
+   },
+   "search_": {
+      "message": "Търсене..."
+   },
+   "general": {
+      "message": "Общи"
+   },
+   "advanced": {
+      "message": "Разширени"
+   },
+   "top_sites": {
+      "message": "Най-посещавани сайтове"
+   },
+   "history": {
+      "message": "История"
+   },
+   "bookmarks": {
+      "message": "Отметки"
+   },
+   "reading_list": {
+      "message": "Списък за четене"
+   },
+   "tab_groups": {
+      "message": "Групи табове"
+   },
+   "settings": {
+      "message": "Настройки"
+   },
+   "root_folder": {
+      "message": "Главна папка"
+   },
+   "new_folder": {
+      "message": "Добави папка"
+   },
+   "new_bookmark": {
+      "message": "Добави отметка"
+   },
+   "new_tab": {
+      "message": "Добави таб"
+   },
+   "new_tabGroup": {
+      "message": "Добави група табове"
+   },
+   "new_page": {
+      "message": "Добави страница"
+   },
+   "edit_folder": {
+      "message": "Редактирай папка"
+   },
+   "edit_bookmark": {
+      "message": "Редактирай отметка"
+   },
+   "edit_tab": {
+      "message": "Редактирай таб"
+   },
+   "edit_tabGroup": {
+      "message": "Редактирай група табове"
+   },
+   "edit_page": {
+      "message": "Редактирай страница"
+   },
+   "add": {
+      "message": "Добави"
+   },
+   "edit": {
+      "message": "Редактирай"
+   },
+   "delete": {
+      "message": "Изтрий"
+   },
+   "cancel": {
+      "message": "Отмени"
+   },
+   "save": {
+      "message": "Запази"
+   },
+   "close": {
+      "message": "Затвори"
+   },
+   "title": {
+      "message": "Заглавие"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL адрес"
+   },
+   "parent_path": {
+      "message": "Папка"
+   },
+   "grid_cols": {
+      "message": "Колони"
+   },
+   "background_color": {
+      "message": "Цвят на темата"
+   },
+   "background_type": {
+      "message": "Фоново изображение"
+   },
+   "background_file": {
+      "message": "Локален файл"
+   },
+   "background_url": {
+      "message": "Персонализирана услуга за тапети"
+   },
+   "background_none": {
+      "message": "Няма"
+   },
+   "favicon_type": {
+      "message": "Икони"
+   },
+   "favicon_url": {
+      "message": "Персонализирана услуга за икони"
+   },
+   "favicon_default": {
+      "message": "По подразбиране"
+   },
+   "select_file": {
+      "message": "Избери файл"
+   },
+   "tiles": {
+      "message": "Плочки" 
+   },
+   "tile_enable_add": {
+      "message": "Покажи бутон 'Добави нов елемент'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Активирай бутони за редактиране и изтриване" 
+   },
+   "tile_enable_reorder": {
+      "message": "Активирай пренареждане" 
+   },
+   "permissions": {
+      "message": "Разрешения"
+   },
+   "enable_top_sites": {
+      "message": "Достъп до най-посещавани сайтове"
+   },
+   "enable_history": {
+      "message": "Достъп до история"
+   },
+   "enable_bookmarks": {
+      "message": "Достъп до отметки"
+   },
+   "enable_reading_list": {
+      "message": "Достъп до списък за четене"
+   },
+   "enable_tab_groups": {
+      "message": "Достъп до групи табове"
+   },
+   "custom_theme": {
+      "message": "Персонализиран вид"
+   },
+   "no_search_results_found": {
+      "message": "Няма намерени резултати"
+   },
+   "no_search_results_found_details": {
+      "message": "Опитайте с различни ключови думи"
+   },
+   "delete_item_confirm": {
+      "message": "Сигурни ли сте, че искате да изтриете\n$1?"
+   },
+   "empty_state": {
+      "message": "Тази папка все още е празна"
+   },
+   "empty_state_details": {
+      "message": "Добавете нови елементи с бутона +"
+   },
+   "error_loading_data": {
+      "message": "Упс! Нещо се обърка!"
+   },
+   "error_loading_data_details": {
+      "message": "Неуспешно зареждане на данни."
+   },
+   "pages_unread": {
+      "message": "Непрочетени страници"
+   },
+   "pages_read": {
+      "message": "Прочетени страници"
+   },
+   "ungrouped_tabs": {
+      "message": "Негрупирани табове"
+   },
+   "open_side_panel": {
+      "message": "Кликнете за отваряне / затваряне на страничния панел"
+   },
+   "expert": {
+      "message": "Експерт"
+   },
+   "custom_theme_placeholder": {
+      "message": "Използвайте CSS стилове тук за персонализиране на интерфейса, напр.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nЗа повече: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Оставете празно за създаване на папка"
+   },
+   "motivation_1": {
+      "message": "Здравей, приятен ден!"
+   },
+   "motivation_2": {
+      "message": "Радвам се да те видя отново!"
+   },
+   "motivation_3": {
+      "message": "Нека направим нещо страхотно днес!"
+   },
+   "welcome_title": {
+      "message": "Бърз достъп"
+   },
+   "welcome_message": {
+      "message": "Добре дошли в новата си начална страница! Освен често посещаваните страници, сега можете да достъпите отметките си, списъка за четене и групите табове с едно кликване. Задайте готин фон или оставете мишката и използвайте клавишите <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> и <kbd>→</kbd> за навигация. Закачете иконата на разширението в лентата с инструменти и можете да я извикате като страничен панел по всяко време."
+   },
+   "welcome_permissions1": {
+      "message": "За да започнете, изберете какво бихте искали да видите тук:"
+   },
+   "welcome_permissions2": {
+      "message": "Можете да промените това в настройките по всяко време."
+   },
+   "welcome_footnote": {
+      "message": "Настройките ви ще се синхронизират автоматично с Chrome акаунта ви, така че да можете да се насладите на същото страхотно изживяване на всичките си устройства."
+   }
+}

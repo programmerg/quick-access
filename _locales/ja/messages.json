@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "クイックアクセス"
+   },
+   "app_description": {
+      "message": "お気に入り、リーディングリスト、タブグループにワンクリックでアクセスできる、シンプルで直感的な新しいタブページです。"
+   },
+   "new_tab_page": {
+      "message": "新しいタブ"
+   },
+   "search_": {
+      "message": "検索..."
+   },
+   "general": {
+      "message": "一般"
+   },
+   "advanced": {
+      "message": "詳細設定"
+   },
+   "top_sites": {
+      "message": "よく訪れるサイト"
+   },
+   "history": {
+      "message": "履歴"
+   },
+   "bookmarks": {
+      "message": "ブックマーク"
+   },
+   "reading_list": {
+      "message": "リーディングリスト"
+   },
+   "tab_groups": {
+      "message": "タブグループ"
+   },
+   "settings": {
+      "message": "設定"
+   },
+   "root_folder": {
+      "message": "ルートフォルダ"
+   },
+   "new_folder": {
+      "message": "新しいフォルダ"
+   },
+   "new_bookmark": {
+      "message": "新しいブックマーク"
+   },
+   "new_tab": {
+      "message": "新しいタブ"
+   },
+   "new_tabGroup": {
+      "message": "新しいタブグループ"
+   },
+   "new_page": {
+      "message": "新しいページ"
+   },
+   "edit_folder": {
+      "message": "フォルダを編集"
+   },
+   "edit_bookmark": {
+      "message": "ブックマークを編集"
+   },
+   "edit_tab": {
+      "message": "タブを編集"
+   },
+   "edit_tabGroup": {
+      "message": "タブグループを編集"
+   },
+   "edit_page": {
+      "message": "ページを編集"
+   },
+   "add": {
+      "message": "追加"
+   },
+   "edit": {
+      "message": "編集"
+   },
+   "delete": {
+      "message": "削除"
+   },
+   "cancel": {
+      "message": "キャンセル"
+   },
+   "save": {
+      "message": "保存"
+   },
+   "close": {
+      "message": "閉じる"
+   },
+   "title": {
+      "message": "タイトル"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URLアドレス"
+   },
+   "parent_path": {
+      "message": "フォルダ"
+   },
+   "grid_cols": {
+      "message": "列数"
+   },
+   "background_color": {
+      "message": "テーマカラー"
+   },
+   "background_type": {
+      "message": "背景画像"
+   },
+   "background_file": {
+      "message": "ローカルファイル"
+   },
+   "background_url": {
+      "message": "カスタム壁紙サービス"
+   },
+   "background_none": {
+      "message": "なし"
+   },
+   "favicon_type": {
+      "message": "アイコン"
+   },
+   "favicon_url": {
+      "message": "カスタムアイコンサービス"
+   },
+   "favicon_default": {
+      "message": "デフォルト"
+   },
+   "select_file": {
+      "message": "ファイルを選択"
+   },
+   "tiles": {
+      "message": "タイル"
+   },
+   "tile_enable_add": {
+      "message": "「新規追加」ボタンを表示"
+   },
+   "tile_enable_edit_delete": {
+      "message": "編集と削除ボタンを有効にする"
+   },
+   "tile_enable_reorder": {
+      "message": "並べ替えを有効にする"
+   },
+   "permissions": {
+      "message": "権限"
+   },
+   "enable_top_sites": {
+      "message": "トップサイトへのアクセスを許可"
+   },
+   "enable_history": {
+      "message": "履歴へのアクセスを許可"
+   },
+   "enable_bookmarks": {
+      "message": "ブックマークへのアクセスを許可"
+   },
+   "enable_reading_list": {
+      "message": "リーディングリストへのアクセスを許可"
+   },
+   "enable_tab_groups": {
+      "message": "タブグループへのアクセスを許可"
+   },
+   "custom_theme": {
+      "message": "カスタム外観"
+   },
+   "no_search_results_found": {
+      "message": "検索結果が見つかりません"
+   },
+   "no_search_results_found_details": {
+      "message": "別のキーワードを試してください"
+   },
+   "delete_item_confirm": {
+      "message": "本当に削除しますか？\n$1"
+   },
+   "empty_state": {
+      "message": "このフォルダはまだ空です"
+   },
+   "empty_state_details": {
+      "message": "＋ボタンで新しい項目を追加"
+   },
+   "error_loading_data": {
+      "message": "おっと！問題が発生しました"
+   },
+   "error_loading_data_details": {
+      "message": "データの読み込みに失敗しました"
+   },
+   "pages_unread": {
+      "message": "未読ページ"
+   },
+   "pages_read": {
+      "message": "既読ページ"
+   },
+   "ungrouped_tabs": {
+      "message": "未分類のタブ"
+   },
+   "open_side_panel": {
+      "message": "サイドパネルを開く/閉じる"
+   },
+   "expert": {
+      "message": "エキスパート"
+   },
+   "custom_theme_placeholder": {
+      "message": "CSSスタイルを使用してインターフェースをカスタマイズできます。例:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\n詳細はこちら: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "フォルダを作成するには空欄のままにしてください"
+   },
+   "motivation_1": {
+      "message": "こんにちは、良い一日を！"
+   },
+   "motivation_2": {
+      "message": "またお会いできて嬉しいです！"
+   },
+   "motivation_3": {
+      "message": "今日は素晴らしいことをしましょう！"
+   },
+   "welcome_title": {
+      "message": "クイックアクセス"
+   },
+   "welcome_message": {
+      "message": "新しいホームページへようこそ！「よく訪れるページ」に加えて、ブックマーク、リーディングリスト、タブグループにワンクリックでアクセスできます。クールな背景を設定するか、マウスを使わずに <kbd>TAB</kbd>、<kbd>↑</kbd>、<kbd>↓</kbd>、<kbd>←</kbd>、<kbd>→</kbd> キーで操作できます。拡張機能のアイコンをツールバーに固定すると、いつでもサイドパネルとして開くことができます。"
+   },
+   "welcome_permissions1": {
+      "message": "まず、ここに表示したいものを選択してください："
+   },
+   "welcome_permissions2": {
+      "message": "これらはいつでも設定から変更できます。"
+   },
+   "welcome_footnote": {
+      "message": "設定は自動的にChromeアカウントに同期され、すべてのデバイスで同じ優れた体験をお楽しみいただけます。"
+   }
+}

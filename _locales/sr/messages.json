@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Brzi pristup"
+   },
+   "app_description": {
+      "message": "Čista, intuitivna stranica novog taba gdje možete pristupiti omiljenim stranicama, listi za čitanje i grupama tabova jednim klikom."
+   },
+   "new_tab_page": {
+      "message": "Novi tab"
+   },
+   "search_": {
+      "message": "Pretraži..."
+   },
+   "general": {
+      "message": "Opšte"
+   },
+   "advanced": {
+      "message": "Napredne"
+   },
+   "top_sites": {
+      "message": "Najposećenije stranice"
+   },
+   "history": {
+      "message": "Istorija"
+   },
+   "bookmarks": {
+      "message": "Označene stranice"
+   },
+   "reading_list": {
+      "message": "Lista za čitanje"
+   },
+   "tab_groups": {
+      "message": "Grupe tabova"
+   },
+   "settings": {
+      "message": "Podešavanja"
+   },
+   "root_folder": {
+      "message": "Koren direktorijum"
+   },
+   "new_folder": {
+      "message": "Dodaj direktorijum"
+   },
+   "new_bookmark": {
+      "message": "Dodaj označenu stranicu"
+   },
+   "new_tab": {
+      "message": "Dodaj tab"
+   },
+   "new_tabGroup": {
+      "message": "Dodaj grupu tabova"
+   },
+   "new_page": {
+      "message": "Dodaj stranicu"
+   },
+   "edit_folder": {
+      "message": "Uredi direktorijum"
+   },
+   "edit_bookmark": {
+      "message": "Uredi označenu stranicu"
+   },
+   "edit_tab": {
+      "message": "Uredi tab"
+   },
+   "edit_tabGroup": {
+      "message": "Uredi grupu tabova"
+   },
+   "edit_page": {
+      "message": "Uredi stranicu"
+   },
+   "add": {
+      "message": "Dodaj"
+   },
+   "edit": {
+      "message": "Uredi"
+   },
+   "delete": {
+      "message": "Obriši"
+   },
+   "cancel": {
+      "message": "Odustani"
+   },
+   "save": {
+      "message": "Sačuvaj"
+   },
+   "close": {
+      "message": "Zatvori"
+   },
+   "title": {
+      "message": "Naslov"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresa"
+   },
+   "parent_path": {
+      "message": "Direktorijum"
+   },
+   "grid_cols": {
+      "message": "Kolone"
+   },
+   "background_color": {
+      "message": "Boja teme"
+   },
+   "background_type": {
+      "message": "Pozadinska slika"
+   },
+   "background_file": {
+      "message": "Lokalni fajl"
+   },
+   "background_url": {
+      "message": "Prilagođena usluga pozadine"
+   },
+   "background_none": {
+      "message": "Nijedna"
+   },
+   "favicon_type": {
+      "message": "Ikone"
+   },
+   "favicon_url": {
+      "message": "Prilagođena usluga ikona"
+   },
+   "favicon_default": {
+      "message": "Podrazumevane"
+   },
+   "select_file": {
+      "message": "Izaberi fajl"
+   },
+   "tiles": {
+      "message": "Pločice" 
+   },
+   "tile_enable_add": {
+      "message": "Prikaži dugme 'Dodaj novi element'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Omogući dugmad za uređivanje i brisanje" 
+   },
+   "tile_enable_reorder": {
+      "message": "Omogući preusmeravanje" 
+   },
+   "permissions": {
+      "message": "Dozvole"
+   },
+   "enable_top_sites": {
+      "message": "Pristup najposećenijim stranicama"
+   },
+   "enable_history": {
+      "message": "Pristup istoriji"
+   },
+   "enable_bookmarks": {
+      "message": "Pristup označenim stranicama"
+   },
+   "enable_reading_list": {
+      "message": "Pristup listi za čitanje"
+   },
+   "enable_tab_groups": {
+      "message": "Pristup grupama tabova"
+   },
+   "custom_theme": {
+      "message": "Prilagođeni izgled"
+   },
+   "no_search_results_found": {
+      "message": "Nema rezultata pretrage"
+   },
+   "no_search_results_found_details": {
+      "message": "Pokušajte da koristite druge ključne reči"
+   },
+   "delete_item_confirm": {
+      "message": "Da li ste sigurni da želite da obrišete\n$1?"
+   },
+   "empty_state": {
+      "message": "Ovaj direktorijum je još uvek prazan"
+   },
+   "empty_state_details": {
+      "message": "Dodajte nove elemente pomoću + dugmeta"
+   },
+   "error_loading_data": {
+      "message": "Ups! Nešto je pošlo po zlu!"
+   },
+   "error_loading_data_details": {
+      "message": "Neuspešno dohvatanje podataka."
+   },
+   "pages_unread": {
+      "message": "Nepročitane stranice"
+   },
+   "pages_read": {
+      "message": "Pročitane stranice"
+   },
+   "ungrouped_tabs": {
+      "message": "Negrupisani tabovi"
+   },
+   "open_side_panel": {
+      "message": "Kliknite da otvorite / zatvorite bočni panel"
+   },
+   "expert": {
+      "message": "Ekspert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Koristite CSS stilove ovde za prilagođavanje interfejsa, npr.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nViše informacija: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Ostavite prazno da biste kreirali direktorijum"
+   },
+   "motivation_1": {
+      "message": "Zdravo, prijatan dan!"
+   },
+   "motivation_2": {
+      "message": "Drago mi je što te ponovo vidim!"
+   },
+   "motivation_3": {
+      "message": "Hajde da danas uradimo nešto sjajno!"
+   },
+   "welcome_title": {
+      "message": "Brzi pristup"
+   },
+   "welcome_message": {
+      "message": "Dobrodošli na vašu novu početnu stranicu! Pored često posećenih stranica, sada možete pristupiti označenim stranicama, listi za čitanje i grupama tabova jednim klikom. Postavite kul pozadinu ili ostavite miš i koristite <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> i <kbd>→</kbd> tastere za navigaciju. Zakačite ikonu ekstenzije na traku sa alatkama i možete je pozvati kao bočni panel u bilo kom trenutku."
+   },
+   "welcome_permissions1": {
+      "message": "Za početak izaberite šta biste želeli da vidite ovde:"
+   },
+   "welcome_permissions2": {
+      "message": "Možete ovo promeniti u podešavanjima u bilo kom vremenu."
+   },
+   "welcome_footnote": {
+      "message": "Vaša podešavanja će se automatski sinhronizovati sa vašim Chrome nalogom tako da možete uživati u istom sjajnom iskustvu na svim vašim uređajima."
+   }
+}

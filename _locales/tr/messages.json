@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Hızlı Erişim"
+   },
+   "app_description": {
+      "message": "Yer İşaretlerinize, Okuma Listenize ve Sekme Gruplarınıza tek tıklamayla erişebileceğiniz temiz ve sezgisel yeni sekme sayfası."
+   },
+   "new_tab_page": {
+      "message": "Yeni Sekme"
+   },
+   "search_": {
+      "message": "Ara..."
+   },
+   "general": {
+      "message": "Genel"
+   },
+   "advanced": {
+      "message": "Gelişmiş"
+   },
+   "top_sites": {
+      "message": "En çok ziyaret edilen siteler"
+   },
+   "history": {
+      "message": "Geçmiş"
+   },
+   "bookmarks": {
+      "message": "Yer işaretleri"
+   },
+   "reading_list": {
+      "message": "Okuma listesi"
+   },
+   "tab_groups": {
+      "message": "Sekme grupları"
+   },
+   "settings": {
+      "message": "Ayarlar"
+   },
+   "root_folder": {
+      "message": "Ana klasör"
+   },
+   "new_folder": {
+      "message": "Klasör ekle"
+   },
+   "new_bookmark": {
+      "message": "Yer işareti ekle"
+   },
+   "new_tab": {
+      "message": "Sekme ekle"
+   },
+   "new_tabGroup": {
+      "message": "Sekme grubu ekle"
+   },
+   "new_page": {
+      "message": "Sayfa ekle"
+   },
+   "edit_folder": {
+      "message": "Klasörü düzenle"
+   },
+   "edit_bookmark": {
+      "message": "Yer işaretini düzenle"
+   },
+   "edit_tab": {
+      "message": "Sekmeyi düzenle"
+   },
+   "edit_tabGroup": {
+      "message": "Sekme grubunu düzenle"
+   },
+   "edit_page": {
+      "message": "Sayfayı düzenle"
+   },
+   "add": {
+      "message": "Ekle"
+   },
+   "edit": {
+      "message": "Düzenle"
+   },
+   "delete": {
+      "message": "Sil"
+   },
+   "cancel": {
+      "message": "İptal"
+   },
+   "save": {
+      "message": "Kaydet"
+   },
+   "close": {
+      "message": "Kapat"
+   },
+   "title": {
+      "message": "Başlık"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresi"
+   },
+   "parent_path": {
+      "message": "Klasör"
+   },
+   "grid_cols": {
+      "message": "Sütun sayısı"
+   },
+   "background_color": {
+      "message": "Tema rengi"
+   },
+   "background_type": {
+      "message": "Arka plan resmi"
+   },
+   "background_file": {
+      "message": "Yerel dosya"
+   },
+   "background_url": {
+      "message": "Özel duvar kağıdı servisi"
+   },
+   "background_none": {
+      "message": "Yok"
+   },
+   "favicon_type": {
+      "message": "Simgeler"
+   },
+   "favicon_url": {
+      "message": "Özel favicon servisi"
+   },
+   "favicon_default": {
+      "message": "Varsayılan"
+   },
+   "select_file": {
+      "message": "Dosya seç"
+   },
+   "tiles": {
+      "message": "Kutucuklar" 
+   },
+   "tile_enable_add": {
+      "message": "'Yeni öğe ekle' düğmesini göster" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Düzenleme ve silme düğmelerini etkinleştir" 
+   },
+   "tile_enable_reorder": {
+      "message": "Yeniden sıralamayı etkinleştir" 
+   },
+   "permissions": {
+      "message": "İzinler"
+   },
+   "enable_top_sites": {
+      "message": "En çok ziyaret edilen sitelere erişim"
+   },
+   "enable_history": {
+      "message": "Geçmişe erişim"
+   },
+   "enable_bookmarks": {
+      "message": "Yer işaretlerine erişim"
+   },
+   "enable_reading_list": {
+      "message": "Okuma listesine erişim"
+   },
+   "enable_tab_groups": {
+      "message": "Sekme gruplarına erişim"
+   },
+   "custom_theme": {
+      "message": "Özel görünüm"
+   },
+   "no_search_results_found": {
+      "message": "Arama sonucu bulunamadı"
+   },
+   "no_search_results_found_details": {
+      "message": "Farklı anahtar kelimeler kullanmayı deneyin"
+   },
+   "delete_item_confirm": {
+      "message": "Şunu silmek istediğinizden emin misiniz?\n$1"
+   },
+   "empty_state": {
+      "message": "Bu klasör henüz boş"
+   },
+   "empty_state_details": {
+      "message": "+ düğmesi ile yeni öğeler ekleyin"
+   },
+   "error_loading_data": {
+      "message": "Hay aksi! Bir şeyler ters gitti!"
+   },
+   "error_loading_data_details": {
+      "message": "Veriler yüklenemedi"
+   },
+   "pages_unread": {
+      "message": "Okunmamış sayfalar"
+   },
+   "pages_read": {
+      "message": "Okunan sayfalar"
+   },
+   "ungrouped_tabs": {
+      "message": "Gruplandırılmamış sekmeler"
+   },
+   "open_side_panel": {
+      "message": "Yan paneli açmak / kapatmak için tıklayın"
+   },
+   "expert": {
+      "message": "Uzman"
+   },
+   "custom_theme_placeholder": {
+      "message": "Arayüzü özelleştirmek için burada CSS stilleri kullanın, örneğin:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nDaha fazla bilgi için: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Klasör oluşturmak için boş bırakın"
+   },
+   "motivation_1": {
+      "message": "Merhaba, güzel bir gün geçirin!"
+   },
+   "motivation_2": {
+      "message": "Sizi tekrar görmek güzel!"
+   },
+   "motivation_3": {
+      "message": "Bugün harika bir şeyler yapalım!"
+   },
+   "welcome_title": {
+      "message": "Hızlı Erişim"
+   },
+   "welcome_message": {
+      "message": "Yeni ana sayfanıza hoş geldiniz! Sık Ziyaret Edilen Sayfaların yanı sıra artık Yer İşaretlerinize, Okuma Listenize ve Sekme Gruplarınıza tek tıklamayla erişebilirsiniz. Harika bir arka plan ayarlayın veya fareyi bir kenara bırakıp gezinmek için <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> ve <kbd>→</kbd> tuşlarını kullanın. Uzantı simgesini araç çubuğuna sabitleyin ve istediğiniz zaman yan panel olarak açabilirsiniz."
+   },
+   "welcome_permissions1": {
+      "message": "Başlamak için burada neyi görmek istediğinizi seçin:"
+   },
+   "welcome_permissions2": {
+      "message": "Bunları istediğiniz zaman Ayarlar'dan değiştirebilirsiniz."
+   },
+   "welcome_footnote": {
+      "message": "Ayarlarınız otomatik olarak Chrome hesabınıza senkronize edilecek, böylece tüm cihazlarınızda aynı harika deneyimi yaşayabilirsiniz."
+   }
+}

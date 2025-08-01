@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Brzi pristup"
+   },
+   "app_description": {
+      "message": "Čista, intuitivna stranica nove kartice gdje možete pristupiti svojim omiljenim stranicama, popisu za čitanje i grupama kartica jednim klikom."
+   },
+   "new_tab_page": {
+      "message": "Nova kartica"
+   },
+   "search_": {
+      "message": "Pretraži..."
+   },
+   "general": {
+      "message": "Općenito"
+   },
+   "advanced": {
+      "message": "Napredno"
+   },
+   "top_sites": {
+      "message": "Najposjećenije stranice"
+   },
+   "history": {
+      "message": "Povijest"
+   },
+   "bookmarks": {
+      "message": "Zabilješke"
+   },
+   "reading_list": {
+      "message": "Popis za čitanje"
+   },
+   "tab_groups": {
+      "message": "Grupe kartica"
+   },
+   "settings": {
+      "message": "Postavke"
+   },
+   "root_folder": {
+      "message": "Korijenski direktorij"
+   },
+   "new_folder": {
+      "message": "Dodaj direktorij"
+   },
+   "new_bookmark": {
+      "message": "Dodaj zabilješku"
+   },
+   "new_tab": {
+      "message": "Dodaj karticu"
+   },
+   "new_tabGroup": {
+      "message": "Dodaj grupu kartica"
+   },
+   "new_page": {
+      "message": "Dodaj stranicu"
+   },
+   "edit_folder": {
+      "message": "Uredi direktorij"
+   },
+   "edit_bookmark": {
+      "message": "Uredi zabilješku"
+   },
+   "edit_tab": {
+      "message": "Uredi karticu"
+   },
+   "edit_tabGroup": {
+      "message": "Uredi grupu kartica"
+   },
+   "edit_page": {
+      "message": "Uredi stranicu"
+   },
+   "add": {
+      "message": "Dodaj"
+   },
+   "edit": {
+      "message": "Uredi"
+   },
+   "delete": {
+      "message": "Obriši"
+   },
+   "cancel": {
+      "message": "Odustani"
+   },
+   "save": {
+      "message": "Spremi"
+   },
+   "close": {
+      "message": "Zatvori"
+   },
+   "title": {
+      "message": "Naslov"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresa"
+   },
+   "parent_path": {
+      "message": "Direktorij"
+   },
+   "grid_cols": {
+      "message": "Stupci"
+   },
+   "background_color": {
+      "message": "Boja teme"
+   },
+   "background_type": {
+      "message": "Pozadinska slika"
+   },
+   "background_file": {
+      "message": "Lokalna datoteka"
+   },
+   "background_url": {
+      "message": "Prilagođeni servis pozadinske slike"
+   },
+   "background_none": {
+      "message": "Nema"
+   },
+   "favicon_type": {
+      "message": "Ikone"
+   },
+   "favicon_url": {
+      "message": "Prilagođeni servis ikona"
+   },
+   "favicon_default": {
+      "message": "Zadano"
+   },
+   "select_file": {
+      "message": "Odaberi datoteku"
+   },
+   "tiles": {
+      "message": "Pločice" 
+   },
+   "tile_enable_add": {
+      "message": "Prikaži gumb 'Dodaj novi element'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Omogući gumbove za uređivanje i brisanje" 
+   },
+   "tile_enable_reorder": {
+      "message": "Omogući preraspoređivanje" 
+   },
+   "permissions": {
+      "message": "Dozvole"
+   },
+   "enable_top_sites": {
+      "message": "Pristup najposjećenijim stranicama"
+   },
+   "enable_history": {
+      "message": "Pristup povijesti"
+   },
+   "enable_bookmarks": {
+      "message": "Pristup zabilješkama"
+   },
+   "enable_reading_list": {
+      "message": "Pristup popisu za čitanje"
+   },
+   "enable_tab_groups": {
+      "message": "Pristup grupama kartica"
+   },
+   "custom_theme": {
+      "message": "Prilagođeni izgled"
+   },
+   "no_search_results_found": {
+      "message": "Nema rezultata pretrage"
+   },
+   "no_search_results_found_details": {
+      "message": "Pokušajte koristiti druge ključne riječi"
+   },
+   "delete_item_confirm": {
+      "message": "Jeste li sigurni da želite obrisati\n$1?"
+   },
+   "empty_state": {
+      "message": "Ovaj direktorij je još prazan"
+   },
+   "empty_state_details": {
+      "message": "Dodajte nove elemente pomoću + gumba"
+   },
+   "error_loading_data": {
+      "message": "Ups! Nešto je pošlo po zlu!"
+   },
+   "error_loading_data_details": {
+      "message": "Neuspješno dohvaćanje podataka."
+   },
+   "pages_unread": {
+      "message": "Nepročitane stranice"
+   },
+   "pages_read": {
+      "message": "Pročitane stranice"
+   },
+   "ungrouped_tabs": {
+      "message": "Negrupirane kartice"
+   },
+   "open_side_panel": {
+      "message": "Kliknite za otvaranje / zatvaranje bočne ploče"
+   },
+   "expert": {
+      "message": "Stručnjak"
+   },
+   "custom_theme_placeholder": {
+      "message": "Koristite CSS stilove ovdje za prilagođavanje sučelja, npr.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nViše informacija: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Ostavite prazno za stvaranje direktorija"
+   },
+   "motivation_1": {
+      "message": "Pozdrav, ugodan dan!"
+   },
+   "motivation_2": {
+      "message": "Drago mi je vidjeti te ponovno!"
+   },
+   "motivation_3": {
+      "message": "Učinimo danas nešto sjajno!"
+   },
+   "welcome_title": {
+      "message": "Brzi pristup"
+   },
+   "welcome_message": {
+      "message": "Dobrodošli na vašu novu početnu stranicu! Osim često posjećenih stranica, sada možete pristupiti svojim zabilješkama, popisu za čitanje i grupama kartica jednim klikom. Postavite cool pozadinu ili ostavite miš i koristite tipke <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> i <kbd>→</kbd> za navigaciju. Zakačite ikonu proširenja na alatnu traku i možete je pozvati kao bočnu ploču bilo kada."
+   },
+   "welcome_permissions1": {
+      "message": "Za početak odaberite što biste htjeli vidjeti ovdje:"
+   },
+   "welcome_permissions2": {
+      "message": "Možete to promijeniti u postavkama bilo kada."
+   },
+   "welcome_footnote": {
+      "message": "Vaše postavke će se automatski sinkronizirati s vašim Chrome računom tako da možete uživati u istom sjajnom iskustvu na svim svojim uređajima."
+   }
+}

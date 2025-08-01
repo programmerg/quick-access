@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "快速存取"
+   },
+   "app_description": {
+      "message": "簡潔直觀的新分頁，讓您只需一鍵即可存取書籤、閱讀清單和分頁群組。"
+   },
+   "new_tab_page": {
+      "message": "新分頁"
+   },
+   "search_": {
+      "message": "搜尋..."
+   },
+   "general": {
+      "message": "一般"
+   },
+   "advanced": {
+      "message": "進階"
+   },
+   "top_sites": {
+      "message": "熱門網站"
+   },
+   "history": {
+      "message": "歷史記錄"
+   },
+   "bookmarks": {
+      "message": "書籤"
+   },
+   "reading_list": {
+      "message": "閱讀清單"
+   },
+   "tab_groups": {
+      "message": "分頁群組"
+   },
+   "settings": {
+      "message": "設定"
+   },
+   "root_folder": {
+      "message": "根資料夾"
+   },
+   "new_folder": {
+      "message": "新增資料夾"
+   },
+   "new_bookmark": {
+      "message": "新增書籤"
+   },
+   "new_tab": {
+      "message": "新增分頁"
+   },
+   "new_tabGroup": {
+      "message": "新增分頁群組"
+   },
+   "new_page": {
+      "message": "新增頁面"
+   },
+   "edit_folder": {
+      "message": "編輯資料夾"
+   },
+   "edit_bookmark": {
+      "message": "編輯書籤"
+   },
+   "edit_tab": {
+      "message": "編輯分頁"
+   },
+   "edit_tabGroup": {
+      "message": "編輯分頁群組"
+   },
+   "edit_page": {
+      "message": "編輯頁面"
+   },
+   "add": {
+      "message": "新增"
+   },
+   "edit": {
+      "message": "編輯"
+   },
+   "delete": {
+      "message": "刪除"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "save": {
+      "message": "儲存"
+   },
+   "close": {
+      "message": "關閉"
+   },
+   "title": {
+      "message": "標題"
+   },
+   "url": {
+      "message": "網址"
+   },
+   "url_address": {
+      "message": "網址"
+   },
+   "parent_path": {
+      "message": "資料夾"
+   },
+   "grid_cols": {
+      "message": "欄位數量"
+   },
+   "background_color": {
+      "message": "主題色彩"
+   },
+   "background_type": {
+      "message": "背景圖片"
+   },
+   "background_file": {
+      "message": "本機檔案"
+   },
+   "background_url": {
+      "message": "自訂桌布服務"
+   },
+   "background_none": {
+      "message": "無"
+   },
+   "favicon_type": {
+      "message": "圖示"
+   },
+   "favicon_url": {
+      "message": "自訂圖示服務"
+   },
+   "favicon_default": {
+      "message": "預設"
+   },
+   "select_file": {
+      "message": "選擇檔案"
+   },
+   "tiles": {
+      "message": "磚塊" 
+   },
+   "tile_enable_add": {
+      "message": "顯示「新增項目」按鈕" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "啟用編輯和刪除按鈕" 
+   },
+   "tile_enable_reorder": {
+      "message": "啟用重新排列" 
+   },
+   "permissions": {
+      "message": "權限"
+   },
+   "enable_top_sites": {
+      "message": "存取熱門網站"
+   },
+   "enable_history": {
+      "message": "存取歷史記錄"
+   },
+   "enable_bookmarks": {
+      "message": "存取書籤"
+   },
+   "enable_reading_list": {
+      "message": "存取閱讀清單"
+   },
+   "enable_tab_groups": {
+      "message": "存取分頁群組"
+   },
+   "custom_theme": {
+      "message": "自訂外觀"
+   },
+   "no_search_results_found": {
+      "message": "找不到搜尋結果"
+   },
+   "no_search_results_found_details": {
+      "message": "請嘗試使用不同的關鍵字"
+   },
+   "delete_item_confirm": {
+      "message": "您確定要刪除\n$1 嗎？"
+   },
+   "empty_state": {
+      "message": "此資料夾目前是空的"
+   },
+   "empty_state_details": {
+      "message": "使用 + 按鈕新增項目"
+   },
+   "error_loading_data": {
+      "message": "糟糕！發生了錯誤！"
+   },
+   "error_loading_data_details": {
+      "message": "無法載入資料"
+   },
+   "pages_unread": {
+      "message": "未讀頁面"
+   },
+   "pages_read": {
+      "message": "已讀頁面"
+   },
+   "ungrouped_tabs": {
+      "message": "未分組分頁"
+   },
+   "open_side_panel": {
+      "message": "點選以開啟/關閉側邊面板"
+   },
+   "expert": {
+      "message": "專家"
+   },
+   "custom_theme_placeholder": {
+      "message": "在此使用 CSS 樣式來自訂介面，例如：\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\n更多資訊：https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "留空以建立資料夾"
+   },
+   "motivation_1": {
+      "message": "嗨，祝您有美好的一天！"
+   },
+   "motivation_2": {
+      "message": "很高興再次見到您！"
+   },
+   "motivation_3": {
+      "message": "讓我們今天做些很棒的事吧！"
+   },
+   "welcome_title": {
+      "message": "快速存取"
+   },
+   "welcome_message": {
+      "message": "歡迎來到您的新首頁！除了常用頁面外，您現在可以一鍵存取書籤、閱讀清單和分頁群組。設定一個酷炫的背景，或者放下滑鼠，使用 <kbd>TAB</kbd>、<kbd>↑</kbd>、<kbd>↓</kbd>、<kbd>←</kbd> 和 <kbd>→</kbd> 鍵來導覽。將擴充功能圖示釘選到工具列，您就可以隨時將其作為側邊欄開啟。"
+   },
+   "welcome_permissions1": {
+      "message": "首先，請選擇您希望在此處看到的內容："
+   },
+   "welcome_permissions2": {
+      "message": "您可以隨時在設定中變更這些選項。"
+   },
+   "welcome_footnote": {
+      "message": "您的設定將自動同步到您的 Chrome 帳戶，讓您在所有裝置上都能享受相同的絕佳體驗。"
+   }
+}

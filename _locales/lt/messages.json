@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Greitas prieigos"
+   },
+   "app_description": {
+      "message": "Švarus, intuityvus naujo skirtuko puslapis, kuriame vienu paspaudimu galite pasiekti mėgstamiausius puslapius, skaitinių sąrašą ir skirtukų grupes."
+   },
+   "new_tab_page": {
+      "message": "Naujas skirtukas"
+   },
+   "search_": {
+      "message": "Ieškoti..."
+   },
+   "general": {
+      "message": "Bendri"
+   },
+   "advanced": {
+      "message": "Išplėstiniai"
+   },
+   "top_sites": {
+      "message": "Dažniausiai lankomos svetainės"
+   },
+   "history": {
+      "message": "Istorija"
+   },
+   "bookmarks": {
+      "message": "Žymės"
+   },
+   "reading_list": {
+      "message": "Skaitinių sąrašas"
+   },
+   "tab_groups": {
+      "message": "Skirtukų grupės"
+   },
+   "settings": {
+      "message": "Nustatymai"
+   },
+   "root_folder": {
+      "message": "Šaknies aplankas"
+   },
+   "new_folder": {
+      "message": "Pridėti aplanką"
+   },
+   "new_bookmark": {
+      "message": "Pridėti žymę"
+   },
+   "new_tab": {
+      "message": "Pridėti skirtuką"
+   },
+   "new_tabGroup": {
+      "message": "Pridėti skirtukų grupę"
+   },
+   "new_page": {
+      "message": "Pridėti puslapį"
+   },
+   "edit_folder": {
+      "message": "Redaguoti aplanką"
+   },
+   "edit_bookmark": {
+      "message": "Redaguoti žymę"
+   },
+   "edit_tab": {
+      "message": "Redaguoti skirtuką"
+   },
+   "edit_tabGroup": {
+      "message": "Redaguoti skirtukų grupę"
+   },
+   "edit_page": {
+      "message": "Redaguoti puslapį"
+   },
+   "add": {
+      "message": "Pridėti"
+   },
+   "edit": {
+      "message": "Redaguoti"
+   },
+   "delete": {
+      "message": "Ištrinti"
+   },
+   "cancel": {
+      "message": "Atšaukti"
+   },
+   "save": {
+      "message": "Išsaugoti"
+   },
+   "close": {
+      "message": "Uždaryti"
+   },
+   "title": {
+      "message": "Pavadinimas"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresas"
+   },
+   "parent_path": {
+      "message": "Aplankas"
+   },
+   "grid_cols": {
+      "message": "Stulpeliai"
+   },
+   "background_color": {
+      "message": "Temos spalva"
+   },
+   "background_type": {
+      "message": "Fono paveikslėlis"
+   },
+   "background_file": {
+      "message": "Lokalus failas"
+   },
+   "background_url": {
+      "message": "Pasirinktinė tapetų paslauga"
+   },
+   "background_none": {
+      "message": "Nėra"
+   },
+   "favicon_type": {
+      "message": "Piktogramos"
+   },
+   "favicon_url": {
+      "message": "Pasirinktinė piktogramų paslauga"
+   },
+   "favicon_default": {
+      "message": "Numatytoji"
+   },
+   "select_file": {
+      "message": "Pasirinkti failą"
+   },
+   "tiles": {
+      "message": "Plytelės" 
+   },
+   "tile_enable_add": {
+      "message": "Rodyti 'Pridėti naują elementą' mygtuką" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Įgalinti redagavimo ir šalinimo mygtukus" 
+   },
+   "tile_enable_reorder": {
+      "message": "Įgalinti pertvarkymai" 
+   },
+   "permissions": {
+      "message": "Leidimai"
+   },
+   "enable_top_sites": {
+      "message": "Prieiga prie dažniausiai lankomų svetainių"
+   },
+   "enable_history": {
+      "message": "Prieiga prie istorijos"
+   },
+   "enable_bookmarks": {
+      "message": "Prieiga prie žymių"
+   },
+   "enable_reading_list": {
+      "message": "Prieiga prie skaitinių sąrašo"
+   },
+   "enable_tab_groups": {
+      "message": "Prieiga prie skirtukų grupių"
+   },
+   "custom_theme": {
+      "message": "Pasirinktinis išvaizda"
+   },
+   "no_search_results_found": {
+      "message": "Paieškos rezultatų nerasta"
+   },
+   "no_search_results_found_details": {
+      "message": "Pabandykite naudoti kitus raktinius žodžius"
+   },
+   "delete_item_confirm": {
+      "message": "Ar tikrai norite ištrinti\n$1?"
+   },
+   "empty_state": {
+      "message": "Šis aplankas dar tuščias"
+   },
+   "empty_state_details": {
+      "message": "Pridėkite naujų elementų paspausdami + mygtuką"
+   },
+   "error_loading_data": {
+      "message": "Ups! Kažkas nutiko!"
+   },
+   "error_loading_data_details": {
+      "message": "Nepavyko gauti duomenų."
+   },
+   "pages_unread": {
+      "message": "Neskaityti puslapiai"
+   },
+   "pages_read": {
+      "message": "Perskaityti puslapiai"
+   },
+   "ungrouped_tabs": {
+      "message": "Nesugrupuoti skirtukai"
+   },
+   "open_side_panel": {
+      "message": "Spustelėkite, norėdami atidaryti / uždaryti šoninį skydelį"
+   },
+   "expert": {
+      "message": "Ekspertas"
+   },
+   "custom_theme_placeholder": {
+      "message": "Naudokite CSS stilius čia, kad pritaikytumėte sąsają, pvz.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nDaugiau informacijos: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Palikite tuščią aplankui sukurti"
+   },
+   "motivation_1": {
+      "message": "Sveiki, gražios dienos!"
+   },
+   "motivation_2": {
+      "message": "Smagu vėl jus matyti!"
+   },
+   "motivation_3": {
+      "message": "Padarykime šiandien kažką puikaus!"
+   },
+   "welcome_title": {
+      "message": "Greitas prieigos"
+   },
+   "welcome_message": {
+      "message": "Sveiki atvykę į savo naują pradinį puslapį! Be dažnai lankytų puslapių, dabar galite vienu paspaudimu pasiekti savo žymes, skaitinių sąrašą ir skirtukų grupes. Nustatykite šaunų foną arba palikę pelę naudokite <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> ir <kbd>→</kbd> klavišus navigacijai. Prisegkite plėtinio piktogramą prie įrankių juostos ir galėsite ją iškviesti kaip šoninį skydelį bet kada."
+   },
+   "welcome_permissions1": {
+      "message": "Pradžiai pasirinkite, ką norėtumėte čia matyti:"
+   },
+   "welcome_permissions2": {
+      "message": "Tai galite bet kada pakeisti nustatymuose."
+   },
+   "welcome_footnote": {
+      "message": "Jūsų nustatymai bus automatiškai sinchronizuojami su jūsų Chrome paskyra, kad galėtumėte mėgautis tuo pačiu puikiu patirimu visuose savo įrenginiuose."
+   }
+}

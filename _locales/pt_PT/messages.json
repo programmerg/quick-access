@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Acesso rápido"
+   },
+   "app_description": {
+      "message": "Uma nova página de separador limpa e intuitiva onde pode aceder aos seus Favoritos, Lista de leitura e Grupos de separadores com apenas um clique."
+   },
+   "new_tab_page": {
+      "message": "Novo separador"
+   },
+   "search_": {
+      "message": "Pesquisar..."
+   },
+   "general": {
+      "message": "Geral"
+   },
+   "advanced": {
+      "message": "Avançado"
+   },
+   "top_sites": {
+      "message": "Sites frequentes"
+   },
+   "history": {
+      "message": "Histórico"
+   },
+   "bookmarks": {
+      "message": "Favoritos"
+   },
+   "reading_list": {
+      "message": "Lista de leitura"
+   },
+   "tab_groups": {
+      "message": "Grupos de separadores"
+   },
+   "settings": {
+      "message": "Definições"
+   },
+   "root_folder": {
+      "message": "Pasta raiz"
+   },
+   "new_folder": {
+      "message": "Nova pasta"
+   },
+   "new_bookmark": {
+      "message": "Novo favorito"
+   },
+   "new_tab": {
+      "message": "Novo separador"
+   },
+   "new_tabGroup": {
+      "message": "Novo grupo de separadores"
+   },
+   "new_page": {
+      "message": "Nova página"
+   },
+   "edit_folder": {
+      "message": "Editar pasta"
+   },
+   "edit_bookmark": {
+      "message": "Editar favorito"
+   },
+   "edit_tab": {
+      "message": "Editar separador"
+   },
+   "edit_tabGroup": {
+      "message": "Editar grupo de separadores"
+   },
+   "edit_page": {
+      "message": "Editar página"
+   },
+   "add": {
+      "message": "Adicionar"
+   },
+   "edit": {
+      "message": "Editar"
+   },
+   "delete": {
+      "message": "Eliminar"
+   },
+   "cancel": {
+      "message": "Cancelar"
+   },
+   "save": {
+      "message": "Guardar"
+   },
+   "close": {
+      "message": "Fechar"
+   },
+   "title": {
+      "message": "Nome"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Endereço URL"
+   },
+   "parent_path": {
+      "message": "Pasta"
+   },
+   "grid_cols": {
+      "message": "Colunas"
+   },
+   "background_color": {
+      "message": "Cor do tema"
+   },
+   "background_type": {
+      "message": "Imagem de fundo"
+   },
+   "background_file": {
+      "message": "Ficheiro local"
+   },
+   "background_url": {
+      "message": "Serviço de fundo personalizado"
+   },
+   "background_none": {
+      "message": "Nenhum"
+   },
+   "favicon_type": {
+      "message": "Ícones"
+   },
+   "favicon_url": {
+      "message": "Serviço de ícones personalizado"
+   },
+   "favicon_default": {
+      "message": "Padrão"
+   },
+   "select_file": {
+      "message": "Escolher ficheiro"
+   },
+   "tiles": {
+      "message": "Azulejos"
+   },
+   "tile_enable_add": {
+      "message": "Mostrar botão 'Adicionar novo item'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Ativar botões de editar e eliminar"
+   },
+   "tile_enable_reorder": {
+      "message": "Ativar reordenação"
+   },
+   "permissions": {
+      "message": "Permissões"
+   },
+   "enable_top_sites": {
+      "message": "Ativar sites frequentes"
+   },
+   "enable_history": {
+      "message": "Ativar histórico"
+   },
+   "enable_bookmarks": {
+      "message": "Ativar favoritos"
+   },
+   "enable_reading_list": {
+      "message": "Ativar lista de leitura"
+   },
+   "enable_tab_groups": {
+      "message": "Ativar grupos de separadores"
+   },
+   "custom_theme": {
+      "message": "Aparência personalizada"
+   },
+   "no_search_results_found": {
+      "message": "Nenhum resultado encontrado"
+   },
+   "no_search_results_found_details": {
+      "message": "Tente usar outras palavras-chave"
+   },
+   "delete_item_confirm": {
+      "message": "Tem a certeza de que pretende eliminar isto:\n$1?"
+   },
+   "empty_state": {
+      "message": "Esta pasta ainda está vazia"
+   },
+   "empty_state_details": {
+      "message": "Adicione novos itens com o botão +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Ocorreu um problema"
+   },
+   "error_loading_data_details": {
+      "message": "Não foi possível carregar os dados"
+   },
+   "pages_unread": {
+      "message": "Páginas não lidas"
+   },
+   "pages_read": {
+      "message": "Páginas lidas"
+   },
+   "ungrouped_tabs": {
+      "message": "Sem grupo"
+   },
+   "open_side_panel": {
+      "message": "Clique para abrir/fechar o painel lateral"
+   },
+   "expert": {
+      "message": "Especialista"
+   },
+   "custom_theme_placeholder": {
+      "message": "Use estilos CSS aqui para personalizar a interface, por exemplo:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nPara mais informações: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Deixe em branco para criar uma pasta"
+   },
+   "motivation_1": {
+      "message": "Olá, tenha um bom dia!"
+   },
+   "motivation_2": {
+      "message": "Bom ver-te novamente!"
+   },
+   "motivation_3": {
+      "message": "Vamos fazer algo incrível hoje!"
+   },
+   "welcome_title": {
+      "message": "Acesso rápido"
+   },
+   "welcome_message": {
+      "message": "Bem-vindo à sua nova página inicial! Além dos sites frequentes, agora pode aceder aos seus favoritos, lista de leitura e grupos de separadores com um só clique. Defina um fundo interessante ou utilize as teclas <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> e <kbd>→</kbd> para navegar. Fixe o ícone da extensão na barra de ferramentas e pode abri-lo como barra lateral a qualquer momento."
+   },
+   "welcome_permissions1": {
+      "message": "Para começar, selecione o que gostaria de ver aqui:"
+   },
+   "welcome_permissions2": {
+      "message": "Pode alterar isto nas definições a qualquer momento."
+   },
+   "welcome_footnote": {
+      "message": "As suas definições serão sincronizadas automaticamente com a sua conta Chrome para que possa desfrutar da mesma experiência em todos os seus dispositivos."
+   }
+}

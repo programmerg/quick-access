@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Schnellzugriff"
+   },
+   "app_description": {
+      "message": "Eine übersichtliche, intuitive neue Tab-Seite, auf der du neben den Häufig besuchten Seiten auch deine Lesezeichen, Leseliste und Tab-Gruppen mit nur einem Klick erreichen kannst."
+   },
+   "new_tab_page": {
+      "message": "Neuer Tab"
+   },
+   "search_": {
+      "message": "Suchen..."
+   },
+   "general": {
+      "message": "Allgemein"
+   },
+   "advanced": {
+      "message": "Erweitert"
+   },
+   "top_sites": {
+      "message": "Häufig besuchte Seiten"
+   },
+   "history": {
+      "message": "Verlauf"
+   },
+   "bookmarks": {
+      "message": "Lesezeichen"
+   },
+   "reading_list": {
+      "message": "Leseliste"
+   },
+   "tab_groups": {
+      "message": "Tab-Gruppen"
+   },
+   "settings": {
+      "message": "Einstellungen"
+   },
+   "root_folder": {
+      "message": "Stammordner"
+   },
+   "new_folder": {
+      "message": "Neuer Ordner"
+   },
+   "new_bookmark": {
+      "message": "Neues Lesezeichen"
+   },
+   "new_tab": {
+      "message": "Neuer Tab"
+   },
+   "new_tabGroup": {
+      "message": "Neue Tab-Gruppe"
+   },
+   "new_page": {
+      "message": "Neue Seite"
+   },
+   "edit_folder": {
+      "message": "Ordner bearbeiten"
+   },
+   "edit_bookmark": {
+      "message": "Lesezeichen bearbeiten"
+   },
+   "edit_tab": {
+      "message": "Tab bearbeiten"
+   },
+   "edit_tabGroup": {
+      "message": "Tab-Gruppe bearbeiten"
+   },
+   "edit_page": {
+      "message": "Seite bearbeiten"
+   },
+   "add": {
+      "message": "Neu"
+   },
+   "edit": {
+      "message": "Bearbeiten"
+   },
+   "delete": {
+      "message": "Löschen"
+   },
+   "cancel": {
+      "message": "Abbrechen"
+   },
+   "save": {
+      "message": "Speichern"
+   },
+   "close": {
+      "message": "Schließen"
+   },
+   "title": {
+      "message": "Name"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-Adresse"
+   },
+   "parent_path": {
+      "message": "Ordner"
+   },
+   "grid_cols": {
+      "message": "Spalten"
+   },
+   "background_color": {
+      "message": "Themenfarbe"
+   },
+   "background_type": {
+      "message": "Hintergrundbild"
+   },
+   "background_file": {
+      "message": "Lokale Datei"
+   },
+   "background_url": {
+      "message": "Benutzerdefinierter Hintergrunddienst"
+   },
+   "background_none": {
+      "message": "Kein"
+   },
+   "favicon_type": {
+      "message": "Icons"
+   },
+   "favicon_url": {
+      "message": "Benutzerdefinierter Icon-Dienst"
+   },
+   "favicon_default": {
+      "message": "Standard"
+   },
+   "select_file": {
+      "message": "Datei auswählen"
+   },
+   "tiles": {
+      "message": "Kacheln"
+   },
+   "tile_enable_add": {
+      "message": "Schaltfläche 'Neues Element' anzeigen"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Bearbeiten- und Löschen-Schaltflächen aktivieren"
+   },
+   "tile_enable_reorder": {
+      "message": "Umsortieren aktivieren"
+   },
+   "permissions": {
+      "message": "Berechtigungen"
+   },
+   "enable_top_sites": {
+      "message": "Häufig besuchte Seiten aktivieren"
+   },
+   "enable_history": {
+      "message": "Verlauf aktivieren"
+   },
+   "enable_bookmarks": {
+      "message": "Lesezeichen aktivieren"
+   },
+   "enable_reading_list": {
+      "message": "Leseliste aktivieren"
+   },
+   "enable_tab_groups": {
+      "message": "Tab-Gruppen aktivieren"
+   },
+   "custom_theme": {
+      "message": "Benutzerdefiniertes Design"
+   },
+   "no_search_results_found": {
+      "message": "Keine Suchergebnisse gefunden"
+   },
+   "no_search_results_found_details": {
+      "message": "Versuche andere Suchbegriffe zu verwenden"
+   },
+   "delete_item_confirm": {
+      "message": "Möchten Sie dies wirklich löschen:\n$1?"
+   },
+   "empty_state": {
+      "message": "Dieser Ordner ist noch leer"
+   },
+   "empty_state_details": {
+      "message": "Füge neue Elemente mit der + Schaltfläche hinzu"
+   },
+   "error_loading_data": {
+      "message": "Hoppla, ein Fehler ist aufgetreten"
+   },
+   "error_loading_data_details": {
+      "message": "Daten konnten nicht geladen werden"
+   },
+   "pages_unread": {
+      "message": "Ungelesene Seiten"
+   },
+   "pages_read": {
+      "message": "Gelesene Seiten"
+   },
+   "ungrouped_tabs": {
+      "message": "Ohne Gruppe"
+   },
+   "open_side_panel": {
+      "message": "Klicken zum Öffnen/Schließen des Seitenpanels"
+   },
+   "expert": {
+      "message": "Experte"
+   },
+   "custom_theme_placeholder": {
+      "message": "Verwende hier CSS-Stile, um die Oberfläche anzupassen, z.B.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nMehr Infos: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Leer lassen, um einen Ordner zu erstellen"
+   },
+   "motivation_1": {
+      "message": "Hallo, hab einen schönen Tag!"
+   },
+   "motivation_2": {
+      "message": "Schön, dich wiederzusehen!"
+   },
+   "motivation_3": {
+      "message": "Lass uns heute etwas Großartiges machen!"
+   },
+   "welcome_title": {
+      "message": "Schnellzugriff"
+   },
+   "welcome_message": {
+      "message": "Willkommen auf deiner neuen Startseite! Neben Häufig besuchten Seiten kannst du jetzt auch deine Lesezeichen, Leseliste und Tab-Gruppen mit nur einem Klick erreichen. Lege ein cooles Hintergrundbild fest oder benutze die <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> und <kbd>→</kbd> Tasten zur Navigation. Pinne das Erweiterungssymbol an die Symbolleiste, um es jederzeit als Seitenleiste zu öffnen."
+   },
+   "welcome_permissions1": {
+      "message": "Wähle aus, was du hier sehen möchtest:"
+   },
+   "welcome_permissions2": {
+      "message": "Du kannst dies jederzeit in den Einstellungen ändern."
+   },
+   "welcome_footnote": {
+      "message": "Deine Einstellungen werden automatisch mit deinem Chrome-Konto synchronisiert, damit du auf allen Geräten das gleiche tolle Erlebnis hast."
+   }
+}

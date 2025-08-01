@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Быстрый доступ"
+   },
+   "app_description": {
+      "message": "Чистая и интуитивно понятная страница новой вкладки, где вы можете получить доступ к Избранному, Списку для чтения и Группам вкладок одним кликом."
+   },
+   "new_tab_page": {
+      "message": "Новая вкладка"
+   },
+   "search_": {
+      "message": "Поиск..."
+   },
+   "general": {
+      "message": "Общие"
+   },
+   "advanced": {
+      "message": "Дополнительно"
+   },
+   "top_sites": {
+      "message": "Часто посещаемые"
+   },
+   "history": {
+      "message": "История"
+   },
+   "bookmarks": {
+      "message": "Закладки"
+   },
+   "reading_list": {
+      "message": "Список для чтения"
+   },
+   "tab_groups": {
+      "message": "Группы вкладок"
+   },
+   "settings": {
+      "message": "Настройки"
+   },
+   "root_folder": {
+      "message": "Корневая папка"
+   },
+   "new_folder": {
+      "message": "Новая папка"
+   },
+   "new_bookmark": {
+      "message": "Новая закладка"
+   },
+   "new_tab": {
+      "message": "Новая вкладка"
+   },
+   "new_tabGroup": {
+      "message": "Новая группа вкладок"
+   },
+   "new_page": {
+      "message": "Новая страница"
+   },
+   "edit_folder": {
+      "message": "Редактировать папку"
+   },
+   "edit_bookmark": {
+      "message": "Редактировать закладку"
+   },
+   "edit_tab": {
+      "message": "Редактировать вкладку"
+   },
+   "edit_tabGroup": {
+      "message": "Редактировать группу вкладок"
+   },
+   "edit_page": {
+      "message": "Редактировать страницу"
+   },
+   "add": {
+      "message": "Добавить"
+   },
+   "edit": {
+      "message": "Редактировать"
+   },
+   "delete": {
+      "message": "Удалить"
+   },
+   "cancel": {
+      "message": "Отмена"
+   },
+   "save": {
+      "message": "Сохранить"
+   },
+   "close": {
+      "message": "Закрыть"
+   },
+   "title": {
+      "message": "Название"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Адрес URL"
+   },
+   "parent_path": {
+      "message": "Папка"
+   },
+   "grid_cols": {
+      "message": "Колонки"
+   },
+   "background_color": {
+      "message": "Цвет темы"
+   },
+   "background_type": {
+      "message": "Фоновое изображение"
+   },
+   "background_file": {
+      "message": "Локальный файл"
+   },
+   "background_url": {
+      "message": "Сервис пользовательских обоев"
+   },
+   "background_none": {
+      "message": "Нет"
+   },
+   "favicon_type": {
+      "message": "Иконки"
+   },
+   "favicon_url": {
+      "message": "Сервис пользовательских иконок"
+   },
+   "favicon_default": {
+      "message": "По умолчанию"
+   },
+   "select_file": {
+      "message": "Выбрать файл"
+   },
+   "tiles": {
+      "message": "Плитки"
+   },
+   "tile_enable_add": {
+      "message": "Показать кнопку 'Добавить новый элемент'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Включить кнопки редактирования и удаления"
+   },
+   "tile_enable_reorder": {
+      "message": "Включить изменение порядка"
+   },
+   "permissions": {
+      "message": "Разрешения"
+   },
+   "enable_top_sites": {
+      "message": "Включить часто посещаемые"
+   },
+   "enable_history": {
+      "message": "Включить историю"
+   },
+   "enable_bookmarks": {
+      "message": "Включить закладки"
+   },
+   "enable_reading_list": {
+      "message": "Включить список для чтения"
+   },
+   "enable_tab_groups": {
+      "message": "Включить группы вкладок"
+   },
+   "custom_theme": {
+      "message": "Пользовательский вид"
+   },
+   "no_search_results_found": {
+      "message": "Результаты не найдены"
+   },
+   "no_search_results_found_details": {
+      "message": "Попробуйте использовать другие ключевые слова"
+   },
+   "delete_item_confirm": {
+      "message": "Вы уверены, что хотите удалить это:\n$1?"
+   },
+   "empty_state": {
+      "message": "Эта папка пока пуста"
+   },
+   "empty_state_details": {
+      "message": "Добавьте новые элементы с помощью кнопки +"
+   },
+   "error_loading_data": {
+      "message": "Упс! Произошла ошибка"
+   },
+   "error_loading_data_details": {
+      "message": "Не удалось загрузить данные"
+   },
+   "pages_unread": {
+      "message": "Непрочитанные страницы"
+   },
+   "pages_read": {
+      "message": "Прочитанные страницы"
+   },
+   "ungrouped_tabs": {
+      "message": "Без группы"
+   },
+   "open_side_panel": {
+      "message": "Нажмите, чтобы открыть/закрыть боковую панель"
+   },
+   "expert": {
+      "message": "Эксперт"
+   },
+   "custom_theme_placeholder": {
+      "message": "Используйте CSS-стили для настройки интерфейса, например:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nПодробнее: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Оставьте пустым, чтобы создать папку"
+   },
+   "motivation_1": {
+      "message": "Привет, хорошего дня!"
+   },
+   "motivation_2": {
+      "message": "Рады видеть вас снова!"
+   },
+   "motivation_3": {
+      "message": "Давайте сделаем сегодня что-то великое!"
+   },
+   "welcome_title": {
+      "message": "Быстрый доступ"
+   },
+   "welcome_message": {
+      "message": "Добро пожаловать на вашу новую домашнюю страницу! Помимо часто посещаемых страниц, теперь вы можете получить доступ к закладкам, списку для чтения и группам вкладок одним кликом. Установите классный фон или используйте клавиши <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> и <kbd>→</kbd> для навигации. Закрепите значок расширения на панели инструментов, чтобы открыть его как боковую панель в любое время."
+   },
+   "welcome_permissions1": {
+      "message": "Для начала выберите, что вы хотите видеть здесь:"
+   },
+   "welcome_permissions2": {
+      "message": "Вы можете изменить это в настройках в любое время."
+   },
+   "welcome_footnote": {
+      "message": "Ваши настройки будут автоматически синхронизированы с вашей учетной записью Chrome, чтобы вы могли наслаждаться одинаковым опытом на всех устройствах."
+   }
+}

@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "त्वरित पहुँच"
+   },
+   "app_description": {
+      "message": "एक साफ, सहज नई टैब पेज जहाँ आप अपने पसंदीदा, रीडिंग लिस्ट और टैब समूहों तक सिर्फ एक क्लिक में पहुँच सकते हैं।"
+   },
+   "new_tab_page": {
+      "message": "नया टैब"
+   },
+   "search_": {
+      "message": "खोजें..."
+   },
+   "general": {
+      "message": "सामान्य"
+   },
+   "advanced": {
+      "message": "उन्नत"
+   },
+   "top_sites": {
+      "message": "शीर्ष साइटें"
+   },
+   "history": {
+      "message": "इतिहास"
+   },
+   "bookmarks": {
+      "message": "बुकमार्क्स"
+   },
+   "reading_list": {
+      "message": "रीडिंग लिस्ट"
+   },
+   "tab_groups": {
+      "message": "टैब समूह"
+   },
+   "settings": {
+      "message": "सेटिंग्स"
+   },
+   "root_folder": {
+      "message": "रूट फ़ोल्डर"
+   },
+   "new_folder": {
+      "message": "नया फ़ोल्डर"
+   },
+   "new_bookmark": {
+      "message": "नया बुकमार्क"
+   },
+   "new_tab": {
+      "message": "नया टैब"
+   },
+   "new_tabGroup": {
+      "message": "नया टैब समूह"
+   },
+   "new_page": {
+      "message": "नया पृष्ठ"
+   },
+   "edit_folder": {
+      "message": "फ़ोल्डर संपादित करें"
+   },
+   "edit_bookmark": {
+      "message": "बुकमार्क संपादित करें"
+   },
+   "edit_tab": {
+      "message": "टैब संपादित करें"
+   },
+   "edit_tabGroup": {
+      "message": "टैब समूह संपादित करें"
+   },
+   "edit_page": {
+      "message": "पृष्ठ संपादित करें"
+   },
+   "add": {
+      "message": "जोड़ें"
+   },
+   "edit": {
+      "message": "संपादित करें"
+   },
+   "delete": {
+      "message": "हटाएँ"
+   },
+   "cancel": {
+      "message": "रद्द करें"
+   },
+   "save": {
+      "message": "सहेजें"
+   },
+   "close": {
+      "message": "बंद करें"
+   },
+   "title": {
+      "message": "नाम"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL पता"
+   },
+   "parent_path": {
+      "message": "फ़ोल्डर"
+   },
+   "grid_cols": {
+      "message": "स्तंभ"
+   },
+   "background_color": {
+      "message": "थीम रंग"
+   },
+   "background_type": {
+      "message": "पृष्ठभूमि छवि"
+   },
+   "background_file": {
+      "message": "स्थानीय फ़ाइल"
+   },
+   "background_url": {
+      "message": "कस्टम वॉलपेपर सेवा"
+   },
+   "background_none": {
+      "message": "कोई नहीं"
+   },
+   "favicon_type": {
+      "message": "आइकन"
+   },
+   "favicon_url": {
+      "message": "कस्टम आइकन सेवा"
+   },
+   "favicon_default": {
+      "message": "डिफ़ॉल्ट"
+   },
+   "select_file": {
+      "message": "फ़ाइल चुनें"
+   },
+   "tiles": {
+      "message": "टाइल्स"
+   },
+   "tile_enable_add": {
+      "message": "'नया आइटम जोड़ें' बटन दिखाएँ"
+   },
+   "tile_enable_edit_delete": {
+      "message": "संपादन और हटाने के बटन सक्षम करें"
+   },
+   "tile_enable_reorder": {
+      "message": "पुनः क्रमित करना सक्षम करें"
+   },
+   "permissions": {
+      "message": "अनुमतियाँ"
+   },
+   "enable_top_sites": {
+      "message": "शीर्ष साइटें सक्षम करें"
+   },
+   "enable_history": {
+      "message": "इतिहास सक्षम करें"
+   },
+   "enable_bookmarks": {
+      "message": "बुकमार्क्स सक्षम करें"
+   },
+   "enable_reading_list": {
+      "message": "रीडिंग लिस्ट सक्षम करें"
+   },
+   "enable_tab_groups": {
+      "message": "टैब समूह सक्षम करें"
+   },
+   "custom_theme": {
+      "message": "कस्टम रूप"
+   },
+   "no_search_results_found": {
+      "message": "कोई परिणाम नहीं मिला"
+   },
+   "no_search_results_found_details": {
+      "message": "कृपया अन्य कीवर्ड आज़माएँ"
+   },
+   "delete_item_confirm": {
+      "message": "क्या आप वाकई इसे हटाना चाहते हैं:\n$1?"
+   },
+   "empty_state": {
+      "message": "यह फ़ोल्डर अभी खाली है"
+   },
+   "empty_state_details": {
+      "message": "+ बटन से नए आइटम जोड़ें"
+   },
+   "error_loading_data": {
+      "message": "ओह! कुछ गलत हो गया"
+   },
+   "error_loading_data_details": {
+      "message": "डेटा लोड करने में विफल"
+   },
+   "pages_unread": {
+      "message": "अपठित पृष्ठ"
+   },
+   "pages_read": {
+      "message": "पढ़े गए पृष्ठ"
+   },
+   "ungrouped_tabs": {
+      "message": "कोई समूह नहीं"
+   },
+   "open_side_panel": {
+      "message": "साइड पैनल खोलने/बंद करने के लिए क्लिक करें"
+   },
+   "expert": {
+      "message": "विशेषज्ञ"
+   },
+   "custom_theme_placeholder": {
+      "message": "इंटरफ़ेस को अनुकूलित करने के लिए यहाँ CSS स्टाइल्स का उपयोग करें, उदाहरण के लिए:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nअधिक जानकारी: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "फ़ोल्डर बनाने के लिए खाली छोड़ें"
+   },
+   "motivation_1": {
+      "message": "नमस्ते, आपका दिन शुभ हो!"
+   },
+   "motivation_2": {
+      "message": "फिर से मिलकर अच्छा लगा!"
+   },
+   "motivation_3": {
+      "message": "आइए आज कुछ शानदार करें!"
+   },
+   "welcome_title": {
+      "message": "त्वरित पहुँच"
+   },
+   "welcome_message": {
+      "message": "आपका स्वागत है आपकी नई होम पेज पर! शीर्ष साइटों के अलावा, अब आप अपने बुकमार्क्स, रीडिंग लिस्ट और टैब समूहों तक एक क्लिक में पहुँच सकते हैं। एक शानदार पृष्ठभूमि सेट करें या <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> और <kbd>→</kbd> कुंजियों का उपयोग करके नेविगेट करें। एक्सटेंशन आइकन को टूलबार में पिन करें और आप इसे कभी भी साइडबार के रूप में खोल सकते हैं।"
+   },
+   "welcome_permissions1": {
+      "message": "शुरू करने के लिए, चुनें कि आप यहाँ क्या देखना चाहेंगे:"
+   },
+   "welcome_permissions2": {
+      "message": "आप इसे सेटिंग्स में कभी भी बदल सकते हैं।"
+   },
+   "welcome_footnote": {
+      "message": "आपकी सेटिंग्स स्वचालित रूप से आपके Chrome खाते में सिंक हो जाएंगी ताकि आप सभी डिवाइस पर एक जैसा अनुभव प्राप्त कर सकें।"
+   }
+}

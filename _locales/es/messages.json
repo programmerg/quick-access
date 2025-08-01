@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Acceso rápido"
+   },
+   "app_description": {
+      "message": "Una página de nueva pestaña limpia e intuitiva donde puedes acceder a tus Favoritos, Lista de lectura y Grupos de pestañas con un solo clic."
+   },
+   "new_tab_page": {
+      "message": "Nueva pestaña"
+   },
+   "search_": {
+      "message": "Buscar..."
+   },
+   "general": {
+      "message": "General"
+   },
+   "advanced": {
+      "message": "Avanzado"
+   },
+   "top_sites": {
+      "message": "Sitios frecuentes"
+   },
+   "history": {
+      "message": "Historial"
+   },
+   "bookmarks": {
+      "message": "Marcadores"
+   },
+   "reading_list": {
+      "message": "Lista de lectura"
+   },
+   "tab_groups": {
+      "message": "Grupos de pestañas"
+   },
+   "settings": {
+      "message": "Configuración"
+   },
+   "root_folder": {
+      "message": "Carpeta raíz"
+   },
+   "new_folder": {
+      "message": "Nueva carpeta"
+   },
+   "new_bookmark": {
+      "message": "Nuevo marcador"
+   },
+   "new_tab": {
+      "message": "Nueva pestaña"
+   },
+   "new_tabGroup": {
+      "message": "Nuevo grupo de pestañas"
+   },
+   "new_page": {
+      "message": "Nueva página"
+   },
+   "edit_folder": {
+      "message": "Editar carpeta"
+   },
+   "edit_bookmark": {
+      "message": "Editar marcador"
+   },
+   "edit_tab": {
+      "message": "Editar pestaña"
+   },
+   "edit_tabGroup": {
+      "message": "Editar grupo de pestañas"
+   },
+   "edit_page": {
+      "message": "Editar página"
+   },
+   "add": {
+      "message": "Añadir"
+   },
+   "edit": {
+      "message": "Editar"
+   },
+   "delete": {
+      "message": "Eliminar"
+   },
+   "cancel": {
+      "message": "Cancelar"
+   },
+   "save": {
+      "message": "Guardar"
+   },
+   "close": {
+      "message": "Cerrar"
+   },
+   "title": {
+      "message": "Nombre"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Dirección URL"
+   },
+   "parent_path": {
+      "message": "Carpeta"
+   },
+   "grid_cols": {
+      "message": "Columnas"
+   },
+   "background_color": {
+      "message": "Color del tema"
+   },
+   "background_type": {
+      "message": "Imagen de fondo"
+   },
+   "background_file": {
+      "message": "Archivo local"
+   },
+   "background_url": {
+      "message": "Servicio de fondo personalizado"
+   },
+   "background_none": {
+      "message": "Ninguno"
+   },
+   "favicon_type": {
+      "message": "Iconos"
+   },
+   "favicon_url": {
+      "message": "Servicio de iconos personalizado"
+   },
+   "favicon_default": {
+      "message": "Predeterminado"
+   },
+   "select_file": {
+      "message": "Seleccionar archivo"
+   },
+   "tiles": {
+      "message": "Cuadrículas"
+   },
+   "tile_enable_add": {
+      "message": "Mostrar botón 'Añadir nuevo elemento'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Habilitar botones de editar y eliminar"
+   },
+   "tile_enable_reorder": {
+      "message": "Habilitar reordenación"
+   },
+   "permissions": {
+      "message": "Permisos"
+   },
+   "enable_top_sites": {
+      "message": "Habilitar sitios frecuentes"
+   },
+   "enable_history": {
+      "message": "Habilitar historial"
+   },
+   "enable_bookmarks": {
+      "message": "Habilitar marcadores"
+   },
+   "enable_reading_list": {
+      "message": "Habilitar lista de lectura"
+   },
+   "enable_tab_groups": {
+      "message": "Habilitar grupos de pestañas"
+   },
+   "custom_theme": {
+      "message": "Apariencia personalizada"
+   },
+   "no_search_results_found": {
+      "message": "No se encontraron resultados"
+   },
+   "no_search_results_found_details": {
+      "message": "Intenta usar otras palabras clave"
+   },
+   "delete_item_confirm": {
+      "message": "¿Seguro que deseas eliminar esto?\n$1?"
+   },
+   "empty_state": {
+      "message": "Esta carpeta está vacía"
+   },
+   "empty_state_details": {
+      "message": "Añade nuevos elementos con el botón +"
+   },
+   "error_loading_data": {
+      "message": "¡Vaya! Ocurrió un error"
+   },
+   "error_loading_data_details": {
+      "message": "No se pudieron cargar los datos"
+   },
+   "pages_unread": {
+      "message": "Páginas no leídas"
+   },
+   "pages_read": {
+      "message": "Páginas leídas"
+   },
+   "ungrouped_tabs": {
+      "message": "Sin grupo"
+   },
+   "open_side_panel": {
+      "message": "Haz clic para abrir/cerrar el panel lateral"
+   },
+   "expert": {
+      "message": "Experto"
+   },
+   "custom_theme_placeholder": {
+      "message": "Utiliza estilos CSS aquí para personalizar la interfaz, por ejemplo:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nMás información: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Déjalo en blanco para crear una carpeta"
+   },
+   "motivation_1": {
+      "message": "¡Hola, que tengas un buen día!"
+   },
+   "motivation_2": {
+      "message": "¡Qué bueno verte de nuevo!"
+   },
+   "motivation_3": {
+      "message": "¡Hagamos algo grandioso hoy!"
+   },
+   "welcome_title": {
+      "message": "Acceso rápido"
+   },
+   "welcome_message": {
+      "message": "¡Bienvenido a tu nueva página de inicio! Además de las páginas frecuentes, ahora puedes acceder a tus marcadores, lista de lectura y grupos de pestañas con un solo clic. Establece un fondo genial o usa las teclas <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> y <kbd>→</kbd> para navegar. Fija el icono de la extensión en la barra de herramientas y podrás abrirlo como barra lateral en cualquier momento."
+   },
+   "welcome_permissions1": {
+      "message": "Para empezar, selecciona lo que te gustaría ver aquí:"
+   },
+   "welcome_permissions2": {
+      "message": "Puedes cambiar esto en la configuración en cualquier momento."
+   },
+   "welcome_footnote": {
+      "message": "Tu configuración se sincronizará automáticamente con tu cuenta de Chrome para que disfrutes de la misma experiencia en todos tus dispositivos."
+   }
+}

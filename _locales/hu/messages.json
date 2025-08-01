@@ -95,7 +95,7 @@
    "url_address": {
       "message": "URL cím"
    },
-   "folder": {
+   "parent_path": {
       "message": "Mappa"
    },
    "grid_cols": {

@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Accés ràpid"
+   },
+   "app_description": {
+      "message": "Una pàgina de pestanya nova neta i intuïtiva on pots accedir als teus marcadors, llista de lectura i grups de pestanyes amb un sol clic."
+   },
+   "new_tab_page": {
+      "message": "Pestanya nova"
+   },
+   "search_": {
+      "message": "Cerca..."
+   },
+   "general": {
+      "message": "General"
+   },
+   "advanced": {
+      "message": "Avançat"
+   },
+   "top_sites": {
+      "message": "Llocs principals"
+   },
+   "history": {
+      "message": "Historial"
+   },
+   "bookmarks": {
+      "message": "Marcadors"
+   },
+   "reading_list": {
+      "message": "Llista de lectura"
+   },
+   "tab_groups": {
+      "message": "Grups de pestanyes"
+   },
+   "settings": {
+      "message": "Configuració"
+   },
+   "root_folder": {
+      "message": "Carpeta arrel"
+   },
+   "new_folder": {
+      "message": "Afegir carpeta"
+   },
+   "new_bookmark": {
+      "message": "Afegir marcador"
+   },
+   "new_tab": {
+      "message": "Afegir pestanya"
+   },
+   "new_tabGroup": {
+      "message": "Afegir grup de pestanyes"
+   },
+   "new_page": {
+      "message": "Afegir pàgina"
+   },
+   "edit_folder": {
+      "message": "Editar carpeta"
+   },
+   "edit_bookmark": {
+      "message": "Editar marcador"
+   },
+   "edit_tab": {
+      "message": "Editar pestanya"
+   },
+   "edit_tabGroup": {
+      "message": "Editar grup de pestanyes"
+   },
+   "edit_page": {
+      "message": "Editar pàgina"
+   },
+   "add": {
+      "message": "Afegir"
+   },
+   "edit": {
+      "message": "Editar"
+   },
+   "delete": {
+      "message": "Eliminar"
+   },
+   "cancel": {
+      "message": "Cancel·lar"
+   },
+   "save": {
+      "message": "Desar"
+   },
+   "close": {
+      "message": "Tancar"
+   },
+   "title": {
+      "message": "Títol"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Adreça URL"
+   },
+   "parent_path": {
+      "message": "Carpeta"
+   },
+   "grid_cols": {
+      "message": "Nombre de columnes"
+   },
+   "background_color": {
+      "message": "Color del tema"
+   },
+   "background_type": {
+      "message": "Imatge de fons"
+   },
+   "background_file": {
+      "message": "Fitxer local"
+   },
+   "background_url": {
+      "message": "Servei de fons personalitzat"
+   },
+   "background_none": {
+      "message": "Cap"
+   },
+   "favicon_type": {
+      "message": "Icones"
+   },
+   "favicon_url": {
+      "message": "Servei d'icones personalitzat"
+   },
+   "favicon_default": {
+      "message": "Per defecte"
+   },
+   "select_file": {
+      "message": "Triar fitxer"
+   },
+   "tiles": {
+      "message": "Rajoles" 
+   },
+   "tile_enable_add": {
+      "message": "Mostrar botó 'Afegir element nou'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Activar botons d'edició i eliminació" 
+   },
+   "tile_enable_reorder": {
+      "message": "Activar reordenació" 
+   },
+   "permissions": {
+      "message": "Permisos"
+   },
+   "enable_top_sites": {
+      "message": "Accés als llocs principals"
+   },
+   "enable_history": {
+      "message": "Accés a l'historial"
+   },
+   "enable_bookmarks": {
+      "message": "Accés als marcadors"
+   },
+   "enable_reading_list": {
+      "message": "Accés a la llista de lectura"
+   },
+   "enable_tab_groups": {
+      "message": "Accés als grups de pestanyes"
+   },
+   "custom_theme": {
+      "message": "Aparença personalitzada"
+   },
+   "no_search_results_found": {
+      "message": "No s'han trobat resultats de cerca"
+   },
+   "no_search_results_found_details": {
+      "message": "Prova d'utilitzar paraules clau diferents"
+   },
+   "delete_item_confirm": {
+      "message": "Estàs segur que vols eliminar\n$1?"
+   },
+   "empty_state": {
+      "message": "Aquesta carpeta encara està buida"
+   },
+   "empty_state_details": {
+      "message": "Afegeix elements nous amb el botó +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Alguna cosa ha anat malament!"
+   },
+   "error_loading_data_details": {
+      "message": "No s'han pogut carregar les dades"
+   },
+   "pages_unread": {
+      "message": "Pàgines no llegides"
+   },
+   "pages_read": {
+      "message": "Pàgines llegides"
+   },
+   "ungrouped_tabs": {
+      "message": "Pestanyes sense agrupar"
+   },
+   "open_side_panel": {
+      "message": "Fes clic per obrir / tancar el panell lateral"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Utilitza estils CSS aquí per personalitzar la interfície, per exemple:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nPer a més informació: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Deixa en blanc per crear una carpeta"
+   },
+   "motivation_1": {
+      "message": "Hola, que tinguis un bon dia!"
+   },
+   "motivation_2": {
+      "message": "És bo tornar-te a veure!"
+   },
+   "motivation_3": {
+      "message": "Fem alguna cosa genial avui!"
+   },
+   "welcome_title": {
+      "message": "Accés ràpid"
+   },
+   "welcome_message": {
+      "message": "Benvingut a la teva nova pàgina d'inici! A més de les pàgines freqüents, ara pots accedir als teus marcadors, llista de lectura i grups de pestanyes amb un sol clic. Estableix un fons genial o deixa el ratolí i utilitza les tecles <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> i <kbd>→</kbd> per navegar. Fixa la icona de l'extensió a la barra d'eines i podràs obrir-la com a barra lateral en qualsevol moment."
+   },
+   "welcome_permissions1": {
+      "message": "Per començar, selecciona què t'agradaria veure aquí:"
+   },
+   "welcome_permissions2": {
+      "message": "Pots canviar això a la configuració en qualsevol moment."
+   },
+   "welcome_footnote": {
+      "message": "La teva configuració se sincronitzarà automàticament amb el teu compte de Chrome perquè puguis gaudir de la mateixa experiència fantàstica a tots els teus dispositius."
+   }
+}

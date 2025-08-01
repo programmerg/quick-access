@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "وصول سريع"
+   },
+   "app_description": {
+      "message": "صفحة تبويب جديدة نظيفة وبديهية حيث يمكنك الوصول إلى المفضلة وقائمة القراءة ومجموعات التبويبات بنقرة واحدة فقط."
+   },
+   "new_tab_page": {
+      "message": "تبويب جديد"
+   },
+   "search_": {
+      "message": "بحث..."
+   },
+   "general": {
+      "message": "عام"
+   },
+   "advanced": {
+      "message": "متقدم"
+   },
+   "top_sites": {
+      "message": "المواقع المتكررة"
+   },
+   "history": {
+      "message": "السجل"
+   },
+   "bookmarks": {
+      "message": "المفضلة"
+   },
+   "reading_list": {
+      "message": "قائمة القراءة"
+   },
+   "tab_groups": {
+      "message": "مجموعات التبويبات"
+   },
+   "settings": {
+      "message": "الإعدادات"
+   },
+   "root_folder": {
+      "message": "المجلد الجذري"
+   },
+   "new_folder": {
+      "message": "مجلد جديد"
+   },
+   "new_bookmark": {
+      "message": "إشارة مرجعية جديدة"
+   },
+   "new_tab": {
+      "message": "تبويب جديد"
+   },
+   "new_tabGroup": {
+      "message": "مجموعة تبويبات جديدة"
+   },
+   "new_page": {
+      "message": "صفحة جديدة"
+   },
+   "edit_folder": {
+      "message": "تعديل المجلد"
+   },
+   "edit_bookmark": {
+      "message": "تعديل الإشارة المرجعية"
+   },
+   "edit_tab": {
+      "message": "تعديل التبويب"
+   },
+   "edit_tabGroup": {
+      "message": "تعديل مجموعة التبويبات"
+   },
+   "edit_page": {
+      "message": "تعديل الصفحة"
+   },
+   "add": {
+      "message": "إضافة"
+   },
+   "edit": {
+      "message": "تعديل"
+   },
+   "delete": {
+      "message": "حذف"
+   },
+   "cancel": {
+      "message": "إلغاء"
+   },
+   "save": {
+      "message": "حفظ"
+   },
+   "close": {
+      "message": "إغلاق"
+   },
+   "title": {
+      "message": "الاسم"
+   },
+   "url": {
+      "message": "الرابط"
+   },
+   "url_address": {
+      "message": "عنوان الرابط"
+   },
+   "parent_path": {
+      "message": "مجلد"
+   },
+   "grid_cols": {
+      "message": "عدد الأعمدة"
+   },
+   "background_color": {
+      "message": "لون السمة"
+   },
+   "background_type": {
+      "message": "صورة الخلفية"
+   },
+   "background_file": {
+      "message": "ملف محلي"
+   },
+   "background_url": {
+      "message": "خدمة خلفية مخصصة"
+   },
+   "background_none": {
+      "message": "لا يوجد"
+   },
+   "favicon_type": {
+      "message": "الأيقونات"
+   },
+   "favicon_url": {
+      "message": "خدمة أيقونات مخصصة"
+   },
+   "favicon_default": {
+      "message": "افتراضي"
+   },
+   "select_file": {
+      "message": "اختر ملف"
+   },
+   "tiles": {
+      "message": "البلاطات"
+   },
+   "tile_enable_add": {
+      "message": "إظهار زر 'إضافة عنصر جديد'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "تفعيل أزرار التعديل والحذف"
+   },
+   "tile_enable_reorder": {
+      "message": "تفعيل إعادة الترتيب"
+   },
+   "permissions": {
+      "message": "الأذونات"
+   },
+   "enable_top_sites": {
+      "message": "تفعيل المواقع المتكررة"
+   },
+   "enable_history": {
+      "message": "تفعيل السجل"
+   },
+   "enable_bookmarks": {
+      "message": "تفعيل المفضلة"
+   },
+   "enable_reading_list": {
+      "message": "تفعيل قائمة القراءة"
+   },
+   "enable_tab_groups": {
+      "message": "تفعيل مجموعات التبويبات"
+   },
+   "custom_theme": {
+      "message": "مظهر مخصص"
+   },
+   "no_search_results_found": {
+      "message": "لم يتم العثور على نتائج"
+   },
+   "no_search_results_found_details": {
+      "message": "حاول استخدام كلمات مفتاحية أخرى"
+   },
+   "delete_item_confirm": {
+      "message": "هل أنت متأكد أنك تريد حذف هذا:\n$1؟"
+   },
+   "empty_state": {
+      "message": "هذا المجلد فارغ حتى الآن"
+   },
+   "empty_state_details": {
+      "message": "أضف عناصر جديدة باستخدام زر +"
+   },
+   "error_loading_data": {
+      "message": "عذراً، حدث خطأ ما"
+   },
+   "error_loading_data_details": {
+      "message": "فشل في تحميل البيانات"
+   },
+   "pages_unread": {
+      "message": "صفحات غير مقروءة"
+   },
+   "pages_read": {
+      "message": "صفحات مقروءة"
+   },
+   "ungrouped_tabs": {
+      "message": "بدون مجموعة"
+   },
+   "open_side_panel": {
+      "message": "انقر لفتح/إغلاق اللوحة الجانبية"
+   },
+   "expert": {
+      "message": "خبير"
+   },
+   "custom_theme_placeholder": {
+      "message": "استخدم أنماط CSS هنا لتخصيص الواجهة، على سبيل المثال:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nلمزيد من المعلومات: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "اتركه فارغًا لإنشاء مجلد"
+   },
+   "motivation_1": {
+      "message": "مرحبًا، أتمنى لك يومًا سعيدًا!"
+   },
+   "motivation_2": {
+      "message": "سعيد برؤيتك مرة أخرى!"
+   },
+   "motivation_3": {
+      "message": "لنقم بشيء رائع اليوم!"
+   },
+   "welcome_title": {
+      "message": "وصول سريع"
+   },
+   "welcome_message": {
+      "message": "مرحبًا بك في صفحتك الرئيسية الجديدة! بالإضافة إلى المواقع المتكررة، يمكنك الآن الوصول إلى المفضلة وقائمة القراءة ومجموعات التبويبات بنقرة واحدة. عيّن خلفية رائعة أو استخدم مفاتيح <kbd>TAB</kbd>، <kbd>↑</kbd>، <kbd>↓</kbd>، <kbd>←</kbd> و<kbd>→</kbd> للتنقل. ثبّت أيقونة الإضافة على شريط الأدوات ويمكنك فتحها كلوحة جانبية في أي وقت."
+   },
+   "welcome_permissions1": {
+      "message": "لبدء الاستخدام، اختر ما ترغب في رؤيته هنا:"
+   },
+   "welcome_permissions2": {
+      "message": "يمكنك تغيير هذا في الإعدادات في أي وقت."
+   },
+   "welcome_footnote": {
+      "message": "سيتم مزامنة إعداداتك تلقائيًا مع حساب Chrome الخاص بك حتى تستمتع بنفس التجربة الرائعة عبر جميع أجهزتك."
+   }
+}

@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Snelle toegang"
+   },
+   "app_description": {
+      "message": "Een schone, intuïtieve nieuwe tabbladpagina waar je met één klik toegang hebt tot je favorieten, leeslijst en tabbladgroepen."
+   },
+   "new_tab_page": {
+      "message": "Nieuw tabblad"
+   },
+   "search_": {
+      "message": "Zoeken..."
+   },
+   "general": {
+      "message": "Algemeen"
+   },
+   "advanced": {
+      "message": "Geavanceerd"
+   },
+   "top_sites": {
+      "message": "Topwebsites"
+   },
+   "history": {
+      "message": "Geschiedenis"
+   },
+   "bookmarks": {
+      "message": "Bladwijzers"
+   },
+   "reading_list": {
+      "message": "Leeslijst"
+   },
+   "tab_groups": {
+      "message": "Tabbladgroepen"
+   },
+   "settings": {
+      "message": "Instellingen"
+   },
+   "root_folder": {
+      "message": "Hoofdmap"
+   },
+   "new_folder": {
+      "message": "Map toevoegen"
+   },
+   "new_bookmark": {
+      "message": "Bladwijzer toevoegen"
+   },
+   "new_tab": {
+      "message": "Tabblad toevoegen"
+   },
+   "new_tabGroup": {
+      "message": "Tabbladgroep toevoegen"
+   },
+   "new_page": {
+      "message": "Pagina toevoegen"
+   },
+   "edit_folder": {
+      "message": "Map bewerken"
+   },
+   "edit_bookmark": {
+      "message": "Bladwijzer bewerken"
+   },
+   "edit_tab": {
+      "message": "Tabblad bewerken"
+   },
+   "edit_tabGroup": {
+      "message": "Tabbladgroep bewerken"
+   },
+   "edit_page": {
+      "message": "Pagina bewerken"
+   },
+   "add": {
+      "message": "Toevoegen"
+   },
+   "edit": {
+      "message": "Bewerken"
+   },
+   "delete": {
+      "message": "Verwijderen"
+   },
+   "cancel": {
+      "message": "Annuleren"
+   },
+   "save": {
+      "message": "Opslaan"
+   },
+   "close": {
+      "message": "Sluiten"
+   },
+   "title": {
+      "message": "Titel"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-adres"
+   },
+   "parent_path": {
+      "message": "Map"
+   },
+   "grid_cols": {
+      "message": "Kolommen"
+   },
+   "background_color": {
+      "message": "Themakleur"
+   },
+   "background_type": {
+      "message": "Achtergrondafbeelding"
+   },
+   "background_file": {
+      "message": "Lokaal bestand"
+   },
+   "background_url": {
+      "message": "Aangepaste wallpaper service"
+   },
+   "background_none": {
+      "message": "Geen"
+   },
+   "favicon_type": {
+      "message": "Pictogrammen"
+   },
+   "favicon_url": {
+      "message": "Aangepaste favicon service"
+   },
+   "favicon_default": {
+      "message": "Standaard"
+   },
+   "select_file": {
+      "message": "Bestand kiezen"
+   },
+   "tiles": {
+      "message": "Tegels" 
+   },
+   "tile_enable_add": {
+      "message": "Toon 'Nieuw item toevoegen' knop" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Bewerk- en verwijderknoppen inschakelen" 
+   },
+   "tile_enable_reorder": {
+      "message": "Herordenen inschakelen" 
+   },
+   "permissions": {
+      "message": "Machtigingen"
+   },
+   "enable_top_sites": {
+      "message": "Toegang tot topwebsites"
+   },
+   "enable_history": {
+      "message": "Toegang tot geschiedenis"
+   },
+   "enable_bookmarks": {
+      "message": "Toegang tot bladwijzers"
+   },
+   "enable_reading_list": {
+      "message": "Toegang tot leeslijst"
+   },
+   "enable_tab_groups": {
+      "message": "Toegang tot tabbladgroepen"
+   },
+   "custom_theme": {
+      "message": "Aangepast uiterlijk"
+   },
+   "no_search_results_found": {
+      "message": "Geen zoekresultaten gevonden"
+   },
+   "no_search_results_found_details": {
+      "message": "Probeer andere zoekwoorden te gebruiken"
+   },
+   "delete_item_confirm": {
+      "message": "Weet je zeker dat je wilt verwijderen\n$1?"
+   },
+   "empty_state": {
+      "message": "Deze map is nog leeg"
+   },
+   "empty_state_details": {
+      "message": "Voeg nieuwe items toe met de + knop"
+   },
+   "error_loading_data": {
+      "message": "Oeps! Er is iets misgegaan!"
+   },
+   "error_loading_data_details": {
+      "message": "Gegevens ophalen mislukt."
+   },
+   "pages_unread": {
+      "message": "Ongelezen pagina's"
+   },
+   "pages_read": {
+      "message": "Gelezen pagina's"
+   },
+   "ungrouped_tabs": {
+      "message": "Niet-gegroepeerde tabbladen"
+   },
+   "open_side_panel": {
+      "message": "Klik om zijpaneel te openen / sluiten"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Gebruik hier CSS-stijlen om de interface aan te passen, bijv.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nVoor meer: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Laat leeg om een map te maken"
+   },
+   "motivation_1": {
+      "message": "Hallo, fijne dag!"
+   },
+   "motivation_2": {
+      "message": "Goed je weer te zien!"
+   },
+   "motivation_3": {
+      "message": "Laten we vandaag iets geweldigs doen!"
+   },
+   "welcome_title": {
+      "message": "Snelle toegang"
+   },
+   "welcome_message": {
+      "message": "Welkom op je nieuwe startpagina! Naast veelbezochte pagina's kun je nu met één klik toegang krijgen tot je bladwijzers, leeslijst en tabbladgroepen. Stel een coole achtergrond in of leg de muis weg en gebruik de <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> en <kbd>→</kbd> toetsen om te navigeren. Zet het extensie-pictogram vast op de werkbalk en je kunt het altijd als zijpaneel oproepen."
+   },
+   "welcome_permissions1": {
+      "message": "Selecteer om te beginnen wat je hier wilt zien:"
+   },
+   "welcome_permissions2": {
+      "message": "Je kunt dit altijd wijzigen in de instellingen."
+   },
+   "welcome_footnote": {
+      "message": "Je instellingen worden automatisch gesynchroniseerd met je Chrome-account zodat je op al je apparaten dezelfde geweldige ervaring kunt hebben."
+   }
+}

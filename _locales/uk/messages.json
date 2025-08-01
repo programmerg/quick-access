@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Швидкий доступ"
+   },
+   "app_description": {
+      "message": "Чиста, інтуїтивна сторінка нової вкладки, де ви можете отримати доступ до своїх закладок, списку читання та груп вкладок одним кліком."
+   },
+   "new_tab_page": {
+      "message": "Нова вкладка"
+   },
+   "search_": {
+      "message": "Пошук..."
+   },
+   "general": {
+      "message": "Загальні"
+   },
+   "advanced": {
+      "message": "Розширені"
+   },
+   "top_sites": {
+      "message": "Популярні сайти"
+   },
+   "history": {
+      "message": "Історія"
+   },
+   "bookmarks": {
+      "message": "Закладки"
+   },
+   "reading_list": {
+      "message": "Список читання"
+   },
+   "tab_groups": {
+      "message": "Групи вкладок"
+   },
+   "settings": {
+      "message": "Налаштування"
+   },
+   "root_folder": {
+      "message": "Коренева папка"
+   },
+   "new_folder": {
+      "message": "Додати папку"
+   },
+   "new_bookmark": {
+      "message": "Додати закладку"
+   },
+   "new_tab": {
+      "message": "Додати вкладку"
+   },
+   "new_tabGroup": {
+      "message": "Додати групу вкладок"
+   },
+   "new_page": {
+      "message": "Додати сторінку"
+   },
+   "edit_folder": {
+      "message": "Редагувати папку"
+   },
+   "edit_bookmark": {
+      "message": "Редагувати закладку"
+   },
+   "edit_tab": {
+      "message": "Редагувати вкладку"
+   },
+   "edit_tabGroup": {
+      "message": "Редагувати групу вкладок"
+   },
+   "edit_page": {
+      "message": "Редагувати сторінку"
+   },
+   "add": {
+      "message": "Додати"
+   },
+   "edit": {
+      "message": "Редагувати"
+   },
+   "delete": {
+      "message": "Видалити"
+   },
+   "cancel": {
+      "message": "Скасувати"
+   },
+   "save": {
+      "message": "Зберегти"
+   },
+   "close": {
+      "message": "Закрити"
+   },
+   "title": {
+      "message": "Назва"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL адреса"
+   },
+   "parent_path": {
+      "message": "Папка"
+   },
+   "grid_cols": {
+      "message": "Кількість стовпців"
+   },
+   "background_color": {
+      "message": "Колір теми"
+   },
+   "background_type": {
+      "message": "Фонове зображення"
+   },
+   "background_file": {
+      "message": "Локальний файл"
+   },
+   "background_url": {
+      "message": "Користувацький сервіс шпалер"
+   },
+   "background_none": {
+      "message": "Немає"
+   },
+   "favicon_type": {
+      "message": "Іконки"
+   },
+   "favicon_url": {
+      "message": "Користувацький сервіс іконок"
+   },
+   "favicon_default": {
+      "message": "За замовчуванням"
+   },
+   "select_file": {
+      "message": "Вибрати файл"
+   },
+   "tiles": {
+      "message": "Плитки" 
+   },
+   "tile_enable_add": {
+      "message": "Показувати кнопку 'Додати новий елемент'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Увімкнути кнопки редагування та видалення" 
+   },
+   "tile_enable_reorder": {
+      "message": "Увімкнути перевпорядкування" 
+   },
+   "permissions": {
+      "message": "Дозволи"
+   },
+   "enable_top_sites": {
+      "message": "Доступ до популярних сайтів"
+   },
+   "enable_history": {
+      "message": "Доступ до історії"
+   },
+   "enable_bookmarks": {
+      "message": "Доступ до закладок"
+   },
+   "enable_reading_list": {
+      "message": "Доступ до списку читання"
+   },
+   "enable_tab_groups": {
+      "message": "Доступ до груп вкладок"
+   },
+   "custom_theme": {
+      "message": "Користувацький вигляд"
+   },
+   "no_search_results_found": {
+      "message": "Результатів пошуку не знайдено"
+   },
+   "no_search_results_found_details": {
+      "message": "Спробуйте використати інші ключові слова"
+   },
+   "delete_item_confirm": {
+      "message": "Ви впевнені, що хочете видалити\n$1?"
+   },
+   "empty_state": {
+      "message": "Ця папка поки що порожня"
+   },
+   "empty_state_details": {
+      "message": "Додайте нові елементи за допомогою кнопки +"
+   },
+   "error_loading_data": {
+      "message": "Упс! Щось пішло не так!"
+   },
+   "error_loading_data_details": {
+      "message": "Не вдалося завантажити дані"
+   },
+   "pages_unread": {
+      "message": "Непрочитані сторінки"
+   },
+   "pages_read": {
+      "message": "Прочитані сторінки"
+   },
+   "ungrouped_tabs": {
+      "message": "Незгруповані вкладки"
+   },
+   "open_side_panel": {
+      "message": "Натисніть, щоб відкрити / закрити бічну панель"
+   },
+   "expert": {
+      "message": "Експерт"
+   },
+   "custom_theme_placeholder": {
+      "message": "Використовуйте CSS стилі тут для налаштування інтерфейсу, наприклад:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nДокладніше: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Залиште порожнім, щоб створити папку"
+   },
+   "motivation_1": {
+      "message": "Привіт, гарного дня!"
+   },
+   "motivation_2": {
+      "message": "Радий знову вас бачити!"
+   },
+   "motivation_3": {
+      "message": "Давайте зробимо щось чудове сьогодні!"
+   },
+   "welcome_title": {
+      "message": "Швидкий доступ"
+   },
+   "welcome_message": {
+      "message": "Ласкаво просимо на вашу нову домашню сторінку! Окрім часто відвідуваних сторінок, тепер ви можете отримати доступ до своїх закладок, списку читання та груп вкладок одним кліком. Встановіть крутий фон або відкладіть мишку та використовуйте клавіші <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> і <kbd>→</kbd> для навігації. Закріпіть іконку розширення на панелі інструментів, і ви зможете викликати її як бічну панель у будь-який час."
+   },
+   "welcome_permissions1": {
+      "message": "Для початку виберіть, що ви хотіли б тут бачити:"
+   },
+   "welcome_permissions2": {
+      "message": "Ви можете змінити це в налаштуваннях у будь-який час."
+   },
+   "welcome_footnote": {
+      "message": "Ваші налаштування будуть автоматично синхронізовані з вашим обліковим записом Chrome, щоб ви могли насолоджуватися однаковим чудовим досвідом на всіх своїх пристроях."
+   }
+}

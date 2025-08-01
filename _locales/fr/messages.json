@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Accès rapide"
+   },
+   "app_description": {
+      "message": "Une page de nouvel onglet propre et intuitive où vous pouvez accéder à vos Favoris, Liste de lecture et Groupes d'onglets en un seul clic."
+   },
+   "new_tab_page": {
+      "message": "Nouvel onglet"
+   },
+   "search_": {
+      "message": "Recherche..."
+   },
+   "general": {
+      "message": "Général"
+   },
+   "advanced": {
+      "message": "Avancé"
+   },
+   "top_sites": {
+      "message": "Sites fréquents"
+   },
+   "history": {
+      "message": "Historique"
+   },
+   "bookmarks": {
+      "message": "Favoris"
+   },
+   "reading_list": {
+      "message": "Liste de lecture"
+   },
+   "tab_groups": {
+      "message": "Groupes d'onglets"
+   },
+   "settings": {
+      "message": "Paramètres"
+   },
+   "root_folder": {
+      "message": "Dossier racine"
+   },
+   "new_folder": {
+      "message": "Nouveau dossier"
+   },
+   "new_bookmark": {
+      "message": "Nouveau favori"
+   },
+   "new_tab": {
+      "message": "Nouvel onglet"
+   },
+   "new_tabGroup": {
+      "message": "Nouveau groupe d'onglets"
+   },
+   "new_page": {
+      "message": "Nouvelle page"
+   },
+   "edit_folder": {
+      "message": "Modifier le dossier"
+   },
+   "edit_bookmark": {
+      "message": "Modifier le favori"
+   },
+   "edit_tab": {
+      "message": "Modifier l'onglet"
+   },
+   "edit_tabGroup": {
+      "message": "Modifier le groupe d'onglets"
+   },
+   "edit_page": {
+      "message": "Modifier la page"
+   },
+   "add": {
+      "message": "Ajouter"
+   },
+   "edit": {
+      "message": "Modifier"
+   },
+   "delete": {
+      "message": "Supprimer"
+   },
+   "cancel": {
+      "message": "Annuler"
+   },
+   "save": {
+      "message": "Enregistrer"
+   },
+   "close": {
+      "message": "Fermer"
+   },
+   "title": {
+      "message": "Nom"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Adresse URL"
+   },
+   "parent_path": {
+      "message": "Dossier"
+   },
+   "grid_cols": {
+      "message": "Colonnes"
+   },
+   "background_color": {
+      "message": "Couleur du thème"
+   },
+   "background_type": {
+      "message": "Image de fond"
+   },
+   "background_file": {
+      "message": "Fichier local"
+   },
+   "background_url": {
+      "message": "Service de fond personnalisé"
+   },
+   "background_none": {
+      "message": "Aucun"
+   },
+   "favicon_type": {
+      "message": "Icônes"
+   },
+   "favicon_url": {
+      "message": "Service d'icônes personnalisé"
+   },
+   "favicon_default": {
+      "message": "Par défaut"
+   },
+   "select_file": {
+      "message": "Choisir un fichier"
+   },
+   "tiles": {
+      "message": "Tuiles"
+   },
+   "tile_enable_add": {
+      "message": "Afficher le bouton 'Ajouter un nouvel élément'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Activer les boutons modifier et supprimer"
+   },
+   "tile_enable_reorder": {
+      "message": "Activer le réarrangement"
+   },
+   "permissions": {
+      "message": "Autorisations"
+   },
+   "enable_top_sites": {
+      "message": "Activer les sites fréquents"
+   },
+   "enable_history": {
+      "message": "Activer l'historique"
+   },
+   "enable_bookmarks": {
+      "message": "Activer les favoris"
+   },
+   "enable_reading_list": {
+      "message": "Activer la liste de lecture"
+   },
+   "enable_tab_groups": {
+      "message": "Activer les groupes d'onglets"
+   },
+   "custom_theme": {
+      "message": "Apparence personnalisée"
+   },
+   "no_search_results_found": {
+      "message": "Aucun résultat trouvé"
+   },
+   "no_search_results_found_details": {
+      "message": "Essayez d'autres mots-clés"
+   },
+   "delete_item_confirm": {
+      "message": "Êtes-vous sûr de vouloir supprimer ceci :\n$1?"
+   },
+   "empty_state": {
+      "message": "Ce dossier est encore vide"
+   },
+   "empty_state_details": {
+      "message": "Ajoutez de nouveaux éléments avec le bouton +"
+   },
+   "error_loading_data": {
+      "message": "Oups, un problème est survenu"
+   },
+   "error_loading_data_details": {
+      "message": "Impossible de charger les données"
+   },
+   "pages_unread": {
+      "message": "Pages non lues"
+   },
+   "pages_read": {
+      "message": "Pages lues"
+   },
+   "ungrouped_tabs": {
+      "message": "Sans groupe"
+   },
+   "open_side_panel": {
+      "message": "Cliquer pour ouvrir/fermer le panneau latéral"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Utilisez ici des styles CSS pour personnaliser l'interface, par exemple :\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nPour en savoir plus : https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Laissez vide pour créer un dossier"
+   },
+   "motivation_1": {
+      "message": "Bonjour, passez une bonne journée !"
+   },
+   "motivation_2": {
+      "message": "Content de vous revoir !"
+   },
+   "motivation_3": {
+      "message": "Faisons quelque chose de génial aujourd'hui !"
+   },
+   "welcome_title": {
+      "message": "Accès rapide"
+   },
+   "welcome_message": {
+      "message": "Bienvenue sur votre nouvelle page d'accueil ! En plus des sites fréquents, vous pouvez désormais accéder à vos favoris, liste de lecture et groupes d'onglets en un seul clic. Définissez un fond sympa ou utilisez les touches <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> et <kbd>→</kbd> pour naviguer. Épinglez l'icône de l'extension à la barre d'outils et vous pourrez l'ouvrir en barre latérale à tout moment."
+   },
+   "welcome_permissions1": {
+      "message": "Pour commencer, sélectionnez ce que vous souhaitez voir ici :"
+   },
+   "welcome_permissions2": {
+      "message": "Vous pouvez modifier cela dans les paramètres à tout moment."
+   },
+   "welcome_footnote": {
+      "message": "Vos paramètres seront automatiquement synchronisés avec votre compte Chrome afin que vous puissiez profiter de la même expérience sur tous vos appareils."
+   }
+}

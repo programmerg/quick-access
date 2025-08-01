@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Snabbåtkomst"
+   },
+   "app_description": {
+      "message": "En ren och intuitiv ny fliksida där du kan komma åt favoriter, läslista och flikgrupper med bara ett klick."
+   },
+   "new_tab_page": {
+      "message": "Ny flik"
+   },
+   "search_": {
+      "message": "Sök..."
+   },
+   "general": {
+      "message": "Allmänt"
+   },
+   "advanced": {
+      "message": "Avancerat"
+   },
+   "top_sites": {
+      "message": "Mest besökta"
+   },
+   "history": {
+      "message": "Historik"
+   },
+   "bookmarks": {
+      "message": "Bokmärken"
+   },
+   "reading_list": {
+      "message": "Läslista"
+   },
+   "tab_groups": {
+      "message": "Flikgrupper"
+   },
+   "settings": {
+      "message": "Inställningar"
+   },
+   "root_folder": {
+      "message": "Rotmapp"
+   },
+   "new_folder": {
+      "message": "Ny mapp"
+   },
+   "new_bookmark": {
+      "message": "Nytt bokmärke"
+   },
+   "new_tab": {
+      "message": "Ny flik"
+   },
+   "new_tabGroup": {
+      "message": "Ny flikgrupp"
+   },
+   "new_page": {
+      "message": "Ny sida"
+   },
+   "edit_folder": {
+      "message": "Redigera mapp"
+   },
+   "edit_bookmark": {
+      "message": "Redigera bokmärke"
+   },
+   "edit_tab": {
+      "message": "Redigera flik"
+   },
+   "edit_tabGroup": {
+      "message": "Redigera flikgrupp"
+   },
+   "edit_page": {
+      "message": "Redigera sida"
+   },
+   "add": {
+      "message": "Lägg till"
+   },
+   "edit": {
+      "message": "Redigera"
+   },
+   "delete": {
+      "message": "Ta bort"
+   },
+   "cancel": {
+      "message": "Avbryt"
+   },
+   "save": {
+      "message": "Spara"
+   },
+   "close": {
+      "message": "Stäng"
+   },
+   "title": {
+      "message": "Titel"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-adress"
+   },
+   "parent_path": {
+      "message": "Mapp"
+   },
+   "grid_cols": {
+      "message": "Antal kolumner"
+   },
+   "background_color": {
+      "message": "Temafärg"
+   },
+   "background_type": {
+      "message": "Bakgrundsbild"
+   },
+   "background_file": {
+      "message": "Lokal fil"
+   },
+   "background_url": {
+      "message": "Anpassad bakgrundstjänst"
+   },
+   "background_none": {
+      "message": "Ingen"
+   },
+   "favicon_type": {
+      "message": "Ikoner"
+   },
+   "favicon_url": {
+      "message": "Anpassad ikontjänst"
+   },
+   "favicon_default": {
+      "message": "Standard"
+   },
+   "select_file": {
+      "message": "Välj fil"
+   },
+   "tiles": {
+      "message": "Brickor"
+   },
+   "tile_enable_add": {
+      "message": "Visa 'Lägg till ny'-knapp"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Aktivera redigerings- och borttagningsknappar"
+   },
+   "tile_enable_reorder": {
+      "message": "Tillåt omordning"
+   },
+   "permissions": {
+      "message": "Behörigheter"
+   },
+   "enable_top_sites": {
+      "message": "Tillåt åtkomst till mest besökta"
+   },
+   "enable_history": {
+      "message": "Tillåt åtkomst till historik"
+   },
+   "enable_bookmarks": {
+      "message": "Tillåt åtkomst till bokmärken"
+   },
+   "enable_reading_list": {
+      "message": "Tillåt åtkomst till läslista"
+   },
+   "enable_tab_groups": {
+      "message": "Tillåt åtkomst till flikgrupper"
+   },
+   "custom_theme": {
+      "message": "Anpassat utseende"
+   },
+   "no_search_results_found": {
+      "message": "Inga sökresultat hittades"
+   },
+   "no_search_results_found_details": {
+      "message": "Prova med andra sökord"
+   },
+   "delete_item_confirm": {
+      "message": "Är du säker på att du vill ta bort:\n$1?"
+   },
+   "empty_state": {
+      "message": "Denna mapp är tom"
+   },
+   "empty_state_details": {
+      "message": "Lägg till nya objekt med +-knappen"
+   },
+   "error_loading_data": {
+      "message": "Hoppsan! Något gick fel"
+   },
+   "error_loading_data_details": {
+      "message": "Det gick inte att läsa in data"
+   },
+   "pages_unread": {
+      "message": "Olästa sidor"
+   },
+   "pages_read": {
+      "message": "Lästa sidor"
+   },
+   "ungrouped_tabs": {
+      "message": "Ogrupperade flikar"
+   },
+   "open_side_panel": {
+      "message": "Öppna/stäng sidopanel"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Använd CSS-stilar för att anpassa gränssnittet, t.ex.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nMer information: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Lämna tomt för att skapa en mapp"
+   },
+   "motivation_1": {
+      "message": "Hej, ha en bra dag!"
+   },
+   "motivation_2": {
+      "message": "Kul att se dig igen!"
+   },
+   "motivation_3": {
+      "message": "Låt oss göra något fantastiskt idag!"
+   },
+   "welcome_title": {
+      "message": "Snabbåtkomst"
+   },
+   "welcome_message": {
+      "message": "Välkommen till din nya startsida! Förutom mest besökta sidor kan du nu nå dina bokmärken, läslista och flikgrupper med ett enda klick. Ställ in en snygg bakgrund eller navigera med <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> och <kbd>→</kbd> utan att använda musen. Fäst tilläggets ikon i verktygsfältet för att kunna öppna det som en sidopanel när som helst."
+   },
+   "welcome_permissions1": {
+      "message": "Välj vad du vill se här för att börja:"
+   },
+   "welcome_permissions2": {
+      "message": "Du kan ändra detta när som helst i inställningarna."
+   },
+   "welcome_footnote": {
+      "message": "Dina inställningar synkroniseras automatiskt till ditt Chrome-konto så att du kan njuta av samma upplevelse på alla dina enheter."
+   }
+}

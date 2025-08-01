@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Rýchly prístup"
+   },
+   "app_description": {
+      "message": "Čistá, intuitívna stránka novej karty, kde môžete jedným kliknutím pristupovať k svojim obľúbeným položkám, zoznamu na čítanie a skupinám kariet."
+   },
+   "new_tab_page": {
+      "message": "Nová karta"
+   },
+   "search_": {
+      "message": "Hľadať..."
+   },
+   "general": {
+      "message": "Všeobecné"
+   },
+   "advanced": {
+      "message": "Pokročilé"
+   },
+   "top_sites": {
+      "message": "Najnavštevovanejšie stránky"
+   },
+   "history": {
+      "message": "História"
+   },
+   "bookmarks": {
+      "message": "Záložky"
+   },
+   "reading_list": {
+      "message": "Zoznam na čítanie"
+   },
+   "tab_groups": {
+      "message": "Skupiny kariet"
+   },
+   "settings": {
+      "message": "Nastavenia"
+   },
+   "root_folder": {
+      "message": "Koreňový priečinok"
+   },
+   "new_folder": {
+      "message": "Pridať priečinok"
+   },
+   "new_bookmark": {
+      "message": "Pridať záložku"
+   },
+   "new_tab": {
+      "message": "Pridať kartu"
+   },
+   "new_tabGroup": {
+      "message": "Pridať skupinu kariet"
+   },
+   "new_page": {
+      "message": "Pridať stránku"
+   },
+   "edit_folder": {
+      "message": "Upraviť priečinok"
+   },
+   "edit_bookmark": {
+      "message": "Upraviť záložku"
+   },
+   "edit_tab": {
+      "message": "Upraviť kartu"
+   },
+   "edit_tabGroup": {
+      "message": "Upraviť skupinu kariet"
+   },
+   "edit_page": {
+      "message": "Upraviť stránku"
+   },
+   "add": {
+      "message": "Pridať"
+   },
+   "edit": {
+      "message": "Upraviť"
+   },
+   "delete": {
+      "message": "Odstrániť"
+   },
+   "cancel": {
+      "message": "Zrušiť"
+   },
+   "save": {
+      "message": "Uložiť"
+   },
+   "close": {
+      "message": "Zavrieť"
+   },
+   "title": {
+      "message": "Názov"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL adresa"
+   },
+   "parent_path": {
+      "message": "Priečinok"
+   },
+   "grid_cols": {
+      "message": "Stľpce"
+   },
+   "background_color": {
+      "message": "Farba témy"
+   },
+   "background_type": {
+      "message": "Obrázok pozadia"
+   },
+   "background_file": {
+      "message": "Miestny súbor"
+   },
+   "background_url": {
+      "message": "Vlastná služba tapety"
+   },
+   "background_none": {
+      "message": "Žiadny"
+   },
+   "favicon_type": {
+      "message": "Ikony"
+   },
+   "favicon_url": {
+      "message": "Vlastná služba ikon"
+   },
+   "favicon_default": {
+      "message": "Predvolené"
+   },
+   "select_file": {
+      "message": "Vybrať súbor"
+   },
+   "tiles": {
+      "message": "Dlaždice" 
+   },
+   "tile_enable_add": {
+      "message": "Zobraziť tlačidlo 'Pridať novú položku'" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Povoliť tlačidlá upraviť a odstrániť" 
+   },
+   "tile_enable_reorder": {
+      "message": "Povoliť preusporiadanie" 
+   },
+   "permissions": {
+      "message": "Oprávnenia"
+   },
+   "enable_top_sites": {
+      "message": "Prístup k najnavštevovanejším stránkam"
+   },
+   "enable_history": {
+      "message": "Prístup k histórii"
+   },
+   "enable_bookmarks": {
+      "message": "Prístup k záložkám"
+   },
+   "enable_reading_list": {
+      "message": "Prístup k zoznamu na čítanie"
+   },
+   "enable_tab_groups": {
+      "message": "Prístup k skupinám kariet"
+   },
+   "custom_theme": {
+      "message": "Vlastný vzhľad"
+   },
+   "no_search_results_found": {
+      "message": "Nenašli sa žiadne výsledky vyhľadávania"
+   },
+   "no_search_results_found_details": {
+      "message": "Skúste použiť iné kľúčové slová"
+   },
+   "delete_item_confirm": {
+      "message": "Ste si istí, že chcete odstrániť\n$1?"
+   },
+   "empty_state": {
+      "message": "Tento priečinok je zatiaľ prázdny"
+   },
+   "empty_state_details": {
+      "message": "Pridajte nové položky pomocou tlačidla +"
+   },
+   "error_loading_data": {
+      "message": "Ups! Niečo sa pokazilo!"
+   },
+   "error_loading_data_details": {
+      "message": "Nepodarilo sa načítať údaje."
+   },
+   "pages_unread": {
+      "message": "Neprečítané stránky"
+   },
+   "pages_read": {
+      "message": "Prečítané stránky"
+   },
+   "ungrouped_tabs": {
+      "message": "Nezoskupené karty"
+   },
+   "open_side_panel": {
+      "message": "Kliknite na otvorenie / zatvorenie bočného panelu"
+   },
+   "expert": {
+      "message": "Expert"
+   },
+   "custom_theme_placeholder": {
+      "message": "Použite tu CSS štýly na prispôsobenie rozhrania, napr.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nViac informácií: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Nechajte prázdne na vytvorenie priečinka"
+   },
+   "motivation_1": {
+      "message": "Ahoj, krásny deň!"
+   },
+   "motivation_2": {
+      "message": "Dobre ťa znovu vidieť!"
+   },
+   "motivation_3": {
+      "message": "Urobme dnes niečo skvelé!"
+   },
+   "welcome_title": {
+      "message": "Rýchly prístup"
+   },
+   "welcome_message": {
+      "message": "Vitajte na vašej novej domovskej stránke! Okrem často navštevovaných stránok môžete teraz jedným kliknutím pristupovať k svojim záložkám, zoznamu na čítanie a skupinám kariet. Nastavte si cool pozadie alebo odložte myš a použite klávesy <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> a <kbd>→</kbd> na navigáciu. Pripnite ikonu rozšírenia na panel nástrojov a môžete ju kedykoľvek vyvolať ako bočný panel."
+   },
+   "welcome_permissions1": {
+      "message": "Na začiatok vyberte, čo by ste tu chceli vidieť:"
+   },
+   "welcome_permissions2": {
+      "message": "Môžete to kedykoľvek zmeniť v nastaveniach."
+   },
+   "welcome_footnote": {
+      "message": "Vaše nastavenia sa automaticky synchronizujú s vaším Chrome účtom, takže si môžete užívať rovnaký skvelý zážitok na všetkých svojich zariadeniach."
+   }
+}

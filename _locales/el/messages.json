@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Γρήγορη πρόσβαση"
+   },
+   "app_description": {
+      "message": "Μια καθαρή και διαισθητική νέα σελίδα καρτέλας όπου μπορείτε να έχετε πρόσβαση στα αγαπημένα, τη λίστα ανάγνωσης και τις ομάδες καρτελών με ένα μόνο κλικ."
+   },
+   "new_tab_page": {
+      "message": "Νέα καρτέλα"
+   },
+   "search_": {
+      "message": "Αναζήτηση..."
+   },
+   "general": {
+      "message": "Γενικά"
+   },
+   "advanced": {
+      "message": "Προηγμένα"
+   },
+   "top_sites": {
+      "message": "Κορυφαίοι ιστότοποι"
+   },
+   "history": {
+      "message": "Ιστορικό"
+   },
+   "bookmarks": {
+      "message": "Σελιδοδείκτες"
+   },
+   "reading_list": {
+      "message": "Λίστα ανάγνωσης"
+   },
+   "tab_groups": {
+      "message": "Ομάδες καρτελών"
+   },
+   "settings": {
+      "message": "Ρυθμίσεις"
+   },
+   "root_folder": {
+      "message": "Κύριος φάκελος"
+   },
+   "new_folder": {
+      "message": "Νέος φάκελος"
+   },
+   "new_bookmark": {
+      "message": "Νέος σελιδοδείκτης"
+   },
+   "new_tab": {
+      "message": "Νέα καρτέλα"
+   },
+   "new_tabGroup": {
+      "message": "Νέα ομάδα καρτελών"
+   },
+   "new_page": {
+      "message": "Νέα σελίδα"
+   },
+   "edit_folder": {
+      "message": "Επεξεργασία φακέλου"
+   },
+   "edit_bookmark": {
+      "message": "Επεξεργασία σελιδοδείκτη"
+   },
+   "edit_tab": {
+      "message": "Επεξεργασία καρτέλας"
+   },
+   "edit_tabGroup": {
+      "message": "Επεξεργασία ομάδας καρτελών"
+   },
+   "edit_page": {
+      "message": "Επεξεργασία σελίδας"
+   },
+   "add": {
+      "message": "Προσθήκη"
+   },
+   "edit": {
+      "message": "Επεξεργασία"
+   },
+   "delete": {
+      "message": "Διαγραφή"
+   },
+   "cancel": {
+      "message": "Ακύρωση"
+   },
+   "save": {
+      "message": "Αποθήκευση"
+   },
+   "close": {
+      "message": "Κλείσιμο"
+   },
+   "title": {
+      "message": "Τίτλος"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "Διεύθυνση URL"
+   },
+   "parent_path": {
+      "message": "Φάκελος"
+   },
+   "grid_cols": {
+      "message": "Αριθμός στηλών"
+   },
+   "background_color": {
+      "message": "Χρώμα θέματος"
+   },
+   "background_type": {
+      "message": "Εικόνα φόντου"
+   },
+   "background_file": {
+      "message": "Τοπικό αρχείο"
+   },
+   "background_url": {
+      "message": "Προσαρμοσμένη υπηρεσία φόντου"
+   },
+   "background_none": {
+      "message": "Κανένα"
+   },
+   "favicon_type": {
+      "message": "Εικονίδια"
+   },
+   "favicon_url": {
+      "message": "Προσαρμοσμένη υπηρεσία εικονιδίων"
+   },
+   "favicon_default": {
+      "message": "Προεπιλογή"
+   },
+   "select_file": {
+      "message": "Επιλογή αρχείου"
+   },
+   "tiles": {
+      "message": "Πλακίδια"
+   },
+   "tile_enable_add": {
+      "message": "Εμφάνιση κουμπιού 'Προσθήκη νέου'"
+   },
+   "tile_enable_edit_delete": {
+      "message": "Ενεργοποίηση κουμπιών επεξεργασίας και διαγραφής"
+   },
+   "tile_enable_reorder": {
+      "message": "Ενεργοποίηση αναδιάταξης"
+   },
+   "permissions": {
+      "message": "Δικαιώματα"
+   },
+   "enable_top_sites": {
+      "message": "Ενεργοποίηση πρόσβασης σε κορυφαίους ιστότοπους"
+   },
+   "enable_history": {
+      "message": "Ενεργοποίηση πρόσβασης στο ιστορικό"
+   },
+   "enable_bookmarks": {
+      "message": "Ενεργοποίηση πρόσβασης στους σελιδοδείκτες"
+   },
+   "enable_reading_list": {
+      "message": "Ενεργοποίηση πρόσβασης στη λίστα ανάγνωσης"
+   },
+   "enable_tab_groups": {
+      "message": "Ενεργοποίηση πρόσβασης στις ομάδες καρτελών"
+   },
+   "custom_theme": {
+      "message": "Προσαρμοσμένη εμφάνιση"
+   },
+   "no_search_results_found": {
+      "message": "Δεν βρέθηκαν αποτελέσματα αναζήτησης"
+   },
+   "no_search_results_found_details": {
+      "message": "Δοκιμάστε διαφορετικές λέξεις-κλειδιά"
+   },
+   "delete_item_confirm": {
+      "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε:\n$1;"
+   },
+   "empty_state": {
+      "message": "Αυτός ο φάκελος είναι ακόμη άδειος"
+   },
+   "empty_state_details": {
+      "message": "Προσθέστε νέα στοιχεία με το κουμπί +"
+   },
+   "error_loading_data": {
+      "message": "Ωχ! Κάτι πήγε στραβά"
+   },
+   "error_loading_data_details": {
+      "message": "Αποτυχία φόρτωσης δεδομένων"
+   },
+   "pages_unread": {
+      "message": "Μη αναγνωσμένες σελίδες"
+   },
+   "pages_read": {
+      "message": "Αναγνωσμένες σελίδες"
+   },
+   "ungrouped_tabs": {
+      "message": "Μη ομαδοποιημένες καρτέλες"
+   },
+   "open_side_panel": {
+      "message": "Άνοιγμα/κλείσιμο πλαϊνού πίνακα"
+   },
+   "expert": {
+      "message": "Ειδικός"
+   },
+   "custom_theme_placeholder": {
+      "message": "Χρησιμοποιήστε στυλ CSS για να προσαρμόσετε τη διεπαφή, π.χ.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nΠερισσότερα: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Αφήστε κενό για να δημιουργήσετε φάκελο"
+   },
+   "motivation_1": {
+      "message": "Γεια, να έχετε μια υπέροχη μέρα!"
+   },
+   "motivation_2": {
+      "message": "Χαίρομαι που σας ξαναβλέπω!"
+   },
+   "motivation_3": {
+      "message": "Ας κάνουμε κάτι σπουδαίο σήμερα!"
+   },
+   "welcome_title": {
+      "message": "Γρήγορη πρόσβαση"
+   },
+   "welcome_message": {
+      "message": "Καλώς ήρθατε στη νέα σας αρχική σελίδα! Εκτός από τις συχνές σελίδες, μπορείτε πλέον να έχετε πρόσβαση στους σελιδοδείκτες, τη λίστα ανάγνωσης και τις ομάδες καρτελών με ένα μόνο κλικ. Ορίστε μια όμορφη εικόνα φόντου ή χρησιμοποιήστε τα πλήκτρα <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> και <kbd>→</kbd> για πλοήγηση χωρίς το ποντίκι. Καρφιτσώστε το εικονίδιο της επέκτασης στη γραμμή εργαλείων για να το ανοίγετε ως πλαϊνό πίνακα όποτε θέλετε."
+   },
+   "welcome_permissions1": {
+      "message": "Για να ξεκινήσετε, επιλέξτε τι θέλετε να βλέπετε εδώ:"
+   },
+   "welcome_permissions2": {
+      "message": "Μπορείτε να το αλλάξετε οποιαδήποτε στιγμή στις ρυθμίσεις."
+   },
+   "welcome_footnote": {
+      "message": "Οι ρυθμίσεις σας θα συγχρονιστούν αυτόματα με τον λογαριασμό Chrome, ώστε να απολαμβάνετε την ίδια εμπειρία σε όλες τις συσκευές σας."
+   }
+}

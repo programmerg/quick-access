@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "快速访问"
+   },
+   "app_description": {
+      "message": "一个简洁直观的新标签页，您可以一键访问常用网站、书签、阅读列表和标签组。"
+   },
+   "new_tab_page": {
+      "message": "新标签页"
+   },
+   "search_": {
+      "message": "搜索..."
+   },
+   "general": {
+      "message": "常规"
+   },
+   "advanced": {
+      "message": "高级"
+   },
+   "top_sites": {
+      "message": "常用网站"
+   },
+   "history": {
+      "message": "历史记录"
+   },
+   "bookmarks": {
+      "message": "书签"
+   },
+   "reading_list": {
+      "message": "阅读列表"
+   },
+   "tab_groups": {
+      "message": "标签组"
+   },
+   "settings": {
+      "message": "设置"
+   },
+   "root_folder": {
+      "message": "根文件夹"
+   },
+   "new_folder": {
+      "message": "新建文件夹"
+   },
+   "new_bookmark": {
+      "message": "新建书签"
+   },
+   "new_tab": {
+      "message": "新建标签页"
+   },
+   "new_tabGroup": {
+      "message": "新建标签组"
+   },
+   "new_page": {
+      "message": "新建页面"
+   },
+   "edit_folder": {
+      "message": "编辑文件夹"
+   },
+   "edit_bookmark": {
+      "message": "编辑书签"
+   },
+   "edit_tab": {
+      "message": "编辑标签页"
+   },
+   "edit_tabGroup": {
+      "message": "编辑标签组"
+   },
+   "edit_page": {
+      "message": "编辑页面"
+   },
+   "add": {
+      "message": "新增"
+   },
+   "edit": {
+      "message": "编辑"
+   },
+   "delete": {
+      "message": "删除"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "save": {
+      "message": "保存"
+   },
+   "close": {
+      "message": "关闭"
+   },
+   "title": {
+      "message": "名称"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL地址"
+   },
+   "parent_path": {
+      "message": "文件夹"
+   },
+   "grid_cols": {
+      "message": "列数"
+   },
+   "background_color": {
+      "message": "主题颜色"
+   },
+   "background_type": {
+      "message": "背景图片"
+   },
+   "background_file": {
+      "message": "本地文件"
+   },
+   "background_url": {
+      "message": "自定义壁纸服务"
+   },
+   "background_none": {
+      "message": "无"
+   },
+   "favicon_type": {
+      "message": "图标"
+   },
+   "favicon_url": {
+      "message": "自定义图标服务"
+   },
+   "favicon_default": {
+      "message": "默认"
+   },
+   "select_file": {
+      "message": "选择文件"
+   },
+   "tiles": {
+      "message": "磁贴"
+   },
+   "tile_enable_add": {
+      "message": "显示“新增项目”按钮"
+   },
+   "tile_enable_edit_delete": {
+      "message": "启用编辑和删除按钮"
+   },
+   "tile_enable_reorder": {
+      "message": "启用重新排序"
+   },
+   "permissions": {
+      "message": "权限"
+   },
+   "enable_top_sites": {
+      "message": "启用常用网站"
+   },
+   "enable_history": {
+      "message": "启用历史记录"
+   },
+   "enable_bookmarks": {
+      "message": "启用书签"
+   },
+   "enable_reading_list": {
+      "message": "启用阅读列表"
+   },
+   "enable_tab_groups": {
+      "message": "启用标签组"
+   },
+   "custom_theme": {
+      "message": "自定义外观"
+   },
+   "no_search_results_found": {
+      "message": "未找到搜索结果"
+   },
+   "no_search_results_found_details": {
+      "message": "请尝试使用其他关键词"
+   },
+   "delete_item_confirm": {
+      "message": "确定要删除此项吗：\n$1?"
+   },
+   "empty_state": {
+      "message": "此文件夹为空"
+   },
+   "empty_state_details": {
+      "message": "使用 + 按钮添加新项目"
+   },
+   "error_loading_data": {
+      "message": "哎呀，出现了一些问题"
+   },
+   "error_loading_data_details": {
+      "message": "无法加载数据"
+   },
+   "pages_unread": {
+      "message": "未读页面"
+   },
+   "pages_read": {
+      "message": "已读页面"
+   },
+   "ungrouped_tabs": {
+      "message": "未分组"
+   },
+   "open_side_panel": {
+      "message": "点击打开/关闭侧边栏"
+   },
+   "expert": {
+      "message": "专家"
+   },
+   "custom_theme_placeholder": {
+      "message": "在此处使用CSS样式自定义界面，例如：\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\n更多信息：https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "留空以创建文件夹"
+   },
+   "motivation_1": {
+      "message": "你好，祝你有美好的一天！"
+   },
+   "motivation_2": {
+      "message": "很高兴再次见到你！"
+   },
+   "motivation_3": {
+      "message": "让我们今天做些伟大的事情吧！"
+   },
+   "welcome_title": {
+      "message": "快速访问"
+   },
+   "welcome_message": {
+      "message": "欢迎来到你的新主页！除了常用网站，你现在还可以一键访问书签、阅读列表和标签组。设置一个酷炫的背景，或使用 <kbd>TAB</kbd>、<kbd>↑</kbd>、<kbd>↓</kbd>、<kbd>←</kbd> 和 <kbd>→</kbd> 键进行导航。将扩展图标固定到工具栏，随时可以作为侧边栏打开。"
+   },
+   "welcome_permissions1": {
+      "message": "首先，选择你想在这里看到的内容："
+   },
+   "welcome_permissions2": {
+      "message": "你可以随时在设置中更改这些选项。"
+   },
+   "welcome_footnote": {
+      "message": "你的设置会自动同步到你的Chrome账户，这样你可以在所有设备上享受同样的体验。"
+   }
+}

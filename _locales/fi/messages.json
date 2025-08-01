@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "Pikakäyttö"
+   },
+   "app_description": {
+      "message": "Selkeä ja intuitiivinen uusi välilehtisivu, josta pääset suosikkeihin, lukulistaan ja välilehtiryhmiin yhdellä napsautuksella."
+   },
+   "new_tab_page": {
+      "message": "Uusi välilehti"
+   },
+   "search_": {
+      "message": "Haku..."
+   },
+   "general": {
+      "message": "Yleiset"
+   },
+   "advanced": {
+      "message": "Lisäasetukset"
+   },
+   "top_sites": {
+      "message": "Suosituimmat sivut"
+   },
+   "history": {
+      "message": "Historia"
+   },
+   "bookmarks": {
+      "message": "Kirjanmerkit"
+   },
+   "reading_list": {
+      "message": "Lukulista"
+   },
+   "tab_groups": {
+      "message": "Välilehtiryhmät"
+   },
+   "settings": {
+      "message": "Asetukset"
+   },
+   "root_folder": {
+      "message": "Pääkansio"
+   },
+   "new_folder": {
+      "message": "Uusi kansio"
+   },
+   "new_bookmark": {
+      "message": "Uusi kirjanmerkki"
+   },
+   "new_tab": {
+      "message": "Uusi välilehti"
+   },
+   "new_tabGroup": {
+      "message": "Uusi välilehtiryhmä"
+   },
+   "new_page": {
+      "message": "Uusi sivu"
+   },
+   "edit_folder": {
+      "message": "Muokkaa kansiota"
+   },
+   "edit_bookmark": {
+      "message": "Muokkaa kirjanmerkkiä"
+   },
+   "edit_tab": {
+      "message": "Muokkaa välilehteä"
+   },
+   "edit_tabGroup": {
+      "message": "Muokkaa välilehtiryhmää"
+   },
+   "edit_page": {
+      "message": "Muokkaa sivua"
+   },
+   "add": {
+      "message": "Lisää"
+   },
+   "edit": {
+      "message": "Muokkaa"
+   },
+   "delete": {
+      "message": "Poista"
+   },
+   "cancel": {
+      "message": "Peruuta"
+   },
+   "save": {
+      "message": "Tallenna"
+   },
+   "close": {
+      "message": "Sulje"
+   },
+   "title": {
+      "message": "Nimi"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL-osoite"
+   },
+   "parent_path": {
+      "message": "Kansio"
+   },
+   "grid_cols": {
+      "message": "Sarakkeiden määrä"
+   },
+   "background_color": {
+      "message": "Teeman väri"
+   },
+   "background_type": {
+      "message": "Taustakuva"
+   },
+   "background_file": {
+      "message": "Paikallinen tiedosto"
+   },
+   "background_url": {
+      "message": "Mukautettu taustakuvapalvelu"
+   },
+   "background_none": {
+      "message": "Ei mitään"
+   },
+   "favicon_type": {
+      "message": "Kuvakkeet"
+   },
+   "favicon_url": {
+      "message": "Mukautettu kuvakepalvelu"
+   },
+   "favicon_default": {
+      "message": "Oletus"
+   },
+   "select_file": {
+      "message": "Valitse tiedosto"
+   },
+   "tiles": {
+      "message": "Laatat" 
+   },
+   "tile_enable_add": {
+      "message": "Näytä 'Lisää uusi' -painike" 
+   },
+   "tile_enable_edit_delete": {
+      "message": "Salli muokkaus- ja poistopainikkeet" 
+   },
+   "tile_enable_reorder": {
+      "message": "Salli uudelleenjärjestely" 
+   },
+   "permissions": {
+      "message": "Käyttöoikeudet"
+   },
+   "enable_top_sites": {
+      "message": "Salli pääsy suosituimpiin sivuihin"
+   },
+   "enable_history": {
+      "message": "Salli pääsy historiaan"
+   },
+   "enable_bookmarks": {
+      "message": "Salli pääsy kirjanmerkkeihin"
+   },
+   "enable_reading_list": {
+      "message": "Salli pääsy lukulistaan"
+   },
+   "enable_tab_groups": {
+      "message": "Salli pääsy välilehtiryhmiin"
+   },
+   "custom_theme": {
+      "message": "Mukautettu ulkoasu"
+   },
+   "no_search_results_found": {
+      "message": "Ei hakutuloksia"
+   },
+   "no_search_results_found_details": {
+      "message": "Kokeile eri hakusanoja"
+   },
+   "delete_item_confirm": {
+      "message": "Haluatko varmasti poistaa:\n$1?"
+   },
+   "empty_state": {
+      "message": "Tämä kansio on vielä tyhjä"
+   },
+   "empty_state_details": {
+      "message": "Lisää uusia kohteita + -painikkeella"
+   },
+   "error_loading_data": {
+      "message": "Hups! Jotain meni pieleen!"
+   },
+   "error_loading_data_details": {
+      "message": "Tietojen lataus epäonnistui."
+   },
+   "pages_unread": {
+      "message": "Lukemattomat sivut"
+   },
+   "pages_read": {
+      "message": "Luetut sivut"
+   },
+   "ungrouped_tabs": {
+      "message": "Ryhmittämättömät välilehdet"
+   },
+   "open_side_panel": {
+      "message": "Avaa/sulje sivupaneeli"
+   },
+   "expert": {
+      "message": "Asiantuntija"
+   },
+   "custom_theme_placeholder": {
+      "message": "Käytä CSS-tyylejä mukauttaaksesi ulkoasua, esim.:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nLisätietoja: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "Jätä tyhjäksi luodaksesi kansion"
+   },
+   "motivation_1": {
+      "message": "Hei, mukavaa päivää!"
+   },
+   "motivation_2": {
+      "message": "Kiva nähdä sinut taas!"
+   },
+   "motivation_3": {
+      "message": "Tehdään tänään jotain hienoa!"
+   },
+   "welcome_title": {
+      "message": "Pikakäyttö"
+   },
+   "welcome_message": {
+      "message": "Tervetuloa uudelle aloitussivullesi! Suosittujen sivujen lisäksi pääset nyt kirjanmerkkeihin, lukulistaan ja välilehtiryhmiin yhdellä napsautuksella. Aseta tyylikäs taustakuva tai käytä näppäimistön <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> ja <kbd>→</kbd> -näppäimiä navigointiin. Kiinnitä laajennuksen kuvake työkalupalkkiin, niin voit avata sen sivupaneelina milloin tahansa."
+   },
+   "welcome_permissions1": {
+      "message": "Valitse ensin, mitä haluat nähdä täällä:"
+   },
+   "welcome_permissions2": {
+      "message": "Voit muuttaa näitä asetuksia milloin tahansa."
+   },
+   "welcome_footnote": {
+      "message": "Asetukset synkronoidaan automaattisesti Chrome-tiliisi, joten voit nauttia samasta käyttökokemuksesta kaikilla laitteillasi."
+   }
+}

@@ -1,0 +1,230 @@
+{
+   "app_name": {
+      "message": "দ্রুত প্রবেশাধিকার"
+   },
+   "app_description": {
+      "message": "একটি পরিষ্কার, স্বজ্ঞাত নতুন ট্যাব পৃষ্ঠা যেখানে আপনি এক ক্লিকে আপনার প্রিয়, পড়ার তালিকা এবং ট্যাব গ্রুপে প্রবেশ করতে পারেন।"
+   },
+   "new_tab_page": {
+      "message": "নতুন ট্যাব"
+   },
+   "search_": {
+      "message": "অনুসন্ধান..."
+   },
+   "general": {
+      "message": "সাধারণ"
+   },
+   "advanced": {
+      "message": "উন্নত"
+   },
+   "top_sites": {
+      "message": "শীর্ষ সাইট"
+   },
+   "history": {
+      "message": "ইতিহাস"
+   },
+   "bookmarks": {
+      "message": "বুকমার্ক"
+   },
+   "reading_list": {
+      "message": "পড়ার তালিকা"
+   },
+   "tab_groups": {
+      "message": "ট্যাব গ্রুপ"
+   },
+   "settings": {
+      "message": "সেটিংস"
+   },
+   "root_folder": {
+      "message": "মূল ফোল্ডার"
+   },
+   "new_folder": {
+      "message": "নতুন ফোল্ডার"
+   },
+   "new_bookmark": {
+      "message": "নতুন বুকমার্ক"
+   },
+   "new_tab": {
+      "message": "নতুন ট্যাব"
+   },
+   "new_tabGroup": {
+      "message": "নতুন ট্যাব গ্রুপ"
+   },
+   "new_page": {
+      "message": "নতুন পৃষ্ঠা"
+   },
+   "edit_folder": {
+      "message": "ফোল্ডার সম্পাদনা করুন"
+   },
+   "edit_bookmark": {
+      "message": "বুকমার্ক সম্পাদনা করুন"
+   },
+   "edit_tab": {
+      "message": "ট্যাব সম্পাদনা করুন"
+   },
+   "edit_tabGroup": {
+      "message": "ট্যাব গ্রুপ সম্পাদনা করুন"
+   },
+   "edit_page": {
+      "message": "পৃষ্ঠা সম্পাদনা করুন"
+   },
+   "add": {
+      "message": "যোগ করুন"
+   },
+   "edit": {
+      "message": "সম্পাদনা করুন"
+   },
+   "delete": {
+      "message": "মুছুন"
+   },
+   "cancel": {
+      "message": "বাতিল করুন"
+   },
+   "save": {
+      "message": "সংরক্ষণ করুন"
+   },
+   "close": {
+      "message": "বন্ধ করুন"
+   },
+   "title": {
+      "message": "নাম"
+   },
+   "url": {
+      "message": "URL"
+   },
+   "url_address": {
+      "message": "URL ঠিকানা"
+   },
+   "parent_path": {
+      "message": "ফোল্ডার"
+   },
+   "grid_cols": {
+      "message": "কলাম"
+   },
+   "background_color": {
+      "message": "থিম রঙ"
+   },
+   "background_type": {
+      "message": "ব্যাকগ্রাউন্ড ছবি"
+   },
+   "background_file": {
+      "message": "স্থানীয় ফাইল"
+   },
+   "background_url": {
+      "message": "কাস্টম ওয়ালপেপার পরিষেবা"
+   },
+   "background_none": {
+      "message": "কিছুই না"
+   },
+   "favicon_type": {
+      "message": "আইকন"
+   },
+   "favicon_url": {
+      "message": "কাস্টম আইকন পরিষেবা"
+   },
+   "favicon_default": {
+      "message": "ডিফল্ট"
+   },
+   "select_file": {
+      "message": "ফাইল নির্বাচন করুন"
+   },
+   "tiles": {
+      "message": "টাইলস"
+   },
+   "tile_enable_add": {
+      "message": "'নতুন আইটেম যোগ করুন' বোতাম দেখান"
+   },
+   "tile_enable_edit_delete": {
+      "message": "সম্পাদনা ও মুছুন বোতাম সক্রিয় করুন"
+   },
+   "tile_enable_reorder": {
+      "message": "পুনঃক্রম নির্ধারণ সক্রিয় করুন"
+   },
+   "permissions": {
+      "message": "অনুমতি"
+   },
+   "enable_top_sites": {
+      "message": "শীর্ষ সাইট সক্রিয় করুন"
+   },
+   "enable_history": {
+      "message": "ইতিহাস সক্রিয় করুন"
+   },
+   "enable_bookmarks": {
+      "message": "বুকমার্ক সক্রিয় করুন"
+   },
+   "enable_reading_list": {
+      "message": "পড়ার তালিকা সক্রিয় করুন"
+   },
+   "enable_tab_groups": {
+      "message": "ট্যাব গ্রুপ সক্রিয় করুন"
+   },
+   "custom_theme": {
+      "message": "কাস্টম চেহারা"
+   },
+   "no_search_results_found": {
+      "message": "কোনো অনুসন্ধান ফলাফল পাওয়া যায়নি"
+   },
+   "no_search_results_found_details": {
+      "message": "অন্যান্য কীওয়ার্ড ব্যবহার করে দেখুন"
+   },
+   "delete_item_confirm": {
+      "message": "আপনি কি সত্যিই এটি মুছতে চান:\n$1?"
+   },
+   "empty_state": {
+      "message": "এই ফোল্ডারটি এখনও খালি"
+   },
+   "empty_state_details": {
+      "message": "+ বোতাম দিয়ে নতুন আইটেম যোগ করুন"
+   },
+   "error_loading_data": {
+      "message": "উফ! কিছু ভুল হয়েছে"
+   },
+   "error_loading_data_details": {
+      "message": "ডেটা লোড করতে ব্যর্থ হয়েছে"
+   },
+   "pages_unread": {
+      "message": "অপঠিত পৃষ্ঠা"
+   },
+   "pages_read": {
+      "message": "পঠিত পৃষ্ঠা"
+   },
+   "ungrouped_tabs": {
+      "message": "কোনো গ্রুপ নেই"
+   },
+   "open_side_panel": {
+      "message": "সাইড প্যানেল খুলতে/বন্ধ করতে ক্লিক করুন"
+   },
+   "expert": {
+      "message": "বিশেষজ্ঞ"
+   },
+   "custom_theme_placeholder": {
+      "message": "ইন্টারফেস কাস্টমাইজ করতে এখানে CSS স্টাইল ব্যবহার করুন, যেমন:\n\n.header {\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n.navigation {\n    margin: 0;\n}\n.tile-title {\n    background: var(--color-overlay);\n    position: absolute;\n    bottom: 0;\n    padding: 5px;\n}\n\nআরও জানুন: https://www.w3schools.com/css/"
+   },
+   "create_url_footnote": {
+      "message": "ফোল্ডার তৈরি করতে ফাঁকা রাখুন"
+   },
+   "motivation_1": {
+      "message": "হ্যালো, আপনার দিনটি শুভ হোক!"
+   },
+   "motivation_2": {
+      "message": "আবার দেখা হয়ে ভালো লাগলো!"
+   },
+   "motivation_3": {
+      "message": "চলুন আজ কিছু দারুণ করি!"
+   },
+   "welcome_title": {
+      "message": "দ্রুত প্রবেশাধিকার"
+   },
+   "welcome_message": {
+      "message": "আপনার নতুন হোম পেজে স্বাগতম! শীর্ষ সাইট ছাড়াও, এখন আপনি এক ক্লিকে আপনার বুকমার্ক, পড়ার তালিকা এবং ট্যাব গ্রুপে প্রবেশ করতে পারেন। একটি চমৎকার ব্যাকগ্রাউন্ড সেট করুন অথবা <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> এবং <kbd>→</kbd> কী ব্যবহার করে নেভিগেট করুন। এক্সটেনশন আইকনটি টুলবারে পিন করুন এবং আপনি যেকোনো সময় এটি সাইডবার হিসেবে খুলতে পারবেন।"
+   },
+   "welcome_permissions1": {
+      "message": "শুরু করতে, এখানে আপনি কী দেখতে চান তা নির্বাচন করুন:"
+   },
+   "welcome_permissions2": {
+      "message": "আপনি এটি সেটিংসে যেকোনো সময় পরিবর্তন করতে পারেন।"
+   },
+   "welcome_footnote": {
+      "message": "আপনার সেটিংস স্বয়ংক্রিয়ভাবে আপনার Chrome অ্যাকাউন্টে সিঙ্ক হবে যাতে আপনি সব ডিভাইসে একই অভিজ্ঞতা উপভোগ করতে পারেন।"
+   }
+}
