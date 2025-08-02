@@ -6,11 +6,11 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 
 <table style="width:100%">
 <tr>
-  <td><a href="images/chrome-web-store/1_welcome.jpg"><img alt="screenshot 1" src="images/chrome-web-store/1_welcome.jpg"></a></td>
-  <td><a href="images/chrome-web-store/2_bookmarks.jpg"><img alt="screenshot 2" src="images/chrome-web-store/2_bookmarks.jpg"></a></td>
-  <td><a href="images/chrome-web-store/3_settings_1.jpg"><img alt="screenshot 3" src="images/chrome-web-store/3_settings_1.jpg"></a></td>
-  <td><a href="images/chrome-web-store/4_settings_2.jpg"><img alt="screenshot 4" src="images/chrome-web-store/4_settings_2.jpg"></a></td>
-  <td><a href="images/chrome-web-store/5_reading_lists.jpg"><img alt="screenshot 5" src="images/chrome-web-store/5_reading_lists.jpg"></a></td>
+  <td><a href="docs/chrome-web-store/1_welcome.jpg"><img alt="screenshot 1" src="docs/chrome-web-store/1_welcome.jpg"></a></td>
+  <td><a href="docs/chrome-web-store/2_bookmarks.jpg"><img alt="screenshot 2" src="docs/chrome-web-store/2_bookmarks.jpg"></a></td>
+  <td><a href="docs/chrome-web-store/3_settings_1.jpg"><img alt="screenshot 3" src="docs/chrome-web-store/3_settings_1.jpg"></a></td>
+  <td><a href="docs/chrome-web-store/4_settings_2.jpg"><img alt="screenshot 4" src="docs/chrome-web-store/4_settings_2.jpg"></a></td>
+  <td><a href="docs/chrome-web-store/5_reading_lists.jpg"><img alt="screenshot 5" src="docs/chrome-web-store/5_reading_lists.jpg"></a></td>
 </tr>
 </table>
 
@@ -34,7 +34,7 @@ A clean, intuitive new tab page where you can access your Favorites, Reading Lis
 
 ## Installation
 
-1. Download or clone the repository.
+1. Download the <a href="https://github.com/programmerg/quick-access/archive/refs/tags/v1.4.1.zip">latest release</a> or clone the repository.
 2. Open Chrome and go to `chrome://extensions`.
 3. Enable "Developer mode".
 4. Click "Load unpacked" and select the project folder.
