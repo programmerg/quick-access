@@ -1,6 +1,18 @@
-# Quick Access
+# <img alt="icon" src="images/icon-24.png"> Quick Access
 
 A clean, intuitive new tab page where you can access your Favorites, Reading List, and Tab Groups with just one click.
+
+## Screenshots
+
+<table style="width:100%">
+<tr>
+  <td><a href="images/chrome-web-store/1_welcome.jpg"><img alt="screenshot 1" src="images/chrome-web-store/1_welcome.jpg"></a></td>
+  <td><a href="images/chrome-web-store/2_bookmarks.jpg"><img alt="screenshot 2" src="images/chrome-web-store/2_bookmarks.jpg"></a></td>
+  <td><a href="images/chrome-web-store/3_settings_1.jpg"><img alt="screenshot 3" src="images/chrome-web-store/3_settings_1.jpg"></a></td>
+  <td><a href="images/chrome-web-store/4_settings_2.jpg"><img alt="screenshot 4" src="images/chrome-web-store/4_settings_2.jpg"></a></td>
+  <td><a href="images/chrome-web-store/5_reading_lists.jpg"><img alt="screenshot 5" src="images/chrome-web-store/5_reading_lists.jpg"></a></td>
+</tr>
+</table>
 
 ## Features
 
