@@ -4,75 +4,338 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="">
+  <meta name="description" content="A clean, intuitive browser extension that gives you one-click access to all your bookmarks, reading lists, browsing history, and tab groups on the new tab page.">
   <meta name="author" content="Gelencsér Gergő">
-  <title>Quick Access · Browser extension</title>
+  <title>Quick Access</title>
 
   <link rel="canonical" href="https://programmerg.github.io/quick-access/">
   <link rel="icon" href="icon-48.png" sizes="48x48" type="image/png">
   <link href="bootstrap.min.css" rel="stylesheet">
+  <style>
+    [role="dialog"]::backdrop {
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.35);
+      transition: display 0.1s allow-discrete, overlay 0.1s allow-discrete, opacity 0.1s;
+    }
+    [role="dialog"][open]::backdrop {
+        opacity: 1;
+    }
+  </style>
 </head>
 <body>
-  <main>
 
-    <div class="container my-5">
-      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <h1 class="display-4 fw-bold lh-1 text-body-secondary"><img alt="icon" src="icon-48.png" height="48"> Quick Access</h1>
-          <p class="lead my-5">A clean, intuitive new tab page where you can access your Favorites, Reading List, and Tab Groups with just one click.</p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"> 
-            <a href="https://github.com/programmerg/quick-access/archive/refs/tags/v1.4.1.zip" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">
-              Add to Chrome
-            </a>
-          </div>
+  <header class="container my-5" style="margin-top: 15vh !important;">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg overflow-hidden">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-secondary">
+          <img alt="icon" src="icon-48.png" height="48"> Quick Access
+        </h1>
+        <p class="lead my-5">A clean, intuitive new tab page where you can access your Favorites, Reading List, and Tab Groups with just one click.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+          <a href="https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">
+            Add to <span id="browser">Chrome</span>
+          </a>
         </div>
-        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3" src="screenshots/2_bookmarks.jpg" alt="" width="720">
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+        <img class="rounded-lg-3" src="screenshots/2_bookmarks.jpg" alt="preview" width="720">
+      </div>
+    </div>
+  </header>
+
+  <main class="container px-4 py-5" id="features">
+    <h2 class="pb-2 border-bottom">Features</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pt-5">
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M6 1v3H1V1zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm14 12v3h-5v-3zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM6 8v7H1V8zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm14-6v7h-5V1zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/>
+        </svg>
+        <div>
+          <p>Clean, tiled, Speed Dial-like user interface</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M2 2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z"/>
+          <path d="M13 4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"/>
+        </svg>
+        <div>
+          <p>Single side panel for quick access to everything</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+        </svg>
+        <div>
+          <p>Easy switch between different views, groups and folders</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+        <div>
+          <p>Quick search across all items</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+        </svg>
+        <div>
+          <p>Create, modify or delete everything in one place</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10M.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8"/>
+        </svg>
+        <div>
+          <p>Drag and drop support (rearrange, organize, pin)</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+        </svg>
+        <div>
+          <p>Automatic dark/light mode detection</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+          <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
+        </svg>
+        <div>
+          <p>Custom wallpapers and wallpaper provider URLs</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"/>
+        </svg>
+        <div>
+          <p>Built-in favicon and custom favicon provider support</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a3 3 0 0 1-2.121-.879A3 3 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0M15 15v-4H9.258l-4.015 4zM0 .5v12.495zm0 12.495V13z"/>
+        </svg>
+        <div>
+          <p>Customizable grid layout and color themes</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"  class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+          <path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25z"/>
+        </svg>
+        <div>
+          <p>Lightning fast navigation with TAB and arrow keys.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"  class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+          <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+        </svg>
+        <div>
+          <p>Fully localized interface (available in 36 languages)</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"  class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5m2.45 0A3.5 3.5 0 0 1 8 3.5 3.5 3.5 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7"/>
+        </svg>
+        <div>
+          <p>Fine-tuneable permissions. Only allow what you need.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        <div>
+          <p>All settings are synced to your browser's account.</p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+        </svg>
+        <div>
+          <p>Works in Chrome, Edge, Brave, Opera, Vivaldi, ...</p>
         </div>
       </div>
     </div>
-
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-lg-11 mx-auto p-4 py-md-5">
-
-          <div class="row row-cols-1 row-cols-lg-5 align-items-stretch g-4 pb-5">
-            <div class="col"><a href="chrome-web-store/1_welcome.jpg"><img alt="screenshot 1" width="100%" src="chrome-web-store/1_welcome.jpg"></a></div>
-            <div class="col"><a href="chrome-web-store/2_bookmarks.jpg"><img alt="screenshot 2" width="100%" src="chrome-web-store/2_bookmarks.jpg"></a></div>
-            <div class="col"><a href="chrome-web-store/3_settings_1.jpg"><img alt="screenshot 3" width="100%" src="chrome-web-store/3_settings_1.jpg"></a></div>
-            <div class="col"><a href="chrome-web-store/4_settings_2.jpg"><img alt="screenshot 4" width="100%" src="chrome-web-store/4_settings_2.jpg"></a></div>
-            <div class="col"><a href="chrome-web-store/5_reading_lists.jpg"><img alt="screenshot 5" width="100%" src="chrome-web-store/5_reading_lists.jpg"></a></div>
-          </div>
-
-          <h2 id="features" class="h3 pb-2 mb-4 border-bottom">Features</h2>
-          <ul class="pb-2">
-            <li>Clean, tiled, Speed Dial-like interface</li>
-            <li>Side panel for quick access</li>
-            <li>Easy switch between history, bookmarks, reading list, and tab groups</li>
-            <li>Quick search across all items</li>
-            <li>Create, modify or delete everything in one place</li>
-            <li>Drag and drop support (rearrange, organize, pin to desktop as shortcut)</li>
-            <li>Automatic dark/light mode detection</li>
-            <li>Custom wallpaper and wallpaper provider URL support</li>
-            <li>Built-in favicon and custom favicon provider support</li>
-            <li>Customizable grid layout and color themes</li>
-            <li>Lightning fast navigation with <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> arrow keys.</li>
-            <li>Fully localized interface (available in 36 languages)</li>
-            <li>Fine-tuneable permissions. Only grant as many permissions as you need.</li>
-            <li>It just works. All your settings are with you in your Chrome account.</li>
-            <li>Works in all browsers that support V3 manifest</li>
-          </ul>
-          
-          <p class="pb-5">Thanks for trying it! ;)</p>
-
-          <p class="pb-1">This is a hobby project for myself, but let's see if it can conquer the world!</p>
-
-          <p class="pb-1">Bug reports, improvement ideas, and pull requests are welcome!</p>
-
-        </div>
-      </div>
-    </div>
-
   </main>
+
+  <div class="container px-4 py-5" id="screenshots">
+    <h2 class="pb-2 border-bottom">Screenshots</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div onclick="toggleGalery(0)" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="cursor: pointer; background-image: url('./screenshots/1_welcome.jpg'); background-size: cover; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div onclick="toggleGalery(1)" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="cursor: pointer; background-image: url('./screenshots/2_bookmarks.jpg'); background-size: cover; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div onclick="toggleGalery(2)" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="cursor: pointer; background-image: url('./screenshots/3_settings_1.jpg'); background-size: cover; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div onclick="toggleGalery(3)" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="cursor: pointer; background-image: url('./screenshots/4_settings_2.jpg'); background-size: cover; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div onclick="toggleGalery(4)" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="cursor: pointer; background-image: url('./screenshots/5_reading_lists.jpg'); background-size: cover; background-position: center;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <dialog id="modal" class="position-fixed border-0 p-0 mx-5 rounded-3 shadow-lg" role="dialog">
+    <button type="submit" class="btn-close position-absolute" formmethod="dialog" style="top: 5px; right: 5px; width: 37px; height: 37px; z-index: 999; opacity: 0.7; background-color: white;" autofocus aria-label="close"></button>
+    <div id="galery" class="carousel carousel-fade slide" data-bs-ride="carousel">
+      <div class="carousel-indicators"> 
+        <button type="button" data-bs-target="#galery" data-bs-slide-to="0" aria-label="Screenshot 1" class="active" aria-current="true"></button> 
+        <button type="button" data-bs-target="#galery" data-bs-slide-to="1" aria-label="Screenshot 2" class=""></button> 
+        <button type="button" data-bs-target="#galery" data-bs-slide-to="2" aria-label="Screenshot 3" class=""></button> 
+        <button type="button" data-bs-target="#galery" data-bs-slide-to="3" aria-label="Screenshot 4" class=""></button> 
+        <button type="button" data-bs-target="#galery" data-bs-slide-to="4" aria-label="Screenshot 5" class=""></button> 
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center"> 
+          <img src="./screenshots/1_welcome.jpg" alt="screenshot 1" width="100%">
+          <div class="container">
+            <div class="carousel-caption text-start"></div>
+          </div>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="./screenshots/2_bookmarks.jpg" alt="screenshot 2" width="100%">
+          <div class="container">
+            <div class="carousel-caption"></div>
+          </div>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="./screenshots/3_settings_1.jpg" alt="screenshot 3" width="100%">
+          <div class="container">
+            <div class="carousel-caption text-end"></div>
+          </div>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="./screenshots/4_settings_2.jpg" alt="screenshot 3" width="100%">
+          <div class="container">
+            <div class="carousel-caption text-end"></div>
+          </div>
+        </div>
+        <div class="carousel-item text-center">
+          <img src="./screenshots/5_reading_lists.jpg" alt="screenshot 3" width="100%">
+          <div class="container">
+            <div class="carousel-caption text-end"></div>
+          </div>
+        </div>
+      </div> 
+      <button class="carousel-control-prev" type="button" data-bs-target="#galery" data-bs-slide="prev"> 
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span> 
+        <span class="visually-hidden">Previous</span>
+      </button> 
+      <button class="carousel-control-next" type="button" data-bs-target="#galery" data-bs-slide="next"> 
+        <span class="carousel-control-next-icon" aria-hidden="true"></span> 
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </dialog>
+
+  <div class="container">
+    <p class="pb-5">Thanks for trying it! ;)</p>
+    <p class="pb-1">This is a hobby project for myself, but let's see if it can conquer the world!</p>
+    <p class="pb-5">Bug reports, improvement ideas, and pull requests are welcome!</p>
+  </div>
+
+  <footer class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-6 d-flex align-items-center"> 
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Quick Access">
+          <img src="./icon-48.png" width="24" alt="icon">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">Made with <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/></svg>, HTML, CSS and JS.</span>
+      </div>
+      <p class="col-md-6 justify-content-end text-end d-flex">
+        © 2025 Gelencsér Gergő
+      </p>
+    </div>
+  </footer>
+
+  <script src="bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (evt) => {
+      const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      const updateTheme = () => {
+        const colorMode = colorScheme.matches ? "dark" : "light";
+        document.querySelector("html").setAttribute("data-bs-theme", colorMode);
+      }
+      colorScheme.addEventListener('change', updateTheme);
+      updateTheme();
+
+      const getBrowser = () => {
+        const ua = navigator.userAgent;
+        if ((agent.indexOf("Opera") || agent.indexOf('OPR')) != -1) return 'Opera';
+        if (agent.indexOf("Edg") != -1) return 'Edge';
+        if (agent.indexOf("Vivaldi") != -1) return 'Vivaldi';
+        if (agent.indexOf("Brave") != -1) return 'Brave';
+        if (agent.indexOf("Chrome") != -1) return 'Chrome';
+        if (agent.indexOf("Firefox") != -1) return 'Firefox';
+        if (agent.indexOf("Safari") != -1) return 'Safari';
+        return 'Browser';
+      }
+      const downloadBtn = document.getElementById('browser')
+      if (downloadBtn) downloadBtn.innerText = getBrowser();
+
+      const modal = document.getElementById('modal');
+      if (modal) {
+        modal.addEventListener('click', (event) => { 
+          if (event.target === modal) modal.close();
+        });
+      }
+    });
+
+    function toggleGalery(idx) {
+      const galery = document.getElementById('galery');
+      if (galery) {
+        const carousel = bootstrap.Carousel.getInstance(galery);
+        carousel.to(idx);
+      }
+      
+      const modal = document.getElementById('modal');
+      if (modal) {
+        modal.showModal();
+      }
+    }
+  </script>
 </body>
 </html>
