@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="google-site-verification" content="lHnx1da1HDG8GdJsF8kVUQLEwOoPD5k5wfWTtEwhYAs" />
   <meta name="description" content="A clean, intuitive browser extension that gives you one-click access to all your bookmarks, reading lists, browsing history, and tab groups on the new tab page.">
   <meta name="author" content="Gelencsér Gergő">
   <title>Quick Access</title>
@@ -218,7 +218,7 @@
   </div>
 
   <dialog id="modal" class="position-fixed border-0 p-0 mx-5 rounded-3 shadow-lg" role="dialog">
-    <button type="submit" class="btn-close position-absolute" formmethod="dialog" style="top: 5px; right: 5px; width: 37px; height: 37px; z-index: 999; opacity: 0.7; background-color: white;" autofocus aria-label="close"></button>
+    <button type="button" class="btn-close position-absolute" style="top: 5px; right: 5px; width: 37px; height: 37px; z-index: 999; opacity: 0.7; background-color: white;" autofocus aria-label="close"></button>
     <div id="galery" class="carousel carousel-fade slide" data-bs-ride="carousel">
       <div class="carousel-indicators"> 
         <button type="button" data-bs-target="#galery" data-bs-slide-to="0" aria-label="Screenshot 1" class="active" aria-current="true"></button> 
@@ -292,37 +292,42 @@
 
   <script src="bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', (evt) => {
+    function initColorTheme() {
       const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
       const updateTheme = () => {
         const colorMode = colorScheme.matches ? "dark" : "light";
         document.querySelector("html").setAttribute("data-bs-theme", colorMode);
       }
+
       colorScheme.addEventListener('change', updateTheme);
       updateTheme();
+    }
 
-      const getBrowser = () => {
-        const ua = navigator.userAgent;
-        if ((agent.indexOf("Opera") || agent.indexOf('OPR')) != -1) return 'Opera';
-        if (agent.indexOf("Edg") != -1) return 'Edge';
-        if (agent.indexOf("Vivaldi") != -1) return 'Vivaldi';
-        if (agent.indexOf("Brave") != -1) return 'Brave';
-        if (agent.indexOf("Chrome") != -1) return 'Chrome';
-        if (agent.indexOf("Firefox") != -1) return 'Firefox';
-        if (agent.indexOf("Safari") != -1) return 'Safari';
-        return 'Browser';
-      }
+    function getBrowser() {
+      const ua = navigator.userAgent;
+      if ((agent.indexOf("Opera") || agent.indexOf('OPR')) != -1) return 'Opera';
+      if (agent.indexOf("Edg") != -1) return 'Edge';
+      if (agent.indexOf("Vivaldi") != -1) return 'Vivaldi';
+      if (agent.indexOf("Brave") != -1) return 'Brave';
+      if (agent.indexOf("Chrome") != -1) return 'Chrome';
+      if (agent.indexOf("Firefox") != -1) return 'Firefox';
+      if (agent.indexOf("Safari") != -1) return 'Safari';
+      return 'Browser';
+    }
+
+    function initDonwloadButton() {
       const downloadBtn = document.getElementById('browser')
-      if (downloadBtn) downloadBtn.innerText = getBrowser();
+      downloadBtn?.innerText = getBrowser();
+    }
 
+    function initModal() {
       const modal = document.getElementById('modal');
-      if (modal) {
-        modal.addEventListener('click', (event) => { 
-          if (event.target === modal) modal.close();
-        });
-      }
-    });
+      modal?.addEventListener('click', (event) => {
+        if (event.target === modal) modal.close();
+      });
+      modal?.querySelector('.btn-close')?.addEventListener('click', modal.close());
+    }
 
     function toggleGalery(idx) {
       const galery = document.getElementById('galery');
@@ -332,10 +337,14 @@
       }
       
       const modal = document.getElementById('modal');
-      if (modal) {
-        modal.showModal();
-      }
+      modal?.showModal();
     }
+    
+    document.addEventListener('DOMContentLoaded', (evt) => {
+      initColorTheme();
+      initDonwloadButton();
+      initModal();
+    });
   </script>
 </body>
 </html>

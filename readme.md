@@ -5,11 +5,11 @@ A clean, intuitive browser extension that gives you one-click access to all your
 <br>
 <table border="0">
 <tr>
-  <td><a href="docs/chrome-web-store/1_welcome.jpg"><img alt="screenshot 1" src="docs/chrome-web-store/1_welcome.jpg"></a></td>
-  <td><a href="docs/chrome-web-store/2_bookmarks.jpg"><img alt="screenshot 2" src="docs/chrome-web-store/2_bookmarks.jpg"></a></td>
-  <td><a href="docs/chrome-web-store/3_settings_1.jpg"><img alt="screenshot 3" src="docs/chrome-web-store/3_settings_1.jpg"></a></td>
-  <td><a href="docs/chrome-web-store/4_settings_2.jpg"><img alt="screenshot 4" src="docs/chrome-web-store/4_settings_2.jpg"></a></td>
-  <td><a href="docs/chrome-web-store/5_reading_lists.jpg"><img alt="screenshot 5" src="docs/chrome-web-store/5_reading_lists.jpg"></a></td>
+  <td><a href="docs/screenshots/1_welcome.jpg"><img alt="screenshot 1" src="docs/screenshots/1_welcome.jpg"></a></td>
+  <td><a href="docs/screenshots/2_bookmarks.jpg"><img alt="screenshot 2" src="docs/screenshots/2_bookmarks.jpg"></a></td>
+  <td><a href="docs/screenshots/3_settings_1.jpg"><img alt="screenshot 3" src="docs/screenshots/3_settings_1.jpg"></a></td>
+  <td><a href="docs/screenshots/4_settings_2.jpg"><img alt="screenshot 4" src="docs/screenshots/4_settings_2.jpg"></a></td>
+  <td><a href="docs/screenshots/5_reading_lists.jpg"><img alt="screenshot 5" src="docs/screenshots/5_reading_lists.jpg"></a></td>
 </tr>
 </table>
 
