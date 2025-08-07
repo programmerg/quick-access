@@ -305,7 +305,7 @@
     }
 
     function getBrowser() {
-      const ua = navigator.userAgent;
+      const agent = navigator.userAgent;
       if ((agent.indexOf("Opera") || agent.indexOf('OPR')) != -1) return 'Opera';
       if (agent.indexOf("Edg") != -1) return 'Edge';
       if (agent.indexOf("Vivaldi") != -1) return 'Vivaldi';
@@ -318,15 +318,17 @@
 
     function initDonwloadButton() {
       const downloadBtn = document.getElementById('browser')
-      downloadBtn?.innerText = getBrowser();
+      if (downloadBtn) downloadBtn.innerText = getBrowser();
     }
 
     function initModal() {
       const modal = document.getElementById('modal');
-      modal?.addEventListener('click', (event) => {
+      if (modal) modal.addEventListener('click', (event) => {
         if (event.target === modal) modal.close();
       });
-      modal?.querySelector('.btn-close')?.addEventListener('click', modal.close());
+      if (modal) modal.querySelector('.btn-close')?.addEventListener('click', (event) => {
+        modal.close();
+      });
     }
 
     function toggleGalery(idx) {
@@ -337,7 +339,7 @@
       }
       
       const modal = document.getElementById('modal');
-      modal?.showModal();
+      if (modal) modal.showModal();
     }
     
     document.addEventListener('DOMContentLoaded', (evt) => {
