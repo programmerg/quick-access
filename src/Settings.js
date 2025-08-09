@@ -23,24 +23,32 @@ export class Settings {
         this.tileReorder                = Boolean(tileReorder               ?? true);
         this.theme                      = String(theme                      ?? '');
     }
+    
+    static async all() {
+        const results = await this.find(null);
+        return results;
+    }
 
     static async find(keys = []) {
-        return new this({
-          ...await chrome.storage.sync.get(keys),
-          ...await chrome.storage.local.get(keys),
-        });
+        const sync = await browser.storage?.sync?.get(keys);
+        const local = await browser.storage?.local?.get(keys);
+        return new this({ ...sync, ...local });
     }
 
     static async get(key) {
-        return (await Settings.find([key]))[key];
+        const results = await this.find([key]);
+        return results[key];
     }
 
     static async set(object, sync = false) {
+        let results = {};
         if (sync) {
-            await chrome.storage.sync.set(object);
+            results = await browser.storage?.sync?.set(object);
+
         } else {
-            await chrome.storage.local.set(object);
+            results = await browser.storage?.local?.set(object);
         }
+        return Object.assign(this, results);
     }
 
     static async save(settings) {
@@ -75,6 +83,7 @@ export class Settings {
         if (Object.keys(store.local).length > 0) {
             await this.set(store.local, false);
         }
+        return this;
     }
 
     static filter(settings, allowed) {
@@ -87,16 +96,12 @@ export class Settings {
     }
 
     static async delete(keys = []) {
-        await chrome.storage.sync.remove(keys);
-        await chrome.storage.local.remove(keys);
-    }
-    
-    static async all() {
-        return await Settings.find(null);
+        await browser.storage?.sync?.remove(keys);
+        await browser.storage?.local?.remove(keys);
     }
     
     static async clear() {
-        await chrome.storage.sync.clear();
-        await chrome.storage.local.clear();
+        await browser.storage?.sync?.clear();
+        await browser.storage?.local?.clear();
     }
 }

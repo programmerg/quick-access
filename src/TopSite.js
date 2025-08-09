@@ -6,35 +6,38 @@ export class TopSite {
     }
 
     static async all() {
-        return await this.find();
+        const results = await this.find();
+        return results;
     }
 
     static async list() {
         return [
-            new this({ id: '', title: chrome.i18n.getMessage('root_folder') }),
+            new this({ id: '', title: browser.i18n?.getMessage('root_folder') }),
         ];
     }
 
     static async find(parentId = '') {
         if (parentId !== '') return [];
-        return (await chrome.topSites.get())
-            .map(item => new this(item)) || [];
+
+        const results = await browser.topSites?.get();
+        return results.map(item => new this(item)) ?? [];
     }
 
     static async get(url) {
-        return (await this.find(''))
-            .find(item => item.url === url);
+        const result = await this.find('');
+        return result.find(item => item.url === url);
     }
 
     async save({ title, url }) {
         // not availabe
+        return this;
     }
 
     async remove() {
         // not available
     }
 
-    open(newTab = false) {
+    async open(newTab = false) {
         window.open(this.url, newTab ? '_blank' : '_self');
     }
 

@@ -1,6 +1,7 @@
 export class Permission {
 
     static defaults = [
+        'topSites',
         'history',
         'bookmarks',
         'readingList',
@@ -8,18 +9,20 @@ export class Permission {
     ];
 
     static async hasAccessTo(permissions) {
-        return await chrome.permissions.contains({ permissions });
+        const result = await browser.permissions?.contains({ permissions });
+        return result;
     }
 
     static async all() {
-        return (await chrome.permissions.getAll())?.permissions;
+        const results = await browser.permissions?.getAll();
+        return results?.permissions;
     }
 
     static async request(permissions) {
-        return await chrome.permissions.request({ permissions });
+        await browser.permissions?.request({ permissions });
     }
     
     static async remove(permissions) {
-        return await chrome.permissions.remove({ permissions });
+        await browser.permissions?.remove({ permissions });
     }
 }

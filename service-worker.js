@@ -1,8 +1,12 @@
-chrome.runtime.onInstalled.addListener((details) => {
-    chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
+if (typeof browser === 'undefined') {
+  window.browser = chrome ?? {};
+}
 
-    if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-        // chrome.tabs.create({ url: "index.html" });
-        // chrome.runtime.setUninstallURL('https://programmerg.github.io/quick-access/');
+browser.runtime?.onInstalled.addListener((details) => {
+    browser.sidePanel?.setPanelBehavior({ openPanelOnActionClick: true });
+
+    if (details.reason === browser.runtime?.OnInstalledReason.INSTALL) {
+        // browser.tabs?.create({ url: "index.html" });
+        // browser.runtime?.setUninstallURL('https://programmerg.github.io/quick-access/');
     }
 });

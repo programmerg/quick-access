@@ -1,3 +1,6 @@
+if (typeof browser === 'undefined') {
+  window.browser = chrome ?? {};
+}
 
 import { Bookmark } from "./src/Bookmark.js";
 import { History } from "./src/History.js";
@@ -43,7 +46,7 @@ export class UI {
         this.initTabs();
         
         // Internationalization
-        document.documentElement.lang = chrome.i18n.getUILanguage();
+        document.documentElement.lang = browser.i18n?.getUILanguage();
         this.updateTranslation();
 
         // Welcome screen
@@ -68,8 +71,8 @@ export class UI {
             }));
         });
 
-        chrome.permissions.onAdded.addListener(({permissions}) => this.handlePermissionChange());
-        chrome.permissions.onRemoved.addListener(({permissions}) => this.handlePermissionChange());
+        browser.permissions?.onAdded.addListener(({permissions}) => this.handlePermissionChange());
+        browser.permissions?.onRemoved.addListener(({permissions}) => this.handlePermissionChange());
         this.handlePermissionChange();
     }
 
@@ -87,15 +90,15 @@ export class UI {
     // MARK: Translation
     updateTranslation() {
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-            el.placeholder = chrome.i18n.getMessage(el.getAttribute('data-i18n-placeholder'));
+            el.placeholder = browser.i18n?.getMessage(el.getAttribute('data-i18n-placeholder'));
         });
 
         document.querySelectorAll('[data-i18n-title]').forEach(el => {
-            el.title = chrome.i18n.getMessage(el.getAttribute('data-i18n-title'));
+            el.title = browser.i18n?.getMessage(el.getAttribute('data-i18n-title'));
         });
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
-            el.innerHTML = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+            el.innerHTML = browser.i18n?.getMessage(el.getAttribute('data-i18n'));
         });
     }
 
@@ -125,17 +128,14 @@ export class UI {
     }
 
     getBrowserIcon() {
-        if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
-            return 'images/opera.svg';
-        } else if (navigator.userAgent.indexOf("Edg") != -1) {
-            return 'images/edge.svg';
-        } else if (navigator.userAgent.indexOf("Chrome") != -1) {
-            return 'images/chrome.svg';
-        } else if (navigator.userAgent.indexOf("Safari") != -1) {
-            return 'images/safari.svg';
-        } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-            return 'images/firefox.svg';
-        }
+        const agent = navigator.userAgent;
+        if (agent.indexOf("Firefox") != -1) return 'images/firefox.svg';
+        if (agent.indexOf('OPR') != -1) return 'images/opera.svg';
+        if (agent.indexOf('Opera') != -1) return 'images/opera.svg';
+        if (agent.indexOf("Edg") != -1) return 'images/edge.svg';
+        if (agent.indexOf("MSIE") != -1) return 'images/edge.svg';
+        if (agent.indexOf("Chrome") != -1) return 'images/chrome.svg';
+        if (agent.indexOf("Safari") != -1) return 'images/safari.svg';
         return 'images/browser.svg';
     }
 
@@ -189,15 +189,15 @@ export class UI {
         const homeItem = document.createElement('span');
         if (this.currentView === '') {
             homeItem.className = 'breadcrumb-item motivation';
-            homeItem.textContent = chrome.i18n.getMessage('motivation_' + (Math.floor(Math.random() * 3) + 1));
+            homeItem.textContent = browser.i18n?.getMessage('motivation_' + (Math.floor(Math.random() * 3) + 1));
         } else {
             homeItem.className = 'breadcrumb-item';
             switch (this.currentView) {
-                case 'topSites':    homeItem.textContent = chrome.i18n.getMessage('top_sites'); break;
-                case 'history':     homeItem.textContent = chrome.i18n.getMessage('history'); break;
-                case 'bookmarks':   homeItem.textContent = chrome.i18n.getMessage('bookmarks'); break;
-                case 'readingList': homeItem.textContent = chrome.i18n.getMessage('reading_list'); break;
-                case 'tabGroups':   homeItem.textContent = chrome.i18n.getMessage('tab_groups'); break;
+                case 'topSites':    homeItem.textContent = browser.i18n?.getMessage('top_sites'); break;
+                case 'history':     homeItem.textContent = browser.i18n?.getMessage('history'); break;
+                case 'bookmarks':   homeItem.textContent = browser.i18n?.getMessage('bookmarks'); break;
+                case 'readingList': homeItem.textContent = browser.i18n?.getMessage('reading_list'); break;
+                case 'tabGroups':   homeItem.textContent = browser.i18n?.getMessage('tab_groups'); break;
             }
             homeItem.setAttribute('data-path', '');
             homeItem.addEventListener('click', (e) => {
@@ -296,8 +296,8 @@ export class UI {
             
             message.classList.toggle('hidden', false);
             message.innerHTML = `
-                <h3>${chrome.i18n.getMessage('error_loading_data')}</h3>
-                <p>${chrome.i18n.getMessage('error_loading_data_details')}</p>`;
+                <h3>${browser.i18n?.getMessage('error_loading_data')}</h3>
+                <p>${browser.i18n?.getMessage('error_loading_data_details')}</p>`;
 
         } finally {
             grid.classList.toggle('hidden', false);
@@ -326,8 +326,8 @@ export class UI {
                 const isSearchActive = document.getElementById('searchInput').value.length > 0;
                 message.classList.toggle('hidden', false);
                 message.innerHTML = `
-                    <h3>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found' : 'empty_state')}</h3>
-                    <p>${chrome.i18n.getMessage(isSearchActive ? 'no_search_results_found_details' : 'empty_state_details')}</p>`;
+                    <h3>${browser.i18n?.getMessage(isSearchActive ? 'no_search_results_found' : 'empty_state')}</h3>
+                    <p>${browser.i18n?.getMessage(isSearchActive ? 'no_search_results_found_details' : 'empty_state_details')}</p>`;
             }
         }
         
@@ -494,34 +494,34 @@ export class UI {
     }
     
     registerTileEventListeners() {
-        chrome.bookmarks?.onCreated?.addListener((id, bookmark) => this.handleTileEvent('bookmarks', null, 'created', new Bookmark(bookmark)));
-        chrome.bookmarks?.onChanged?.addListener(async (id, changeInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
-        chrome.bookmarks?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
-        chrome.bookmarks?.onChildrenReordered?.addListener(async (id, reorderInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
-        chrome.bookmarks?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('bookmarks', id, 'removed', null));
+        browser.bookmarks?.onCreated?.addListener((id, bookmark) => this.handleTileEvent('bookmarks', null, 'created', new Bookmark(bookmark)));
+        browser.bookmarks?.onChanged?.addListener(async (id, changeInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        browser.bookmarks?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        browser.bookmarks?.onChildrenReordered?.addListener(async (id, reorderInfo) => this.handleTileEvent('bookmarks', id, 'updated', (await Bookmark.get(id))[0]));
+        browser.bookmarks?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('bookmarks', id, 'removed', null));
 
-        chrome.readingList?.onEntryAdded?.addListener((entry) => this.handleTileEvent('readingList', null, 'created', new Page(entry)));
-        chrome.readingList?.onEntryUpdated?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'updated', new Page(entry)));
-        chrome.readingList?.onEntryRemoved?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'removed', null));
+        browser.readingList?.onEntryAdded?.addListener((entry) => this.handleTileEvent('readingList', null, 'created', new Page(entry)));
+        browser.readingList?.onEntryUpdated?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'updated', new Page(entry)));
+        browser.readingList?.onEntryRemoved?.addListener((entry) => this.handleTileEvent('readingList', entry.url, 'removed', null));
 
-        chrome.tabGroups?.onCreated?.addListener((group) => this.handleTileEvent('tabGroups', null, 'created', new Tab(group)));
-        chrome.tabGroups?.onUpdated?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
-        chrome.tabGroups?.onMoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
-        chrome.tabGroups?.onRemoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'removed', null));
+        browser.tabGroups?.onCreated?.addListener((group) => this.handleTileEvent('tabGroups', null, 'created', new Tab(group)));
+        browser.tabGroups?.onUpdated?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
+        browser.tabGroups?.onMoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'updated', new Tab(group)));
+        browser.tabGroups?.onRemoved?.addListener((group) => this.handleTileEvent('tabGroups', group.id, 'removed', null));
 
-        chrome.tabs?.onAttached?.addListener(async (id, attachInfo) => this.handleTileEvent('tabGroups', null, 'created', (await Tab.get(id))[0]));
-        chrome.tabs?.onCreated?.addListener((tab) => this.handleTileEvent('tabGroups', null, 'created', new Tab(tab)));
-        chrome.tabs?.onUpdated?.addListener((id, changeInfo, tab) => this.handleTileEvent('tabGroups', id, 'updated', new Tab(tab)));
-        chrome.tabs?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('tabGroups', id, 'updated', (await Tab.get(id))[0]));
-        chrome.tabs?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
-        chrome.tabs?.onDetached?.addListener((id, detachInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
-        chrome.tabs?.onReplaced?.addListener(async (addedTabId, removedTabId) => {
+        browser.tabs?.onAttached?.addListener(async (id, attachInfo) => this.handleTileEvent('tabGroups', null, 'created', (await Tab.get(id))[0]));
+        browser.tabs?.onCreated?.addListener((tab) => this.handleTileEvent('tabGroups', null, 'created', new Tab(tab)));
+        browser.tabs?.onUpdated?.addListener((id, changeInfo, tab) => this.handleTileEvent('tabGroups', id, 'updated', new Tab(tab)));
+        browser.tabs?.onMoved?.addListener(async (id, moveInfo) => this.handleTileEvent('tabGroups', id, 'updated', (await Tab.get(id))[0]));
+        browser.tabs?.onRemoved?.addListener((id, removeInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
+        browser.tabs?.onDetached?.addListener((id, detachInfo) => this.handleTileEvent('tabGroups', id, 'removed', null));
+        browser.tabs?.onReplaced?.addListener(async (addedTabId, removedTabId) => {
             this.handleTileEvent('tabGroups', removedTabId, 'removed', null);
             this.handleTileEvent('tabGroups', null, 'created', (await Tab.get(addedTabId))[0]);
         });
 
-        chrome.history?.onVisited?.addListener((history) => this.handleTileEvent('history', history.id, 'created', new History(history)));
-        chrome.history?.onVisitRemoved?.addListener(({allHistory, urls}) => urls?.forEach(url => this.handleTileEvent('history', url, 'removed', null)));
+        browser.history?.onVisited?.addListener((history) => this.handleTileEvent('history', history.id, 'created', new History(history)));
+        browser.history?.onVisitRemoved?.addListener(({allHistory, urls}) => urls?.forEach(url => this.handleTileEvent('history', url, 'removed', null)));
     }
 
     // MARK: Search
@@ -596,7 +596,7 @@ export class UI {
 
                 case 'none':
                 default:
-                    const faviconUrl = new URL(chrome.runtime.getURL('/_favicon/'));
+                    const faviconUrl = new URL(browser.runtime?.getURL('/_favicon/'));
                     faviconUrl.searchParams.set('pageUrl', url);
                     faviconUrl.searchParams.set('size', '48');
                     return faviconUrl.toString();
@@ -709,23 +709,23 @@ export class UI {
         switch (this.currentView) {
             case 'topSites':
                 item = new TopSite({ parentId });
-                title = chrome.i18n.getMessage('new_top_sites');
+                title = browser.i18n?.getMessage('new_top_sites');
                 break;
             case 'history':
                 item = new History({ parentId });
-                title = chrome.i18n.getMessage('new_history');
+                title = browser.i18n?.getMessage('new_history');
                 break;
             case 'bookmarks':
                 item = new Bookmark({ parentId });
-                title = chrome.i18n.getMessage('new_bookmark');
+                title = browser.i18n?.getMessage('new_bookmark');
                 break;
             case 'readingList':
                 item = new Page({ parentId });
-                title = chrome.i18n.getMessage('new_page');
+                title = browser.i18n?.getMessage('new_page');
                 break;
             case 'tabGroups':
                 item = new Tab({ parentId });
-                title = chrome.i18n.getMessage('new_tab');
+                title = browser.i18n?.getMessage('new_tab');
                 break;
         }
         if (item === undefined || (item instanceof Bookmark && parentId === '') || (item instanceof Page && parentId === '') || item instanceof History || item instanceof TopSite) return;
@@ -750,20 +750,20 @@ export class UI {
         let title = '';
         switch (this.currentView) {
             case 'history':   
-                title = chrome.i18n.getMessage('edit_history');
+                title = browser.i18n?.getMessage('edit_history');
                 break;
             case 'bookmarks':   
-                title = chrome.i18n.getMessage('edit_bookmark');
+                title = browser.i18n?.getMessage('edit_bookmark');
                 break;
             case 'readingList': 
-                title = chrome.i18n.getMessage('edit_page');
+                title = browser.i18n?.getMessage('edit_page');
                 break;
             case 'tabGroups':   
-                title = chrome.i18n.getMessage('edit_tab');
+                title = browser.i18n?.getMessage('edit_tab');
                 break;
         }
         const editBtn = document.createElement('button');
-        editBtn.title = chrome.i18n.getMessage('edit');
+        editBtn.title = browser.i18n?.getMessage('edit');
         editBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#edit"></svg>';
         editBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -778,11 +778,11 @@ export class UI {
         if ((item instanceof Bookmark && item.parentId === '0') || (item instanceof Page && !item.url) || item instanceof TopSite) return;
 
         const deleteBtn = document.createElement('button');
-        deleteBtn.title = chrome.i18n.getMessage('delete');
+        deleteBtn.title = browser.i18n?.getMessage('delete');
         deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#trash"></svg>';
         deleteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (confirm(chrome.i18n.getMessage('delete_item_confirm', item.title))) {
+            if (confirm(browser.i18n?.getMessage('delete_item_confirm', item.title))) {
                 item.remove();
             }
         });
@@ -838,6 +838,23 @@ export class UI {
             };
             reader.readAsDataURL(file);
         });
+
+        const manifest = browser.runtime?.getManifest();
+        modal.querySelector('#about').innerHTML = `
+            <div class="form-group" style="text-align: center">
+                <h2><span>${manifest.name}</span> - <span>${manifest.version}</span></h2>
+            </div>
+            <div class="form-group" style="text-align: center">
+                <p><span>${manifest.description}</span></p>
+            </div>
+            <div class="form-group" style="text-align: center">
+                <p>${browser.i18n?.getMessage('developer')}: <span>${manifest.author}</span></p>
+            </div>
+            <div class="form-group" style="text-align: center">
+                <p><a href="${manifest.homepage_url}" target="_blank">${browser.i18n?.getMessage('homepage')}</a></p>
+                <p><a href="https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc" target="_blank">Chrome Web Store</a></p>
+            </div>
+        `;
     }
 
     async createParentIdOptions(form, item) {

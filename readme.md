@@ -16,20 +16,20 @@ A clean, intuitive browser extension that gives you one-click access to all your
 ## Features
 
 - Clean tiled Speed Dial-like interface
-- Side panel for quick access
-- Easy switch between history, bookmarks, reading list, and tab groups 
+- Single side panel for quick access to everything
+- Easy switch between different views, groups and folders
 - Quick search across all items
 - Create, modify or delete everything in one place
-- Drag and drop support (rearrange, organize, pin to desktop as shortcut)
+- Drag and drop support (rearrange, organize, pin to desktop)
 - Automatic dark/light mode detection
-- Custom wallpaper and wallpaper provider URL support
+- Custom wallpapers and wallpaper provider URLs
 - Built-in favicon and custom favicon provider support
 - Customizable grid layout and color themes
 - Lightning fast navigation with <kbd>TAB</kbd>, <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd> arrow keys.
 - Fully localized interface (available in 36 languages)
-- Fine-tuneable permissions. Only grant as many permissions as you need.
-- It just works. All your settings are with you in your Chrome account.
-- Works in all chromium based browsers that support V3 manifest (Chrome, Edge, Brave, Opera, Vivaldi, ...)
+- Fine-tuneable permissions. Only allow what you need.
+- All settings are synced to your browser's account.
+- Works in Firefox, Chrome, Edge, Opera, Brave, Vivaldi, ...
 
 Thanks for trying it! ;)
 
@@ -55,7 +55,7 @@ Get it from the [Chrome Webstore](https://chromewebstore.google.com/detail/quick
 - `index.html` – Main HTML page, includes UI and SVG icons
 - `index.js` – UI logic: event handling, tiles, search, settings, etc.
 - `index.css` – Default styles
-- `manifest.json` – Chrome extension manifest
+- `manifest.json` – Extension manifest
 - `service-worker.js` – Service worker, install logic
 
 ## Contributing

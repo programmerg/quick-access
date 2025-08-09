@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Your settings will be synced to your Chrome account automatically so you can enjoy the same great experience across all your devices."
+   },
+   "about": {
+      "message": "About"
+   },
+   "homepage": {
+      "message": "Extension's homepage"
+   },
+   "version": {
+      "message": "Version"
+   },
+   "developer": {
+      "message": "Author"
    }
 }

@@ -36,9 +36,9 @@ export class Tab {
         return [
             new this({ 
                 id: '',
-                title: chrome.i18n.getMessage('root_folder'), 
-                children: this.find().map(item => {
-                    item.children = this.find(item.id);
+                title: browser.i18n?.getMessage('root_folder'), 
+                children: (await this.find()).map(async (item) => {
+                    item.children = await this.find(item.id);
                     return item;
                 })
             })
@@ -46,52 +46,55 @@ export class Tab {
     }
 
     static async list() {
-        const items = await chrome.tabGroups.query({});
-        // items.push({
-        //     id: -1,
-        //     title: chrome.i18n.getMessage('ungrouped_tabs')
-        // });
+        const results = await browser.tabGroups?.query({}) ?? [];
+        // results.push({ id: -1, title: browser.i18n?.getMessage('ungrouped_tabs') });
+
         return [
-            { id: '', title: chrome.i18n.getMessage('root_folder') },
-            ...(items.map(({id, title}) => ({
-                id: id, 
-                title: ' '.repeat(1 * 2) + title
-            })))
+            { id: '', title: browser.i18n?.getMessage('root_folder') },
+            ...(results.map(({id, title}) => ({ id: id, title: ' '.repeat(1 * 2) + title })))
         ];
     }
 
     static async find(parentId = '') {
-        let items = [];
+        const currentWindow = browser.windows?.WINDOW_ID_CURRENT;
+        let results = [];
+
+        console.log(await browser.tabs?.query({ windowId: currentWindow }));
+
         if (parentId === '') {
-            items = [
-                ...(await chrome.tabGroups.query({ windowId: chrome.windows.WINDOW_ID_CURRENT })),
-                ...(await chrome.tabs.query({ windowId: chrome.windows.WINDOW_ID_CURRENT, groupId: -1 }))
+            const tabGroups = await browser.tabGroups?.query({ windowId: currentWindow });
+            const tabs = await browser.tabs?.query({ windowId: currentWindow, groupId: -1 });
+            results = [
+                ...tabGroups,
+                ...tabs,
             ];
-            // items.push({
-            //     id: -1,
-            //     title: chrome.i18n.getMessage('ungrouped_tabs'),
-            // });
+            // results.push({ id: -1, title: browser.i18n?.getMessage('ungrouped_tabs') });
         } else {
-            items = (await chrome.tabs.query({ windowId: chrome.windows.WINDOW_ID_CURRENT, groupId: parseInt(parentId) }));
+            results = await browser.tabs?.query({ windowId: currentWindow, groupId: parseInt(parentId) });
         }
-        return items.map(item => new this(item)) || [];
+        return results.map(item => new this(item)) ?? [];
     }
 
     static async get(id) {
-        return await chrome.tabs.get(id);
+        const tabs = await browser.tabs?.get(id);
+        const tabGroups = await browser.tabGroups?.get(id);
+        return new this(tabs ?? tabGroups);
     }
     
     async save({ title, url, parentId, index }) {
+        const currentWindow = browser.windows?.WINDOW_ID_CURRENT;
+        let result = {};
+
         if (!this.id) { // create
             if (!url) { // group
-                const newTab = await chrome.tabs.create({ windowId: chrome.windows.WINDOW_ID_CURRENT, url: 'chrome://newtab', active: false });
-                const newGroup = await chrome.tabs.group({ tabIds: [newTab.id], createProperties: { windowId: chrome.windows.WINDOW_ID_CURRENT } });
-                await chrome.tabGroups.update(newGroup, { title });
+                const newTab = await browser.tabs?.create({ windowId: currentWindow, url: 'chrome://newtab', active: false });
+                const newGroup = await browser.tabs?.group({ tabIds: [newTab.id], createProperties: { windowId: currentWindow } });
+                result = await browser.tabGroups?.update(newGroup, { title });
 
             } else { // tab
-                const newTab = await chrome.tabs.create({ windowId: chrome.windows.WINDOW_ID_CURRENT, url, active: false });
+                const newTab = await browser.tabs?.create({ windowId: currentWindow, url, active: false });
                 if (parentId) { // attach to group
-                    await chrome.tabs.group({ tabIds: [newTab.id], groupId: Number(parentId) });
+                    result = await browser.tabs?.group({ tabIds: [newTab.id], groupId: Number(parentId) });
                 }
             }
 
@@ -99,62 +102,64 @@ export class Tab {
             if (!this.url) {
                 if (index || parentId) { // move or reorder
                     if (parentId) return;
-                    await chrome.tabGroups.move(this.id, { windowId: chrome.windows.WINDOW_ID_CURRENT, index: index ?? -1 });
+                    result = await browser.tabGroups?.move(this.id, { windowId: currentWindow, index: index ?? -1 });
                 }
 
                 if (title) { // edit
-                    await chrome.tabGroups.update(this.id, { title });
+                    result = await browser.tabGroups?.update(this.id, { title });
                 }
 
             } else {
                 if (parentId === '') {
-                    await chrome.tabs.ungroup([this.id]);
+                    result = await browser.tabs?.ungroup([this.id]);
                 }
                 else if (parentId) { // move to another group
-                    await chrome.tabs.group({ tabIds: [this.id], groupId: Number(parentId) });
+                    result = await browser.tabs?.group({ tabIds: [this.id], groupId: Number(parentId) });
                 }
 
                 if (index) { // reorder
-                    await chrome.tabs.move(this.id, { windowId: chrome.windows.WINDOW_ID_CURRENT, index });
+                    result = await browser.tabs?.move(this.id, { windowId: currentWindow, index });
                 }
 
                 if (url) { // edit
-                    await chrome.tabs.update(this.id, { url });
+                    result = await browser.tabs?.update(this.id, { url });
                 }
             }
         }
+        return Object.assign(this, result);
     }
 
     async remove() {
         if (!this.url) { // group
             const childTabs = await Tab.find(this.id);
-            childTabs.forEach(tab => chrome.tabs.remove(tab.id));
+            await childTabs.forEach(async (tab) => browser.tabs?.remove(tab.id));
         } else {
-            await chrome.tabs.remove(this.id);
+            await browser.tabs?.remove(this.id);
         }
     }
 
     async open(newTab = false) {
         if (!this.url) {
-            await chrome.tabGroups.update(this.id, { collapsed: false });
+            await browser.tabGroups?.update(this.id, { collapsed: false });
         } else {
-            await chrome.tabs.update(this.id, { active: true });
+            await browser.tabs?.update(this.id, { active: true });
         }
         if (!newTab) window.close();
     }
 
+    static colors = {
+        'grey': '#5f6368',
+        'blue': '#1a73e8',
+        'red': '#d93025',
+        'yellow': '#fbbc04',
+        'green': '#34a853',
+        'pink': '#ff6d01',
+        'purple': '#9c27b0',
+        'cyan': '#00bcd4'
+    };
+
     getColor() {
-        const colors = {
-            'grey': '#5f6368',
-            'blue': '#1a73e8',
-            'red': '#d93025',
-            'yellow': '#fbbc04',
-            'green': '#34a853',
-            'pink': '#ff6d01',
-            'purple': '#9c27b0',
-            'cyan': '#00bcd4'
-        };
-        return colors[this.color] || '#5f6368';
+        return Tab.colors[this.color] || '#5f6368';
     }
 
 }

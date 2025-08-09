@@ -15,12 +15,13 @@ export class History {
     }
 
     static async all() {
-        return (await chrome.history.search({ text: '' }))
-          .map(item => new this(item)) || [];
+        const results = await browser.history?.search({ text: '' });
+        return results.map(item => new this(item)) ?? [];
     }
 
     static async list() {
-        return new Array(30).fill().map((_, index) => {
+        const results = new Array(30).fill();
+        return results.map((_, index) => {
             const today = new Date();
             const day = new Date(today.setDate(today.getDate() - index));
             day.setHours(0,0,0,0);
@@ -29,43 +30,51 @@ export class History {
     }
 
     static async find(parentId) {
+        let results = [];
+
         if (parentId == '') {
-            return this.list().map(item => new this(item));
+            results = await this.list();
+
         } else {
             let timestamp  = new Date(parentId);
             const startTime = timestamp.setHours(0,0,0,0);
             const endTime = timestamp.setHours(24,0,0,0);
-            return (await chrome.history.search({ text: '', startTime, endTime }))
-                .map(item => new this(item)) || [];
+            results = await browser.history?.search({ text: '', startTime, endTime });
         }
+        return results.map(item => new this(item)) ?? [];
     }
     
     static async get(url) {
-        return (await this.all())
+        const results = await this.all();
+        return results
           .filter(item => item.url === url)
-          .map(item => new this(item)) || [];
+          .map(item => new this(item)) ?? [];
     }
       
     async save({ url }) {
-        if (!this.id) {
-            return await chrome.history.addUrl({ url });
-        } else {
+        const result = {};
+
+        if (!this.id) { // create
+            result = await browser.history?.addUrl({ url });
+
+        } else { // edit
             // history items can't be edited
         }
+        return Object.assign(this, result);
     }
 
     async remove() {
         if (!this.url) {
             const startTime = this.id;
             const endTime = new Date(this.id).setHours(24,0,0,0);
-            return await chrome.history.deleteRange({ startTime, endTime });
+            await browser.history?.deleteRange({ startTime, endTime });
 
         } else {
-            return await chrome.history.deleteUrl({ url: this.url })
+            await browser.history?.deleteUrl({ url: this.url })
         }
     }
 
-    open(newTab = false) {
+    async open(newTab = false) {
         window.open(this.url, newTab ? '_blank' : '_self');
     }
 }
