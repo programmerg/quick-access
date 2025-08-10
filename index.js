@@ -24,9 +24,11 @@ export class UI {
 
     // MARK: Initialization
     async init() {
+        const savedSettings = await Settings.all().catch(e => this.addToast(e));
+
         this.applySettings({
             ...this.settings,
-            ...await Settings.all(),
+            ...savedSettings,
         });
         
         if ((new Date()).getTime() > this.settings.backgroundTime + (1 * 60 * 60 * 1000)) { // +1 hour
@@ -55,7 +57,7 @@ export class UI {
             if (welcomeModal) welcomeModal.showModal();
             welcomeModal.addEventListener("close", (e) => {
                 this.settings.firstRun = false;
-                Settings.save({ firstRun: false });
+                Settings.save({ firstRun: false }).catch(e => this.addToast(e));
             });
         }
     }
@@ -66,8 +68,8 @@ export class UI {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.addEventListener('change', (e) => {
                 const items = (view === 'tabGroups') ? ['tabGroups', 'tabs'] : [view];
-                if (e.target.checked)   Permission.request(items);
-                else                    Permission.remove(items);
+                if (e.target.checked)   Permission.request(items).catch(e => this.addToast(e));
+                else                    Permission.remove(items).catch(e => this.addToast(e));
             }));
         });
 
@@ -77,7 +79,7 @@ export class UI {
     }
 
     async handlePermissionChange() {
-        const permissions = await Permission.all();
+        const permissions = await Permission.all().catch(e => this.addToast(e));
         ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
             const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
             Array.from(inputs).forEach(input => input.checked = permissions.includes(view));
@@ -155,8 +157,9 @@ export class UI {
                 btn.classList.toggle('active', btn.getAttribute('data-view') === view);
             });
 
+            // TODO: ezt lehessen konfigrálni, mentjük-e:
             this.settings.defaultView = view;
-            Settings.save({ defaultView: view });
+            Settings.save({ defaultView: view }).catch(e => this.addToast(e));
         }
         
         let path = [];
@@ -175,7 +178,7 @@ export class UI {
             defaultPath_readingList: this.settings.defaultPath_readingList,
             defaultPath_tabGroups: this.settings.defaultPath_tabGroups,
             defaultPath_history: this.settings.defaultPath_history,
-        });
+        }).catch(e => this.addToast(e));
 
         this.updateBreadcrumb();
         this.loadContent();
@@ -261,27 +264,30 @@ export class UI {
             grid.classList.toggle('hidden', true);
             loading.classList.toggle('hidden', false);
 
-            // if (!(await Permission.hasAccessTo([this.currentView]))) {
-            //     throw new Error('Missing permission');
-            // }
+            if (this.currentView !== '') {
+                if (!(await Permission.hasAccessTo([this.currentView]))) {
+                    throw new Error('Missing permission');
+                }
 
-            switch (this.currentView) {
-                case 'topSites':
-                    items = await TopSite.find(parentId);
-                    break;
-                case 'history':
-                    items = await History.find(parentId);
-                    break;
-                case 'bookmarks':
-                    items = await Bookmark.find(parentId);
-                    break;
-                case 'readingList':
-                    items = await Page.find(parentId);
-                    break;
-                case 'tabGroups':
-                    items = await Tab.find(parentId);
-                    break;
+                switch (this.currentView) {
+                    case 'topSites':
+                        items = await TopSite.find(parentId);
+                        break;
+                    case 'history':
+                        items = await History.find(parentId);
+                        break;
+                    case 'bookmarks':
+                        items = await Bookmark.find(parentId);
+                        break;
+                    case 'readingList':
+                        items = await Page.find(parentId);
+                        break;
+                    case 'tabGroups':
+                        items = await Tab.find(parentId);
+                        break;
+                }
             }
+            
             this.renderTiles(items);
             
             if (this.settings.tileAdd) {
@@ -292,12 +298,13 @@ export class UI {
             document.getElementById('searchInput').style.pointerEvents = items.length < 1 ? 'none' : '';
 
         } catch (error) {
-            console.error(error);
+            this.addToast(error);
             
             message.classList.toggle('hidden', false);
             message.innerHTML = `
                 <h3>${browser.i18n?.getMessage('error_loading_data')}</h3>
-                <p>${browser.i18n?.getMessage('error_loading_data_details')}</p>`;
+                <p>${browser.i18n?.getMessage('error_loading_data_details')}</p>
+            `;
 
         } finally {
             grid.classList.toggle('hidden', false);
@@ -421,10 +428,10 @@ export class UI {
                 const parentId = e.currentTarget.dataset.id;
                 if (tile.classList.contains('folder') && itemId !== parentId) {
                     if (!(item instanceof Tab && item.url === '')) {
-                        item.save({ parentId: parentId }); // move
+                        item.save({ parentId: parentId }).catch(e => this.addToast(e)); // move
                     }
                 } else if (sourceIdx !== targetIdx) {
-                    item.save({ index: targetIdx }); // reorder
+                    item.save({ index: targetIdx }).catch(e => this.addToast(e)); // reorder
                 }
                 tile.classList.remove('dropping');
                 sourceElement.style.opacity = 1;
@@ -782,9 +789,18 @@ export class UI {
         deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="#trash"></svg>';
         deleteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (confirm(browser.i18n?.getMessage('delete_item_confirm', item.title))) {
-                item.remove();
-            }
+
+            const modal = document.getElementById('removeModal');
+            modal.querySelector('.modal-body').textContent = browser.i18n?.getMessage('delete_item_confirm', item.title);
+            modal.showModal();
+
+            const form = modal.querySelector('form');
+            const onSubmit = (evt) => {
+                form.removeEventListener('submit', onSubmit);
+                item.remove().catch(e => this.addToast(e));
+                modal.close();
+            };
+            form.addEventListener('submit', onSubmit);
         });
 
         return deleteBtn;
@@ -859,20 +875,24 @@ export class UI {
 
     async createParentIdOptions(form, item) {
         let items = [];
-        if (item instanceof TopSite && await Permission.hasAccessTo(['topSites'])) {
-            items = await TopSite.list();
-        }
-        if (item instanceof History && await Permission.hasAccessTo(['history'])) {
-            items = await History.list();
-        }
-        if (item instanceof Bookmark && await Permission.hasAccessTo(['bookmarks'])) {
-            items = await Bookmark.list();
-        }
-        if (item instanceof Tab && await Permission.hasAccessTo(['tabGroups'])) {
-            items = await Tab.list();
-        }
-        if (item instanceof Page && await Permission.hasAccessTo(['readingList'])) {
-            items = await Page.list();
+        try {
+            if (item instanceof TopSite && await Permission.hasAccessTo(['topSites'])) {
+                items = await TopSite.list();
+            }
+            if (item instanceof History && await Permission.hasAccessTo(['history'])) {
+                items = await History.list();
+            }
+            if (item instanceof Bookmark && await Permission.hasAccessTo(['bookmarks'])) {
+                items = await Bookmark.list();
+            }
+            if (item instanceof Tab && await Permission.hasAccessTo(['tabGroups'])) {
+                items = await Tab.list();
+            }
+            if (item instanceof Page && await Permission.hasAccessTo(['readingList'])) {
+                items = await Page.list();
+            }
+        } catch (e) {
+            this.addToast(e);
         }
         this.createSelectOptions(form.parentId, items, item.parentId);
     }
@@ -922,7 +942,7 @@ export class UI {
             tileReorder:                form.tileReorder.checked ? true : false,
             theme:                      form.theme.value,
         });
-        await Settings.save(newSettings);
+        await Settings.save(newSettings).catch(e => this.addToast(e));
         this.applySettings(newSettings);
 
         this.loadContent(); // force change favicons, and tile buttons
@@ -943,7 +963,7 @@ export class UI {
                     const backgroundFile = reader.result;
                     this.settings.backgroundTime = backgroundTime;
                     this.settings.backgroundFile = backgroundFile;
-                    Settings.save({ backgroundFile, backgroundTime });
+                    Settings.save({ backgroundFile, backgroundTime }).catch(e => this.addToast(e));
                     const custom_theme = document.getElementById('custom_theme');
                     custom_theme.innerHTML += `body {\n  background-image: url('${this.settings.backgroundFile}');\n}`;
                 };
@@ -1034,6 +1054,14 @@ export class UI {
         form.url.value = item.url || '';
         // form.parentId.value = item.parentId;
 
+        if (item instanceof Tab && item.id) {
+            form.title.disabled = "disabled";
+            form.title.parentElement.classList.add('hidden');
+        } else {
+            form.title.removeAttribute('disabled');
+            form.title.parentElement.classList.remove('hidden');
+        }
+
         this.createParentIdOptions(form, item);
 
         modal.showModal();
@@ -1048,7 +1076,7 @@ export class UI {
         const url = form.url.value.trim();
         const parentId = form.parentId.value;
 
-        await item.save({ title, url, parentId });
+        await item.save({ title, url, parentId }).catch(e => this.addToast(e));
 
         modal.close();
     }
@@ -1124,9 +1152,41 @@ export class UI {
         tabs[0].setAttribute('aria-selected', 'true');
         panels[0].hidden = false;
     }
+
+    // MARK: Toasts
+    addToast(msg) {
+        const toasts = document.getElementById('toasts');
+
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.role = "alert";
+        toast.ariaLive = "assertive";
+        toast.ariaAtomic = "true";
+
+        if (msg instanceof Error) {
+            console.error(msg);
+            toast.style.backgroundColor = 'var(--color-danger)';
+            msg = msg.message;
+        }
+        toast.innerHTML += `
+            <div class="toast-body">${msg}</div>
+            <button type="button" class="close-btn" data-i18n-title="close">×</button>
+        `;
+
+        const showToast = () => {
+            toasts.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 200);
+        };
+
+        const dismissToast = () => toast.remove();
+        toast.querySelector('.close-btn').onclick = dismissToast;
+        setTimeout(dismissToast, 5 * 1000);
+
+        showToast();
+    }
 }
 
 // MARK: Entry point
 document.addEventListener('DOMContentLoaded', (e) => {
-    new UI();
+    window.ui = new UI();
 });

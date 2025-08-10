@@ -55,7 +55,7 @@ export class Page {
     
     async save({ title, url, parentId }) {
         const hasBeenRead = (parentId === '1') ? true : false;
-        const result = {};
+        let result = {};
 
         if (!this.id) { // create
             result = await browser.readingList?.addEntry({ title, url, hasBeenRead });

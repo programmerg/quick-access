@@ -95,7 +95,7 @@ export class Settings {
             }, {});
     }
 
-    static async delete(keys = []) {
+    static async remove(keys = []) {
         await browser.storage?.sync?.remove(keys);
         await browser.storage?.local?.remove(keys);
     }

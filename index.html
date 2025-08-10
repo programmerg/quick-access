@@ -149,6 +149,21 @@
         </form>
     </dialog>
 
+    <dialog id="removeModal" role="dialog" aria-modal="true">
+        <form class="modal-content" data-action="removeItem" method="dialog">
+            <div class="modal-header">
+                <h2 class="modal-title"></h2>
+            </div>
+
+            <div class="modal-body"></div>
+
+            <div class="modal-footer">
+                <button type="reset" class="btn-secondary" data-i18n="cancel"></button>
+                <button type="submit" class="btn-danger" data-i18n="delete"></button>
+            </div>
+        </form>
+    </dialog>
+
     <dialog id="settingsModal" role="dialog" aria-modal="true">
         <form class="modal-content" data-action="saveSettings" method="dialog">
             <div class="modal-header">
@@ -317,6 +332,8 @@
             </div>
         </form>
     </dialog>
+
+    <div id="toasts" class="toasts"></div>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
         <symbol id="spinner" viewBox="0 0 60 60"><g fill="none" fill-rule="evenodd" stroke="currentcolor"><g transform="translate(12 12)" stroke-width="4"><circle stroke-opacity=".15" cx="18" cy="18" r="18"/><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/></path></g></g></symbol>    

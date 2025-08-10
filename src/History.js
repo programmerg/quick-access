@@ -52,7 +52,7 @@ export class History {
     }
       
     async save({ url }) {
-        const result = {};
+        let result = {};
 
         if (!this.id) { // create
             result = await browser.history?.addUrl({ url });
