@@ -59,7 +59,7 @@ export class Tab {
         const currentWindow = browser.windows?.WINDOW_ID_CURRENT;
         let results = [];
 
-        console.log(await browser.tabs?.query({ windowId: currentWindow }));
+        // console.log(await browser.tabs?.query({ windowId: currentWindow })); // TODO: index bug
 
         if (parentId === '') {
             const tabGroups = await browser.tabGroups?.query({ windowId: currentWindow });
@@ -87,19 +87,21 @@ export class Tab {
 
         if (!this.id) { // create
             if (!url) { // group
-                const newTab = await browser.tabs?.create({ windowId: currentWindow, url: 'chrome://newtab', active: false });
+                const isFirefox = navigator.userAgent.indexOf("Firefox") != -1;
+                const newTab = await browser.tabs?.create({ windowId: currentWindow, url: isFirefox ? 'about:newtab' : 'chrome://newtab', active: false });
                 const newGroup = await browser.tabs?.group({ tabIds: [newTab.id], createProperties: { windowId: currentWindow } });
                 result = await browser.tabGroups?.update(newGroup, { title });
 
             } else { // tab
                 const newTab = await browser.tabs?.create({ windowId: currentWindow, url, active: false });
                 if (parentId) { // attach to group
-                    result = await browser.tabs?.group({ tabIds: [newTab.id], groupId: Number(parentId) });
+                    const groupId = await browser.tabs?.group({ tabIds: [newTab.id], groupId: Number(parentId) });
+                    result = Tab.get(newTab);
                 }
             }
 
         } else { // update
-            if (!this.url) {
+            if (!this.url) { // group
                 if (index || parentId) { // move or reorder
                     if (parentId) return;
                     result = await browser.tabGroups?.move(this.id, { windowId: currentWindow, index: index ?? -1 });
@@ -109,12 +111,14 @@ export class Tab {
                     result = await browser.tabGroups?.update(this.id, { title });
                 }
 
-            } else {
+            } else { // tab
                 if (parentId === '') {
-                    result = await browser.tabs?.ungroup([this.id]);
+                    await browser.tabs?.ungroup([this.id]);
+                    result = Tab.get(this.id);
                 }
                 else if (parentId) { // move to another group
-                    result = await browser.tabs?.group({ tabIds: [this.id], groupId: Number(parentId) });
+                    const groupId = await browser.tabs?.group({ tabIds: [this.id], groupId: Number(parentId) });
+                    result = Tab.get(this.id);
                 }
 
                 if (index) { // reorder

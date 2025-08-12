@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "設定は自動的にChromeアカウントに同期され、すべてのデバイスで同じ優れた体験をお楽しみいただけます。"
+   },
+   "about": {
+      "message": "概要"
+   },
+   "homepage": {
+      "message": "拡張機能のホームページ"
+   },
+   "version": {
+      "message": "バージョン"
+   },
+   "developer": {
+      "message": "開発者"
    }
 }

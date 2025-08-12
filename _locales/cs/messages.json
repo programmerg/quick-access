@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Vaše nastavení se automaticky synchronizují s vaším účtem Chrome, takže si můžete užívat stejný skvělý zážitek na všech svých zařízeních."
+   },
+   "about": {
+      "message": "O aplikaci"
+   },
+   "homepage": {
+      "message": "Domovská stránka doplňku"
+   },
+   "version": {
+      "message": "Verze"
+   },
+   "developer": {
+      "message": "Vývojář"
    }
 }

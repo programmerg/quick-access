@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "您的設定將自動同步到您的 Chrome 帳戶，讓您在所有裝置上都能享受相同的絕佳體驗。"
+   },
+   "about": {
+      "message": "關於"
+   },
+   "homepage": {
+      "message": "擴充功能首頁"
+   },
+   "version": {
+      "message": "版本"
+   },
+   "developer": {
+      "message": "開發者"
    }
 }

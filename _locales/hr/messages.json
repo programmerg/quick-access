@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Vaše postavke će se automatski sinkronizirati s vašim Chrome računom tako da možete uživati u istom sjajnom iskustvu na svim svojim uređajima."
+   },
+   "about": {
+      "message": "O nama"
+   },
+   "homepage": {
+      "message": "Početna stranica dodatka"
+   },
+   "version": {
+      "message": "Verzija"
+   },
+   "developer": {
+      "message": "Programer"
    }
 }

@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Dine indstillinger synkroniseres automatisk til din Chrome-konto, så du kan nyde den samme fantastiske oplevelse på tværs af alle dine enheder."
+   },
+   "about": {
+      "message": "Om"
+   },
+   "homepage": {
+      "message": "Udvidelsens hjemmeside"
+   },
+   "version": {
+      "message": "Version"
+   },
+   "developer": {
+      "message": "Udvikler"
    }
 }

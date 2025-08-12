@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Ayarlarınız otomatik olarak Chrome hesabınıza senkronize edilecek, böylece tüm cihazlarınızda aynı harika deneyimi yaşayabilirsiniz."
+   },
+   "about": {
+      "message": "Hakkında"
+   },
+   "homepage": {
+      "message": "Eklenti ana sayfası"
+   },
+   "version": {
+      "message": "Sürüm"
+   },
+   "developer": {
+      "message": "Geliştirici"
    }
 }

@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Dina inställningar synkroniseras automatiskt till ditt Chrome-konto så att du kan njuta av samma upplevelse på alla dina enheter."
+   },
+   "about": {
+      "message": "Om"
+   },
+   "homepage": {
+      "message": "Tilläggets startsida"
+   },
+   "version": {
+      "message": "Version"
+   },
+   "developer": {
+      "message": "Utvecklare"
    }
 }

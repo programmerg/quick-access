@@ -58,11 +58,12 @@ export class Page {
         let result = {};
 
         if (!this.id) { // create
-            result = await browser.readingList?.addEntry({ title, url, hasBeenRead });
+            await browser.readingList?.addEntry({ title, url, hasBeenRead });
         
         } else { // edit
-            result = await browser.readingList?.updateEntry({ url: this.url, hasBeenRead });
+            await browser.readingList?.updateEntry({ url: this.url, hasBeenRead });
         }
+        result = await Page.get(url);
         return Object.assign(this, result);
     }
     

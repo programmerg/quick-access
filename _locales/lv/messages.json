@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Jūsu iestatījumi tiks automātiski sinhronizēti ar jūsu Chrome kontu, lai jūs varētu baudīt vienādu lielisku pieredzi visās savās ierīcēs."
+   },
+   "about": {
+      "message": "Par"
+   },
+   "homepage": {
+      "message": "Paplašinājuma sākumlapa"
+   },
+   "version": {
+      "message": "Versija"
+   },
+   "developer": {
+      "message": "Izstrādātājs"
    }
 }

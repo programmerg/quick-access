@@ -55,11 +55,12 @@ export class History {
         let result = {};
 
         if (!this.id) { // create
-            result = await browser.history?.addUrl({ url });
+            await browser.history?.addUrl({ url });
 
         } else { // edit
             // history items can't be edited
         }
+        result = await History.get(url);
         return Object.assign(this, result);
     }
 

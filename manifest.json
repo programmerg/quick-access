@@ -34,9 +34,6 @@
             "id": "quick-access@programmerg.github.io"
         }
     },
-    "action": {
-        "default_title": "__MSG_open_side_panel__"
-    },
     "background": {
         "scripts": ["service-worker.js"],
         "service_worker": "service-worker.js"
@@ -44,7 +41,15 @@
     "chrome_url_overrides": {
         "newtab": "index.html?context=newtab"
     },
+    "action": {
+        "default_title": "__MSG_open_side_panel__"
+    },
     "side_panel": {
         "default_path": "index.html?context=side_panel"
-    }
+    },
+    "sidebar_action": {
+		"default_icon": "images/icon.png",
+		"default_title" : "__MSG_app_name__",
+		"default_panel": "index.html?context=side_panel"
+	}
 }

@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Tu configuración se sincronizará automáticamente con tu cuenta de Chrome para que disfrutes de la misma experiencia en todos tus dispositivos."
+   },
+   "about": {
+      "message": "Acerca de"
+   },
+   "homepage": {
+      "message": "Página de la extensión"
+   },
+   "version": {
+      "message": "Versión"
+   },
+   "developer": {
+      "message": "Desarrollador"
    }
 }

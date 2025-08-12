@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Teie seaded sünkroonitakse automaatselt teie Chrome'i kontoga, nii et saate nautida sama suurepärast kogemust kõigis oma seadmetes."
+   },
+   "about": {
+      "message": "Teave"
+   },
+   "homepage": {
+      "message": "Laienduse avakuht"
+   },
+   "version": {
+      "message": "Versioon"
+   },
+   "developer": {
+      "message": "Arendaja"
    }
 }

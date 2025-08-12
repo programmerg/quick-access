@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Beállításaid automatikusan a Chrome fiókodba szinkronizáljuk, így minden eszközödön egyformán klassz élményben legyen részed."
+   },
+   "about": {
+      "message": "Névjegy"
+   },
+   "homepage": {
+      "message": "Bővítmény weblapja"
+   },
+   "version": {
+      "message": "Verzió"
+   },
+   "developer": {
+      "message": "Fejlesztő"
    }
 }

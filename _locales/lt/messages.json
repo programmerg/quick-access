@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Jūsų nustatymai bus automatiškai sinchronizuojami su jūsų Chrome paskyra, kad galėtumėte mėgautis tuo pačiu puikiu patirimu visuose savo įrenginiuose."
+   },
+   "about": {
+      "message": "Apie"
+   },
+   "homepage": {
+      "message": "Praplėtimo svetainė"
+   },
+   "version": {
+      "message": "Versija"
+   },
+   "developer": {
+      "message": "Kūrėjas"
    }
 }

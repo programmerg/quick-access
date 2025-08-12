@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Asetukset synkronoidaan automaattisesti Chrome-tiliisi, joten voit nauttia samasta käyttökokemuksesta kaikilla laitteillasi."
+   },
+   "about": {
+      "message": "Tietoja"
+   },
+   "homepage": {
+      "message": "Lisäosan kotisivu"
+   },
+   "version": {
+      "message": "Versio"
+   },
+   "developer": {
+      "message": "Kehittäjä"
    }
 }

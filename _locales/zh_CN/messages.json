@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "你的设置会自动同步到你的Chrome账户，这样你可以在所有设备上享受同样的体验。"
+   },
+   "about": {
+      "message": "关于"
+   },
+   "homepage": {
+      "message": "扩展主页"
+   },
+   "version": {
+      "message": "版本"
+   },
+   "developer": {
+      "message": "开发者"
    }
 }

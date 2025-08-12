@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Vaša podešavanja će se automatski sinhronizovati sa vašim Chrome nalogom tako da možete uživati u istom sjajnom iskustvu na svim vašim uređajima."
+   },
+   "about": {
+      "message": "О програму"
+   },
+   "homepage": {
+      "message": "Почетна страница додатка"
+   },
+   "version": {
+      "message": "Верзија"
+   },
+   "developer": {
+      "message": "Развојни програмер"
    }
 }

@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Vos paramètres seront automatiquement synchronisés avec votre compte Chrome afin que vous puissiez profiter de la même expérience sur tous vos appareils."
+   },
+   "about": {
+      "message": "À propos"
+   },
+   "homepage": {
+      "message": "Page d’accueil de l’extension"
+   },
+   "version": {
+      "message": "Version"
+   },
+   "developer": {
+      "message": "Développeur"
    }
 }

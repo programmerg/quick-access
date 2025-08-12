@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Je instellingen worden automatisch gesynchroniseerd met je Chrome-account zodat je op al je apparaten dezelfde geweldige ervaring kunt hebben."
+   },
+   "about": {
+      "message": "Over"
+   },
+   "homepage": {
+      "message": "Homepage van de extensie"
+   },
+   "version": {
+      "message": "Versie"
+   },
+   "developer": {
+      "message": "Ontwikkelaar"
    }
 }

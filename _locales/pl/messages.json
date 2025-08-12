@@ -226,5 +226,17 @@
    },
    "welcome_footnote": {
       "message": "Twoje ustawienia zostaną automatycznie zsynchronizowane z kontem Chrome, abyś mógł cieszyć się taką samą wygodą na wszystkich urządzeniach."
+   },
+   "about": {
+      "message": "O programie"
+   },
+   "homepage": {
+      "message": "Strona rozszerzenia"
+   },
+   "version": {
+      "message": "Wersja"
+   },
+   "developer": {
+      "message": "Twórca"
    }
 }
