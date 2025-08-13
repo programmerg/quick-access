@@ -1134,3 +1134,31 @@ fieldset {
 #welcomeModal .permissions label {
     margin: 0.5em 0;
 }
+
+#about .form-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#about h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.about-buttons {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about-buttons a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-overlay);
+    color: var(--color-text);
+    text-align: center;
+    text-decoration: none;
+}

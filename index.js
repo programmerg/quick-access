@@ -64,13 +64,28 @@ export class UI {
     
     // MARK: Permissions
     registerPermissionEventListeners() {
-        ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
-            const inputs = document.querySelectorAll(`input[name="${view}Permission"]`);
-            Array.from(inputs).forEach(input => input.addEventListener('change', (e) => {
-                const items = (view === 'tabGroups') ? ['tabGroups', 'tabs'] : [view];
-                if (e.target.checked)   Permission.request(items).catch(e => this.addToast(e));
-                else                    Permission.remove(items).catch(e => this.addToast(e));
-            }));
+        ['welcomeModal', 'settingsModal'].forEach(id => {
+            const modal = document.getElementById(id);
+            const form = modal.querySelector('form');
+            modal.querySelector('button[type="submit"]').addEventListener('click', (e) => {
+                const removedItems = [], requestedItems = [];
+                ['topSites', 'history', 'bookmarks', 'tabGroups', 'readingList'].forEach(view => {
+                    const items = (view === 'tabGroups') ? ['tabGroups', 'tabs'] : [view];
+                    if (form[view + 'Permission'].checked)  requestedItems.push(...items);
+                    else                                    removedItems.push(...items);
+                });
+
+                if (removedItems.length > 0) {
+                    Permission.remove(removedItems)
+                        .catch(e => this.addToast(e));
+                }
+                if (requestedItems.length > 0) {
+                    Permission.request(requestedItems)
+                        .then(granted => { if (!granted) this.handlePermissionChange(); })
+                        .catch(e => this.addToast(e));
+                }
+                if (id === 'welcomeModal') modal.close();
+            });
         });
 
         browser.permissions?.onAdded.addListener(({permissions}) => this.handlePermissionChange());
@@ -87,6 +102,8 @@ export class UI {
             const btn = document.querySelector(`[data-view="${view}"]`);
             btn.classList.toggle('hidden', !permissions.includes(view));
         });
+
+        if (this.currentView !== '' && !permissions.includes(this.currentView)) this.switchView('');
     }
 
     // MARK: Translation
@@ -428,10 +445,11 @@ export class UI {
                 const parentId = e.currentTarget.dataset.id;
                 if (tile.classList.contains('folder') && itemId !== parentId) {
                     if (!(item instanceof Tab && item.url === '')) {
-                        item.save({ parentId: parentId }).catch(e => this.addToast(e)); // move
+                        item.save({ parentId }).catch(e => this.addToast(e)); // move
                     }
                 } else if (sourceIdx !== targetIdx) {
-                    item.save({ index: targetIdx }).catch(e => this.addToast(e)); // reorder
+                    const index = items[targetIdx].index;
+                    if (index) item.save({ index }).catch(e => this.addToast(e)); // reorder
                 }
                 tile.classList.remove('dropping');
                 sourceElement.style.opacity = 1;
@@ -462,8 +480,7 @@ export class UI {
             }
             return;
         }
-        return this.loadContent();
-
+        /*
         const grid = document.getElementById('grid');
         const oldTile = grid.querySelector(`.tile[data-id="${id}"]`);
         const newTile = item ? this.createTile(item) : null;
@@ -498,6 +515,8 @@ export class UI {
         } else { // propably just moved to another folder, so we can remove the tile from here
             if (oldTile) oldTile.remove();
         }
+        */
+        return this.loadContent();
     }
     
     registerTileEventListeners() {
@@ -857,18 +876,21 @@ export class UI {
 
         const manifest = browser.runtime?.getManifest();
         modal.querySelector('#about').innerHTML = `
-            <div class="form-group" style="text-align: center">
-                <h2><span>${manifest.name}</span> - <span>${manifest.version}</span></h2>
+            <div class="form-group">
+                <h1><img src="./images/icon-24.png" alt="logo"> <span style="color: #5f6368;">${manifest.name}</span></h1>
+                <p>${browser.i18n?.getMessage('version')}: <span>${manifest.version}</span></p>
             </div>
-            <div class="form-group" style="text-align: center">
+            <div class="form-group">
                 <p><span>${manifest.description}</span></p>
             </div>
-            <div class="form-group" style="text-align: center">
+            <div class="form-group">
                 <p>${browser.i18n?.getMessage('developer')}: <span>${manifest.author}</span></p>
             </div>
-            <div class="form-group" style="text-align: center">
-                <p><a href="${manifest.homepage_url}" target="_blank">${browser.i18n?.getMessage('homepage')}</a></p>
-                <p><a href="https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc" target="_blank">Chrome Web Store</a></p>
+            <div class="form-group about-buttons">
+                <a href="${manifest.homepage_url}" target="_blank">${browser.i18n?.getMessage('homepage')}</a>
+                <a href="https://github.com/programmerg/quick-access/" target="_blank">GitHub</a>
+                <a href="https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc" target="_blank">Chrome Web Store</a>
+                <a href="https://addons.mozilla.org/hu/firefox/addon/quick-access/" target="_blank">Firefox Add-ons</a>
             </div>
         `;
     }

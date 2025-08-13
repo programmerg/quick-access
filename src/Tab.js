@@ -59,8 +59,6 @@ export class Tab {
         const currentWindow = browser.windows?.WINDOW_ID_CURRENT;
         let results = [];
 
-        // console.log(await browser.tabs?.query({ windowId: currentWindow })); // TODO: index bug
-
         if (parentId === '') {
             const tabGroups = await browser.tabGroups?.query({ windowId: currentWindow });
             const tabs = await browser.tabs?.query({ windowId: currentWindow, groupId: -1 });

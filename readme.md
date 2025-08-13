@@ -37,15 +37,15 @@ This is a hobby project for myself, but let's see if it can conquer the world!
 
 ## Installation
 
-Get it from the [Chrome Webstore](https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc)
+Get it from the [Chrome Web Store](https://chromewebstore.google.com/detail/quick-access/pomnndfpgmpdpcjinlcihleaehhblchc) / [Firefox Add-ons](https://addons.mozilla.org/hu/firefox/addon/quick-access/)
 
 -- OR -- 
 
-1. Download the <a href="https://github.com/programmerg/quick-access/archive/refs/tags/v1.4.1.zip">latest release</a>.
+1. Download the <a href="https://github.com/programmerg/quick-access/archive/refs/tags/v1.4.3.zip">latest release</a>.
 2. Open your browser and go to `chrome://extensions`.
 3. Enable "Developer mode".
 4. Click "Load unpacked" and select the project folder.
-5. Hooray, you now have your own Quick Access version!
+5. Hooray, you now have your own Quick Access!
 
 ## File Structure
 
@@ -60,7 +60,9 @@ Get it from the [Chrome Webstore](https://chromewebstore.google.com/detail/quick
 
 ## Contributing
 
-Bug reports, improvement ideas, and pull requests are welcome!
+[Bug reports](https://github.com/programmerg/quick-access/issues), 
+[improvement ideas](https://github.com/programmerg/quick-access/discussions), 
+and [pull requests](https://github.com/programmerg/quick-access/pulls) are welcome!
 
 ## License
 

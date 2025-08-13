@@ -3,7 +3,7 @@
     "minimum_chrome_version": "121",
     "name": "__MSG_app_name__",
     "description": "__MSG_app_description__",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "author": "Gelencsér Gergő",
     "homepage_url": "https://programmerg.github.io/quick-access/",
     "default_locale": "en",
@@ -31,7 +31,7 @@
     ],
     "browser_specific_settings": {
         "gecko": {
-            "id": "quick-access@programmerg.github.io"
+            "id": "@quick-access.programmerg.github.io"
         }
     },
     "background": {
