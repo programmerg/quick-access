@@ -66,4 +66,4 @@ and [pull requests](https://github.com/programmerg/quick-access/pulls) are welco
 
 ## License
 
-MIT
+[MIT](LICENSE)
